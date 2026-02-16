@@ -121,13 +121,13 @@
 
 #### 1.3.2 `statistics_screen.dart` (700 satır)
 
-- [ ] `_buildOverviewCard` → ayrı `StatsOverviewCard` widget dosyası
-- [ ] `_buildPerformanceGrid` + `_buildStatCard` → ayrı `PerformanceGrid` widget dosyası
-- [ ] `_buildTimeStatsCard` + `_buildTimeStatRow` → ayrı `TimeStatsCard` widget dosyası
-- [ ] `_buildAchievementProgressCard` → ayrı `AchievementProgressCard` widget dosyası
-- [ ] `_buildWinRateCard` + `_buildWinLossItem` → ayrı `WinRateCard` widget dosyası
-- [ ] `_buildStarDistributionCard` + `_buildStarItem` → ayrı `StarDistributionCard` widget dosyası
-- [ ] `statistics_screen.dart`'ı yeniden yaz — sadece layout orchestration
+- [x] `_buildOverviewCard` → ayrı `StatsOverviewCard` widget dosyası
+- [x] `_buildPerformanceGrid` + `_buildStatCard` → ayrı `PerformanceGrid` widget dosyası
+- [x] `_buildTimeStatsCard` + `_buildTimeStatRow` → ayrı `TimeStatsCard` widget dosyası
+- [x] `_buildAchievementProgressCard` → ayrı `AchievementProgressCard` widget dosyası
+- [x] `_buildWinRateCard` + `_buildWinLossItem` → ayrı `WinRateCard` widget dosyası
+- [x] `_buildStarDistributionCard` + `_buildStarItem` → ayrı `StarDistributionCard` widget dosyası
+- [x] `statistics_screen.dart`'ı yeniden yaz — sadece layout orchestration
 
 #### 1.3.3 `achievements_screen.dart` (451 satır)
 
