@@ -168,8 +168,9 @@ class LevelMapScreen extends ConsumerWidget {
                                   Navigator.push(
                                     context,
                                     AppPageRoute(
-                                      builder: (context) =>
-                                          GameScreen(level: level),
+                                      builder: (context) => ProviderScope(
+                                        child: GameScreen(level: level),
+                                      ),
                                     ),
                                   );
                                 }

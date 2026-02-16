@@ -137,8 +137,8 @@
 
 ### 1.4 Provider Scoping
 
-- [ ] `GameScreen`'i `ProviderScope` ile sar → `gameProvider` otomatik dispose olsun
-- [ ] `DailyChallengeScreen` için gerekiyorsa ayrı scope
+- [x] `GameScreen`'i `ProviderScope` ile sar → `gameProvider` otomatik dispose olsun
+- [x] `DailyChallengeScreen` için gerekiyorsa ayrı scope
 
 ---
 
