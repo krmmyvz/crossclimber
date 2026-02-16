@@ -111,13 +111,13 @@
 
 #### 1.3.1 `game_screen.dart` (1,057 satır)
 
-- [ ] `_GameScreenState._buildStatusBar` → ayrı `GameStatusBar` widget
-- [ ] `_GameScreenState._buildMiddleWords` + `_buildMiddleWordItem` → ayrı `MiddleWordsSection` widget
-- [ ] `_GameScreenState._buildMiddleWordContent` + `_getMiddleWordDecoration` → `MiddleWordTile` widget
-- [ ] `_GameScreenState._buildEndWordRow` → ayrı `EndWordRow` widget
-- [ ] `_GameScreenState._buildKeyboardSection` → ayrı `GameKeyboardSection` widget
-- [ ] `_GameScreenState._buildGameContent` → ana orchestrator, sadece child widget'ları birleştirmeli
-- [ ] `_GameScreenState` controller mantığı (`_handleInputChange`, `_handleInputSubmit`, `_selectMiddleWord`, `_selectEndWord`, `_saveCurrentInput`) → ya widget'lara taşı ya da ayrı controller sınıfına çıkar
+- [x] `_GameScreenState._buildStatusBar` → ayrı `GameStatusBar` widget
+- [x] `_GameScreenState._buildMiddleWords` + `_buildMiddleWordItem` → ayrı `MiddleWordsSection` widget
+- [x] `_GameScreenState._buildMiddleWordContent` + `_getMiddleWordDecoration` → `MiddleWordTile` widget
+- [x] `_GameScreenState._buildEndWordRow` → ayrı `EndWordRow` widget
+- [x] `_GameScreenState._buildKeyboardSection` → ayrı `GameKeyboardSection` widget
+- [x] `_GameScreenState._buildGameContent` → ana orchestrator, sadece child widget'ları birleştirmeli
+- [x] `_GameScreenState` controller mantığı (`_handleInputChange`, `_handleInputSubmit`, `_selectMiddleWord`, `_selectEndWord`, `_saveCurrentInput`) → ya widget'lara taşı ya da ayrı controller sınıfına çıkar
 
 #### 1.3.2 `statistics_screen.dart` (700 satır)
 

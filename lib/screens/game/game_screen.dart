@@ -4,10 +4,10 @@ import 'package:crossclimber/l10n/app_localizations.dart';
 import 'package:crossclimber/models/level.dart';
 import 'package:crossclimber/services/tutorial_data.dart';
 import 'package:crossclimber/providers/game_provider.dart';
+import 'package:crossclimber/providers/game_ui_provider.dart';
 import 'package:crossclimber/providers/settings_provider.dart';
 import 'package:crossclimber/providers/tutorial_provider.dart';
 import 'package:crossclimber/providers/locale_provider.dart';
-import 'package:crossclimber/widgets/custom_keyboard.dart';
 import 'package:crossclimber/widgets/combo_indicator.dart';
 import 'package:crossclimber/services/daily_challenge_service.dart';
 import 'package:crossclimber/theme/page_transitions.dart';
@@ -22,6 +22,8 @@ import 'package:crossclimber/screens/game/widgets/game_status_bar.dart';
 import 'package:crossclimber/screens/game/widgets/middle_words_section.dart';
 import 'package:crossclimber/screens/game/widgets/end_word_row.dart';
 import 'package:crossclimber/screens/game/widgets/game_keyboard_section.dart';
+import 'package:crossclimber/screens/game/widgets/hint_quick_access_bar.dart';
+import 'package:crossclimber/screens/game/widgets/clue_display.dart';
 
 class GameScreen extends ConsumerStatefulWidget {
   final Level level;
@@ -44,16 +46,12 @@ class _GameScreenState extends ConsumerState<GameScreen>
         GameScreenDialogs,
         GameScreenTutorial,
         GameScreenHints {
-  int? _selectedRowIndex;
-  bool _isTopSelected = false;
-  bool _isBottomSelected = false;
   final TextEditingController _inputController = TextEditingController();
   final FocusNode _focusNode = FocusNode();
   bool _keyboardVisible = false;
 
   OverlayEntry? _unlockOverlayEntry;
   OverlayEntry? _comboPopupEntry;
-  final Map<String, String> _temporaryInputs = {};
 
   @override
   void dispose() {
@@ -87,21 +85,17 @@ class _GameScreenState extends ConsumerState<GameScreen>
         );
       }
 
-      if (next == GamePhase.guessing && _selectedRowIndex == null) {
+      if (next == GamePhase.guessing && ref.read(gameUIProvider).selectedRowIndex == null) {
         WidgetsBinding.instance.addPostFrameCallback((_) {
           if (mounted) {
-            setState(() {
-              _selectedRowIndex = 0;
-              _isTopSelected = false;
-              _isBottomSelected = false;
-            });
+            ref.read(gameUIProvider.notifier).selectMiddleWord(0, _inputController.text);
+            _inputController.text = ref.read(gameUIProvider).temporaryInputs['middle_0'] ?? '';
             _focusNode.requestFocus();
           }
         });
       }
 
-      // Check tutorial when phase changes (e.g. guessing -> sorting)
-      // If transitioning to Final Solve, wait for unlock animation
+      // Check tutorial when phase changes
       if (next == GamePhase.finalSolve) {
         Future.delayed(AnimDurations.extraLong + AnimDurations.slowest, () {
           if (mounted) {
@@ -152,9 +146,7 @@ class _GameScreenState extends ConsumerState<GameScreen>
     // Initial focus on first word
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) {
-        setState(() {
-          _selectedRowIndex = 0;
-        });
+        ref.read(gameUIProvider.notifier).selectMiddleWord(0, '');
       }
     });
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -221,17 +213,13 @@ class _GameScreenState extends ConsumerState<GameScreen>
         _keyboardVisible = keyboardVisible;
       });
 
-      // Update tutorial overlay to reposition highlights when keyboard changes
-      // Use a small delay to ensure layout is fully settled
       Future.delayed(AnimDurations.micro, () {
         if (mounted && tutorialEntry != null) {
-          // If we're in guess_interactive with card hidden, rebuild overlay
           final tutorialProgress = ref.read(tutorialProgressProvider);
           final currentStep = TutorialData.getStepAt(
             tutorialProgress.currentStepIndex,
           );
           if (currentStep?.id == 'guess_interactive') {
-            // Rebuild to ensure highlights update
             hideTutorialCard();
           } else {
             updateTutorial();
@@ -248,9 +236,8 @@ class _GameScreenState extends ConsumerState<GameScreen>
     final settings = ref.watch(settingsProvider);
     final level = gameState.currentLevel;
     final locale = Localizations.localeOf(context).languageCode;
+    final uiState = ref.watch(gameUIProvider);
 
-    // Listen to pause state for tutorial visibility
-    // We do this in build() to ensure it persists across hot reloads
     ref.listen(gameProvider.select((state) => state.isPaused), (
       previous,
       next,
@@ -258,8 +245,6 @@ class _GameScreenState extends ConsumerState<GameScreen>
       if (next) {
         dismissTutorial();
       } else {
-        // When resuming, check if we need to show tutorial
-        // We use a small delay to ensure the UI has settled
         Future.delayed(AnimDurations.micro, () {
           if (mounted && tutorialEntry == null) {
             checkTutorial();
@@ -272,12 +257,10 @@ class _GameScreenState extends ConsumerState<GameScreen>
       return const Scaffold(body: Center(child: CircularProgressIndicator()));
     }
 
-    // Show completion screen
     if (gameState.phase == GamePhase.completed) {
       return _buildCompletionScreen(context, l10n, gameState, level, locale);
     }
 
-    // Clear error after showing shake animation
     if (gameState.lastError != null) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         ref.read(gameProvider.notifier).clearError();
@@ -288,15 +271,12 @@ class _GameScreenState extends ConsumerState<GameScreen>
       canPop: false,
       onPopInvokedWithResult: (didPop, result) async {
         if (didPop) return;
-        // Toggle pause state regardless of current state
-        // This creates a loop: Playing -> Paused -> Playing
         ref.read(gameProvider.notifier).togglePause();
       },
       child: Scaffold(
         resizeToAvoidBottomInset: !settings.useCustomKeyboard,
         appBar: CommonAppBar(
           title: l10n.level(widget.level.id),
-          // Use static hero tag to link with LevelMap
           heroTag: 'level_title_${widget.level.id}',
           type: AppBarType.game,
           onPausePressed: () {
@@ -305,7 +285,7 @@ class _GameScreenState extends ConsumerState<GameScreen>
         ),
         body: gameState.isPaused
             ? buildPauseMenu(context, l10n)
-            : _buildGameContent(context, l10n, gameState, level, settings),
+            : _buildGameContent(context, l10n, gameState, level, settings, uiState),
       ),
     );
   }
@@ -381,6 +361,7 @@ class _GameScreenState extends ConsumerState<GameScreen>
     GameState gameState,
     Level level,
     SettingsState settings,
+    GameUIState uiState,
   ) {
     return Column(
       children: [
@@ -413,10 +394,10 @@ class _GameScreenState extends ConsumerState<GameScreen>
                         gameState: gameState,
                         level: level,
                         tileSize: tileSize,
-                        isSelected: _isTopSelected,
+                        isSelected: uiState.isTopSelected,
                         currentInput: _inputController.text,
-                        tempInput: _temporaryInputs['top'],
-                        onSelect: () => _selectEndWord(true),
+                        tempInput: uiState.temporaryInputs['top'],
+                        onSelect: () => _handleSelectEndWord(true),
                       ),
                     ),
                     VerticalSpacing.xs,
@@ -426,14 +407,14 @@ class _GameScreenState extends ConsumerState<GameScreen>
                         gameState: gameState,
                         level: level,
                         tileSize: tileSize,
-                        selectedRowIndex: _selectedRowIndex,
+                        selectedRowIndex: uiState.selectedRowIndex,
                         onReorder: (oldIndex, newIndex) {
                           ref
                               .read(gameProvider.notifier)
                               .reorderMiddleWords(oldIndex, newIndex);
                           onReorderCompleted();
                         },
-                        onSelect: _selectMiddleWord,
+                        onSelect: (index) => _handleSelectMiddleWord(index),
                         onPointerDown: hideTutorialCard,
                       ),
                     ),
@@ -445,10 +426,10 @@ class _GameScreenState extends ConsumerState<GameScreen>
                         gameState: gameState,
                         level: level,
                         tileSize: tileSize,
-                        isSelected: _isBottomSelected,
+                        isSelected: uiState.isBottomSelected,
                         currentInput: _inputController.text,
-                        tempInput: _temporaryInputs['bottom'],
-                        onSelect: () => _selectEndWord(false),
+                        tempInput: uiState.temporaryInputs['bottom'],
+                        onSelect: () => _handleSelectEndWord(false),
                       ),
                     ),
                   ],
@@ -457,29 +438,20 @@ class _GameScreenState extends ConsumerState<GameScreen>
             },
           ),
         ),
-        if (_selectedRowIndex != null || _isTopSelected || _isBottomSelected)
-          buildClueDisplay(
-            context,
-            l10n,
-            gameState,
-            level,
-            key: clueKey,
-            selectedRowIndex: _selectedRowIndex,
-            isTopSelected: _isTopSelected,
-            isBottomSelected: _isBottomSelected,
-          ),
-        buildHintQuickAccessBar(
-          context,
-          l10n,
-          gameState,
-          level,
-          selectedRowIndex: _selectedRowIndex,
+        ClueDisplay(
+          key: clueKey,
+          gameState: gameState,
+          level: level,
+          selectedRowIndex: uiState.selectedRowIndex,
+          isTopSelected: uiState.isTopSelected,
+          isBottomSelected: uiState.isBottomSelected,
+        ),
+        HintQuickAccessBar(
+          selectedRowIndex: uiState.selectedRowIndex,
           onShowMarket: showMarketDialog,
           onHintUsed: () {
-            setState(() {
-              _selectedRowIndex = null;
-              _inputController.clear();
-            });
+            ref.read(gameUIProvider.notifier).clearSelection();
+            _inputController.clear();
           },
         ),
         GameKeyboardSection(
@@ -492,7 +464,7 @@ class _GameScreenState extends ConsumerState<GameScreen>
           onKeyTap: (key) {
             if (_inputController.text.length < level.startWord.length) {
               _inputController.text += key;
-              _handleInputChange(settings, level);
+              _handleInputChange(settings, level, uiState);
             }
           },
           onBackspace: () {
@@ -501,26 +473,26 @@ class _GameScreenState extends ConsumerState<GameScreen>
                 0,
                 _inputController.text.length - 1,
               );
-              _handleInputChange(settings, level);
+              _handleInputChange(settings, level, uiState);
             }
           },
           onSubmit: () {
-            _handleInputSubmit();
+            _handleInputSubmit(uiState);
           },
-          onChanged: (value) => _handleInputChange(settings, level),
+          onChanged: (value) => _handleInputChange(settings, level, uiState),
         ),
       ],
     );
   }
 
-  void _handleInputChange(SettingsState settings, Level level) {
+  void _handleInputChange(SettingsState settings, Level level, GameUIState uiState) {
     setState(() {});
 
     if (settings.autoCheck) {
       int? targetLength;
-      if (_selectedRowIndex != null) {
-        targetLength = level.solution[_selectedRowIndex! + 1].length;
-      } else if (_isTopSelected || _isBottomSelected) {
+      if (uiState.selectedRowIndex != null) {
+        targetLength = level.solution[uiState.selectedRowIndex! + 1].length;
+      } else if (uiState.isTopSelected || uiState.isBottomSelected) {
         targetLength = level.startWord.length;
       }
 
@@ -528,110 +500,74 @@ class _GameScreenState extends ConsumerState<GameScreen>
           _inputController.text.length == targetLength) {
         Future.delayed(AnimDurations.normal, () {
           if (!mounted) return;
-          _handleInputSubmit();
+          _handleInputSubmit(uiState);
         });
       }
     }
   }
 
-  void _handleInputSubmit() {
+  void _handleInputSubmit(GameUIState uiState) {
     final value = _inputController.text;
-    if (_selectedRowIndex != null) {
-      ref
-          .read(gameProvider.notifier)
-          .submitMiddleGuess(_selectedRowIndex!, value);
+    final notifier = ref.read(gameProvider.notifier);
+    final uiNotifier = ref.read(gameUIProvider.notifier);
+
+    if (uiState.selectedRowIndex != null) {
+      notifier.submitMiddleGuess(uiState.selectedRowIndex!, value);
 
       final gameState = ref.read(gameProvider);
       if (gameState.lastError != 'wrong') {
         onGuessSubmitted(true);
-        setState(() {
-          _selectedRowIndex = null;
-          _inputController.clear();
-          _focusNode.unfocus();
-        });
+        uiNotifier.clearSelection();
+        _inputController.clear();
+        _focusNode.unfocus();
       }
-    } else if (_isTopSelected) {
-      ref.read(gameProvider.notifier).submitFinalGuess(true, value);
+    } else if (uiState.isTopSelected) {
+      notifier.submitFinalGuess(true, value);
       final gameState = ref.read(gameProvider);
       if (gameState.lastError != 'wrong') {
         onFinalGuessSubmitted(true, true);
-        setState(() {
-          _isTopSelected = false;
-          _inputController.clear();
-          _focusNode.unfocus();
-        });
+        uiNotifier.clearSelection();
+        _inputController.clear();
+        _focusNode.unfocus();
       }
-    } else if (_isBottomSelected) {
-      ref.read(gameProvider.notifier).submitFinalGuess(false, value);
+    } else if (uiState.isBottomSelected) {
+      notifier.submitFinalGuess(false, value);
       final gameState = ref.read(gameProvider);
       if (gameState.lastError != 'wrong') {
         onFinalGuessSubmitted(false, true);
-        setState(() {
-          _isBottomSelected = false;
-          _inputController.clear();
-          _focusNode.unfocus();
-        });
+        uiNotifier.clearSelection();
+        _inputController.clear();
+        _focusNode.unfocus();
       }
     }
   }
 
-  void _selectMiddleWord(int index) {
-    _saveCurrentInput();
+  void _handleSelectMiddleWord(int index) {
+    final uiNotifier = ref.read(gameUIProvider.notifier);
+    uiNotifier.selectMiddleWord(index, _inputController.text);
+    _inputController.text = ref.read(gameUIProvider).temporaryInputs['middle_$index'] ?? '';
 
-    // Hide tutorial card if on step 3 (guess_interactive) but keep highlights
     final tutorialProgress = ref.read(tutorialProgressProvider);
-    final currentStep = TutorialData.getStepAt(
-      tutorialProgress.currentStepIndex,
-    );
+    final currentStep = TutorialData.getStepAt(tutorialProgress.currentStepIndex);
     if (currentStep?.id == 'guess_interactive') {
       hideTutorialCard();
     }
-    setState(() {
-      _selectedRowIndex = index;
-      _isTopSelected = false;
-      _isBottomSelected = false;
-      _inputController.text = _temporaryInputs['middle_$index'] ?? '';
-    });
 
-    // If keyboard is already open, just request focus
-    // If keyboard is closed, unfocus then refocus to ensure it opens
-    if (_keyboardVisible) {
-      _focusNode.requestFocus();
-    } else {
-      _focusNode.unfocus();
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (mounted) {
-          _focusNode.requestFocus();
-        }
-      });
-    }
+    _requestFocus();
   }
 
-  void _saveCurrentInput() {
-    if (_selectedRowIndex != null) {
-      _temporaryInputs['middle_$_selectedRowIndex'] = _inputController.text;
-    } else if (_isTopSelected) {
-      _temporaryInputs['top'] = _inputController.text;
-    } else if (_isBottomSelected) {
-      _temporaryInputs['bottom'] = _inputController.text;
-    }
-  }
-
-  void _selectEndWord(bool isTop) {
+  void _handleSelectEndWord(bool isTop) {
     hideTutorialCard();
-    _saveCurrentInput();
+    final uiNotifier = ref.read(gameUIProvider.notifier);
+    uiNotifier.selectEndWord(isTop, _inputController.text);
+    _inputController.text = isTop
+        ? (ref.read(gameUIProvider).temporaryInputs['top'] ?? '')
+        : (ref.read(gameUIProvider).temporaryInputs['bottom'] ?? '');
 
-    setState(() {
-      _isTopSelected = isTop;
-      _isBottomSelected = !isTop;
-      _selectedRowIndex = null;
-      _inputController.text = isTop
-          ? (_temporaryInputs['top'] ?? '')
-          : (_temporaryInputs['bottom'] ?? '');
-    });
+    _requestFocus();
+  }
 
-    // If keyboard is already open, just request focus
-    // If keyboard is closed, unfocus then refocus to ensure it opens
+  void _requestFocus() {
     if (_keyboardVisible) {
       _focusNode.requestFocus();
     } else {
