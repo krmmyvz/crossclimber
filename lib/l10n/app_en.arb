@@ -1,0 +1,332 @@
+{
+    "@@locale": "en",
+    "appTitle": "CrossClimber",
+    "play": "Play",
+    "settings": "Settings",
+    "language": "Language",
+    "english": "English",
+    "turkish": "Turkish",
+    "level": "Level {levelNumber}",
+    "@level": {
+        "placeholders": {
+            "levelNumber": {
+                "type": "int"
+            }
+        }
+    },
+    "nextLevel": "Next Level",
+    "allLevelsCompleted": "Amazing! You've Completed All Levels!",
+    "allLevelsCompletedDesc": "You've mastered all {totalLevels} levels! Stay tuned for more challenges coming soon.",
+    "@allLevelsCompletedDesc": {
+        "placeholders": {
+            "totalLevels": {
+                "type": "int"
+            }
+        }
+    },
+    "hint": "Hint",
+    "correct": "Correct!",
+    "wrong": "Wrong!",
+    "congratulations": "Congratulations!",
+    "youWon": "You completed the level!",
+    "phase1Title": "Guess the Words",
+    "phase2Title": "Sort the Words",
+    "phase3Title": "Find Final Words",
+    "phaseProgress": "Step {current} / {total}",
+    "@phaseProgress": {
+        "placeholders": {
+            "current": {
+                "type": "int"
+            },
+            "total": {
+                "type": "int"
+            }
+        }
+    },
+    "wordsFound": "{found} / {total} words found",
+    "@wordsFound": {
+        "placeholders": {
+            "found": {
+                "type": "int"
+            },
+            "total": {
+                "type": "int"
+            }
+        }
+    },
+    "pause": "Pause",
+    "resume": "Resume",
+    "restart": "Restart",
+    "mainMenu": "Main Menu",
+    "paused": "Paused",
+    "useHint": "Use Hint",
+    "hintsRemaining": "{count} hints remaining",
+    "@hintsRemaining": {
+        "placeholders": {
+            "count": {
+                "type": "int"
+            }
+        }
+    },
+    "noHintsLeft": "No hints left",
+    "hintUsed": "Hint used!",
+    "tapToGuess": "Tap to guess",
+    "enterWord": "Enter word",
+    "locked": "Locked",
+    "completed": "Completed!",
+    "timeElapsed": "Time Elapsed",
+    "yourScore": "Your Score",
+    "stars": "{count} Stars",
+    "@stars": {
+        "placeholders": {
+            "count": {
+                "type": "int"
+            }
+        }
+    },
+    "newBestTime": "New Best Time!",
+    "playAgain": "Play Again",
+    "dragToReorder": "Drag to reorder",
+    "checkOrder": "Check Order",
+    "orderCorrect": "Order is correct!",
+    "orderIncorrect": "Order is incorrect, try again",
+    "invalidWord": "Invalid word!",
+    "alreadyGuessed": "Word already guessed",
+    "theme": "Theme",
+    "system": "System",
+    "light": "Light",
+    "dark": "Dark",
+    "vibration": "Vibration",
+    "showTimer": "Show Timer",
+    "autoCheck": "Auto Check",
+    "autoCheckDesc": "Auto-check when you complete a word",
+    "autoSort": "Auto Sort",
+    "autoSortDesc": "Auto-sort when you find all words",
+    "appearance": "Appearance",
+    "soundEffects": "Sound Effects",
+    "music": "Music",
+    "tutorial": "How to Play",
+    "about": "About",
+    "version": "Version",
+    "difficulty": "Difficulty",
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard",
+    "achievements": "Achievements",
+    "statistics": "Statistics",
+    "dailyChallenge": "Daily Challenge",
+    
+    "tutorial_intro_welcome_title": "Welcome to CrossClimber!",
+    "tutorial_intro_welcome_desc": "Learn how to play this fun word puzzle game. Connect words by changing one letter at a time!",
+    "tutorial_intro_objective_title": "Game Objective",
+    "tutorial_intro_objective_desc": "Your goal is to find the missing words between the START and END words. Each word differs by exactly one letter from the previous word.",
+    "tutorial_intro_rule_title": "The Golden Rule",
+    "tutorial_intro_rule_desc": "You can only change ONE letter at a time. For example: CAT → BAT → BAD → BED",
+    
+    "tutorial_guess_intro_title": "Phase 1: Guessing",
+    "tutorial_guess_intro_desc": "First, you need to guess all the middle words. Tap on any empty slot to start guessing.",
+    "tutorial_guess_success_title": "Great Job!",
+    "tutorial_guess_success_desc": "You found your first word! Keep going to complete the puzzle.",
+    "tutorial_guess_keyboard_title": "Type Your Guess",
+    "tutorial_guess_keyboard_desc": "Use the keyboard to type a word. Remember: it must differ by only one letter from neighboring words!",
+    "tutorial_guess_hints_title": "Need Help?",
+    "tutorial_guess_hints_desc": "You have 3 hints per level. Use them wisely to reveal letters or get clues when stuck.",
+    "tutorial_guess_timer_title": "Beat the Clock",
+    "tutorial_guess_timer_desc": "Faster completion gives more stars! Don't worry, there's no time limit.",
+    
+    "tutorial_combo_intro_title": "Combo System!",
+    "tutorial_combo_intro_desc": "Keep guessing correctly to build combos and multiply your score! Each correct answer in a row increases your multiplier.",
+    
+    "tutorial_sort_intro_title": "Phase 2: Sorting",
+    "tutorial_sort_intro_desc": "Excellent! You found all the middle words. Now arrange them in the correct order - each word must differ by only ONE letter from the next.",
+    "tutorial_sort_action_title": "Real-time Validation",
+    "tutorial_sort_action_desc": "Drag and reorder the words. You'll see green borders for correct positions and red for incorrect ones. When all words are green, the START and END will unlock automatically!",
+    
+    "tutorial_final_intro_title": "Phase 3: Final Challenge",
+    "tutorial_final_intro_desc": "Almost done! Now figure out what the START and END words are based on the sorted middle words.",
+    "tutorial_final_start_title": "Guess the Start Word",
+    "tutorial_final_start_desc": "What word comes before the first middle word? It should differ by one letter.",
+    "tutorial_final_end_title": "Guess the End Word",
+    "tutorial_final_end_desc": "What word comes after the last middle word? Complete the ladder!",
+    
+    "tutorial_complete_congrats_title": "You're Ready!",
+    "tutorial_complete_congrats_desc": "Congratulations! You now know how to play CrossClimber. Have fun and challenge yourself!",
+    
+    "skipTutorial": "Skip Tutorial",
+    "continueButton": "Continue",
+    "showTips": "Show Tips",
+    "resetTutorial": "Reset Tutorial",
+    
+    "outOfLivesTitle": "Out of Lives!",
+    "outOfLivesMessage": "You've run out of lives. Wait for regeneration or use credits to continue.",
+    "nextLifeIn": "Next life in: {time}",
+    "@nextLifeIn": {
+        "placeholders": {
+            "time": {
+                "type": "String"
+            }
+        }
+    },
+    "buyOneLife": "Buy 1 Life (50 💰)",
+    "buyAllLives": "Buy All Lives (100 💰)",
+    "exitGame": "Exit Game",
+    "returnToMainMenu": "Return to Main Menu?",
+    "progressLostWarning": "Your current progress will be lost. Are you sure?",
+    "cancel": "Cancel",
+    "exit": "Exit",
+    "startEndUnlocked": "START & END Unlocked!",
+
+    "shopTitle": "Market",
+    "freeCreditsTitle": "Earn Free",
+    "freeCreditsSubtitle": "Watch ads, earn free credits",
+    "creditPackageTitle": "Credit Package",
+    "creditPackageSubtitle": "Buy credits with real money",
+    "lifePackageTitle": "Life Package",
+    "lifePackageSubtitle": "Buy lives with credits",
+    "hintPackageTitle": "Hint Package",
+    "hintPackageSubtitle": "Buy hints with credits",
+    "nCredits": "{amount} Credits",
+    "@nCredits": {
+        "placeholders": {
+            "amount": {
+                "type": "int"
+            }
+        }
+    },
+    "mostPopular": "MOST POPULAR",
+    "popularLabel": "POPULAR",
+    "nLives": "{amount} Lives",
+    "@nLives": {
+        "placeholders": {
+            "amount": {
+                "type": "int"
+            }
+        }
+    },
+    "buyOneLife": "Buy a single life",
+    "buyFiveLives": "Upgrade to 5 lives",
+    "revealWord": "Reveal Word",
+    "revealWordDesc": "Fully reveals the selected word",
+    "undoMove": "Undo",
+    "undoMoveDesc": "Undo your last move",
+    "dailyRewardClaim": "Claim Your Daily Reward! 🎁",
+    "dailyRewardAmount": "20+ Credits + Bonuses",
+    "dailyRewardStreak": "Streak: {days} days",
+    "@dailyRewardStreak": {
+        "placeholders": {
+            "days": {
+                "type": "int"
+            }
+        }
+    },
+    "watchAdsTitle": "Watch Ads, Earn",
+    "watchAdsSubtitle": "You can watch 5 ads per day",
+    "watchAdCredits": "+10 Credits",
+    "watchAdHint": "+1 Hint",
+    "dailyRewardTitle": "Daily Reward!",
+    "alreadyClaimedToday": "You already claimed today's reward!",
+    "notEnoughCredits": "Not enough credits!",
+    "livesAlreadyFull": "Lives already full!",
+    "great": "Great!",
+    "share": "Share",
+    "shareResult": "Share Result",
+    "customKeyboard": "Custom Keyboard",
+    "customKeyboardDesc": "Use in-game QWERTY keyboard",
+    "hapticFeedback": "Haptic Feedback",
+    "hapticFeedbackDesc": "Vibration and tactile feedback",
+    "gotIt": "Got it!",
+    "skipLabel": "Skip",
+
+    "progress": "Progress",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "daysAgo": "{count} days ago",
+    "@daysAgo": {
+        "placeholders": {
+            "count": {
+                "type": "int"
+            }
+        }
+    },
+
+    "achievementFirstWin": "First Win",
+    "achievementTenLevels": "Ten Levels",
+    "achievementSpeedDemon": "Speed Demon",
+    "achievementMarathonRunner": "Marathon Runner",
+    "achievementThirtyLevels": "Thirty Levels",
+    "achievementPerfectStreak5": "Perfect Streak 5",
+    "achievementCenturyClub": "Century Club",
+    "achievementHintlessHero": "Hintless Hero",
+    "achievementErrorFree": "Error Free",
+    "achievementEarlyBird": "Early Bird",
+    "achievementNightOwl": "Night Owl",
+    "achievementPerfectStreak10": "Perfect Streak 10",
+    "achievementFiftyLevels": "Fifty Levels",
+    "achievementThreeStarPerfectionist": "Three Star Perfectionist",
+    "achievementNoHintsMaster": "No Hints Master",
+
+    "achievementDescFirstWin": "Complete your first level",
+    "achievementDescTenLevels": "Complete 10 levels",
+    "achievementDescSpeedDemon": "Complete a level in under 30 seconds",
+    "achievementDescMarathonRunner": "Play 10 levels in a single session",
+    "achievementDescThirtyLevels": "Complete 30 levels",
+    "achievementDescPerfectStreak5": "Get 3 stars on 5 consecutive levels",
+    "achievementDescCenturyClub": "Complete 100 levels",
+    "achievementDescHintlessHero": "Complete 10 levels without using hints",
+    "achievementDescErrorFree": "Complete a level without any wrong attempts",
+    "achievementDescEarlyBird": "Complete a level before 9 AM",
+    "achievementDescNightOwl": "Complete a level after 11 PM",
+    "achievementDescPerfectStreak10": "Get 3 stars on 10 consecutive levels",
+    "achievementDescFiftyLevels": "Complete 50 levels",
+    "achievementDescThreeStarPerfectionist": "Get 3 stars on 20 levels",
+    "achievementDescNoHintsMaster": "Complete 50 levels without using hints",
+
+    "yourStatistics": "Your Statistics",
+    "gamesPlayed": "Games Played",
+    "gamesWon": "Games Won",
+    "performance": "Performance",
+    "winRate": "Win Rate",
+    "avgStars": "Avg Stars",
+    "timeStatistics": "Time Statistics",
+    "totalTimePlayed": "Total Time Played",
+    "bestTime": "Best Time",
+    "averageTime": "Average Time",
+    "starDistribution": "Star Distribution",
+    "totalStarsEarned": "Total Stars Earned",
+    "perfectGames": "Perfect Games",
+    "noGamesPlayedYet": "No games played yet",
+    "wins": "Wins",
+    "losses": "Losses",
+    "shareStatistics": "Share Statistics",
+
+    "currentStreak": "Current Streak",
+    "failedToLoadDailyChallenge": "Failed to load daily challenge",
+    "failedToLoadChallenge": "Failed to load challenge",
+    "difficultyLabel": "Difficulty",
+    "wordsLabel": "Words",
+    "starsLabel": "Stars",
+    "timeLabel": "Time",
+    "scoreLabel": "Score",
+    "viewResult": "View Result",
+    "playNow": "Play Now",
+    "expert": "Expert",
+    "unknown": "Unknown",
+
+    "monthJanuary": "January",
+    "monthFebruary": "February",
+    "monthMarch": "March",
+    "monthApril": "April",
+    "monthMay": "May",
+    "monthJune": "June",
+    "monthJuly": "July",
+    "monthAugust": "August",
+    "monthSeptember": "September",
+    "monthOctober": "October",
+    "monthNovember": "November",
+    "monthDecember": "December",
+
+    "yourStats": "Your Stats",
+    "completedLabel": "Completed",
+    "bestStreak": "Best Streak"
+}
+

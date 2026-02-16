@@ -1,0 +1,31 @@
+# CrossClimber — Strict Analysis Options
+# Base: flutter_lints + additional strictness rules
+
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  rules:
+    # --- Print & Debug ---
+    avoid_print: true
+
+    # --- Const ---
+    prefer_const_constructors: true
+    prefer_const_declarations: true
+    prefer_const_constructors_in_immutables: true
+    prefer_const_literals_to_create_immutables: true
+
+    # --- Imports ---
+    always_use_package_imports: true
+
+    # --- Style ---
+    prefer_single_quotes: true
+    unnecessary_brace_in_string_interps: true
+    prefer_is_empty: true
+    prefer_is_not_empty: true
+    unnecessary_this: true
+
+    # --- Safety ---
+    avoid_empty_else: true
+    no_duplicate_case_values: true
+    unnecessary_statements: true
+    use_key_in_widget_constructors: true

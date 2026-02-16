@@ -1,0 +1,696 @@
+[
+    {
+        "id": 1,
+        "startWord": "LOVE",
+        "endWord": "HATE",
+        "solution": [
+            "LOVE",
+            "LOSE",
+            "HOSE",
+            "HOSE",
+            "HATE"
+        ],
+        "clues": [
+            "To misplace",
+            "Garden watering tool",
+            "To despise"
+        ],
+        "startClue": "Strong affection",
+        "endClue": "Strong dislike",
+        "difficulty": 2
+    },
+    {
+        "id": 2,
+        "startWord": "RICH",
+        "endWord": "POOR",
+        "solution": [
+            "RICH",
+            "RICK",
+            "ROCK",
+            "POCK",
+            "POOR"
+        ],
+        "clues": [
+            "A name",
+            "Stone",
+            "Small mark on skin"
+        ],
+        "startClue": "Wealthy",
+        "endClue": "Lacking money",
+        "difficulty": 2
+    },
+    {
+        "id": 3,
+        "startWord": "FIRE",
+        "endWord": "COLD",
+        "solution": [
+            "FIRE",
+            "FORE",
+            "FORD",
+            "FOLD",
+            "COLD"
+        ],
+        "clues": [
+            "Front",
+            "Shallow river crossing",
+            "To bend"
+        ],
+        "startClue": "Burning element",
+        "endClue": "Low temperature",
+        "difficulty": 2
+    },
+    {
+        "id": 4,
+        "startWord": "WORK",
+        "endWord": "PLAY",
+        "solution": [
+            "WORK",
+            "WORD",
+            "WARD",
+            "WARY",
+            "PLAY"
+        ],
+        "clues": [
+            "Unit of language",
+            "Hospital section",
+            "Cautious"
+        ],
+        "startClue": "Labor",
+        "endClue": "Recreation",
+        "difficulty": 2
+    },
+    {
+        "id": 5,
+        "startWord": "FAST",
+        "endWord": "SLOW",
+        "solution": [
+            "FAST",
+            "FIST",
+            "GIST",
+            "GLOW",
+            "SLOW"
+        ],
+        "clues": [
+            "Clenched hand",
+            "Main point",
+            "Shine softly"
+        ],
+        "startClue": "Quick speed",
+        "endClue": "Gradual pace",
+        "difficulty": 2
+    },
+    {
+        "id": 6,
+        "startWord": "HARD",
+        "endWord": "SOFT",
+        "solution": [
+            "HARD",
+            "HARE",
+            "HIRE",
+            "SITE",
+            "SIFT",
+            "SOFT"
+        ],
+        "clues": [
+            "Rabbit",
+            "Employ",
+            "Location",
+            "Filter"
+        ],
+        "startClue": "Not yielding",
+        "endClue": "Gentle to touch",
+        "difficulty": 3
+    },
+    {
+        "id": 7,
+        "startWord": "GOOD",
+        "endWord": "EVIL",
+        "solution": [
+            "GOOD",
+            "GOAD",
+            "LOAD",
+            "LEAD",
+            "LEAL",
+            "VEAL",
+            "VEIL",
+            "EVIL"
+        ],
+        "clues": [
+            "Provoke",
+            "Cargo",
+            "Metal element",
+            "Loyal (archaic)",
+            "Calf meat",
+            "Face covering"
+        ],
+        "startClue": "Virtuous",
+        "endClue": "Wicked",
+        "difficulty": 3
+    },
+    {
+        "id": 8,
+        "startWord": "MOON",
+        "endWord": "STAR",
+        "solution": [
+            "MOON",
+            "MOAN",
+            "MOAT",
+            "BOAT",
+            "BOAR",
+            "SOAR",
+            "STAR"
+        ],
+        "clues": [
+            "Groan",
+            "Castle water barrier",
+            "Watercraft",
+            "Wild pig",
+            "Fly high"
+        ],
+        "startClue": "Night satellite",
+        "endClue": "Celestial point of light",
+        "difficulty": 3
+    },
+    {
+        "id": 9,
+        "startWord": "MIND",
+        "endWord": "BODY",
+        "solution": [
+            "MIND",
+            "MINE",
+            "MITE",
+            "BITE",
+            "BODE",
+            "BODY"
+        ],
+        "clues": [
+            "Belonging to me",
+            "Tiny creature",
+            "Chomp",
+            "Portend"
+        ],
+        "startClue": "Consciousness",
+        "endClue": "Physical form",
+        "difficulty": 2
+    },
+    {
+        "id": 10,
+        "startWord": "HOPE",
+        "endWord": "FEAR",
+        "solution": [
+            "HOPE",
+            "HONE",
+            "CONE",
+            "CANE",
+            "CAPE",
+            "CARE",
+            "FARE",
+            "FEAR"
+        ],
+        "clues": [
+            "Sharpen",
+            "Geometric shape",
+            "Walking stick",
+            "Superhero garment",
+            "Concern",
+            "Cost"
+        ],
+        "startClue": "Optimistic expectation",
+        "endClue": "Anxious feeling",
+        "difficulty": 3
+    },
+    {
+        "id": 11,
+        "startWord": "GAME",
+        "endWord": "LIFE",
+        "solution": [
+            "GAME",
+            "GALE",
+            "TALE",
+            "TILE",
+            "BILE",
+            "BIKE",
+            "LIKE",
+            "LIFE"
+        ],
+        "clues": [
+            "Strong wind",
+            "Story",
+            "Ceramic square",
+            "Digestive fluid",
+            "Two-wheeler",
+            "Fond of"
+        ],
+        "startClue": "Activity for fun",
+        "endClue": "Existence",
+        "difficulty": 3
+    },
+    {
+        "id": 12,
+        "startWord": "OPEN",
+        "endWord": "SHUT",
+        "solution": [
+            "OPEN",
+            "OVEN",
+            "OVER",
+            "SEER",
+            "SHEER",
+            "SHEET",
+            "SHUNT",
+            "SHUT"
+        ],
+        "clues": [
+            "Kitchen appliance",
+            "Above",
+            "Prophet",
+            "Absolute",
+            "Bed covering",
+            "Move aside"
+        ],
+        "startClue": "Not closed",
+        "endClue": "Not open",
+        "difficulty": 4
+    },
+    {
+        "id": 13,
+        "startWord": "TRUE",
+        "endWord": "LIES",
+        "solution": [
+            "TRUE",
+            "TREE",
+            "FREE",
+            "FLEE",
+            "FLEES",
+            "FLIES",
+            "LIES"
+        ],
+        "clues": [
+            "Woody plant",
+            "Without cost",
+            "Escape",
+            "Runs away (plural)",
+            "Insects with wings"
+        ],
+        "startClue": "Accurate",
+        "endClue": "False statements",
+        "difficulty": 3
+    },
+    {
+        "id": 14,
+        "startWord": "KING",
+        "endWord": "PAWN",
+        "solution": [
+            "KING",
+            "RING",
+            "RANG",
+            "RANT",
+            "PANT",
+            "PAWN"
+        ],
+        "clues": [
+            "Circular band",
+            "Sounded (bell)",
+            "Angry tirade",
+            "Breathe heavily"
+        ],
+        "startClue": "Chess royalty",
+        "endClue": "Weakest chess piece",
+        "difficulty": 2
+    },
+    {
+        "id": 15,
+        "startWord": "DAWN",
+        "endWord": "DUSK",
+        "solution": [
+            "DAWN",
+            "DARN",
+            "DARK",
+            "DANK",
+            "DUNK",
+            "DUSK"
+        ],
+        "clues": [
+            "Mend socks",
+            "Absence of light",
+            "Moist and cold",
+            "Basketball shot"
+        ],
+        "startClue": "Morning light",
+        "endClue": "Evening twilight",
+        "difficulty": 2
+    },
+    {
+        "id": 16,
+        "startWord": "CITY",
+        "endWord": "TOWN",
+        "solution": [
+            "CITY",
+            "CITE",
+            "SITE",
+            "SIRE",
+            "TIRE",
+            "TORN",
+            "TOWN"
+        ],
+        "clues": [
+            "Quote",
+            "Location",
+            "Male parent (archaic)",
+            "Wheel rubber",
+            "Ripped"
+        ],
+        "startClue": "Large urban area",
+        "endClue": "Small urban area",
+        "difficulty": 3
+    },
+    {
+        "id": 17,
+        "startWord": "WILD",
+        "endWord": "TAME",
+        "solution": [
+            "WILD",
+            "WELD",
+            "MELD",
+            "MEND",
+            "TEND",
+            "TAME"
+        ],
+        "clues": [
+            "Join metal",
+            "Blend",
+            "Repair",
+            "Care for"
+        ],
+        "startClue": "Untamed",
+        "endClue": "Domesticated",
+        "difficulty": 2
+    },
+    {
+        "id": 18,
+        "startWord": "SAVE",
+        "endWord": "LOSE",
+        "solution": [
+            "SAVE",
+            "SAGE",
+            "CAGE",
+            "CAPE",
+            "COPE",
+            "LOPE",
+            "LOSE"
+        ],
+        "clues": [
+            "Wise person",
+            "Animal enclosure",
+            "Superhero garment",
+            "Deal with",
+            "Run easily"
+        ],
+        "startClue": "Rescue or store",
+        "endClue": "Be defeated",
+        "difficulty": 3
+    },
+    {
+        "id": 19,
+        "startWord": "MORE",
+        "endWord": "LESS",
+        "solution": [
+            "MORE",
+            "LORE",
+            "LOSE",
+            "LOSS",
+            "LESS"
+        ],
+        "clues": [
+            "Traditional knowledge",
+            "Be defeated",
+            "Deprivation"
+        ],
+        "startClue": "Greater amount",
+        "endClue": "Smaller amount",
+        "difficulty": 2
+    },
+    {
+        "id": 20,
+        "startWord": "FULL",
+        "endWord": "VOID",
+        "solution": [
+            "FULL",
+            "FOUL",
+            "FOWL",
+            "FOIL",
+            "VEIL",
+            "VEIL",
+            "VOID"
+        ],
+        "clues": [
+            "Breaking rules",
+            "Bird",
+            "Thin metal sheet",
+            "Face covering"
+        ],
+        "startClue": "Complete",
+        "endClue": "Empty",
+        "difficulty": 3
+    },
+    {
+        "id": 21,
+        "startWord": "HIGH",
+        "endWord": "DOWN",
+        "solution": [
+            "HIGH",
+            "SIGH",
+            "SIGN",
+            "SINE",
+            "DINE",
+            "DONE",
+            "DOWN"
+        ],
+        "clues": [
+            "Exhale sadly",
+            "Symbol or notice",
+            "Trigonometry function",
+            "Eat dinner",
+            "Finished"
+        ],
+        "startClue": "Elevated",
+        "endClue": "Below",
+        "difficulty": 3
+    },
+    {
+        "id": 22,
+        "startWord": "GIVE",
+        "endWord": "TAKE",
+        "solution": [
+            "GIVE",
+            "GAVE",
+            "GATE",
+            "GAZE",
+            "HAZE",
+            "HAKE",
+            "TAKE"
+        ],
+        "clues": [
+            "Past tense of give",
+            "Entrance barrier",
+            "Stare",
+            "Misty air",
+            "Type of fish"
+        ],
+        "startClue": "Bestow",
+        "endClue": "Receive",
+        "difficulty": 3
+    },
+    {
+        "id": 23,
+        "startWord": "BORN",
+        "endWord": "DIES",
+        "solution": [
+            "BORN",
+            "CORN",
+            "COIN",
+            "CHIN",
+            "THIN",
+            "THIS",
+            "TIES",
+            "DIES"
+        ],
+        "clues": [
+            "Yellow grain",
+            "Money piece",
+            "Below mouth",
+            "Not thick",
+            "This one",
+            "Binds"
+        ],
+        "startClue": "Brought into life",
+        "endClue": "Ceases to live",
+        "difficulty": 3
+    },
+    {
+        "id": 24,
+        "startWord": "LEAD",
+        "endWord": "GOLD",
+        "solution": [
+            "LEAD",
+            "READ",
+            "ROAD",
+            "GOAD",
+            "GOLD"
+        ],
+        "clues": [
+            "Interpret text",
+            "Highway",
+            "Provoke"
+        ],
+        "startClue": "Heavy metal",
+        "endClue": "Precious metal",
+        "difficulty": 2
+    },
+    {
+        "id": 25,
+        "startWord": "WEAK",
+        "endWord": "IRON",
+        "solution": [
+            "WEAK",
+            "PEAK",
+            "PECK",
+            "POCK",
+            "PORK",
+            "PORN",
+            "ICON",
+            "IRON"
+        ],
+        "clues": [
+            "Mountain top",
+            "Bird bite",
+            "Small mark",
+            "Pig meat",
+            "Adult content",
+            "Symbol"
+        ],
+        "startClue": "Not strong",
+        "endClue": "Strong metal",
+        "difficulty": 4
+    },
+    {
+        "id": 26,
+        "startWord": "FLOW",
+        "endWord": "STOP",
+        "solution": [
+            "FLOW",
+            "GLOW",
+            "GOWN",
+            "SOWN",
+            "STOW",
+            "STOP"
+        ],
+        "clues": [
+            "Shine softly",
+            "Elegant dress",
+            "Planted",
+            "Pack away"
+        ],
+        "startClue": "Move steadily",
+        "endClue": "Cease motion",
+        "difficulty": 2
+    },
+    {
+        "id": 27,
+        "startWord": "BOYS",
+        "endWord": "GIRL",
+        "solution": [
+            "BOYS",
+            "BOWS",
+            "COWS",
+            "COWL",
+            "COIL",
+            "GILL",
+            "GIRL"
+        ],
+        "clues": [
+            "Weapon or ribbon",
+            "Farm animals",
+            "Hood",
+            "Spiral",
+            "Fish breathing organ"
+        ],
+        "startClue": "Male children",
+        "endClue": "Female child",
+        "difficulty": 3
+    },
+    {
+        "id": 28,
+        "startWord": "PULL",
+        "endWord": "PUSH",
+        "solution": [
+            "PULL",
+            "PALL",
+            "PALE",
+            "PANE",
+            "PASH",
+            "PUSH"
+        ],
+        "clues": [
+            "Cloth covering",
+            "Light colored",
+            "Window glass",
+            "Infatuation"
+        ],
+        "startClue": "Draw toward",
+        "endClue": "Press away",
+        "difficulty": 2
+    },
+    {
+        "id": 29,
+        "startWord": "THEN",
+        "endWord": "NOW",
+        "solution": [
+            "THEN",
+            "TEEN",
+            "TEEM",
+            "DEEM",
+            "DEEM",
+            "DOOM",
+            "BOOM",
+            "BOON",
+            "NOON",
+            "NOW"
+        ],
+        "clues": [
+            "Adolescent",
+            "Be full of",
+            "Consider",
+            "Terrible fate",
+            "Loud sound",
+            "Blessing",
+            "Midday"
+        ],
+        "startClue": "At that time",
+        "endClue": "At this moment",
+        "difficulty": 4
+    },
+    {
+        "id": 30,
+        "startWord": "RISE",
+        "endWord": "FALL",
+        "solution": [
+            "RISE",
+            "RIPE",
+            "RAPE",
+            "RATE",
+            "FATE",
+            "FALE",
+            "FALL"
+        ],
+        "clues": [
+            "Mature",
+            "Type of seed plant",
+            "Speed",
+            "Destiny",
+            "Obsolete: To fail"
+        ],
+        "startClue": "Go upward",
+        "endClue": "Go downward",
+        "difficulty": 3
+    }
+]

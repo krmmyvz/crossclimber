@@ -1,0 +1,615 @@
+[
+    {
+        "id": 1,
+        "startWord": "AÇIK",
+        "endWord": "KAPALI",
+        "solution": [
+            "AÇIK",
+            "ACIK",
+            "AKIK",
+            "AKIL",
+            "KAIL",
+            "KAPIL",
+            "KAPALI"
+        ],
+        "clues": [
+            "Ağrısız",
+            "Akik taşı",
+            "Zihin",
+            "İnandırmak",
+            "Ele geçmek"
+        ],
+        "startClue": "Kapalı değil",
+        "endClue": "Açık değil",
+        "difficulty": 3
+    },
+    {
+        "id": 2,
+        "startWord": "GÜN",
+        "endWord": "GECE",
+        "solution": [
+            "GÜN",
+            "GEN",
+            "GENE",
+            "GECE"
+        ],
+        "clues": [
+            "DNA parçası",
+            "Yine, tekrar"
+        ],
+        "startClue": "Aydınlık zaman",
+        "endClue": "Karanlık zaman",
+        "difficulty": 1
+    },
+    {
+        "id": 3,
+        "startWord": "BAŞ",
+        "endWord": "SON",
+        "solution": [
+            "BAŞ",
+            "BOŞ",
+            "KOŞ",
+            "KOS",
+            "SOS",
+            "SON"
+        ],
+        "clues": [
+            "Dolu değil",
+            "Hızlı koşmak",
+            "İsimsiz",
+            "Yardım çağrısı"
+        ],
+        "startClue": "İlk",
+        "endClue": "Sonuncu",
+        "difficulty": 2
+    },
+    {
+        "id": 4,
+        "startWord": "YAZI",
+        "endWord": "TURA",
+        "solution": [
+            "YAZI",
+            "YANI",
+            "YANI",
+            "YARA",
+            "TARA",
+            "TURA"
+        ],
+        "clues": [
+            "Yani demek",
+            "Kesik",
+            "Taramak"
+        ],
+        "startClue": "Madeni paranın bir yüzü",
+        "endClue": "Madeni paranın diğer yüzü",
+        "difficulty": 2
+    },
+    {
+        "id": 5,
+        "startWord": "ERKEN",
+        "endWord": "GEÇ",
+        "solution": [
+            "ERKEN",
+            "ERKEK",
+            "EREK",
+            "GEREK",
+            "GERÇEK",
+            "GERÇEK",
+            "GEÇ"
+        ],
+        "clues": [
+            "Kadın değil",
+            "Amaç",
+            "İhtiyaç",
+            "Sahici"
+        ],
+        "startClue": "Vakitsiz",
+        "endClue": "Geç vakitte",
+        "difficulty": 3
+    },
+    {
+        "id": 6,
+        "startWord": "SU",
+        "endWord": "ATEŞ",
+        "solution": [
+            "SU",
+            "US",
+            "AŞ",
+            "AŞI",
+            "ATI",
+            "ATEŞ"
+        ],
+        "clues": [
+            "Akıl",
+            "Aşmak",
+            "Aşı vurmak",
+            "At (çoğul)"
+        ],
+        "startClue": "Sıvı",
+        "endClue": "Yanma",
+        "difficulty": 2
+    },
+    {
+        "id": 7,
+        "startWord": "EVET",
+        "endWord": "HAYIR",
+        "solution": [
+            "EVET",
+            "EVEY",
+            "AVEY",
+            "AVAY",
+            "HAYAY",
+            "HAYIR"
+        ],
+        "clues": [
+            "Onay kelimesi",
+            "Avuç (eski)",
+            "Hayal",
+            "Sesleniş"
+        ],
+        "startClue": "Olumlu cevap",
+        "endClue": "Olumsuz cevap",
+        "difficulty": 3
+    },
+    {
+        "id": 8,
+        "startWord": "SOĞUK",
+        "endWord": "SICAK",
+        "solution": [
+            "SOĞUK",
+            "SOGUK",
+            "SOYUK",
+            "SOYAK",
+            "SIYAK",
+            "SICAK"
+        ],
+        "clues": [
+            "Üşütmek",
+            "Soyut",
+            "Sokak (eski)",
+            "Politik durum"
+        ],
+        "startClue": "Düşük ısı",
+        "endClue": "Yüksek ısı",
+        "difficulty": 3
+    },
+    {
+        "id": 9,
+        "startWord": "İYİ",
+        "endWord": "KÖTÜ",
+        "solution": [
+            "İYİ",
+            "ÖYÜ",
+            "KÖY",
+            "KÖŞ",
+            "KÖTÜ"
+        ],
+        "clues": [
+            "Öyüm",
+            "Kasaba",
+            "Köşe"
+        ],
+        "startClue": "Güzel",
+        "endClue": "Çirkin",
+        "difficulty": 2
+    },
+    {
+        "id": 10,
+        "startWord": "AZ",
+        "endWord": "ÇOK",
+        "solution": [
+            "AZ",
+            "ÖZ",
+            "ÇÖZ",
+            "ÇÖK",
+            "ÇOK"
+        ],
+        "clues": [
+            "Asıl",
+            "Halletmek",
+            "Yıkılmak"
+        ],
+        "startClue": "Eksik",
+        "endClue": "Fazla",
+        "difficulty": 1
+    },
+    {
+        "id": 11,
+        "startWord": "GEL",
+        "endWord": "GİT",
+        "solution": [
+            "GEL",
+            "GEZ",
+            "GÖZ",
+            "GÖT",
+            "GİT"
+        ],
+        "clues": [
+            "Dolaşmak",
+            "Görmek organı",
+            "Popo"
+        ],
+        "startClue": "Buraya gelmek",
+        "endClue": "Oraya gitmek",
+        "difficulty": 1
+    },
+    {
+        "id": 12,
+        "startWord": "UZUN",
+        "endWord": "KISA",
+        "solution": [
+            "UZUN",
+            "UZAK",
+            "USAK",
+            "ISAK",
+            "ISIR",
+            "KISA"
+        ],
+        "clues": [
+            "Yakın değil",
+            "Şehir",
+            "Isırmak",
+            "Dişlemek"
+        ],
+        "startClue": "Kısa değil",
+        "endClue": "Uzun değil",
+        "difficulty": 3
+    },
+    {
+        "id": 13,
+        "startWord": "HIZLI",
+        "endWord": "YAVAS",
+        "solution": [
+            "HIZLI",
+            "HAZLI",
+            "YAZLI",
+            "YAVAS"
+        ],
+        "clues": [
+            "Hazırlı",
+            "Yazlık"
+        ],
+        "startClue": "Süratli",
+        "endClue": "Ağır",
+        "difficulty": 2
+    },
+    {
+        "id": 14,
+        "startWord": "YENİ",
+        "endWord": "ESKİ",
+        "solution": [
+            "YENİ",
+            "VENİ",
+            "VESİ",
+            "VASİ",
+            "VARİ",
+            "ESKİ"
+        ],
+        "clues": [
+            "Damarlı",
+            "Vasiyetname",
+            "Vasi olan",
+            "Var olan"
+        ],
+        "startClue": "Taze",
+        "endClue": "Eski olan",
+        "difficulty": 3
+    },
+    {
+        "id": 15,
+        "startWord": "BÜYÜK",
+        "endWord": "KÜÇÜK",
+        "solution": [
+            "BÜYÜK",
+            "BÜRÜK",
+            "KÜRÜK",
+            "KÜÇÜK"
+        ],
+        "clues": [
+            "Kırışık",
+            "Kürek çekmek"
+        ],
+        "startClue": "İri",
+        "endClue": "Ufak",
+        "difficulty": 2
+    },
+    {
+        "id": 16,
+        "startWord": "SERT",
+        "endWord": "YUMUŞAK",
+        "solution": [
+            "SERT",
+            "SART",
+            "ŞART",
+            "ŞARJ",
+            "SARJ",
+            "YARI",
+            "YUMU",
+            "YUMUŞAK"
+        ],
+        "clues": [
+            "Koşul",
+            "Koşul",
+            "Pil doldurmak",
+            "Şarj olmamış",
+            "Yarım",
+            "Yumruk"
+        ],
+        "startClue": "Katı",
+        "endClue": "Yumuşak",
+        "difficulty": 4
+    },
+    {
+        "id": 17,
+        "startWord": "SAĞLAM",
+        "endWord": "HASTA",
+        "solution": [
+            "SAĞLAM",
+            "SAGLAM",
+            "SAGLAK",
+            "HASLAK",
+            "HASTA"
+        ],
+        "clues": [
+            "Sağlamlık",
+            "Sağlık",
+            "Has olan"
+        ],
+        "startClue": "İyi durumda",
+        "endClue": "Sağlıksız",
+        "difficulty": 2
+    },
+    {
+        "id": 18,
+        "startWord": "DOĞRU",
+        "endWord": "YANLIŞ",
+        "solution": [
+            "DOĞRU",
+            "DOGRU",
+            "YOGRU",
+            "YOGUN",
+            "YOĞUN",
+            "YANLI",
+            "YANLIŞ"
+        ],
+        "clues": [
+            "Doğrusunu",
+            "Yoğurt",
+            "Yoğunluk",
+            "Yoğun olan",
+            "Yan tutmak"
+        ],
+        "startClue": "Hatasız",
+        "endClue": "Hatalı",
+        "difficulty": 3
+    },
+    {
+        "id": 19,
+        "startWord": "GÜZEL",
+        "endWord": "ÇİRKİN",
+        "solution": [
+            "GÜZEL",
+            "GUZEL",
+            "GIZEL",
+            "GIZLI",
+            "CIZLI",
+            "ÇIRKIN"
+        ],
+        "clues": [
+            "Güzellik",
+            "Gizlemek",
+            "Gizli olan",
+            "Çizili"
+        ],
+        "startClue": "Hoş",
+        "endClue": "Hoş olmayan",
+        "difficulty": 3
+    },
+    {
+        "id": 20,
+        "startWord": "VER",
+        "endWord": "AL",
+        "solution": [
+            "VER",
+            "VEL",
+            "VAL",
+            "AL"
+        ],
+        "clues": [
+            "Veli",
+            "Vali"
+        ],
+        "startClue": "Bağışla",
+        "endClue": "Kabul et",
+        "difficulty": 1
+    },
+    {
+        "id": 21,
+        "startWord": "DOLU",
+        "endWord": "BOŞ",
+        "solution": [
+            "DOLU",
+            "KOLU",
+            "KOŞU",
+            "BOŞ"
+        ],
+        "clues": [
+            "Pazı",
+            "Koşmak"
+        ],
+        "startClue": "Tam",
+        "endClue": "Boşluk",
+        "difficulty": 1
+    },
+    {
+        "id": 22,
+        "startWord": "ÜST",
+        "endWord": "ALT",
+        "solution": [
+            "ÜST",
+            "AST",
+            "ANT",
+            "ALT"
+        ],
+        "clues": [
+            "Asker",
+            "Yemin"
+        ],
+        "startClue": "Yukarı",
+        "endClue": "Aşağı",
+        "difficulty": 1
+    },
+    {
+        "id": 23,
+        "startWord": "SAKIN",
+        "endWord": "ÖFKELİ",
+        "solution": [
+            "SAKIN",
+            "SAKIM",
+            "SAKIM",
+            "ÖFKE",
+            "ÖFKELİ"
+        ],
+        "clues": [
+            "Sakınmak",
+            "Sakımlı"
+        ],
+        "startClue": "Dingin",
+        "endClue": "Sinirli",
+        "difficulty": 2
+    },
+    {
+        "id": 24,
+        "startWord": "DÜŞMAN",
+        "endWord": "DOST",
+        "solution": [
+            "DÜŞMAN",
+            "DUSMAN",
+            "DUSAK",
+            "DOSYA",
+            "DOST"
+        ],
+        "clues": [
+            "Düşmanlık",
+            "Düş görmek",
+            "Evrak klasörü"
+        ],
+        "startClue": "Hasım",
+        "endClue": "Arkadaş",
+        "difficulty": 2
+    },
+    {
+        "id": 25,
+        "startWord": "KARANLIK",
+        "endWord": "AYDINLIK",
+        "solution": [
+            "KARANLIK",
+            "KARANLIK",
+            "AYDINLIK"
+        ],
+        "clues": [
+            "Karanlık olan"
+        ],
+        "startClue": "Işıksız",
+        "endClue": "Işıklı",
+        "difficulty": 1
+    },
+    {
+        "id": 26,
+        "startWord": "GÜLMEK",
+        "endWord": "AĞLAMAK",
+        "solution": [
+            "GÜLMEK",
+            "GULMEK",
+            "GALMAK",
+            "KALMAK",
+            "AĞLAMAK"
+        ],
+        "clues": [
+            "Gülme",
+            "Galmak",
+            "Beklemek"
+        ],
+        "startClue": "Neşelenmek",
+        "endClue": "Gözyaşı dökmek",
+        "difficulty": 2
+    },
+    {
+        "id": 27,
+        "startWord": "SAVAŞ",
+        "endWord": "BARIŞ",
+        "solution": [
+            "SAVAŞ",
+            "SAVAS",
+            "BAVAS",
+            "BARIS",
+            "BARIŞ"
+        ],
+        "clues": [
+            "Savaşmak",
+            "Bavul",
+            "Barış yapmak"
+        ],
+        "startClue": "Çatışma",
+        "endClue": "Huzur",
+        "difficulty": 2
+    },
+    {
+        "id": 28,
+        "startWord": "GÜNDÜZ",
+        "endWord": "GECE",
+        "solution": [
+            "GÜNDÜZ",
+            "GUNUZ",
+            "GECEZ",
+            "GECE"
+        ],
+        "clues": [
+            "Güneşli",
+            "Geçmek"
+        ],
+        "startClue": "Aydınlık vakit",
+        "endClue": "Karanlık vakit",
+        "difficulty": 2
+    },
+    {
+        "id": 29,
+        "startWord": "SEVGİ",
+        "endWord": "NEFRET",
+        "solution": [
+            "SEVGİ",
+            "SEVGI",
+            "SEVDI",
+            "NEFDI",
+            "NEFRET"
+        ],
+        "clues": [
+            "Sevmek",
+            "Sevdirmek",
+            "Nefis"
+        ],
+        "startClue": "Aşk",
+        "endClue": "Kin",
+        "difficulty": 2
+    },
+    {
+        "id": 30,
+        "startWord": "UMUT",
+        "endWord": "KORKU",
+        "solution": [
+            "UMUT",
+            "UMIT",
+            "ÜMIT",
+            "KÖMÜR",
+            "KORKU"
+        ],
+        "clues": [
+            "Umut etmek",
+            "Ümit etmek",
+            "Yanmış odun"
+        ],
+        "startClue": "Beklenti",
+        "endClue": "Endişe",
+        "difficulty": 2
+    }
+]

@@ -1,0 +1,334 @@
+{
+    "@@locale": "tr",
+    "appTitle": "CrossClimber",
+    "play": "Oyna",
+    "settings": "Ayarlar",
+    "language": "Dil",
+    "english": "İngilizce",
+    "turkish": "Türkçe",
+    "level": "Seviye {levelNumber}",
+    "@level": {
+        "placeholders": {
+            "levelNumber": {
+                "type": "int"
+            }
+        }
+    },
+    "nextLevel": "Sonraki Seviye",
+    "allLevelsCompleted": "Harika! Tüm Seviyeleri Tamamladın!",
+    "allLevelsCompletedDesc": "{totalLevels} seviyenin tümünü tamamladın! Yakında yeni zorluklar için takipte kal.",
+    "@allLevelsCompletedDesc": {
+        "placeholders": {
+            "totalLevels": {
+                "type": "int"
+            }
+        }
+    },
+    "hint": "İpucu",
+    "correct": "Doğru!",
+    "wrong": "Yanlış!",
+    "congratulations": "Tebrikler!",
+    "youWon": "Seviyeyi tamamladın!",
+    "phase1Title": "Kelimeleri Tahmin Et",
+    "phase2Title": "Kelimeleri Sırala",
+    "phase3Title": "Son Kelimeleri Bul",
+    "phaseProgress": "Adım {current} / {total}",
+    "@phaseProgress": {
+        "placeholders": {
+            "current": {
+                "type": "int"
+            },
+            "total": {
+                "type": "int"
+            }
+        }
+    },
+    "wordsFound": "{found} / {total} kelime bulundu",
+    "@wordsFound": {
+        "placeholders": {
+            "found": {
+                "type": "int"
+            },
+            "total": {
+                "type": "int"
+            }
+        }
+    },
+    "pause": "Duraklat",
+    "resume": "Devam Et",
+    "restart": "Yeniden Başla",
+    "mainMenu": "Ana Menü",
+    "paused": "Duraklatıldı",
+    "useHint": "İpucu Kullan",
+    "hintsRemaining": "{count} ipucu kaldı",
+    "@hintsRemaining": {
+        "placeholders": {
+            "count": {
+                "type": "int"
+            }
+        }
+    },
+    "noHintsLeft": "İpucu kalmadı",
+    "hintUsed": "İpucu kullanıldı!",
+    "tapToGuess": "Tahmin etmek için dokun",
+    "enterWord": "Kelimeyi gir",
+    "locked": "Kilitli",
+    "completed": "Tamamlandı!",
+    "timeElapsed": "Geçen Süre",
+    "yourScore": "Skorun",
+    "stars": "{count} Yıldız",
+    "@stars": {
+        "placeholders": {
+            "count": {
+                "type": "int"
+            }
+        }
+    },
+    "newBestTime": "Yeni Rekor Süre!",
+    "playAgain": "Tekrar Oyna",
+    "dragToReorder": "Sıralamak için sürükle",
+    "checkOrder": "Sıralamayı Kontrol Et",
+    "orderCorrect": "Sıralama doğru!",
+    "orderIncorrect": "Sıralama yanlış, tekrar dene",
+    "invalidWord": "Geçersiz kelime!",
+    "alreadyGuessed": "Bu kelime zaten bulundu",
+    "theme": "Tema",
+    "system": "Sistem",
+    "light": "Açık",
+    "dark": "Koyu",
+    "vibration": "Titreşim",
+    "showTimer": "Zamanlayıcıyı Göster",
+    "autoCheck": "Otomatik Kontrol",
+    "autoCheckDesc": "Kelimeyi tamamladığınızda otomatik kontrol edilsin",
+    "autoSort": "Otomatik Sıralama",
+    "autoSortDesc": "Tüm kelimeleri bulduğunuzda otomatik sıralama başlasın",
+    "appearance": "Görünüm",
+    "soundEffects": "Ses Efektleri",
+    "music": "Müzik",
+    "tutorial": "Nasıl Oynanır",
+    "about": "Hakkında",
+    "version": "Versiyon",
+    "difficulty": "Zorluk",
+    "easy": "Kolay",
+    "medium": "Orta",
+    "hard": "Zor",
+    "achievements": "Başarımlar",
+    "statistics": "İstatistikler",
+    "dailyChallenge": "Günlük Challenge",
+    
+    "tutorial_intro_welcome_title": "CrossClimber'a Hoş Geldiniz!",
+    "tutorial_intro_welcome_desc": "Bu eğlenceli kelime bulmaca oyununu nasıl oynayacağınızı öğrenin. Her seferde bir harf değiştirerek kelimeleri bağlayın!",
+    "tutorial_intro_objective_title": "Oyun Amacı",
+    "tutorial_intro_objective_desc": "Hedefiniz BAŞLANGIÇ ve BİTİŞ kelimeleri arasındaki eksik kelimeleri bulmaktır. Her kelime bir öncekinden tam olarak bir harf farklıdır.",
+    "tutorial_intro_rule_title": "Altın Kural",
+    "tutorial_intro_rule_desc": "Her seferinde sadece BİR harf değiştirebilirsiniz. Örneğin: KAL → BAL → BAT → BAŞ",
+    
+    "tutorial_guess_intro_title": "Faz 1: Tahmin Etme",
+    "tutorial_guess_intro_desc": "Önce tüm orta kelimeleri tahmin etmelisiniz. Tahmininize başlamak için boş bir slota dokunun.",
+    "tutorial_guess_success_title": "Harika İş!",
+    "tutorial_guess_success_desc": "İlk kelimeyi buldun! Bulmacayı tamamlamak için devam et.",
+    "tutorial_guess_keyboard_title": "Tahmininizi Yazın",
+    "tutorial_guess_keyboard_desc": "Klavyeyi kullanarak bir kelime yazın. Unutmayın: komşu kelimelerden sadece bir harf farklı olmalı!",
+    "tutorial_guess_hints_title": "Yardıma İhtiyacınız Var mı?",
+    "tutorial_guess_hints_desc": "Seviye başına 3 ipucunuz var. Takıldığınızda harfleri açığa çıkarmak veya ipucu almak için onları akıllıca kullanın.",
+    "tutorial_guess_keyboard_desc": "Klavyeyi kullanarak bir kelime yazın. Unutmayın: komşu kelimelerden sadece bir harf farklı olmalı!",
+    "tutorial_guess_hints_title": "Yardıma İhtiyacınız Var mı?",
+    "tutorial_guess_hints_desc": "Her seviyede 3 ipucunuz var. Takıldığınızda harfleri göstermek veya ipucu almak için akıllıca kullanın.",
+    "tutorial_guess_timer_title": "Zamanla Yarışın",
+    "tutorial_guess_timer_desc": "Daha hızlı tamamlama daha fazla yıldız kazandırır! Merak etmeyin, zaman sınırı yok.",
+    
+    "tutorial_combo_intro_title": "Combo Sistemi!",
+    "tutorial_combo_intro_desc": "Doğru tahminlerinizi sürdürerek combo yapın ve skorunuzu katlayın! Her doğru cevap art arda çarpanınızı artırır.",
+    
+    "tutorial_sort_intro_title": "Faz 2: Sıralama",
+    "tutorial_sort_intro_desc": "Mükemmel! Tüm ara kelimeleri buldun. Şimdi bunları doğru sıraya diz - her kelime bir sonrakinden sadece BİR harf farklı olmalı.",
+    "tutorial_sort_action_title": "Gerçek Zamanlı Doğrulama",
+    "tutorial_sort_action_desc": "Kelimeleri sürükleyip sırala. Doğru konumdakiler yeşil, yanlış olanlar kırmızı kenarlıkla gösterilecek. Tüm kelimeler yeşil olunca BAŞLANGIÇ ve BİTİŞ otomatik açılır!",
+    
+    "tutorial_final_intro_title": "Faz 3: Final Meydan Okuması",
+    "tutorial_final_intro_desc": "Neredeyse bitti! Şimdi sıralanmış orta kelimelere dayanarak BAŞLANGIÇ ve BİTİŞ kelimelerinin ne olduğunu bulun.",
+    "tutorial_final_start_title": "Başlangıç Kelimesini Tahmin Edin",
+    "tutorial_final_start_desc": "İlk orta kelimeden önce hangi kelime gelir? Bir harf farklı olmalı.",
+    "tutorial_final_end_title": "Bitiş Kelimesini Tahmin Edin",
+    "tutorial_final_end_desc": "Son orta kelimeden sonra hangi kelime gelir? Merdiveni tamamlayın!",
+    
+    "tutorial_complete_congrats_title": "Hazırsınız!",
+    "tutorial_complete_congrats_desc": "Tebrikler! Artık CrossClimber'ı nasıl oynayacağınızı biliyorsunuz. İyi eğlenceler ve kendinize meydan okuyun!",
+    
+    "skipTutorial": "Tutorial'ı Atla",
+    "continueButton": "Devam Et",
+    "showTips": "İpuçlarını Göster",
+    "resetTutorial": "Tutorial'ı Sıfırla",
+    
+    "outOfLivesTitle": "Canın Bitti!",
+    "outOfLivesMessage": "Canın bitti. Yenilenmesini bekleyebilir veya kredi kullanarak devam edebilirsin.",
+    "nextLifeIn": "Sonraki can: {time}",
+    "@nextLifeIn": {
+        "placeholders": {
+            "time": {
+                "type": "String"
+            }
+        }
+    },
+    "buyOneLife": "1 Can Al (50 💰)",
+    "buyAllLives": "Tüm Canları Al (100 💰)",
+    "exitGame": "Oyundan Çık",
+    "returnToMainMenu": "Ana Menüye Dön?",
+    "progressLostWarning": "Mevcut ilerlemeniz kaybolacak. Emin misiniz?",
+    "cancel": "İptal",
+    "exit": "Çık",
+    "startEndUnlocked": "BAŞLANGIÇ & BİTİŞ Açıldı!",
+
+    "shopTitle": "Market",
+    "freeCreditsTitle": "Ücretsiz Kazan",
+    "freeCreditsSubtitle": "Reklam izle, bedava kredi kazan",
+    "creditPackageTitle": "Kredi Paketi",
+    "creditPackageSubtitle": "Gerçek para ile kredi satın al",
+    "lifePackageTitle": "Can Paketi",
+    "lifePackageSubtitle": "Kredi ile can satın al",
+    "hintPackageTitle": "İpucu Paketi",
+    "hintPackageSubtitle": "Kredi ile ipucu satın al",
+    "nCredits": "{amount} Kredi",
+    "@nCredits": {
+        "placeholders": {
+            "amount": {
+                "type": "int"
+            }
+        }
+    },
+    "mostPopular": "EN POPÜLER",
+    "popularLabel": "POPÜLER",
+    "nLives": "{amount} Can",
+    "@nLives": {
+        "placeholders": {
+            "amount": {
+                "type": "int"
+            }
+        }
+    },
+    "buyOneLife": "Tek can satın al",
+    "buyFiveLives": "5 cana çıkar",
+    "revealWord": "Kelimeyi Göster",
+    "revealWordDesc": "Seçili kelimeyi tamamen açar",
+    "undoMove": "Geri Al",
+    "undoMoveDesc": "Son yaptığın hareketi geri alır",
+    "dailyRewardClaim": "Günlük Ödülünü Al! 🎁",
+    "dailyRewardAmount": "20+ Kredi + Bonuslar",
+    "dailyRewardStreak": "Streak: {days} gün",
+    "@dailyRewardStreak": {
+        "placeholders": {
+            "days": {
+                "type": "int"
+            }
+        }
+    },
+    "watchAdsTitle": "Reklam İzle, Kazan",
+    "watchAdsSubtitle": "Günde 5 reklam izleyebilirsin",
+    "watchAdCredits": "+10 Kredi",
+    "watchAdHint": "+1 İpucu",
+    "dailyRewardTitle": "Günlük Ödül!",
+    "alreadyClaimedToday": "Bugünkü ödülünü zaten aldın!",
+    "notEnoughCredits": "Yeterli kredin yok!",
+    "livesAlreadyFull": "Canın zaten dolu!",
+    "great": "Harika!",
+    "share": "Paylaş",
+    "shareResult": "Sonucu Paylaş",
+    "customKeyboard": "Özel Klavye",
+    "customKeyboardDesc": "Oyun içi QWERTY klavyeyi kullan",
+    "hapticFeedback": "Dokunsal Geri Bildirim",
+    "hapticFeedbackDesc": "Titreşim ve dokunsal geri bildirim",
+    "gotIt": "Anladım!",
+    "skipLabel": "Atla",
+
+    "progress": "İlerleme",
+    "today": "Bugün",
+    "yesterday": "Dün",
+    "daysAgo": "{count} gün önce",
+    "@daysAgo": {
+        "placeholders": {
+            "count": {
+                "type": "int"
+            }
+        }
+    },
+
+    "achievementFirstWin": "İlk Zafer",
+    "achievementTenLevels": "On Seviye",
+    "achievementSpeedDemon": "Hız Şeytanı",
+    "achievementMarathonRunner": "Maraton Koşucusu",
+    "achievementThirtyLevels": "Otuz Seviye",
+    "achievementPerfectStreak5": "5'li Mükemmel Seri",
+    "achievementCenturyClub": "Yüzler Kulübü",
+    "achievementHintlessHero": "İpucusuz Kahraman",
+    "achievementErrorFree": "Hatasız",
+    "achievementEarlyBird": "Sabah Kuşu",
+    "achievementNightOwl": "Gece Kuşu",
+    "achievementPerfectStreak10": "10'lu Mükemmel Seri",
+    "achievementFiftyLevels": "Elli Seviye",
+    "achievementThreeStarPerfectionist": "Üç Yıldız Mükemmeliyetçisi",
+    "achievementNoHintsMaster": "İpucu Ustası",
+
+    "achievementDescFirstWin": "İlk seviyeni tamamla",
+    "achievementDescTenLevels": "10 seviye tamamla",
+    "achievementDescSpeedDemon": "Bir seviyeyi 30 saniyenin altında tamamla",
+    "achievementDescMarathonRunner": "Tek oturumda 10 seviye oyna",
+    "achievementDescThirtyLevels": "30 seviye tamamla",
+    "achievementDescPerfectStreak5": "Ardışık 5 seviyede 3 yıldız al",
+    "achievementDescCenturyClub": "100 seviye tamamla",
+    "achievementDescHintlessHero": "İpucu kullanmadan 10 seviye tamamla",
+    "achievementDescErrorFree": "Hiç hata yapmadan bir seviyeyi tamamla",
+    "achievementDescEarlyBird": "Sabah 9'dan önce bir seviye tamamla",
+    "achievementDescNightOwl": "Gece 11'den sonra bir seviye tamamla",
+    "achievementDescPerfectStreak10": "Ardışık 10 seviyede 3 yıldız al",
+    "achievementDescFiftyLevels": "50 seviye tamamla",
+    "achievementDescThreeStarPerfectionist": "20 seviyede 3 yıldız al",
+    "achievementDescNoHintsMaster": "İpucu kullanmadan 50 seviye tamamla",
+
+    "yourStatistics": "İstatistiklerin",
+    "gamesPlayed": "Oynanan Oyun",
+    "gamesWon": "Kazanılan Oyun",
+    "performance": "Performans",
+    "winRate": "Kazanma Oranı",
+    "avgStars": "Ort. Yıldız",
+    "timeStatistics": "Zaman İstatistikleri",
+    "totalTimePlayed": "Toplam Oynama Süresi",
+    "bestTime": "En İyi Süre",
+    "averageTime": "Ortalama Süre",
+    "starDistribution": "Yıldız Dağılımı",
+    "totalStarsEarned": "Toplam Kazanılan Yıldız",
+    "perfectGames": "Mükemmel Oyunlar",
+    "noGamesPlayedYet": "Henüz oyun oynamamışsın",
+    "wins": "Kazanma",
+    "losses": "Kaybetme",
+    "shareStatistics": "İstatistikleri Paylaş",
+
+    "currentStreak": "Mevcut Seri",
+    "failedToLoadDailyChallenge": "Günlük challenge yüklenemedi",
+    "failedToLoadChallenge": "Challenge yüklenemedi",
+    "difficultyLabel": "Zorluk",
+    "wordsLabel": "Kelimeler",
+    "starsLabel": "Yıldızlar",
+    "timeLabel": "Süre",
+    "scoreLabel": "Puan",
+    "viewResult": "Sonucu Gör",
+    "playNow": "Hemen Oyna",
+    "expert": "Uzman",
+    "unknown": "Bilinmiyor",
+
+    "monthJanuary": "Ocak",
+    "monthFebruary": "Şubat",
+    "monthMarch": "Mart",
+    "monthApril": "Nisan",
+    "monthMay": "Mayıs",
+    "monthJune": "Haziran",
+    "monthJuly": "Temmuz",
+    "monthAugust": "Ağustos",
+    "monthSeptember": "Eylül",
+    "monthOctober": "Ekim",
+    "monthNovember": "Kasım",
+    "monthDecember": "Aralık",
+
+    "yourStats": "İstatistiklerin",
+    "completedLabel": "Tamamlanan",
+    "bestStreak": "En İyi Seri"
+}

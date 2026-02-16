@@ -1,0 +1,602 @@
+[
+  {
+    "id": 1,
+    "startWord": ["C", "O", "L", "D"],
+    "endWord": ["W", "A", "R", "M"],
+    "solution": ["COLD", "CORD", "WORD", "WARD", "WARM"],
+    "clues": ["Thick string or rope", "A single unit of language", "Hospital section or guard"],
+    "startClue": "Low temperature",
+    "endClue": "Comfortable temperature",
+    "difficulty": 1
+  },
+  {
+    "id": 2,
+    "startWord": ["H", "E", "A", "D"],
+    "endWord": ["T", "A", "I", "L"],
+    "solution": ["HEAD", "HEAL", "TEAL", "TELL", "TALL", "TAIL"],
+    "clues": ["To cure or recover", "A blue-green color", "To narrate or inform", "Having great height"],
+    "startClue": "Top part of body",
+    "endClue": "Rear end of an animal",
+    "difficulty": 2
+  },
+  {
+    "id": 3,
+    "startWord": ["L", "O", "S", "T"],
+    "endWord": ["F", "I", "N", "D"],
+    "solution": ["LOST", "LOFT", "LIFT", "LINT", "HINT", "HIND", "FIND"],
+    "clues": ["Attic or upper room", "To raise up", "Fabric fibers or fuzz", "A clue or suggestion", "Rear or back part"],
+    "startClue": "Cannot be found",
+    "endClue": "To discover something",
+    "difficulty": 2
+  },
+  {
+    "id": 4,
+    "startWord": ["F", "I", "R", "E"],
+    "endWord": ["W", "O", "O", "D"],
+    "solution": ["FIRE", "FORE", "FORD", "FOND", "FOOD", "WOOD"],
+    "clues": ["Front part of ship", "Shallow river crossing", "Having affection for", "Things we eat"],
+    "startClue": "Burning flames",
+    "endClue": "Material from trees",
+    "difficulty": 2
+  },
+  {
+    "id": 5,
+    "startWord": ["C", "A", "T"],
+    "endWord": ["D", "O", "G"],
+    "solution": ["CAT", "BAT", "BAG", "BOG", "DOG"],
+    "clues": ["Flying mammal or sports equipment", "Container for carrying things", "Swampy wetland"],
+    "startClue": "Meowing pet",
+    "endClue": "Barking pet",
+    "difficulty": 1
+  },
+  {
+    "id": 6,
+    "startWord": ["S", "U", "N"],
+    "endWord": ["M", "O", "O", "N"],
+    "solution": ["SUN", "SON", "SOON", "MOON"],
+    "clues": ["Male child", "In the near future"],
+    "startClue": "Bright star in day",
+    "endClue": "Shines at night",
+    "difficulty": 1
+  },
+  {
+    "id": 7,
+    "startWord": ["M", "A", "N"],
+    "endWord": ["B", "O", "Y"],
+    "solution": ["MAN", "CAN", "CON", "COY", "BOY"],
+    "clues": ["Metal container", "To trick or deceive", "Shy or modest"],
+    "startClue": "Adult male",
+    "endClue": "Young male",
+    "difficulty": 2
+  },
+  {
+    "id": 8,
+    "startWord": ["F", "I", "S", "H"],
+    "endWord": ["B", "I", "R", "D"],
+    "solution": ["FISH", "WISH", "WIST", "WEST", "BEST", "BENT", "BEND", "BIND", "BIRD"],
+    "clues": ["To desire or hope for", "Past tense of wit", "Compass direction", "Top quality or finest", "Curved or not straight", "To curve or flex", "To tie together"],
+    "startClue": "Swims in water",
+    "endClue": "Flies in the sky",
+    "difficulty": 3
+  },
+  {
+    "id": 9,
+    "startWord": ["B", "L", "U", "E"],
+    "endWord": ["P", "I", "N", "K"],
+    "solution": ["BLUE", "GLUE", "GLUT", "GLIT", "PINK"],
+    "clues": ["Sticky adhesive", "Excess or surplus"],
+    "startClue": "Color of the sky",
+    "endClue": "Light red color",
+    "difficulty": 1
+  },
+  {
+    "id": 10,
+    "startWord": ["L", "O", "V", "E"],
+    "endWord": ["H", "A", "T", "E"],
+    "solution": ["LOVE", "LOBE", "ROBE", "ROTE", "RATE", "HATE"],
+    "clues": ["Part of the ear", "Long loose garment", "Learning by repetition", "Speed or ratio"],
+    "startClue": "Strong affection",
+    "endClue": "Strong dislike",
+    "difficulty": 2
+  },
+  {
+    "id": 11,
+    "startWord": ["P", "L", "A", "Y"],
+    "endWord": ["W", "O", "R", "K"],
+    "solution": ["PLAY", "SLAY", "SLAT", "SLOT", "SOOT", "SORT", "WORT", "WORK"],
+    "clues": ["To kill violently", "Thin strip of wood", "Narrow opening", "Black carbon powder", "To arrange or organize", "Plant or herb"],
+    "startClue": "Have fun",
+    "endClue": "To labor",
+    "difficulty": 3
+  },
+  {
+    "id": 12,
+    "startWord": ["B", "L", "A", "C", "K"],
+    "endWord": ["W", "H", "I", "T", "E"],
+    "solution": ["BLACK", "BLANK", "SHANK", "SHAKE", "SHARE", "SHIRE", "SHIRT", "WHITE"],
+    "clues": ["Empty or not filled", "Lower part of leg", "To tremble or vibrate", "To divide or give part", "English county", "Clothing for upper body"],
+    "startClue": "Darkest color",
+    "endClue": "Lightest color",
+    "difficulty": 3
+  },
+  {
+    "id": 13,
+    "startWord": ["S", "T", "A", "R"],
+    "endWord": ["M", "O", "O", "N"],
+    "solution": ["STAR", "STIR", "SOIR", "SOON", "MOON"],
+    "clues": ["To mix", "Evening in French"],
+    "startClue": "Twinkles at night",
+    "endClue": "Earth's satellite",
+    "difficulty": 2
+  },
+  {
+    "id": 14,
+    "startWord": ["K", "I", "N", "G"],
+    "endWord": ["P", "A", "W", "N"],
+    "solution": ["KING", "PING", "PINE", "PANE", "PAWN"],
+    "clues": ["High-pitched sound", "Evergreen tree", "Glass in a window"],
+    "startClue": "Ruler of kingdom",
+    "endClue": "Smallest chess piece",
+    "difficulty": 2
+  },
+  {
+    "id": 15,
+    "startWord": ["F", "A", "S", "T"],
+    "endWord": ["S", "L", "O", "W"],
+    "solution": ["FAST", "FIST", "GIST", "GIRT", "GLOW", "SLOW"],
+    "clues": ["Clenched hand", "Main point or essence", "Belt or encircle", "To shine warmly"],
+    "startClue": "Very quick",
+    "endClue": "Not quick",
+    "difficulty": 2
+  },
+  {
+    "id": 16,
+    "startWord": ["H", "O", "T"],
+    "endWord": ["I", "C", "Y"],
+    "solution": ["HOT", "HAT", "BAT", "BAY", "ICY"],
+    "clues": ["Head covering", "Nocturnal flying mammal", "Body of water"],
+    "startClue": "Very high temperature",
+    "endClue": "Frozen and slippery",
+    "difficulty": 2
+  },
+  {
+    "id": 17,
+    "startWord": ["D", "U", "C", "K"],
+    "endWord": ["S", "W", "A", "N"],
+    "solution": ["DUCK", "DUNK", "SUNK", "SWUN", "SWAN"],
+    "clues": ["To submerge briefly", "Past tense of sink"],
+    "startClue": "Quacking water bird",
+    "endClue": "Graceful white bird",
+    "difficulty": 1
+  },
+  {
+    "id": 18,
+    "startWord": ["R", "I", "C", "H"],
+    "endWord": ["P", "O", "O", "R"],
+    "solution": ["RICH", "RICK", "ROCK", "POCK", "POOR"],
+    "clues": ["Haystack", "Stone or mineral", "Small dent or mark"],
+    "startClue": "Having much money",
+    "endClue": "Having little money",
+    "difficulty": 2
+  },
+  {
+    "id": 19,
+    "startWord": ["S", "E", "E", "D"],
+    "endWord": ["T", "R", "E", "E"],
+    "solution": ["SEED", "SEER", "BEER", "BEES", "BEES", "TREE"],
+    "clues": ["Prophet or fortune teller", "Alcoholic drink", "Buzzing insects"],
+    "startClue": "Plant beginning",
+    "endClue": "Tall plant with trunk",
+    "difficulty": 2
+  },
+  {
+    "id": 20,
+    "startWord": ["R", "O", "S", "E"],
+    "endWord": ["L", "I", "L", "Y"],
+    "solution": ["ROSE", "RISE", "RILE", "RILY", "LILY"],
+    "clues": ["To go upward", "To annoy or anger", "In an angry manner"],
+    "startClue": "Red flower",
+    "endClue": "White elegant flower",
+    "difficulty": 2
+  },
+  {
+    "id": 21,
+    "startWord": ["W", "I", "L", "D"],
+    "endWord": ["T", "A", "M", "E"],
+    "solution": ["WILD", "WILL", "TILL", "TALE", "TAME"],
+    "clues": ["Future tense helping verb", "Until or cultivate land", "A story"],
+    "startClue": "Untamed and free",
+    "endClue": "Domesticated",
+    "difficulty": 2
+  },
+  {
+    "id": 22,
+    "startWord": ["D", "O", "O", "R"],
+    "endWord": ["W", "A", "L", "L"],
+    "solution": ["DOOR", "DOLL", "DILL", "WILL", "WALL"],
+    "clues": ["Toy figure", "Herb for pickles", "Testament document"],
+    "startClue": "Entrance to room",
+    "endClue": "Side of a room",
+    "difficulty": 2
+  },
+  {
+    "id": 23,
+    "startWord": ["B", "O", "A", "T"],
+    "endWord": ["S", "H", "I", "P"],
+    "solution": ["BOAT", "BOOT", "SOOT", "SHOT", "SHOP", "SHIP"],
+    "clues": ["Footwear", "Black carbon", "Fired projectile", "Store"],
+    "startClue": "Small water vessel",
+    "endClue": "Large water vessel",
+    "difficulty": 2
+  },
+  {
+    "id": 24,
+    "startWord": ["T", "E", "A", "R"],
+    "endWord": ["M", "E", "N", "D"],
+    "solution": ["TEAR", "TEAS", "TENS", "TEND", "MEND"],
+    "clues": ["Multiple hot drinks", "The numbers after nine", "To care for"],
+    "startClue": "To rip apart",
+    "endClue": "To repair",
+    "difficulty": 2
+  },
+  {
+    "id": 25,
+    "startWord": ["D", "A", "R", "K"],
+    "endWord": ["L", "I", "G", "H", "T"],
+    "solution": ["DARK", "DANK", "DUNK", "FUNK", "FUNT", "FONT", "FOOT", "LOOT", "LIGHT"],
+    "clues": ["Damp and musty", "To dip in liquid", "Fear or depression", "Style of letters", "Body part for walking", "Stolen goods"],
+    "startClue": "Absence of light",
+    "endClue": "Opposite of dark",
+    "difficulty": 3
+  },
+  {
+    "id": 26,
+    "startWord": ["B", "O", "L", "D"],
+    "endWord": ["M", "I", "L", "D"],
+    "solution": ["BOLD", "BALD", "BALL", "MALL", "MILL", "MILD"],
+    "clues": ["Without hair", "Round toy", "Shopping center", "Grinding building"],
+    "startClue": "Brave and daring",
+    "endClue": "Gentle and soft",
+    "difficulty": 2
+  },
+  {
+    "id": 27,
+    "startWord": ["F", "R", "O", "G"],
+    "endWord": ["L", "I", "O", "N"],
+    "solution": ["FROG", "FROM", "PROM", "PROD", "PION", "LION"],
+    "clues": ["Origin point", "School dance", "To poke", "Subatomic particle"],
+    "startClue": "Jumping amphibian",
+    "endClue": "King of jungle",
+    "difficulty": 3
+  },
+  {
+    "id": 28,
+    "startWord": ["B", "R", "E", "A", "D"],
+    "endWord": ["T", "O", "A", "S", "T"],
+    "solution": ["BREAD", "BREAS", "AREAS", "AREST", "TOAST"],
+    "clues": ["Regions or zones", "To stop"],
+    "startClue": "Baked food",
+    "endClue": "Browned bread",
+    "difficulty": 2
+  },
+  {
+    "id": 29,
+    "startWord": ["H", "O", "U", "S", "E"],
+    "endWord": ["S", "T", "O", "R", "E"],
+    "solution": ["HOUSE", "HORSE", "WORSE", "STORE"],
+    "clues": ["Animal you ride", "More bad"],
+    "startClue": "Building to live in",
+    "endClue": "Place to shop",
+    "difficulty": 1
+  },
+  {
+    "id": 30,
+    "startWord": ["S", "M", "A", "L", "L"],
+    "endWord": ["L", "A", "R", "G", "E"],
+    "solution": ["SMALL", "SHALL", "SHARE", "SCARE", "SCARL", "LARGE"],
+    "clues": ["Will or future tense", "To divide", "To frighten"],
+    "startClue": "Tiny size",
+    "endClue": "Big size",
+    "difficulty": 2
+  },
+  {
+    "id": 31,
+    "startWord": ["S", "M", "I", "L", "E"],
+    "endWord": ["F", "R", "O", "W", "N"],
+    "solution": ["SMILE", "SMITE", "SMITH", "FROWN"],
+    "clues": ["To strike hard", "Metal worker"],
+    "startClue": "Happy expression",
+    "endClue": "Sad expression",
+    "difficulty": 1
+  },
+  {
+    "id": 32,
+    "startWord": ["B", "R", "I", "G", "H", "T"],
+    "endWord": ["G", "L", "O", "O", "M", "Y"],
+    "solution": ["BRIGHT", "BLIGHT", "GLOOMY"],
+    "clues": ["Plant disease"],
+    "startClue": "Full of light",
+    "endClue": "Dark and sad",
+    "difficulty": 1
+  },
+  {
+    "id": 33,
+    "startWord": ["N", "O", "I", "S", "E"],
+    "endWord": ["Q", "U", "I", "E", "T"],
+    "solution": ["NOISE", "POISE", "QUIES", "QUIET"],
+    "clues": ["Balance and grace"],
+    "startClue": "Loud sound",
+    "endClue": "Silent",
+    "difficulty": 1
+  },
+  {
+    "id": 34,
+    "startWord": ["Y", "O", "U", "N", "G"],
+    "endWord": ["E", "L", "D", "E", "R"],
+    "solution": ["YOUNG", "YOURS", "ELDER"],
+    "clues": ["Belonging to you"],
+    "startClue": "Not old",
+    "endClue": "Older person",
+    "difficulty": 1
+  },
+  {
+    "id": 35,
+    "startWord": ["F", "R", "E", "S", "H"],
+    "endWord": ["S", "T", "A", "L", "E"],
+    "solution": ["FRESH", "FLESH", "FLASE", "STALE"],
+    "clues": ["Body tissue"],
+    "startClue": "New and clean",
+    "endClue": "Old and dry",
+    "difficulty": 1
+  },
+  {
+    "id": 36,
+    "startWord": ["C", "L", "E", "A", "N"],
+    "endWord": ["D", "I", "R", "T", "Y"],
+    "solution": ["CLEAN", "CLEAR", "CLEAT", "DIRTY"],
+    "clues": ["Transparent", "Shoe grip"],
+    "startClue": "Not dirty",
+    "endClue": "Not clean",
+    "difficulty": 1
+  },
+  {
+    "id": 37,
+    "startWord": ["S", "W", "E", "E", "T"],
+    "endWord": ["S", "O", "U", "R"],
+    "solution": ["SWEET", "SWEAT", "SOAR", "SOUR"],
+    "clues": ["Body moisture", "To fly high"],
+    "startClue": "Like sugar",
+    "endClue": "Like lemon",
+    "difficulty": 1
+  },
+  {
+    "id": 38,
+    "startWord": ["F", "L", "O", "A", "T"],
+    "endWord": ["S", "I", "N", "K"],
+    "solution": ["FLOAT", "FLOCK", "FLICK", "SLINK", "SINK"],
+    "clues": ["Group of birds", "Quick light touch", "To move sneakily"],
+    "startClue": "Stay on water surface",
+    "endClue": "Go underwater",
+    "difficulty": 2
+  },
+  {
+    "id": 39,
+    "startWord": ["T", "H", "I", "N"],
+    "endWord": ["F", "A", "T"],
+    "solution": ["THIN", "SHIN", "SPIN", "SPAN", "SPAT", "FAT"],
+    "clues": ["Lower leg bone", "To rotate", "Distance across", "Past tense of spit"],
+    "startClue": "Not thick",
+    "endClue": "Not thin",
+    "difficulty": 2
+  },
+  {
+    "id": 40,
+    "startWord": ["S", "L", "E", "E", "P"],
+    "endWord": ["W", "A", "K", "E"],
+    "solution": ["SLEEP", "STEEP", "STEP", "SAKE", "WAKE"],
+    "clues": ["Very sloped", "One footfall", "Japanese rice wine"],
+    "startClue": "Rest at night",
+    "endClue": "Stop sleeping",
+    "difficulty": 2
+  },
+  {
+    "id": 41,
+    "startWord": ["O", "P", "E", "N"],
+    "endWord": ["S", "H", "U", "T"],
+    "solution": ["OPEN", "OVEN", "OVER", "SHUR", "SHUT"],
+    "clues": ["Cooking appliance", "Finished or above"],
+    "startClue": "Not closed",
+    "endClue": "Not open",
+    "difficulty": 1
+  },
+  {
+    "id": 42,
+    "startWord": ["F", "I", "R", "S", "T"],
+    "endWord": ["L", "A", "S", "T"],
+    "solution": ["FIRST", "FIST", "FAST", "LAST"],
+    "clues": ["Closed hand", "Very quick"],
+    "startClue": "Number one",
+    "endClue": "Final one",
+    "difficulty": 1
+  },
+  {
+    "id": 43,
+    "startWord": ["B", "E", "S", "T"],
+    "endWord": ["W", "O", "R", "S", "T"],
+    "solution": ["BEST", "BENT", "WONT", "WORST"],
+    "clues": ["Curved", "Habit or custom"],
+    "startClue": "Highest quality",
+    "endClue": "Lowest quality",
+    "difficulty": 1
+  },
+  {
+    "id": 44,
+    "startWord": ["E", "A", "S", "Y"],
+    "endWord": ["H", "A", "R", "D"],
+    "solution": ["EASY", "EAST", "HART", "HARD"],
+    "clues": ["Compass direction", "Male deer"],
+    "startClue": "Not difficult",
+    "endClue": "Very difficult",
+    "difficulty": 1
+  },
+  {
+    "id": 45,
+    "startWord": ["S", "A", "F", "E"],
+    "endWord": ["R", "I", "S", "K"],
+    "solution": ["SAFE", "SAKE", "SIKE", "RISK"],
+    "clues": ["Purpose or benefit", "Small stream"],
+    "startClue": "Not dangerous",
+    "endClue": "Possible danger",
+    "difficulty": 1
+  },
+  {
+    "id": 46,
+    "startWord": ["G", "I", "V", "E"],
+    "endWord": ["T", "A", "K", "E"],
+    "solution": ["GIVE", "GIBE", "TIBE", "TAKE"],
+    "clues": ["To mock or taunt"],
+    "startClue": "To donate",
+    "endClue": "To receive",
+    "difficulty": 1
+  },
+  {
+    "id": 47,
+    "startWord": ["P", "U", "S", "H"],
+    "endWord": ["P", "U", "L", "L"],
+    "solution": ["PUSH", "POSH", "POLL", "PULL"],
+    "clues": ["Fancy or elegant", "Survey or vote"],
+    "startClue": "To shove forward",
+    "endClue": "To drag toward",
+    "difficulty": 1
+  },
+  {
+    "id": 48,
+    "startWord": ["C", "O", "M", "E"],
+    "endWord": ["G", "O", "N", "E"],
+    "solution": ["COME", "COMA", "GOMA", "GONE"],
+    "clues": ["Unconscious state"],
+    "startClue": "To approach",
+    "endClue": "Has departed",
+    "difficulty": 1
+  },
+  {
+    "id": 49,
+    "startWord": ["H", "E", "R", "E"],
+    "endWord": ["T", "H", "E", "R", "E"],
+    "solution": ["HERE", "HERO", "THERE"],
+    "clues": ["Brave person"],
+    "startClue": "This location",
+    "endClue": "That location",
+    "difficulty": 1
+  },
+  {
+    "id": 50,
+    "startWord": ["L", "I", "V", "E"],
+    "endWord": ["D", "I", "E"],
+    "solution": ["LIVE", "LIME", "DIME", "DIE"],
+    "clues": ["Green citrus fruit", "Ten cent coin"],
+    "startClue": "To be alive",
+    "endClue": "To stop living",
+    "difficulty": 1
+  },
+  {
+    "id": 51,
+    "startWord": ["G", "O", "L", "D"],
+    "endWord": ["L", "E", "A", "D"],
+    "solution": ["GOLD", "GOAD", "LOAD", "LEAD"],
+    "clues": ["To provoke", "Heavy burden"],
+    "startClue": "Precious yellow metal",
+    "endClue": "Heavy gray metal",
+    "difficulty": 1
+  },
+  {
+    "id": 52,
+    "startWord": ["M", "E", "A", "T"],
+    "endWord": ["F", "I", "S", "H"],
+    "solution": ["MEAT", "FEAT", "FEST", "FISH"],
+    "clues": ["Great achievement", "Festival or celebration"],
+    "startClue": "Flesh food",
+    "endClue": "Seafood",
+    "difficulty": 1
+  },
+  {
+    "id": 53,
+    "startWord": ["B", "A", "K", "E"],
+    "endWord": ["C", "O", "O", "K"],
+    "solution": ["BAKE", "CAKE", "COKE", "COOK"],
+    "clues": ["Sweet dessert", "Cola drink"],
+    "startClue": "Heat in oven",
+    "endClue": "Prepare food",
+    "difficulty": 1
+  },
+  {
+    "id": 54,
+    "startWord": ["S", "H", "O", "P"],
+    "endWord": ["M", "A", "L", "L"],
+    "solution": ["SHOP", "SHOT", "MALT", "MALL"],
+    "clues": ["Fired bullet", "Grain for brewing"],
+    "startClue": "Small store",
+    "endClue": "Shopping center",
+    "difficulty": 1
+  },
+  {
+    "id": 55,
+    "startWord": ["S", "T", "O", "P"],
+    "endWord": ["G", "O"],
+    "solution": ["STOP", "STOW", "SOW", "GO"],
+    "clues": ["To pack away", "To plant seeds"],
+    "startClue": "To halt",
+    "endClue": "To move",
+    "difficulty": 1
+  },
+  {
+    "id": 56,
+    "startWord": ["T", "R", "U", "E"],
+    "endWord": ["L", "I", "E"],
+    "solution": ["TRUE", "TREE", "FLEE", "FEE", "LIE"],
+    "clues": ["Tall plant", "To run away", "Payment or charge"],
+    "startClue": "Factually correct",
+    "endClue": "False statement",
+    "difficulty": 2
+  },
+  {
+    "id": 57,
+    "startWord": ["R", "E", "A", "D"],
+    "endWord": ["W", "R", "I", "T", "E"],
+    "solution": ["READ", "REID", "WRID", "WRIT", "WRITE"],
+    "clues": ["Legal document"],
+    "startClue": "To look at text",
+    "endClue": "To make text",
+    "difficulty": 1
+  },
+  {
+    "id": 58,
+    "startWord": ["W", "A", "L", "K"],
+    "endWord": ["R", "U", "N"],
+    "solution": ["WALK", "WALL", "RAIL", "RAN", "RUN"],
+    "clues": ["Side barrier", "Fence or barrier", "Past of run"],
+    "startClue": "Slow movement",
+    "endClue": "Fast movement",
+    "difficulty": 2
+  },
+  {
+    "id": 59,
+    "startWord": ["D", "A", "Y"],
+    "endWord": ["N", "I", "G", "H", "T"],
+    "solution": ["DAY", "DAM", "DIM", "NIM", "NIGHT"],
+    "clues": ["Water barrier", "Not bright"],
+    "startClue": "When sun shines",
+    "endClue": "When moon shines",
+    "difficulty": 2
+  },
+  {
+    "id": 60,
+    "startWord": ["G", "O", "O", "D"],
+    "endWord": ["E", "V", "I", "L"],
+    "solution": ["GOOD", "GOAD", "GRAD", "EVIL"],
+    "clues": ["To provoke", "Graduate"],
+    "startClue": "Virtuous",
+    "endClue": "Wicked",
+    "difficulty": 1
+  }
+]

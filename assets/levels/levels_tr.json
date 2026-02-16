@@ -1,0 +1,602 @@
+[
+    {
+        "id": 1,
+        "startWord": ["K", "A", "R", "A"],
+        "endWord": ["P", "A", "R", "A"],
+        "solution": ["KARA", "KARE", "PARE", "PARA"],
+        "clues": ["Dört kenarlı şekil", "Parça"],
+        "startClue": "Siyah eş anlamlısı",
+        "endClue": "Ücret",
+        "difficulty": 1
+    },
+    {
+        "id": 2,
+        "startWord": ["Y", "A", "Ş"],
+        "endWord": ["S", "A", "Ç"],
+        "solution": ["YAŞ", "YAZ", "KAZ", "SAZ", "SAÇ"],
+        "clues": ["Mevsim", "Kuş", "Müzik aleti"],
+        "startClue": "Yaşlı zıt anlamlısı",
+        "endClue": "Kıl örtüsü",
+        "difficulty": 2
+    },
+    {
+        "id": 3,
+        "startWord": ["K", "A", "L"],
+        "endWord": ["B", "O", "L"],
+        "solution": ["KAL", "KOL", "YOL", "BOL"],
+        "clues": ["Uzuv", "Yürüme yeri"],
+        "startClue": "Kalmak",
+        "endClue": "Çok",
+        "difficulty": 2
+    },
+    {
+        "id": 4,
+        "startWord": ["Y", "E", "R"],
+        "endWord": ["D", "U", "R"],
+        "solution": ["YER", "TER", "TOR", "TUR", "DUR"],
+        "clues": ["Terleme sıvısı", "Ağ", "Gezi"],
+        "startClue": "Zemin",
+        "endClue": "Durmak",
+        "difficulty": 3
+    },
+    {
+        "id": 5,
+        "startWord": ["S", "O", "L"],
+        "endWord": ["S", "O", "N"],
+        "solution": ["SOL", "SAL", "SAZ", "SAR", "SOR", "SON"],
+        "clues": ["Bırakmak", "Çalgı", "Sarmak", "Sormak"],
+        "startClue": "Sağ zıt anlamlısı",
+        "endClue": "Bitiş",
+        "difficulty": 3
+    },
+    {
+        "id": 6,
+        "startWord": ["K", "A", "R"],
+        "endWord": ["K", "İ", "R"],
+        "solution": ["KAR", "KAT", "KİT", "KİR"],
+        "clues": ["Kat, bina katı", "Nadir"],
+        "startClue": "Beyaz yağış",
+        "endClue": "Kirli",
+        "difficulty": 2
+    },
+    {
+        "id": 7,
+        "startWord": ["B", "A", "L"],
+        "endWord": ["B", "A", "Ş"],
+        "solution": ["BAL", "BAT", "BAN", "BAS", "BAŞ"],
+        "clues": ["Batmak", "Yasak", "Basmak"],
+        "startClue": "Arı ürünü",
+        "endClue": "Kafa",
+        "difficulty": 3
+    },
+    {
+        "id": 8,
+        "startWord": ["D", "A", "L"],
+        "endWord": ["D", "A", "M"],
+        "solution": ["DAL", "BAL", "BAM", "DAM"],
+        "clues": ["Arı ürünü", "Patlama sesi"],
+        "startClue": "Ağaç kolu",
+        "endClue": "Çatı",
+        "difficulty": 2
+    },
+    {
+        "id": 9,
+        "startWord": ["A", "T", "A"],
+        "endWord": ["A", "L", "A"],
+        "solution": ["ATA", "ANA", "AMA", "ALA"],
+        "clues": ["Anne", "Fakat"],
+        "startClue": "Baba",
+        "endClue": "Renkli, benekli",
+        "difficulty": 2
+    },
+    {
+        "id": 10,
+        "startWord": ["O", "D", "A"],
+        "endWord": ["U", "T", "A"],
+        "solution": ["ODA", "OTA", "OTO", "UTO", "UTA"],
+        "clues": ["Bitki", "Araba"],
+        "startClue": "Yatak odası",
+        "endClue": "Utanç",
+        "difficulty": 3
+    },
+    {
+        "id": 11,
+        "startWord": ["T", "A", "Ş"],
+        "endWord": ["A", "Ş", "Ç", "I"],
+        "solution": ["TAŞ", "TAŞ", "PAŞ", "PAŞA", "AŞÇA", "AŞÇI"],
+        "clues": ["Rütbe sahibi", "Aşçı kelimesi"],
+        "startClue": "Kaya",
+        "endClue": "Yemek yapan",
+        "difficulty": 3
+    },
+    {
+        "id": 12,
+        "startWord": ["K", "A", "P", "I"],
+        "endWord": ["K", "O", "L", "I"],
+        "solution": ["KAPI", "KAPI", "KAPI", "KOLI", "KOLI"],
+        "clues": ["Giriş"],
+        "startClue": "Kapı",
+        "endClue": "Paket",
+        "difficulty": 2
+    },
+    {
+        "id": 13,
+        "startWord": ["S", "A", "R", "I"],
+        "endWord": ["K", "İ", "R", "A"],
+        "solution": ["SARI", "KARI", "KARA", "KIRA"],
+        "clues": ["Eş", "Siyah"],
+        "startClue": "Renk",
+        "endClue": "Aylık kira ücreti",
+        "difficulty": 2
+    },
+    {
+        "id": 14,
+        "startWord": ["B", "A", "R", "İ"],
+        "endWord": ["Y", "A", "R", "I"],
+        "solution": ["BARİ", "BARI", "PARI", "YARI"],
+        "clues": ["Parça"],
+        "startClue": "Hiç olmazsa",
+        "endClue": "Yarısı",
+        "difficulty": 2
+    },
+    {
+        "id": 15,
+        "startWord": ["K", "E", "D", "İ"],
+        "endWord": ["K", "A", "D", "İ"],
+        "solution": ["KEDİ", "KENDİ", "KANDİ", "KADİ"],
+        "clues": ["Kendi"],
+        "startClue": "Miyavlayan hayvan",
+        "endClue": "Hakim",
+        "difficulty": 2
+    },
+    {
+        "id": 16,
+        "startWord": ["G", "E", "M", "İ"],
+        "endWord": ["K", "E", "M", "İ"],
+        "solution": ["GEMİ", "GENİ", "KENİ", "KEMİ"],
+        "clues": ["Geniş"],
+        "startClue": "Vapur",
+        "endClue": "Kemik",
+        "difficulty": 2
+    },
+    {
+        "id": 17,
+        "startWord": ["G", "Ü", "L"],
+        "endWord": ["G", "Ö", "L"],
+        "solution": ["GÜL", "GÜN", "GÜZ", "GÖZ", "GÖL"],
+        "clues": ["Gün", "Sonbahar", "Göz"],
+        "startClue": "Çiçek",
+        "endClue": "Su birikintisi",
+        "difficulty": 3
+    },
+    {
+        "id": 18,
+        "startWord": ["D", "İ", "L"],
+        "endWord": ["F", "İ", "L"],
+        "solution": ["DİL", "DİN", "FİN", "FİL"],
+        "clues": ["Din", "Fince"],
+        "startClue": "Konuşma organı",
+        "endClue": "Hortumlu hayvan",
+        "difficulty": 2
+    },
+    {
+        "id": 19,
+        "startWord": ["Y", "A", "N"],
+        "endWord": ["Y", "U", "N"],
+        "solution": ["YAN", "YON", "YUN"],
+        "clues": ["Yön"],
+        "startClue": "Kenar",
+        "endClue": "Koyun postu",
+        "difficulty": 1
+    },
+    {
+        "id": 20,
+        "startWord": ["İ", "Z", "İ", "N"],
+        "endWord": ["O", "Z", "A", "N"],
+        "solution": ["İZİN", "OZAN", "OZAN"],
+        "clues": ["Müsaade"],
+        "startClue": "İzin",
+        "endClue": "Şair",
+        "difficulty": 2
+    },
+    {
+        "id": 21,
+        "startWord": ["S", "E", "S"],
+        "endWord": ["K", "İ", "Ş"],
+        "solution": ["SES", "KEŞ", "KİŞ"],
+        "clues": ["Keşif"],
+        "startClue": "Işık",
+        "endClue": "İnsan",
+        "difficulty": 2
+    },
+    {
+        "id": 22,
+        "startWord": ["K", "U", "Ş"],
+        "endWord": ["P", "U", "L"],
+        "solution": ["KUŞ", "KUL", "PUL"],
+        "clues": ["Köle"],
+        "startClue": "Uçan hayvan",
+        "endClue": "Posta pulu",
+        "difficulty": 1
+    },
+    {
+        "id": 23,
+        "startWord": ["D", "E", "N", "İ", "Z"],
+        "endWord": ["T", "E", "M", "İ", "Z"],
+        "solution": ["DENİZ", "TENİZ", "TEMİZ"],
+        "clues": ["Ten"],
+        "startClue": "Okyanus",
+        "endClue": "Kirli değil",
+        "difficulty": 2
+    },
+    {
+        "id": 24,
+        "startWord": ["K", "I", "Ş", "I", "N"],
+        "endWord": ["K", "O", "Ş", "U", "N"],
+        "solution": ["KIŞIN", "KOŞIN", "KOŞUN"],
+        "clues": ["Koşmak"],
+        "startClue": "Kış mevsiminde",
+        "endClue": "Koşun!",
+        "difficulty": 2
+    },
+    {
+        "id": 25,
+        "startWord": ["A", "L", "T", "I", "N"],
+        "endWord": ["Ü", "S", "T", "Ü", "N"],
+        "solution": ["ALTIN", "USTIN", "ÜSTÜN"],
+        "clues": ["Ustaca"],
+        "startClue": "Kıymetli maden",
+        "endClue": "Üstün, başarılı",
+        "difficulty": 2
+    },
+    {
+        "id": 26,
+        "startWord": ["B", "A", "Y", "A", "N"],
+        "endWord": ["K", "A", "R", "A", "N"],
+        "solution": ["BAYAN", "KAYAN", "KARAN"],
+        "clues": ["Kaymak"],
+        "startClue": "Hanım",
+        "endClue": "Karanlık",
+        "difficulty": 2
+    },
+    {
+        "id": 27,
+        "startWord": ["S", "A", "B", "A", "H"],
+        "endWord": ["K", "A", "B", "A", "K"],
+        "solution": ["SABAH", "KABAH", "KABAK"],
+        "clues": ["Kaba"],
+        "startClue": "Sabahleyin",
+        "endClue": "Sebze",
+        "difficulty": 1
+    },
+    {
+        "id": 28,
+        "startWord": ["T", "A", "R", "A", "F"],
+        "endWord": ["T", "O", "R", "B", "A"],
+        "solution": ["TARAF", "TORAF", "TORBA"],
+        "clues": ["Taraf"],
+        "startClue": "Yön, taraf",
+        "endClue": "Çanta",
+        "difficulty": 2
+    },
+    {
+        "id": 29,
+        "startWord": ["K", "U", "R", "A", "L"],
+        "endWord": ["M", "U", "R", "A", "L"],
+        "solution": ["KURAL", "KURAL", "MURAL"],
+        "clues": ["Yasa"],
+        "startClue": "Kural",
+        "endClue": "Duvar resmi",
+        "difficulty": 2
+    },
+    {
+        "id": 30,
+        "startWord": ["A", "R", "I"],
+        "endWord": ["A", "Y", "I"],
+        "solution": ["ARI", "ATI", "AVI", "AYI"],
+        "clues": ["At", "Avcı"],
+        "startClue": "Bal üreticisi",
+        "endClue": "Ayı hayvanı",
+        "difficulty": 2
+    },
+    {
+        "id": 31,
+        "startWord": ["B", "İ", "R"],
+        "endWord": ["B", "İ", "T"],
+        "solution": ["BİR", "BİN", "BİT"],
+        "clues": ["Bin sayısı"],
+        "startClue": "Bir sayısı",
+        "endClue": "Bitmek",
+        "difficulty": 1
+    },
+    {
+        "id": 32,
+        "startWord": ["Y", "A", "Z"],
+        "endWord": ["S", "I", "Z"],
+        "solution": ["YAZ", "YIZ", "SIZ"],
+        "clues": ["Yüz"],
+        "startClue": "Mevsim",
+        "endClue": "Sen değil",
+        "difficulty": 1
+    },
+    {
+        "id": 33,
+        "startWord": ["K", "O", "R", "U"],
+        "endWord": ["T", "U", "R", "U"],
+        "solution": ["KORU", "TORU", "TURU"],
+        "clues": ["Tor"],
+        "startClue": "Korumak",
+        "endClue": "Tur",
+        "difficulty": 2
+    },
+    {
+        "id": 34,
+        "startWord": ["D", "A", "R", "E"],
+        "endWord": ["P", "A", "R", "A"],
+        "solution": ["DARE", "PARE", "PARA"],
+        "clues": ["Parça"],
+        "startClue": "Daire",
+        "endClue": "Para",
+        "difficulty": 1
+    },
+    {
+        "id": 35,
+        "startWord": ["M", "İ", "D", "E"],
+        "endWord": ["T", "İ", "M", "E"],
+        "solution": ["MİDE", "TİDE", "TİME"],
+        "clues": ["Gelgit"],
+        "startClue": "Sindirim organı",
+        "endClue": "Zaman",
+        "difficulty": 2
+    },
+    {
+        "id": 36,
+        "startWord": ["G", "Ö", "R", "E"],
+        "endWord": ["Y", "A", "R", "E"],
+        "solution": ["GÖRE", "GARE", "YARE"],
+        "clues": ["Gar"],
+        "startClue": "Göre, nazaran",
+        "endClue": "Çevik",
+        "difficulty": 2
+    },
+    {
+        "id": 37,
+        "startWord": ["K", "A", "R", "E"],
+        "endWord": ["B", "İ", "R", "E"],
+        "solution": ["KARE", "KIRE", "BİRE"],
+        "clues": ["Kir"],
+        "startClue": "Dikdörtgen",
+        "endClue": "Bire bir",
+        "difficulty": 2
+    },
+    {
+        "id": 38,
+        "startWord": ["D", "E", "R", "E"],
+        "endWord": ["F", "E", "R", "A"],
+        "solution": ["DERE", "FERE", "FERA"],
+        "clues": ["Fer"],
+        "startClue": "Akarsu",
+        "endClue": "Fer",
+        "difficulty": 2
+    },
+    {
+        "id": 39,
+        "startWord": ["S", "O", "R", "U"],
+        "endWord": ["K", "O", "N", "U"],
+        "solution": ["SORU", "KORU", "KONU"],
+        "clues": ["Korumak"],
+        "startClue": "Sual",
+        "endClue": "Mevzu",
+        "difficulty": 2
+    },
+    {
+        "id": 40,
+        "startWord": ["Y", "A", "R", "I", "N"],
+        "endWord": ["K", "A", "R", "I", "N"],
+        "solution": ["YARIN", "KARIN"],
+        "clues": ["Yarın"],
+        "startClue": "Yarın",
+        "endClue": "Karın, göbek",
+        "difficulty": 1
+    },
+    {
+        "id": 41,
+        "startWord": ["B", "İ", "L", "G", "İ"],
+        "endWord": ["B", "İ", "Ç", "İ", "M"],
+        "solution": ["BİLGİ", "BİÇGİ", "BİÇİM"],
+        "clues": ["Biçki"],
+        "startClue": "Enformasyon",
+        "endClue": "Şekil, biçim",
+        "difficulty": 2
+    },
+    {
+        "id": 42,
+        "startWord": ["M", "U", "Z", "U", "R"],
+        "endWord": ["M", "A", "Z", "A", "R"],
+        "solution": ["MUZUR", "MAZAR"],
+        "clues": ["Zararlı"],
+        "startClue": "Zararlı",
+        "endClue": "Türbe",
+        "difficulty": 2
+    },
+    {
+        "id": 43,
+        "startWord": ["T", "A", "V", "I", "R"],
+        "endWord": ["K", "A", "V", "U", "N"],
+        "solution": ["TAVIR", "KAVIR", "KAVUN"],
+        "clues": ["Kızgın"],
+        "startClue": "Tutum, davranış",
+        "endClue": "Sarı meyve",
+        "difficulty": 2
+    },
+    {
+        "id": 44,
+        "startWord": ["K", "I", "R", "A", "L"],
+        "endWord": ["K", "U", "R", "A", "L"],
+        "solution": ["KIRAL", "KURAL"],
+        "clues": ["Kira"],
+        "startClue": "Kira",
+        "endClue": "Yasa, kural",
+        "difficulty": 1
+    },
+    {
+        "id": 45,
+        "startWord": ["Y", "A", "R", "I", "M"],
+        "endWord": ["T", "A", "M", "A", "M"],
+        "solution": ["YARIM", "TARIM", "TAMAM"],
+        "clues": ["Tarımcılık"],
+        "startClue": "Yarı",
+        "endClue": "Tamam, bitti",
+        "difficulty": 2
+    },
+    {
+        "id": 46,
+        "startWord": ["K", "A", "Y", "I", "N"],
+        "endWord": ["D", "A", "Y", "I", "N"],
+        "solution": ["KAYIN", "DAYIN"],
+        "clues": ["Kayın ağacı"],
+        "startClue": "Kayın ağacı",
+        "endClue": "Amca",
+        "difficulty": 1
+    },
+    {
+        "id": 47,
+        "startWord": ["Y", "A", "Ğ", "I", "Ş"],
+        "endWord": ["A", "Ğ", "I", "Z"],
+        "solution": ["YAĞIŞ", "AĞIŞ", "AĞIZ"],
+        "clues": ["Yağmur"],
+        "startClue": "Yağmur, kar",
+        "endClue": "Ağız",
+        "difficulty": 2
+    },
+    {
+        "id": 48,
+        "startWord": ["M", "U", "T", "L", "U"],
+        "endWord": ["B", "U", "T", "L", "U"],
+        "solution": ["MUTLU", "BUTLU"],
+        "clues": ["Mutlu"],
+        "startClue": "Mutlu, sevinçli",
+        "endClue": "But, bacak",
+        "difficulty": 1
+    },
+    {
+        "id": 49,
+        "startWord": ["T", "U", "T", "K", "U"],
+        "endWord": ["K", "U", "R", "K", "U"],
+        "solution": ["TUTKU", "KURKU"],
+        "clues": ["Tutku, hırs"],
+        "startClue": "Tutku",
+        "endClue": "Korku",
+        "difficulty": 2
+    },
+    {
+        "id": 50,
+        "startWord": ["Y", "A", "M", "A", "Ç"],
+        "endWord": ["K", "A", "Y", "A", "Ç"],
+        "solution": ["YAMAÇ", "KAYAÇ"],
+        "clues": ["Yamaç"],
+        "startClue": "Yokuş",
+        "endClue": "Kaya, taş",
+        "difficulty": 1
+    },
+    {
+        "id": 51,
+        "startWord": ["Ç", "A", "M", "U", "R"],
+        "endWord": ["Ç", "O", "M", "A", "K"],
+        "solution": ["ÇAMUR", "ÇOMUR", "ÇOMAK"],
+        "clues": ["Kömür"],
+        "startClue": "Killi toprak",
+        "endClue": "Sopa",
+        "difficulty": 2
+    },
+    {
+        "id": 52,
+        "startWord": ["B", "A", "L", "I", "K"],
+        "endWord": ["K", "A", "L", "I", "N"],
+        "solution": ["BALIK", "KALIK", "KALIN"],
+        "clues": ["Kalıp"],
+        "startClue": "Deniz hayvanı",
+        "endClue": "Kalın, geniş",
+        "difficulty": 2
+    },
+    {
+        "id": 53,
+        "startWord": ["S", "A", "V", "A", "Ş"],
+        "endWord": ["B", "O", "Y", "A", "Z"],
+        "solution": ["SAVAŞ", "SAVAS", "BOYAS", "BOYAZ"],
+        "clues": ["Savaşmak"],
+        "startClue": "Savaş, mücadele",
+        "endClue": "Boyamak",
+        "difficulty": 2
+    },
+    {
+        "id": 54,
+        "startWord": ["Y", "A", "Ş", "A", "R"],
+        "endWord": ["P", "A", "Z", "A", "R"],
+        "solution": ["YAŞAR", "PAŞAR", "PAZAR"],
+        "clues": ["Paşa"],
+        "startClue": "Yaşamak",
+        "endClue": "Pazar günü",
+        "difficulty": 2
+    },
+    {
+        "id": 55,
+        "startWord": ["Y", "A", "K", "I", "T"],
+        "endWord": ["Y", "A", "P", "I", "T"],
+        "solution": ["YAKIT", "YAKIT", "YAPIT"],
+        "clues": ["Yakıt"],
+        "startClue": "Benzin, mazot",
+        "endClue": "Yapıt, eser",
+        "difficulty": 2
+    },
+    {
+        "id": 56,
+        "startWord": ["D", "Ü", "Ş", "Ü", "K"],
+        "endWord": ["Ü", "Ş", "Ü", "M", "E"],
+        "solution": ["DÜŞÜK", "DÜŞÜM", "ÜŞÜME"],
+        "clues": ["Düşünce"],
+        "startClue": "Düşük, alçak",
+        "endClue": "Üşümek",
+        "difficulty": 2
+    },
+    {
+        "id": 57,
+        "startWord": ["G", "Ü", "N", "E", "Ş"],
+        "endWord": ["K", "Ü", "R", "E", "K"],
+        "solution": ["GÜNEŞ", "KÜNEŞ", "KÜREK"],
+        "clues": ["Güneşli"],
+        "startClue": "Güneş",
+        "endClue": "Kürek",
+        "difficulty": 2
+    },
+    {
+        "id": 58,
+        "startWord": ["K", "A", "L", "E", "M"],
+        "endWord": ["T", "A", "N", "I", "K"],
+        "solution": ["KALEM", "KALEN", "TALEN", "TANIK"],
+        "clues": ["Kale"],
+        "startClue": "Yazı aleti",
+        "endClue": "Tanık, şahit",
+        "difficulty": 3
+    },
+    {
+        "id": 59,
+        "startWord": ["T", "Ü", "R", "L", "Ü"],
+        "endWord": ["K", "Ö", "R", "L", "Ü"],
+        "solution": ["TÜRLÜ", "KÖRLÜ"],
+        "clues": ["Çeşitli"],
+        "startClue": "Türlü, çeşitli",
+        "endClue": "Kör",
+        "difficulty": 1
+    },
+    {
+        "id": 60,
+        "startWord": ["S", "İ", "V", "R", "İ"],
+        "endWord": ["S", "İ", "H", "İ", "R"],
+        "solution": ["SİVRİ", "SİHRİ", "SİHİR"],
+        "clues": ["Sivri"],
+        "startClue": "Sivri, keskin",
+        "endClue": "Büyü",
+        "difficulty": 2
+    }
+]
