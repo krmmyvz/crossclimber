@@ -131,9 +131,9 @@
 
 #### 1.3.3 `achievements_screen.dart` (451 satır)
 
-- [ ] `_buildProgressHeader` → ayrı widget
-- [ ] `_buildAchievementCard` → ayrı widget
-- [ ] Helper method'lar (`_getAchievementIcon`, `_getAchievementTitle`, `_getAchievementDescription`) → `AchievementUtils` helper class
+- [x] `_buildProgressHeader` → ayrı widget
+- [x] `_buildAchievementCard` → ayrı widget
+- [x] Helper method'lar (`_getAchievementIcon`, `_getAchievementTitle`, `_getAchievementDescription`) → `AchievementUtils` helper class
 
 ### 1.4 Provider Scoping
 
