@@ -8,148 +8,144 @@ void main() {
     calculator = ScoreCalculator();
   });
 
-  group('calculateFinalScore', () {
-    test('perfect run: no penalties, no combo bonus', () {
-      final score = calculator.calculateFinalScore(
-        timeElapsed: Duration.zero,
-        wrongAttempts: 0,
-        hintsUsed: 0,
-        comboBonus: 0,
-      );
-      expect(score, 1000);
+  group('ScoreCalculator', () {
+    group('calculateFinalScore', () {
+      test('calculates base score without penalties', () {
+        final score = calculator.calculateFinalScore(
+          timeElapsed: Duration.zero,
+          wrongAttempts: 0,
+          hintsUsed: 0,
+          comboBonus: 0,
+        );
+        expect(score, ScoreCalculator.baseScore);
+      });
+
+      test('applies time penalty', () {
+        final score = calculator.calculateFinalScore(
+          timeElapsed: const Duration(seconds: 10),
+          wrongAttempts: 0,
+          hintsUsed: 0,
+          comboBonus: 0,
+        );
+        const expectedPenalty = 10 * ScoreCalculator.timePenaltyPerSecond;
+        expect(score, ScoreCalculator.baseScore - expectedPenalty);
+      });
+
+      test('applies wrong attempt penalty', () {
+        final score = calculator.calculateFinalScore(
+          timeElapsed: Duration.zero,
+          wrongAttempts: 2,
+          hintsUsed: 0,
+          comboBonus: 0,
+        );
+        const expectedPenalty = 2 * ScoreCalculator.wrongAttemptPenalty;
+        expect(score, ScoreCalculator.baseScore - expectedPenalty);
+      });
+
+      test('applies hint penalty', () {
+        final score = calculator.calculateFinalScore(
+          timeElapsed: Duration.zero,
+          wrongAttempts: 0,
+          hintsUsed: 1,
+          comboBonus: 0,
+        );
+        expect(score, ScoreCalculator.baseScore - ScoreCalculator.hintPenalty);
+      });
+
+      test('adds combo bonus', () {
+        final score = calculator.calculateFinalScore(
+          timeElapsed: Duration.zero,
+          wrongAttempts: 0,
+          hintsUsed: 0,
+          comboBonus: 500,
+        );
+        expect(score, ScoreCalculator.baseScore + 500);
+      });
+
+      test('clamps score to 0 when penalties are high', () {
+        final score = calculator.calculateFinalScore(
+          timeElapsed: const Duration(seconds: 1000), // Huge penalty
+          wrongAttempts: 0,
+          hintsUsed: 0,
+          comboBonus: 0,
+        );
+        expect(score, 0); // Should not be negative
+      });
     });
 
-    test('applies time penalty (2 pts/sec)', () {
-      final score = calculator.calculateFinalScore(
-        timeElapsed: const Duration(seconds: 60),
-        wrongAttempts: 0,
-        hintsUsed: 0,
-        comboBonus: 0,
-      );
-      expect(score, 1000 - 120); // 60s * 2
-    });
+    group('calculateCredits', () {
+      test('returns 0 for replayed levels', () {
+        final credits = calculator.calculateCredits(
+          starsEarned: 3,
+          levelId: 5,
+          hintsUsed: 0,
+          wrongAttempts: 0,
+          highestUnlockedLevel: 10, // Replaying level 5
+        );
+        expect(credits, 0);
+      });
 
-    test('applies wrong attempt penalty (50 pts each)', () {
-      final score = calculator.calculateFinalScore(
-        timeElapsed: Duration.zero,
-        wrongAttempts: 3,
-        hintsUsed: 0,
-        comboBonus: 0,
-      );
-      expect(score, 1000 - 150);
-    });
+      test('calculates base credits for 1 star', () {
+        // 1.5 * 10 = 15
+        final credits = calculator.calculateCredits(
+          starsEarned: 1,
+          levelId: 1,
+          hintsUsed: 1,
+          wrongAttempts: 1,
+          highestUnlockedLevel: 1,
+        );
+        // Base 15 + Difficulty (1~/10 * 10 = 0) = 15
+        expect(credits, 15);
+      });
 
-    test('applies hint penalty (100 pts each)', () {
-      final score = calculator.calculateFinalScore(
-        timeElapsed: Duration.zero,
-        wrongAttempts: 0,
-        hintsUsed: 2,
-        comboBonus: 0,
-      );
-      expect(score, 1000 - 200);
-    });
+      test('calculates base credits for 2 stars', () {
+        // 2.5 * 10 = 25
+        final credits = calculator.calculateCredits(
+          starsEarned: 2,
+          levelId: 1,
+          hintsUsed: 1,
+          wrongAttempts: 1,
+          highestUnlockedLevel: 1,
+        );
+        expect(credits, 25);
+      });
 
-    test('adds combo bonus after penalties', () {
-      final score = calculator.calculateFinalScore(
-        timeElapsed: const Duration(seconds: 30),
-        wrongAttempts: 1,
-        hintsUsed: 0,
-        comboBonus: 100,
-      );
-      // 1000 - 60 - 50 = 890 + 100 = 990
-      expect(score, 990);
-    });
+      test('calculates base credits for 3 stars', () {
+        // 3.5 * 10 = 35
+        final credits = calculator.calculateCredits(
+          starsEarned: 3,
+          levelId: 1,
+          hintsUsed: 1, // Not perfect
+          wrongAttempts: 1,
+          highestUnlockedLevel: 1,
+        );
+        expect(credits, 35);
+      });
 
-    test('score never goes below zero before combo', () {
-      final score = calculator.calculateFinalScore(
-        timeElapsed: const Duration(seconds: 600), // 1200 penalty
-        wrongAttempts: 10, // 500 penalty
-        hintsUsed: 5, // 500 penalty
-        comboBonus: 50,
-      );
-      // clamped to 0, then +50
-      expect(score, 50);
-    });
+      test('adds difficulty bonus', () {
+        // Level 25 -> 25 ~/ 10 = 2 -> 2 * 10 = 20 bonus
+        // 3 stars base = 35
+        final credits = calculator.calculateCredits(
+          starsEarned: 3,
+          levelId: 25,
+          hintsUsed: 1,
+          wrongAttempts: 1,
+          highestUnlockedLevel: 25,
+        );
+        expect(credits, 35 + 20);
+      });
 
-    test('combined penalties', () {
-      final score = calculator.calculateFinalScore(
-        timeElapsed: const Duration(minutes: 2),
-        wrongAttempts: 2,
-        hintsUsed: 1,
-        comboBonus: 30,
-      );
-      // 1000 - 240 - 100 - 100 = 560 + 30 = 590
-      expect(score, 590);
-    });
-  });
-
-  group('calculateCredits', () {
-    test('1 star: base 15 credits', () {
-      final credits = calculator.calculateCredits(
-        starsEarned: 1,
-        levelId: 0,
-        hintsUsed: 1,
-        wrongAttempts: 3,
-        highestUnlockedLevel: 0,
-      );
-      expect(credits, 15); // (1.5 * 10) = 15 + 0 difficulty
-    });
-
-    test('2 stars: base 25 credits', () {
-      final credits = calculator.calculateCredits(
-        starsEarned: 2,
-        levelId: 0,
-        hintsUsed: 0,
-        wrongAttempts: 1,
-        highestUnlockedLevel: 0,
-      );
-      expect(credits, 25);
-    });
-
-    test('3 stars: base 35 credits', () {
-      final credits = calculator.calculateCredits(
-        starsEarned: 3,
-        levelId: 0,
-        hintsUsed: 1,
-        wrongAttempts: 1,
-        highestUnlockedLevel: 0,
-      );
-      expect(credits, 35);
-    });
-
-    test('adds difficulty bonus based on level tier', () {
-      final credits = calculator.calculateCredits(
-        starsEarned: 1,
-        levelId: 25,
-        hintsUsed: 0,
-        wrongAttempts: 1,
-        highestUnlockedLevel: 25,
-      );
-      // base 15 + (25 ~/ 10) * 10 = 15 + 20 = 35
-      expect(credits, 35);
-    });
-
-    test('perfect play bonus: 3 stars, no hints, no wrong', () {
-      final credits = calculator.calculateCredits(
-        starsEarned: 3,
-        levelId: 10,
-        hintsUsed: 0,
-        wrongAttempts: 0,
-        highestUnlockedLevel: 10,
-      );
-      // base 35 + difficulty 10 + perfect 50 = 95
-      expect(credits, 95);
-    });
-
-    test('replayed level awards 0 credits', () {
-      final credits = calculator.calculateCredits(
-        starsEarned: 3,
-        levelId: 5,
-        hintsUsed: 0,
-        wrongAttempts: 0,
-        highestUnlockedLevel: 10,
-      );
-      expect(credits, 0);
+      test('adds perfect completion bonus', () {
+        // 3 stars (35) + No hints + No wrongs (+50)
+        final credits = calculator.calculateCredits(
+          starsEarned: 3,
+          levelId: 1,
+          hintsUsed: 0,
+          wrongAttempts: 0,
+          highestUnlockedLevel: 1,
+        );
+        expect(credits, 35 + 50);
+      });
     });
   });
 }

@@ -130,14 +130,28 @@ class MiddleWordTile extends StatelessWidget {
       content = ReorderableDragStartListener(index: index, child: content);
     }
 
+    String semanticsLabel;
+    if (gameState.phase == GamePhase.sorting) {
+      semanticsLabel = 'Word $word. Double tap and hold to reorder.';
+    } else if (isGuessed) {
+      semanticsLabel = 'Word $word, correct.';
+    } else {
+      semanticsLabel = 'Empty word slot ${index + 1}, length $wordLength. Double tap to select.';
+    }
+
     return Listener(
       onPointerDown: (_) => onPointerDown(),
       child:
           Padding(
                 padding: const EdgeInsets.symmetric(vertical: Spacing.xxs),
-                child: GestureDetector(
-                  onTap: !isGuessed ? onSelect : null,
-                  child: content,
+                child: Semantics(
+                  label: semanticsLabel,
+                  button: !isGuessed,
+                  selected: isSelected,
+                  child: GestureDetector(
+                    onTap: !isGuessed ? onSelect : null,
+                    child: content,
+                  ),
                 ),
               )
               .animate(delay: StaggerDelay.fast(index))

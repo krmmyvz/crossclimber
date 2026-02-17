@@ -5,6 +5,7 @@ import 'package:crossclimber/services/statistics_repository.dart';
 import 'package:crossclimber/theme/border_radius.dart';
 import 'package:crossclimber/theme/spacing.dart';
 import 'package:crossclimber/theme/game_colors.dart';
+import 'package:crossclimber/theme/responsive.dart';
 
 class PerformanceGrid extends StatelessWidget {
   final Statistics stats;
@@ -64,14 +65,19 @@ class _StatCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final isCompact = Responsive.isCompact(context);
+
     return Container(
-      padding: const EdgeInsets.all(Spacing.m + Spacing.xs),
+      padding: EdgeInsets.all(
+        isCompact ? Spacing.s : Spacing.m + Spacing.xs,
+      ),
       decoration: BoxDecoration(
         color: theme.colorScheme.surfaceContainerLow,
         borderRadius: RadiiBR.lg,
         border: Border.all(color: color.withValues(alpha: 0.3), width: 2),
       ),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           Container(
             padding: SpacingInsets.s,
@@ -79,22 +85,34 @@ class _StatCard extends StatelessWidget {
               color: color.withValues(alpha: 0.1),
               shape: BoxShape.circle,
             ),
-            child: Icon(icon, color: color, size: 28),
+            child: Icon(
+              icon,
+              color: color,
+              size: Responsive.getIconSize(context),
+            ),
           ),
           VerticalSpacing.s,
-          Text(
-            value,
-            style: theme.textTheme.headlineMedium?.copyWith(
-              fontWeight: FontWeight.bold,
-              color: color,
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              value,
+              style: theme.textTheme.headlineMedium?.copyWith(
+                fontWeight: FontWeight.bold,
+                color: color,
+                fontSize: isCompact ? 20 : null,
+              ),
             ),
           ),
           VerticalSpacing.xxs,
           Text(
             label,
+            textAlign: TextAlign.center,
             style: theme.textTheme.bodySmall?.copyWith(
               color: theme.colorScheme.onSurfaceVariant,
+              fontSize: isCompact ? 10 : null,
             ),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
           ),
         ],
       ),

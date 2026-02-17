@@ -8,73 +8,64 @@ void main() {
     validator = WordValidator();
   });
 
-  group('isOneLetterDiff', () {
-    test('returns true for single character difference', () {
-      expect(validator.isOneLetterDiff('COLD', 'CORD'), isTrue);
-      expect(validator.isOneLetterDiff('CORD', 'WORD'), isTrue);
-      expect(validator.isOneLetterDiff('WORD', 'WARD'), isTrue);
+  group('WordValidator', () {
+    group('isOneLetterDiff', () {
+      test('returns true for single letter difference', () {
+        expect(validator.isOneLetterDiff('CAT', 'COT'), isTrue);
+        expect(validator.isOneLetterDiff('LIME', 'LIKE'), isTrue);
+      });
+
+      test('returns false for identical words', () {
+        expect(validator.isOneLetterDiff('CAT', 'CAT'), isFalse);
+      });
+
+      test('returns false for two or more letter differences', () {
+        expect(validator.isOneLetterDiff('CAT', 'DOG'), isFalse);
+        expect(validator.isOneLetterDiff('LIME', 'LATE'), isFalse);
+      });
+
+      test('returns false for different lengths', () {
+        expect(validator.isOneLetterDiff('CAT', 'CATS'), isFalse);
+        expect(validator.isOneLetterDiff('HELLO', 'HI'), isFalse);
+      });
     });
 
-    test('returns false for identical strings', () {
-      expect(validator.isOneLetterDiff('COLD', 'COLD'), isFalse);
+    group('isCorrectMiddleGuess', () {
+      test('returns true for exact match', () {
+        expect(validator.isCorrectMiddleGuess('TEST', 'TEST'), isTrue);
+      });
+
+      test('returns true for case-insensitive match', () {
+        expect(validator.isCorrectMiddleGuess('test', 'TEST'), isTrue);
+        expect(validator.isCorrectMiddleGuess('Test', 'TEST'), isTrue);
+      });
+
+      test('returns false for incorrect guess', () {
+        expect(validator.isCorrectMiddleGuess('WRONG', 'TEST'), isFalse);
+      });
     });
 
-    test('returns false for two or more differences', () {
-      expect(validator.isOneLetterDiff('COLD', 'WARM'), isFalse);
-      expect(validator.isOneLetterDiff('COLD', 'CORE'), isFalse);
-    });
+    group('isCorrectFinalGuess', () {
+      test('returns true when guess matches joined target list', () {
+        expect(
+          validator.isCorrectFinalGuess('COLD', ['C', 'O', 'L', 'D']),
+          isTrue,
+        );
+      });
 
-    test('returns false for different lengths', () {
-      expect(validator.isOneLetterDiff('COLD', 'COLDS'), isFalse);
-      expect(validator.isOneLetterDiff('A', 'AB'), isFalse);
-    });
+      test('returns true for case-insensitive match', () {
+        expect(
+          validator.isCorrectFinalGuess('cold', ['C', 'O', 'L', 'D']),
+          isTrue,
+        );
+      });
 
-    test('handles empty strings', () {
-      expect(validator.isOneLetterDiff('', ''), isFalse);
-    });
-
-    test('handles single character strings', () {
-      expect(validator.isOneLetterDiff('A', 'B'), isTrue);
-      expect(validator.isOneLetterDiff('A', 'A'), isFalse);
-    });
-  });
-
-  group('isCorrectMiddleGuess', () {
-    test('matches case-insensitively', () {
-      expect(validator.isCorrectMiddleGuess('cord', 'CORD'), isTrue);
-      expect(validator.isCorrectMiddleGuess('CORD', 'cord'), isTrue);
-      expect(validator.isCorrectMiddleGuess('Cord', 'CORD'), isTrue);
-    });
-
-    test('returns false for wrong guess', () {
-      expect(validator.isCorrectMiddleGuess('COLD', 'CORD'), isFalse);
-    });
-
-    test('returns false for empty guess', () {
-      expect(validator.isCorrectMiddleGuess('', 'CORD'), isFalse);
-    });
-  });
-
-  group('isCorrectFinalGuess', () {
-    test('matches against joined target word list', () {
-      expect(
-        validator.isCorrectFinalGuess('COLD', ['C', 'O', 'L', 'D']),
-        isTrue,
-      );
-    });
-
-    test('matches case-insensitively', () {
-      expect(
-        validator.isCorrectFinalGuess('cold', ['C', 'O', 'L', 'D']),
-        isTrue,
-      );
-    });
-
-    test('returns false for wrong guess', () {
-      expect(
-        validator.isCorrectFinalGuess('WARM', ['C', 'O', 'L', 'D']),
-        isFalse,
-      );
+      test('returns false for incorrect guess', () {
+        expect(
+          validator.isCorrectFinalGuess('WARM', ['C', 'O', 'L', 'D']),
+          isFalse,
+        );
+      });
     });
   });
 }

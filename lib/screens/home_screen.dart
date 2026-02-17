@@ -186,6 +186,8 @@ class HomeScreen extends ConsumerWidget {
   }
 }
 
+import 'package:crossclimber/theme/responsive.dart';
+
 class _QuickAccessButton extends StatelessWidget {
   final IconData icon;
   final String label;
@@ -217,7 +219,11 @@ class _QuickAccessButton extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(icon, color: color, size: 32),
+            Icon(
+              icon,
+              color: color,
+              size: Responsive.getIconSize(context),
+            ),
             VerticalSpacing.xs,
             Text(
               label,
@@ -225,6 +231,7 @@ class _QuickAccessButton extends StatelessWidget {
               style: Theme.of(context).textTheme.labelSmall?.copyWith(
                 color: color,
                 fontWeight: FontWeight.bold,
+                fontSize: Responsive.getFontSize(context, 11),
               ),
               maxLines: 2,
               overflow: TextOverflow.ellipsis,

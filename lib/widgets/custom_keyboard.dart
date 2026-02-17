@@ -6,6 +6,7 @@ import 'package:crossclimber/theme/animations.dart';
 import 'package:crossclimber/theme/border_radius.dart';
 import 'package:crossclimber/theme/game_colors.dart';
 import 'package:crossclimber/theme/spacing.dart';
+import 'package:crossclimber/theme/responsive.dart';
 
 class CustomKeyboard extends ConsumerWidget {
   final Function(String) onKeyTap;
@@ -72,6 +73,7 @@ class CustomKeyboard extends ConsumerWidget {
                     _buildActionButton(
                       context,
                       icon: Icons.check,
+                      label: 'Submit',
                       color: theme.colorScheme.primary,
                       onTap: onSubmit,
                       keyCount: maxKeysInRow,
@@ -86,6 +88,7 @@ class CustomKeyboard extends ConsumerWidget {
                     _buildActionButton(
                       context,
                       icon: Icons.backspace_outlined,
+                      label: 'Backspace',
                       color: theme.colorScheme.error,
                       onTap: onBackspace,
                       keyCount: maxKeysInRow,
@@ -147,23 +150,28 @@ class CustomKeyboard extends ConsumerWidget {
   Widget _buildActionButton(
     BuildContext context, {
     required IconData icon,
+    required String label,
     required Color color,
     required VoidCallback onTap,
     required int keyCount,
     required HapticService hapticService,
   }) {
     final screenWidth = MediaQuery.of(context).size.width;
-    final availableWidth = screenWidth - 90; // Match key calculation
-    final baseKeyWidth = (availableWidth / keyCount).clamp(26.0, 42.0);
+    final isCompact = Responsive.isCompact(context);
+    final availableWidth = screenWidth - (isCompact ? 16 : 90);
+    final baseKeyWidth = (availableWidth / keyCount).clamp(
+      26.0,
+      Responsive.isTablet(context) ? 64.0 : 42.0,
+    );
     final width = (baseKeyWidth * 1.5).clamp(
       42.0,
-      58.0,
-    ); // Increased max from 50 to 58
+      Responsive.isTablet(context) ? 80.0 : 58.0,
+    );
 
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 1, vertical: 2),
       width: width,
-      height: 44,
+      height: Responsive.isTablet(context) ? 56 : 44,
       child: Material(
         color: color.withValues(alpha: 0.2),
         borderRadius: RadiiBR.xs,
@@ -173,9 +181,18 @@ class CustomKeyboard extends ConsumerWidget {
             onTap();
           },
           borderRadius: RadiiBR.xs,
-          child: Center(
-            child: Icon(icon, color: color, size: 20),
-          ), // Increased icon size
+          child: Semantics(
+            label: label,
+            button: true,
+            enabled: true,
+            child: Center(
+              child: Icon(
+                icon,
+                color: color,
+                size: Responsive.getIconSize(context),
+              ),
+            ),
+          ),
         ),
       ),
     );
@@ -207,9 +224,15 @@ class _KeyButtonState extends State<_KeyButton> {
     final theme = Theme.of(context);
     final gameColors = theme.gameColors;
     final screenWidth = MediaQuery.of(context).size.width;
+    final isCompact = Responsive.isCompact(context);
+    final isTablet = Responsive.isTablet(context);
 
-    final availableWidth = screenWidth - 90;
-    final keyWidth = (availableWidth / widget.maxKeys).clamp(26.0, 42.0);
+    final availableWidth = screenWidth - (isCompact ? 16 : 90);
+    final keyWidth = (availableWidth / widget.maxKeys).clamp(
+      26.0,
+      isTablet ? 64.0 : 42.0,
+    );
+    final keyHeight = isTablet ? 56.0 : 44.0;
 
     // Background color with highlight support
     Color backgroundColor;
@@ -238,7 +261,7 @@ class _KeyButtonState extends State<_KeyButton> {
                 duration: AnimDurations.micro,
                 margin: const EdgeInsets.symmetric(horizontal: 1, vertical: 2),
                 width: keyWidth,
-                height: 44,
+                height: keyHeight,
                 transform: _isPressed
                     ? (Matrix4.identity()..scale(0.95))
                     : Matrix4.identity(),
@@ -269,7 +292,10 @@ class _KeyButtonState extends State<_KeyButton> {
                     widget.letter,
                     style: theme.textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.bold,
-                      fontSize: keyWidth > 32 ? 15 : 13,
+                      fontSize: Responsive.getFontSize(
+                        context,
+                        keyWidth > 32 ? 15 : 13,
+                      ),
                       color: widget.isHighlighted
                           ? gameColors
                                 .correct // Correct color when highlighted

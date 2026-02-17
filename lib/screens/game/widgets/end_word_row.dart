@@ -38,9 +38,29 @@ class EndWordRow extends StatelessWidget {
     final theme = Theme.of(context);
     final wordLength = level.startWord.length;
 
-    return GestureDetector(
-      onTap: !isLocked && !isSolved ? onSelect : null,
-      child: Container(
+    String semanticsLabel;
+    if (isLocked) {
+      semanticsLabel =
+          isTop
+              ? 'Start word locked. Solve middle words first.'
+              : 'End word locked. Solve middle words first.';
+    } else if (isSolved) {
+      semanticsLabel =
+          isTop ? 'Start word $word solved.' : 'End word $word solved.';
+    } else {
+      semanticsLabel =
+          isTop
+              ? 'Start word slot, length $wordLength. Double tap to guess.'
+              : 'End word slot, length $wordLength. Double tap to guess.';
+    }
+
+    return Semantics(
+      label: semanticsLabel,
+      button: !isLocked && !isSolved,
+      selected: isSelected,
+      child: GestureDetector(
+        onTap: !isLocked && !isSolved ? onSelect : null,
+        child: Container(
         padding: const EdgeInsets.all(Spacing.xs),
         decoration: BoxDecoration(
           color: isLocked

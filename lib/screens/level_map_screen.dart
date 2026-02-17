@@ -10,6 +10,7 @@ import 'package:crossclimber/theme/border_radius.dart';
 import 'package:crossclimber/theme/spacing.dart';
 import 'package:crossclimber/screens/game_screen.dart';
 import 'package:crossclimber/widgets/common_app_bar.dart';
+import 'package:crossclimber/theme/responsive.dart';
 
 final statisticsRepositoryProvider = Provider((ref) => StatisticsRepository());
 
@@ -212,21 +213,29 @@ class _ProgressStat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final isCompact = Responsive.isCompact(context);
+
     return Column(
       children: [
-        Icon(icon, color: color, size: 28),
+        Icon(
+          icon,
+          color: color,
+          size: Responsive.getIconSize(context),
+        ),
         VerticalSpacing.xxs,
         Text(
           value,
           style: theme.textTheme.titleLarge?.copyWith(
             fontWeight: FontWeight.bold,
             color: theme.colorScheme.onPrimaryContainer,
+            fontSize: isCompact ? 18 : null,
           ),
         ),
         Text(
           label,
           style: theme.textTheme.bodySmall?.copyWith(
             color: theme.colorScheme.onPrimaryContainer.withValues(alpha: 0.8),
+            fontSize: isCompact ? 10 : null,
           ),
         ),
       ],
@@ -258,6 +267,7 @@ class _LevelCard extends StatelessWidget {
     final theme = Theme.of(context);
     final gameColors = theme.gameColors;
     final stars = levelStats?.bestStars ?? 0;
+    final isCompact = Responsive.isCompact(context);
 
     return Material(
       color: Colors.transparent,
@@ -304,7 +314,7 @@ class _LevelCard extends StatelessWidget {
                 Icon(
                   Icons.lock,
                   color: theme.colorScheme.outline.withValues(alpha: 0.5),
-                  size: 36,
+                  size: isCompact ? 28 : 36,
                 )
               else
                 Hero(
@@ -316,6 +326,7 @@ class _LevelCard extends StatelessWidget {
                       style: theme.textTheme.headlineMedium?.copyWith(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
+                        fontSize: isCompact ? 24 : null,
                         shadows: [
                           Shadow(
                             color: Colors.black.withValues(alpha: 0.5),
@@ -330,11 +341,6 @@ class _LevelCard extends StatelessWidget {
 
               VerticalSpacing.xxs,
 
-              // Difficulty indicator
-              // if (isUnlocked)
-              //   Text(difficulty, style: const TextStyle(fontSize: 12)),
-              VerticalSpacing.xs,
-
               // Stars earned
               if (isCompleted && stars > 0) ...[
                 Row(
@@ -346,7 +352,7 @@ class _LevelCard extends StatelessWidget {
                       color: isFilled
                           ? gameColors.star
                           : Colors.white.withValues(alpha: 0.5),
-                      size: 16,
+                      size: isCompact ? 12 : 16,
                     );
                   }),
                 ),
@@ -354,9 +360,9 @@ class _LevelCard extends StatelessWidget {
                     levelStats!.bestScore > 0) ...[
                   VerticalSpacing.xxs,
                   Container(
-                    padding: const EdgeInsets.symmetric(
+                    padding: EdgeInsets.symmetric(
                       horizontal: Spacing.xs,
-                      vertical: Spacing.xxs + 1,
+                      vertical: isCompact ? 2 : Spacing.xxs + 1,
                     ),
                     decoration: BoxDecoration(
                       color: gameColors.star.withValues(alpha: 0.2),
@@ -372,13 +378,13 @@ class _LevelCard extends StatelessWidget {
                         Icon(
                           Icons.emoji_events,
                           color: gameColors.star,
-                          size: 12,
+                          size: isCompact ? 10 : 12,
                         ),
                         HorizontalSpacing.xxs,
                         Text(
                           '${levelStats!.bestScore}',
                           style: TextStyle(
-                            fontSize: 11,
+                            fontSize: isCompact ? 9 : 11,
                             fontWeight: FontWeight.bold,
                             color: gameColors.star,
                           ),
@@ -394,7 +400,7 @@ class _LevelCard extends StatelessWidget {
                     Icon(
                       Icons.check_circle,
                       color: Colors.white.withValues(alpha: 0.9),
-                      size: 16,
+                      size: isCompact ? 12 : 16,
                     ),
                   ],
                 ),
@@ -404,9 +410,9 @@ class _LevelCard extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: Spacing.xxs),
                   child: Container(
-                    padding: const EdgeInsets.symmetric(
+                    padding: EdgeInsets.symmetric(
                       horizontal: Spacing.xs + Spacing.xxs,
-                      vertical: Spacing.xxs,
+                      vertical: isCompact ? 2 : Spacing.xxs,
                     ),
                     decoration: BoxDecoration(
                       color: Colors.black.withValues(alpha: 0.3),
@@ -415,12 +421,16 @@ class _LevelCard extends StatelessWidget {
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        const Icon(Icons.timer, size: 10, color: Colors.white),
+                        Icon(
+                          Icons.timer,
+                          size: isCompact ? 9 : 10,
+                          color: Colors.white,
+                        ),
                         HorizontalSpacing.xxs,
                         Text(
                           _formatTime(levelStats!.bestTime!),
-                          style: const TextStyle(
-                            fontSize: 10,
+                          style: TextStyle(
+                            fontSize: isCompact ? 9 : 10,
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                           ),

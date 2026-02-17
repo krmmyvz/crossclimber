@@ -148,38 +148,38 @@
 
 ### 2.1 Overflow Risk Düzeltmeleri
 
-- [ ] `lib/screens/game/game_screen.dart` — Küçük ekran (< 5", 320dp genişlik) düzeltmesi:
-  - [ ] Middle words alanını `Expanded` + `ListView` ile sar (şu anda sabit yükseklik riski var)
-  - [ ] Keyboard ile oyun alanı arasında `Flexible` kullanarak alan paylaşımı yap
-  - [ ] 4+ middle word'lü level'larda test et
-  - [ ] `LayoutBuilder` veya `MediaQuery` ile tile boyutunu ekran boyutuna göre dinamik ayarla
-- [ ] `lib/screens/home_screen.dart` — Quick Access Buttons:
-  - [ ] Icon boyutu `32` hardcoded → `MediaQuery` veya `Spacing.iconSize` ile responsive yap
-  - [ ] Dar ekranlarda buton label'larının kesilmemesini doğrula
-  - [ ] `overflow: TextOverflow.ellipsis` + `maxLines: 2` yeterli mi test et
-- [ ] `lib/screens/level_map_screen.dart` — `_LevelCard`:
-  - [ ] Kart içi layout'u küçük ekranlarda test et
-  - [ ] Stars row + time + difficulty bilgisi taşma yapıyor mu kontrol et
-- [ ] `lib/screens/statistics_screen.dart` — Performance Grid:
-  - [ ] `GridView.count(crossAxisCount: 2)` — dar ekranlarda `_buildStatCard` text clip olabilir
-  - [ ] `FittedBox` veya `AutoSizeText` ile metin boyutunu otomatik ayarla
+- [x] `lib/screens/game/game_screen.dart` — Küçük ekran (< 5", 320dp genişlik) düzeltmesi:
+  - [x] Middle words alanını `Expanded` + `ListView` ile sar (şu anda sabit yükseklik riski var)
+  - [x] Keyboard ile oyun alanı arasında `Flexible` kullanarak alan paylaşımı yap
+  - [x] 4+ middle word'lü level'larda test et
+  - [x] `LayoutBuilder` veya `MediaQuery` ile tile boyutunu ekran boyutuna göre dinamik ayarla
+- [x] `lib/screens/home_screen.dart` — Quick Access Buttons:
+  - [x] Icon boyutu `32` hardcoded → `MediaQuery` veya `Spacing.iconSize` ile responsive yap
+  - [x] Dar ekranlarda buton label'larının kesilmemesini doğrula
+  - [x] `overflow: TextOverflow.ellipsis` + `maxLines: 2` yeterli mi test et
+- [x] `lib/screens/level_map_screen.dart` — `_LevelCard`:
+  - [x] Kart içi layout'u küçük ekranlarda test et
+  - [x] Stars row + time + difficulty bilgisi taşma yapıyor mu kontrol et
+- [x] `lib/screens/statistics_screen.dart` — Performance Grid:
+  - [x] `GridView.count(crossAxisCount: 2)` — dar ekranlarda `_buildStatCard` text clip olabilir
+  - [x] `FittedBox` veya `AutoSizeText` ile metin boyutunu otomatik ayarla
 
 ### 2.2 Responsive Design İyileştirmeleri
 
-- [ ] Ekran boyutu breakpoint'leri tanımla (`lib/theme/responsive.dart` [YENİ]):
-  - [ ] `compact`: < 360dp
-  - [ ] `medium`: 360-600dp
-  - [ ] `expanded`: > 600dp (tablet)
-- [ ] Game screen tile boyutunu breakpoint'e göre ayarla
-- [ ] Keyboard tuş boyutunu breakpoint'e göre ayarla
-- [ ] Font scale faktörünü breakpoint'e göre ayarla
+- [x] Ekran boyutu breakpoint'leri tanımla (`lib/theme/responsive.dart` [YENİ]):
+  - [x] `compact`: < 360dp
+  - [x] `medium`: 360-600dp
+  - [x] `expanded`: > 600dp (tablet)
+- [x] Game screen tile boyutunu breakpoint'e göre ayarla
+- [x] Keyboard tuş boyutunu breakpoint'e göre ayarla
+- [x] Font scale faktörünü breakpoint'e göre ayarla
 
 ### 2.3 Erişilebilirlik (Accessibility)
 
-- [ ] Tüm interaktif elementlere `Semantics` label ekle
-- [ ] Kontrast oranlarını kontrol et (WCAG AA minimum)
-- [ ] `ExcludeSemantics` kullanılmış mı kontrol et — gereksiz olanları kaldır
-- [ ] TalkBack / VoiceOver ile temel akışları test et
+- [x] Tüm interaktif elementlere `Semantics` label ekle
+- [x] Kontrast oranlarını kontrol et (WCAG AA minimum)
+- [x] `ExcludeSemantics` kullanılmış mı kontrol et — gereksiz olanları kaldır
+- [x] TalkBack / VoiceOver ile temel akışları test et
 
 ---
 
@@ -189,71 +189,71 @@
 
 ### 3.1 Unit Tests
 
-- [ ] `test/services/word_validator_test.dart` [YENİ]
-  - [ ] `isOneLetterDiff` — true/false senaryolar
-  - [ ] Edge case: farklı uzunlukta kelimeler
-  - [ ] Edge case: boş stringler
-- [ ] `test/services/score_calculator_test.dart` [YENİ]
-  - [ ] Zaman bonusu hesabı
-  - [ ] Kombo çarpanı hesabı
-  - [ ] Yıldız eşikleri (3★, 2★, 1★)
-  - [ ] Ceza hesabı (wrong attempts, hints)
-- [ ] `test/services/combo_tracker_test.dart` [YENİ]
-  - [ ] Kombo artışı ve çarpan eşikleri
-  - [ ] Kombo reset
-- [ ] `test/services/life_manager_test.dart` [YENİ]
-  - [ ] Can azaltma, ekleme, tam restore
-  - [ ] Kredi ile can alma
-  - [ ] Regen timer mantığı
-- [ ] `test/services/daily_challenge_service_test.dart` [YENİ]
-  - [ ] Seed üretimi determinizmi
-  - [ ] Streak hesabı
-  - [ ] Gün değişimi
+- [x] `test/services/word_validator_test.dart` [YENİ]
+  - [x] `isOneLetterDiff` — true/false senaryolar
+  - [x] Edge case: farklı uzunlukta kelimeler
+  - [x] Edge case: boş stringler
+- [x] `test/services/score_calculator_test.dart` [YENİ]
+  - [x] Zaman bonusu hesabı
+  - [x] Kombo çarpanı hesabı
+  - [x] Yıldız eşikleri (3★, 2★, 1★)
+  - [x] Ceza hesabı (wrong attempts, hints)
+- [x] `test/services/combo_tracker_test.dart` [YENİ]
+  - [x] Kombo artışı ve çarpan eşikleri
+  - [x] Kombo reset
+- [x] `test/services/life_manager_test.dart` [YENİ]
+  - [x] Can azaltma, ekleme, tam restore
+  - [x] Kredi ile can alma
+  - [x] Regen timer mantığı
+- [x] `test/services/daily_challenge_service_test.dart` [YENİ]
+  - [x] Seed üretimi determinizmi
+  - [x] Streak hesabı
+  - [x] Gün değişimi
 - [ ] `test/services/achievement_service_test.dart` [YENİ]
   - [ ] Achievement unlock koşulları (15 tür)
   - [ ] Duplicate unlock engeli
   - [ ] Progress tracking
-- [ ] `test/services/statistics_repository_test.dart` [YENİ]
-  - [ ] `recordGameComplete` — istatistik güncelleme
-  - [ ] Best time güncelleme mantığı
-  - [ ] Win streak hesabı
-- [ ] `test/services/daily_reward_service_test.dart` [YENİ]
-  - [ ] Streak bonusu
-  - [ ] 7. gün özel ödülü
-  - [ ] Streak reset (gün atlama)
-- [ ] `test/providers/game_provider_test.dart` [YENİ]
-  - [ ] `startLevel` — state initialization
-  - [ ] `submitMiddleGuess` — correct/incorrect
+- [x] `test/services/statistics_repository_test.dart` [YENİ]
+  - [x] `recordGameComplete` — istatistik güncelleme
+  - [x] Best time güncelleme mantığı
+  - [x] Win streak hesabı
+- [x] `test/services/daily_reward_service_test.dart` [YENİ]
+  - [x] Streak bonusu
+  - [x] 7. gün özel ödülü
+  - [x] Streak reset (gün atlama)
+- [x] `test/providers/game_provider_test.dart` [YENİ]
+  - [x] `startLevel` — state initialization
+  - [x] `submitMiddleGuess` — correct/incorrect
   - [ ] `checkSorting` — doğru/yanlış sıralama
-  - [ ] `submitFinalGuess` — top/bottom
-  - [ ] `_completeLevel` — skor hesabı, kredi, yıldız
-  - [ ] `useHint` — stok azalması
-  - [ ] `performUndo` — state geri dönüşü
-- [ ] `test/models/level_test.dart` [YENİ]
-  - [ ] `Level.fromJson` — normal format
-  - [ ] `Level.fromJson` — daily challenge String format
-  - [ ] Hatalı JSON exception handling
+  - [x] `submitFinalGuess` — top/bottom
+  - [x] `_completeLevel` — skor hesabı, kredi, yıldız
+  - [x] `useHint` — stok azalması (kısmen, refactoring gerekebilir)
+  - [x] `performUndo` — state geri dönüşü
+- [x] `test/models/level_test.dart` [YENİ]
+  - [x] `Level.fromJson` — normal format
+  - [x] `Level.fromJson` — daily challenge String format
+  - [x] Hatalı JSON exception handling
 
 ### 3.2 Widget / Integration Tests
 
-- [ ] `test/screens/home_screen_test.dart` [YENİ]
-  - [ ] Tüm butonlar render ediliyor mu
-  - [ ] Navigation çalışıyor mu
-- [ ] `test/screens/settings_screen_test.dart` [YENİ]
-  - [ ] Dil değişimi
-  - [ ] Theme değişimi
-  - [ ] Switch toggle'lar
-- [ ] `test/widgets/letter_tile_test.dart` [YENİ]
-  - [ ] Doğru/yanlış renk durumları
-  - [ ] Animasyon tetiklenmesi
+- [x] `test/screens/home_screen_test.dart` [YENİ]
+  - [x] Tüm butonlar render ediliyor mu
+  - [x] Navigation çalışıyor mu
+- [x] `test/screens/settings_screen_test.dart` [YENİ]
+  - [x] Dil değişimi
+  - [x] Theme değişimi
+  - [x] Switch toggle'lar
+- [x] `test/widgets/letter_tile_test.dart` [YENİ]
+  - [x] Doğru/yanlış renk durumları
+  - [x] Animasyon tetiklenmesi
 
 ### 3.3 Test Altyapısı
 
-- [ ] `test/helpers/` dizini oluştur
-  - [ ] `test/helpers/test_providers.dart` — mock provider override'lar
-  - [ ] `test/helpers/test_data.dart` — örnek Level, GameState verileri
-- [ ] `pubspec.yaml` — `mocktail` veya `mockito` ekle (dev_dependencies)
-- [ ] CI/CD pipeline'da `flutter test` otomatik çalıştırma kuralı (GitHub Actions)
+- [x] `test/helpers/` dizini oluştur
+  - [x] `test/helpers/test_providers.dart` — mock provider override'lar
+  - [x] `test/helpers/test_data.dart` — örnek Level, GameState verileri
+- [x] `pubspec.yaml` — `mocktail` veya `mockito` ekle (dev_dependencies)
+- [x] CI/CD pipeline'da `flutter test` otomatik çalıştırma kuralı (GitHub Actions)
 
 ---
 

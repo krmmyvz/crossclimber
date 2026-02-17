@@ -24,6 +24,7 @@ import 'package:crossclimber/screens/game/widgets/end_word_row.dart';
 import 'package:crossclimber/screens/game/widgets/game_keyboard_section.dart';
 import 'package:crossclimber/screens/game/widgets/hint_quick_access_bar.dart';
 import 'package:crossclimber/screens/game/widgets/clue_display.dart';
+import 'package:crossclimber/theme/responsive.dart';
 
 class GameScreen extends ConsumerStatefulWidget {
   final Level level;
@@ -373,11 +374,9 @@ class _GameScreenState extends ConsumerState<GameScreen>
         Expanded(
           child: LayoutBuilder(
             builder: (context, constraints) {
-              final availableWidth = constraints.maxWidth - 32;
-              final maxWordLength = level.startWord.length;
-              final tileSize = (availableWidth / (maxWordLength + 1)).clamp(
-                20.0,
-                32.0,
+              final tileSize = Responsive.getTileSize(
+                context,
+                level.startWord.length,
               );
 
               return SingleChildScrollView(
