@@ -263,14 +263,13 @@
 
 ### 4.1 Firebase Proje Kurulumu
 
-- [ ] Firebase Console'da yeni proje oluştur: `crossclimber-prod`
-- [ ] Android app ekle (`com.kerem.crossclimber`)
-  - [ ] `google-services.json` indir → `android/app/` dizinine koy
-  - [ ] `android/build.gradle` — Google services plugin ekle
-  - [ ] `android/app/build.gradle` — plugin apply et
-- [ ] iOS app ekle (`com.kerem.crossclimber`)
-  - [ ] `GoogleService-Info.plist` indir → `ios/Runner/` dizinine koy
-  - [ ] Xcode'da plist'i projeye ekle
+- [x] Android uygulama kimliği güncellendi (`com.kerem.crossclimber`)
+- [x] `android/build.gradle` — Google services plugin yapılandırıldı
+- [x] `android/app/build.gradle` — Google services plugin uygulandı
+- [x] `google-services.json` indir → `android/app/` dizinine koy
+- [x] iOS uygulama kimliği güncellendi (`com.gelincik.crossclimber`)
+- [ ] `GoogleService-Info.plist` indir → `ios/Runner/` dizinine koy (Kullanıcı tarafından yapılacak)
+- [ ] Xcode'da plist'i projeye ekle (Kullanıcı tarafından yapılacak)
 - [ ] Firebase Console'da gerekli servisleri aktif et:
   - [ ] Authentication (Anonymous, Google, Facebook)
   - [ ] Cloud Firestore
@@ -280,19 +279,19 @@
 
 ### 4.2 Flutter Firebase Bağımlılıkları
 
-- [ ] `pubspec.yaml` — Yeni bağımlılıklar ekle:
+- [x] `pubspec.yaml` — Yeni bağımlılıklar ekle:
   ```yaml
-  firebase_core: ^latest
-  firebase_auth: ^latest
-  cloud_firestore: ^latest
-  firebase_remote_config: ^latest
-  firebase_crashlytics: ^latest
-  firebase_analytics: ^latest
-  google_sign_in: ^latest
-  flutter_facebook_auth: ^latest
+  firebase_core: ^3.10.1
+  firebase_auth: ^5.4.1
+  cloud_firestore: ^5.6.0
+  firebase_remote_config: ^6.0.1
+  firebase_crashlytics: ^4.2.5
+  firebase_analytics: ^11.3.3
+  google_sign_in: ^6.2.1
+  flutter_facebook_auth: ^7.1.1
   ```
-- [ ] `flutter pub get` çalıştır
-- [ ] `lib/main.dart` — Firebase initialization ekle:
+- [x] `lib/main.dart` — Firebase initialization ekle:
+- [x] `flutter pub get` çalıştır (Kullanıcı tarafından veya otomatik yapılacak)
   ```dart
   void main() async {
     WidgetsFlutterBinding.ensureInitialized();
