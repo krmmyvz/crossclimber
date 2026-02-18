@@ -18,6 +18,7 @@ import 'package:crossclimber/services/game_timer_service.dart';
 import 'package:crossclimber/services/hint_manager.dart';
 import 'package:crossclimber/providers/settings_provider.dart';
 
+import 'package:crossclimber/services/analytics_service.dart';
 import 'package:crossclimber/services/remote_config_service.dart';
 
 // ... existing code ...
@@ -63,6 +64,7 @@ class GameNotifier extends Notifier<GameState> {
   late final StatisticsRepository _statisticsRepo;
   late final AchievementService _achievementService;
   late final DailyChallengeService _dailyChallengeService;
+  late final AnalyticsService _analyticsService;
 
   // Extracted domain services
   final _wordValidator = WordValidator();
@@ -85,6 +87,7 @@ class GameNotifier extends Notifier<GameState> {
     _statisticsRepo = ref.read(statisticsRepositoryProvider);
     _achievementService = ref.read(achievementServiceProvider);
     _dailyChallengeService = ref.read(dailyChallengeServiceProvider);
+    _analyticsService = ref.read(analyticsServiceProvider);
 
     _sortingEngine = SortingEngine(_wordValidator);
     final progressRepo = ref.read(progressRepositoryProvider);
@@ -152,6 +155,8 @@ class GameNotifier extends Notifier<GameState> {
         timeElapsed: state.timeElapsed + const Duration(seconds: 1),
       );
     });
+    
+    _analyticsService.logLevelStart(level.id, level.difficulty.toString());
     _startLifeRegenTimer();
   }
 
@@ -186,6 +191,7 @@ class GameNotifier extends Notifier<GameState> {
     );
     if (result.lives == 0) {
       state = state.copyWith(isPaused: true);
+      _analyticsService.logLevelFail(state.currentLevel?.id ?? 0, 'out_of_lives');
     }
   }
 
@@ -257,6 +263,7 @@ class GameNotifier extends Notifier<GameState> {
       hintsUsed: result.hintsUsed,
     );
 
+    _analyticsService.logHintUsed('basic_reveal');
     _soundService.play(SoundEffect.hint);
     _hapticService.trigger(HapticType.light);
 
@@ -476,6 +483,13 @@ class GameNotifier extends Notifier<GameState> {
       creditsEarned: creditReward,
     );
 
+    _analyticsService.logLevelComplete(
+      currentLevelId,
+      state.starsEarned,
+      state.timeElapsed,
+      finalScore,
+    );
+
     _soundService.play(SoundEffect.complete);
     _hapticService.trigger(HapticType.success);
 
@@ -551,6 +565,7 @@ class GameNotifier extends Notifier<GameState> {
       temporaryHighlightedKeys: result.highlightedKeys,
     );
 
+    _analyticsService.logHintUsed(hintType);
     _soundService.play(SoundEffect.hint);
     _hapticService.trigger(HapticType.light);
 
