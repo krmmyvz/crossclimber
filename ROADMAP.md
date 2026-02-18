@@ -268,7 +268,7 @@
 - [x] `android/app/build.gradle` — Google services plugin uygulandı
 - [x] `google-services.json` indir → `android/app/` dizinine koy
 - [x] iOS uygulama kimliği güncellendi (`com.gelincik.crossclimber`)
-- [ ] `GoogleService-Info.plist` indir → `ios/Runner/` dizinine koy (Kullanıcı tarafından yapılacak)
+- [x] `GoogleService-Info.plist` indir → `ios/Runner/` dizinine koy
 - [ ] Xcode'da plist'i projeye ekle (Kullanıcı tarafından yapılacak)
 - [ ] Firebase Console'da gerekli servisleri aktif et:
   - [ ] Authentication (Anonymous, Google, Facebook)
@@ -303,34 +303,18 @@
 
 ### 4.3 Remote Config — Static Level Data Taşıma
 
-- [ ] Firebase Console → Remote Config'e key'leri ekle:
-  - [ ] `levels_en_v1` — `assets/levels/levels_en.json` içeriği
-  - [ ] `levels_tr_v1` — `assets/levels/levels_tr.json` içeriği
-  - [ ] `daily_levels_en_v1` — `assets/levels/daily_levels_en.json` içeriği
-  - [ ] `daily_levels_tr_v1` — `assets/levels/daily_levels_tr.json` içeriği
-  - [ ] `economy_config` — Ekonomi parametreleri JSON:
-    ```json
-    {
-      "dailyLoginReward": 20,
-      "dailyChallengeReward": 50,
-      "adRewardCredits": 25,
-      "lifeCost": 50,
-      "allLivesCost": 100,
-      "maxAdsPerDay": 5
-    }
-    ```
-  - [ ] `content_version` — `"1.0.0"` (level güncelleme takibi)
-- [ ] `lib/services/remote_config_service.dart` [YENİ]:
-  - [ ] `initialize()` — fetch & activate
-  - [ ] `getLevels(String languageCode)` — Remote Config'den level listesi
-  - [ ] `getDailyLevels(String languageCode)` — günlük challenge level listesi
-  - [ ] `getEconomyConfig()` — ekonomi parametreleri
-  - [ ] `getContentVersion()` — versiyon kontrolü
-  - [ ] Fallback: Remote Config hata verirse local asset'ten oku (offline desteği)
-- [ ] `lib/services/level_repository.dart` — GÜNCELLE:
-  - [ ] Önce Remote Config'den oku
-  - [ ] Remote Config başarısızsa local JSON'dan fallback oku
-  - [ ] Cache mekanizması: 12 saat geçerli
+- [ ] Firebase Console → Remote Config'e key'leri ekle: (Kullanıcı tarafından yapılacak)
+- [x] `lib/services/remote_config_service.dart` [YENİ]:
+  - [x] `initialize()` — fetch & activate
+  - [x] `getLevels(String languageCode)` — Remote Config'den level listesi
+  - [x] `getDailyLevels(String languageCode)` — günlük challenge level listesi
+  - [x] `getEconomyConfig()` — ekonomi parametreleri
+  - [x] `getContentVersion()` — versiyon kontrolü
+  - [x] Fallback: Remote Config hata verirse local asset'ten oku (offline desteği)
+- [x] `lib/services/level_repository.dart` — GÜNCELLE:
+  - [x] Önce Remote Config'den oku
+  - [x] Remote Config başarısızsa local JSON'dan fallback oku
+  - [x] Cache mekanizması: 12 saat geçerli
 - [ ] Test: Uçak modunda uygulama açıldığında local fallback çalışıyor mu?
 
 ### 4.4 Crashlytics & Analytics Kurulumu

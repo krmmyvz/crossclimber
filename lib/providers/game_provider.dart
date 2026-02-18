@@ -18,11 +18,19 @@ import 'package:crossclimber/services/game_timer_service.dart';
 import 'package:crossclimber/services/hint_manager.dart';
 import 'package:crossclimber/providers/settings_provider.dart';
 
-// Re-export game state for convenience
+import 'package:crossclimber/services/remote_config_service.dart';
+
+// ... existing code ...
+
 export 'game_state.dart';
 import 'package:crossclimber/providers/game_state.dart';
 
-final levelRepositoryProvider = Provider((ref) => LevelRepository());
+final remoteConfigServiceProvider = Provider((ref) => RemoteConfigService());
+
+final levelRepositoryProvider = Provider((ref) {
+  final remoteConfig = ref.watch(remoteConfigServiceProvider);
+  return LevelRepository(remoteConfig);
+});
 final progressRepositoryProvider = Provider((ref) => ProgressRepository());
 
 final unlockedLevelProvider = FutureProvider<int>((ref) async {

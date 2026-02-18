@@ -11,6 +11,7 @@ import 'package:crossclimber/theme/app_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
+import 'package:crossclimber/services/remote_config_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,6 +24,9 @@ void main() async {
       return true;
     };
   }
+
+  final remoteConfigService = RemoteConfigService();
+  await remoteConfigService.initialize();
   
   runApp(const ProviderScope(child: CrossclimbApp()));
 }
