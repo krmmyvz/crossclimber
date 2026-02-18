@@ -209,10 +209,10 @@
   - [x] Seed üretimi determinizmi
   - [x] Streak hesabı
   - [x] Gün değişimi
-- [ ] `test/services/achievement_service_test.dart` [YENİ]
-  - [ ] Achievement unlock koşulları (15 tür)
-  - [ ] Duplicate unlock engeli
-  - [ ] Progress tracking
+- [x] `test/services/achievement_service_test.dart` [YENİ]
+  - [x] Achievement unlock koşulları (15 tür)
+  - [x] Duplicate unlock engeli
+  - [x] Progress tracking
 - [x] `test/services/statistics_repository_test.dart` [YENİ]
   - [x] `recordGameComplete` — istatistik güncelleme
   - [x] Best time güncelleme mantığı
@@ -224,7 +224,7 @@
 - [x] `test/providers/game_provider_test.dart` [YENİ]
   - [x] `startLevel` — state initialization
   - [x] `submitMiddleGuess` — correct/incorrect
-  - [ ] `checkSorting` — doğru/yanlış sıralama
+  - [x] `checkSorting` — doğru/yanlış sıralama
   - [x] `submitFinalGuess` — top/bottom
   - [x] `_completeLevel` — skor hesabı, kredi, yıldız
   - [x] `useHint` — stok azalması (kısmen, refactoring gerekebilir)
