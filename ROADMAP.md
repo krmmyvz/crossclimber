@@ -71,9 +71,9 @@
 
 ---
 
-## Phase 5: Authentication & Account System [SIRADAKİ]
+## Phase 5: Authentication & Account System [DEVAM EDİYOR]
 
-- [ ] `lib/services/auth_service.dart` [YENİ]
-- [ ] Auth UI ve Giriş ekranları (Google, Facebook, Anonymous)
-- [ ] İlk açılış akışı (Automatic Anonymous login)
-- [ ] Hesap bağlama (Link account) mantığı
+- [x] `lib/services/auth_service.dart` [YENİ]: Anonim giriş ve hesap bağlama (Google/FB) fonksiyonları.
+- [x] `main.dart` güncellemesi: Uygulama açılışında otomatik anonim giriş.
+- [ ] `SettingsScreen` güncellemesi: Kullanıcı bilgilerini görme ve hesap bağlama seçenekleri.
+- [ ] İlerleme koruma: Anonim hesabı Google/FB ile bağlarken verilerin senkronize edilmesi.

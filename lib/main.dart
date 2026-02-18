@@ -7,10 +7,12 @@ import 'package:crossclimber/screens/home_screen.dart';
 import 'package:crossclimber/providers/locale_provider.dart';
 import 'package:crossclimber/providers/settings_provider.dart';
 import 'package:crossclimber/theme/app_theme.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:crossclimber/services/remote_config_service.dart';
+import 'package:crossclimber/services/auth_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,6 +27,12 @@ void main() async {
       FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
       return true;
     };
+  }
+
+  // Initialize Auth
+  final authService = AuthService();
+  if (authService.currentUser == null) {
+    await authService.signInAnonymously();
   }
 
   final remoteConfigService = RemoteConfigService();
