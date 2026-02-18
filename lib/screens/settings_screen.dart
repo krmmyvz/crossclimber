@@ -6,20 +6,79 @@ import 'package:crossclimber/providers/settings_provider.dart';
 import 'package:crossclimber/theme/spacing.dart';
 import 'package:crossclimber/widgets/common_app_bar.dart';
 
+import 'package:crossclimber/services/auth_service.dart';
+
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
     final currentLocale = ref.watch(localeProvider);
     final settings = ref.watch(settingsProvider);
     final settingsNotifier = ref.read(settingsProvider.notifier);
+    final authState = ref.watch(authStateProvider);
+    final authService = ref.read(authServiceProvider);
 
     return Scaffold(
       appBar: CommonAppBar(title: l10n.settings, type: AppBarType.standard),
       body: ListView(
         children: [
+          // Profile Section
+          _SettingsSection(
+            title: l10n.profile,
+            children: [
+              authState.when(
+                data: (user) {
+                  final isAnonymous = user?.isAnonymous ?? true;
+                  return Column(
+                    children: [
+                      ListTile(
+                        title: Text(
+                          isAnonymous
+                              ? l10n.guestUser
+                              : l10n.loggedInAs(user?.email ?? ''),
+                        ),
+                        subtitle: isAnonymous ? Text(l10n.linkAccountDesc) : null,
+                        leading: CircleAvatar(
+                          backgroundColor: theme.colorScheme.primaryContainer,
+                          child: Icon(
+                            isAnonymous ? Icons.person_outline : Icons.person,
+                            color: theme.colorScheme.primary,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: Spacing.m),
+                        child: SizedBox(
+                          width: double.infinity,
+                          child: isAnonymous
+                              ? ElevatedButton.icon(
+                                  onPressed: () => authService.linkWithGoogle(),
+                                  icon: const Icon(Icons.login),
+                                  label: Text(l10n.googleSignIn),
+                                )
+                              : TextButton.icon(
+                                  onPressed: () => authService.signOut(),
+                                  icon: const Icon(Icons.logout),
+                                  label: Text(l10n.signOut),
+                                  style: TextButton.styleFrom(
+                                    foregroundColor: theme.colorScheme.error,
+                                  ),
+                                ),
+                        ),
+                      ),
+                    ],
+                  );
+                },
+                loading: () => const Center(child: CircularProgressIndicator()),
+                error: (err, stack) => ListTile(title: Text('Error: $err')),
+              ),
+            ],
+          ),
+          const Divider(),
+
           // Language Section
           ListTile(
             title: Text(l10n.language),

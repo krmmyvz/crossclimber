@@ -115,14 +115,28 @@
     "achievements": "Achievements",
     "statistics": "Statistics",
     "dailyChallenge": "Daily Challenge",
-    
+    "profile": "Profile",
+    "guestUser": "Guest User",
+    "loggedInAs": "Logged in as: {email}",
+    "@loggedInAs": {
+        "placeholders": {
+            "email": {
+                "type": "String"
+            }
+        }
+    },
+    "linkAccount": "Link Account",
+    "linkAccountDesc": "Link your account to save progress to the cloud.",
+    "signOut": "Sign Out",
+    "googleSignIn": "Sign in with Google",
+
     "tutorial_intro_welcome_title": "Welcome to CrossClimber!",
     "tutorial_intro_welcome_desc": "Learn how to play this fun word puzzle game. Connect words by changing one letter at a time!",
     "tutorial_intro_objective_title": "Game Objective",
     "tutorial_intro_objective_desc": "Your goal is to find the missing words between the START and END words. Each word differs by exactly one letter from the previous word.",
     "tutorial_intro_rule_title": "The Golden Rule",
     "tutorial_intro_rule_desc": "You can only change ONE letter at a time. For example: CAT → BAT → BAD → BED",
-    
+
     "tutorial_guess_intro_title": "Phase 1: Guessing",
     "tutorial_guess_intro_desc": "First, you need to guess all the middle words. Tap on any empty slot to start guessing.",
     "tutorial_guess_success_title": "Great Job!",
@@ -133,30 +147,30 @@
     "tutorial_guess_hints_desc": "You have 3 hints per level. Use them wisely to reveal letters or get clues when stuck.",
     "tutorial_guess_timer_title": "Beat the Clock",
     "tutorial_guess_timer_desc": "Faster completion gives more stars! Don't worry, there's no time limit.",
-    
+
     "tutorial_combo_intro_title": "Combo System!",
     "tutorial_combo_intro_desc": "Keep guessing correctly to build combos and multiply your score! Each correct answer in a row increases your multiplier.",
-    
+
     "tutorial_sort_intro_title": "Phase 2: Sorting",
     "tutorial_sort_intro_desc": "Excellent! You found all the middle words. Now arrange them in the correct order - each word must differ by only ONE letter from the next.",
     "tutorial_sort_action_title": "Real-time Validation",
     "tutorial_sort_action_desc": "Drag and reorder the words. You'll see green borders for correct positions and red for incorrect ones. When all words are green, the START and END will unlock automatically!",
-    
+
     "tutorial_final_intro_title": "Phase 3: Final Challenge",
     "tutorial_final_intro_desc": "Almost done! Now figure out what the START and END words are based on the sorted middle words.",
     "tutorial_final_start_title": "Guess the Start Word",
     "tutorial_final_start_desc": "What word comes before the first middle word? It should differ by one letter.",
     "tutorial_final_end_title": "Guess the End Word",
     "tutorial_final_end_desc": "What word comes after the last middle word? Complete the ladder!",
-    
+
     "tutorial_complete_congrats_title": "You're Ready!",
     "tutorial_complete_congrats_desc": "Congratulations! You now know how to play CrossClimber. Have fun and challenge yourself!",
-    
+
     "skipTutorial": "Skip Tutorial",
     "continueButton": "Continue",
     "showTips": "Show Tips",
     "resetTutorial": "Reset Tutorial",
-    
+
     "outOfLivesTitle": "Out of Lives!",
     "outOfLivesMessage": "You've run out of lives. Wait for regeneration or use credits to continue.",
     "nextLifeIn": "Next life in: {time}",

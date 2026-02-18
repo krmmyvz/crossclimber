@@ -75,5 +75,5 @@
 
 - [x] `lib/services/auth_service.dart` [YENİ]: Anonim giriş ve hesap bağlama (Google/FB) fonksiyonları.
 - [x] `main.dart` güncellemesi: Uygulama açılışında otomatik anonim giriş.
-- [ ] `SettingsScreen` güncellemesi: Kullanıcı bilgilerini görme ve hesap bağlama seçenekleri.
+- [x] `SettingsScreen` güncellemesi: Kullanıcı bilgilerini görme ve hesap bağlama seçenekleri.
 - [ ] İlerleme koruma: Anonim hesabı Google/FB ile bağlarken verilerin senkronize edilmesi.

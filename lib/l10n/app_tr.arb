@@ -115,6 +115,20 @@
     "achievements": "Başarımlar",
     "statistics": "İstatistikler",
     "dailyChallenge": "Günlük Challenge",
+    "profile": "Profil",
+    "guestUser": "Misafir Kullanıcı",
+    "loggedInAs": "Giriş yapıldı: {email}",
+    "@loggedInAs": {
+        "placeholders": {
+            "email": {
+                "type": "String"
+            }
+        }
+    },
+    "linkAccount": "Hesabı Bağla",
+    "linkAccountDesc": "İlerlemeni buluta kaydetmek için hesabını bağla.",
+    "signOut": "Çıkış Yap",
+    "googleSignIn": "Google ile Giriş Yap",
     
     "tutorial_intro_welcome_title": "CrossClimber'a Hoş Geldiniz!",
     "tutorial_intro_welcome_desc": "Bu eğlenceli kelime bulmaca oyununu nasıl oynayacağınızı öğrenin. Her seferde bir harf değiştirerek kelimeleri bağlayın!",
