@@ -67,6 +67,12 @@ class CrossclimbApp extends ConsumerWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: const [Locale('en'), Locale('tr')],
+      builder: (ctx, child) => MediaQuery(
+        data: MediaQuery.of(ctx).copyWith(
+          highContrast: settings.highContrast,
+        ),
+        child: child!,
+      ),
       home: const _StartupRouter(),
     );
   }

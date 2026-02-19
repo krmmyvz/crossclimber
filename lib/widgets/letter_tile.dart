@@ -80,6 +80,7 @@ class LetterTile extends StatelessWidget {
                 }
                 return Text(
                   letter.toUpperCase(),
+                  textScaler: TextScaler.noScaling,
                   style: theme.textTheme.headlineSmall?.copyWith(
                     color: textColor,
                     fontWeight: FontWeight.bold,

@@ -526,6 +526,45 @@
             "unlocked": { "type": "int" },
             "total": { "type": "int" }
         }
-    }
-}
+    },
 
+    "zoneProgress": "{completed}/{total} completed",
+    "@zoneProgress": {
+        "placeholders": {
+            "completed": { "type": "int" },
+            "total": { "type": "int" }
+        }
+    },
+    "phaseSortBanner": "Sort Now!",
+    "phaseFinalBanner": "Find Final Words!",
+    "completion3Stars": "Perfect! All stars! 🌟",
+    "completion2Stars": "Great job! 👏",
+    "completion1Star": "Not bad! Try again for more stars.",
+    "completion0Stars": "Keep going, you can do it! Try again.",
+    "completionHintSuggestion": "Tip: Use hints to improve your score.",
+    "sharePreviewTitle": "Share Result",
+    "sharePreviewCopy": "Copy",
+    "sharePreviewCopied": "Copied!",
+    "sharePreviewClose": "Close",
+    "settingsHighContrast": "High Contrast Mode",
+    "settingsHighContrastDesc": "Increase color contrast for better readability",
+    "semanticsDragInstruction": "Double tap and hold to drag and reorder",
+    "semanticsComboMultiplier": "Combo: {count} in a row, {multiplier}x multiplier",
+    "@semanticsComboMultiplier": {
+        "placeholders": {
+            "count": { "type": "int" },
+            "multiplier": { "type": "String" }
+        }
+    },
+    "semanticsLevelCard": "Level {id}, {status}, {stars} stars",
+    "@semanticsLevelCard": {
+        "placeholders": {
+            "id": { "type": "int" },
+            "status": { "type": "String" },
+            "stars": { "type": "int" }
+        }
+    },
+    "semanticsLocked": "locked",
+    "semanticsUnlocked": "unlocked",
+    "semanticsCompleted": "completed"
+}

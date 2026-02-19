@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:crossclimber/l10n/app_localizations.dart';
 import 'package:crossclimber/models/level.dart';
@@ -51,6 +52,7 @@ class _GameScreenState extends ConsumerState<GameScreen>
 
   OverlayEntry? _unlockOverlayEntry;
   OverlayEntry? _comboPopupEntry;
+  OverlayEntry? _phaseBannerEntry;
 
   @override
   void dispose() {
@@ -59,6 +61,8 @@ class _GameScreenState extends ConsumerState<GameScreen>
     _unlockOverlayEntry = null;
     _comboPopupEntry?.remove();
     _comboPopupEntry = null;
+    _phaseBannerEntry?.remove();
+    _phaseBannerEntry = null;
     WidgetsBinding.instance.removeObserver(this);
     _inputController.dispose();
     _focusNode.dispose();
@@ -82,6 +86,13 @@ class _GameScreenState extends ConsumerState<GameScreen>
           () => _unlockOverlayEntry,
           (entry) => _unlockOverlayEntry = entry,
         );
+      }
+
+      // Phase transition banners
+      if (previous == GamePhase.guessing && next == GamePhase.sorting) {
+        _showPhaseBanner(AppLocalizations.of(context)!.phaseSortBanner);
+      } else if (next == GamePhase.finalSolve) {
+        _showPhaseBanner(AppLocalizations.of(context)!.phaseFinalBanner);
       }
 
       if (next == GamePhase.guessing && ref.read(gameUIProvider).selectedRowIndex == null) {
@@ -198,6 +209,23 @@ class _GameScreenState extends ConsumerState<GameScreen>
     Future.delayed(AnimDurations.extraLong + AnimDurations.fast, () {
       if (mounted) {
         entry.remove();
+      }
+    });
+  }
+
+  void _showPhaseBanner(String text) {
+    _phaseBannerEntry?.remove();
+    _phaseBannerEntry = null;
+
+    _phaseBannerEntry = OverlayEntry(
+      builder: (ctx) => _PhaseBannerOverlay(text: text),
+    );
+    Overlay.of(context).insert(_phaseBannerEntry!);
+
+    Future.delayed(const Duration(milliseconds: 1800), () {
+      if (mounted) {
+        _phaseBannerEntry?.remove();
+        _phaseBannerEntry = null;
       }
     });
   }
@@ -575,5 +603,57 @@ class _GameScreenState extends ConsumerState<GameScreen>
         }
       });
     }
+  }
+}
+
+// ── Phase transition banner ───────────────────────────────────────────────────
+
+class _PhaseBannerOverlay extends StatelessWidget {
+  final String text;
+  const _PhaseBannerOverlay({required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Positioned(
+      top: MediaQuery.of(context).padding.top + 64,
+      left: 32,
+      right: 32,
+      child: ExcludeSemantics(
+        child: Material(
+        color: Colors.transparent,
+        child: Center(
+          child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                decoration: BoxDecoration(
+                  color: theme.colorScheme.primary,
+                  borderRadius: BorderRadius.circular(32),
+                  boxShadow: [
+                    BoxShadow(
+                      color: theme.colorScheme.primary.withValues(alpha: 0.4),
+                      blurRadius: 16,
+                      offset: const Offset(0, 4),
+                    ),
+                  ],
+                ),
+                child: Text(
+                  text,
+                  textAlign: TextAlign.center,
+                  style: theme.textTheme.titleMedium?.copyWith(
+                    color: theme.colorScheme.onPrimary,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 0.5,
+                  ),
+                ),
+              )
+              .animate()
+              .slideY(begin: -0.5, end: 0, duration: 350.ms, curve: Curves.easeOutBack)
+              .fadeIn(duration: 250.ms)
+              .then(delay: 1100.ms)
+              .fadeOut(duration: 300.ms),
+        ),
+      ),       // closes Material
+      ),       // closes ExcludeSemantics
+    );
   }
 }

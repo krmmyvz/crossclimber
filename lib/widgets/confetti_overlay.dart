@@ -14,7 +14,8 @@ class ConfettiOverlay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Align(
+    return ExcludeSemantics(
+      child: Align(
       alignment: Alignment.topCenter,
       child: ConfettiWidget(
         confettiController: controller,
@@ -33,6 +34,7 @@ class ConfettiOverlay extends StatelessWidget {
           Colors.purple,
           Colors.yellow,
         ],
+      ),
       ),
     );
   }

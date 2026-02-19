@@ -129,4 +129,55 @@ ${l10n.shareStatisticsCTA}
 
     await Share.share(text);
   }
+
+  // ── Emoji Grid ──────────────────────────────────────────────────────────────
+
+  /// Build a shareable emoji grid string.
+  static String buildEmojiGrid({
+    required int levelId,
+    required int stars,
+    required Duration time,
+    required int score,
+  }) {
+    final minutes = time.inMinutes;
+    final seconds = time.inSeconds % 60;
+    final timeStr = '$minutes:${seconds.toString().padLeft(2, '0')}';
+
+    final starRow = '⭐' * stars + '☆' * (3 - stars);
+
+    final String squareGrid;
+    switch (stars) {
+      case 3:
+        squareGrid = '🟩🟩🟩';
+      case 2:
+        squareGrid = '🟥🟨🟩';
+      case 1:
+        squareGrid = '🟥🟥🟨';
+      default:
+        squareGrid = '🟥🟥🟥';
+    }
+
+    return 'CrossClimber #$levelId\n'
+        '$starRow\n'
+        '$squareGrid\n'
+        '⏱️ $timeStr  🏆 $score\n'
+        '#CrossClimber';
+  }
+
+  /// Share result using the emoji grid format.
+  static Future<void> shareWithEmojiGrid({
+    required int levelId,
+    required int stars,
+    required Duration time,
+    required int score,
+  }) async {
+    final text = buildEmojiGrid(
+      levelId: levelId,
+      stars: stars,
+      time: time,
+      score: score,
+    );
+    await Share.share(text, subject: 'CrossClimber #$levelId');
+  }
 }
+

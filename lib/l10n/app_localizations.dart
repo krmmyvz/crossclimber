@@ -1927,6 +1927,126 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{unlocked}/{total}'**
   String homeAchievementsProgress(int unlocked, int total);
+
+  /// No description provided for @zoneProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'{completed}/{total} completed'**
+  String zoneProgress(int completed, int total);
+
+  /// No description provided for @phaseSortBanner.
+  ///
+  /// In en, this message translates to:
+  /// **'Sort Now!'**
+  String get phaseSortBanner;
+
+  /// No description provided for @phaseFinalBanner.
+  ///
+  /// In en, this message translates to:
+  /// **'Find Final Words!'**
+  String get phaseFinalBanner;
+
+  /// No description provided for @completion3Stars.
+  ///
+  /// In en, this message translates to:
+  /// **'Perfect! All stars! 🌟'**
+  String get completion3Stars;
+
+  /// No description provided for @completion2Stars.
+  ///
+  /// In en, this message translates to:
+  /// **'Great job! 👏'**
+  String get completion2Stars;
+
+  /// No description provided for @completion1Star.
+  ///
+  /// In en, this message translates to:
+  /// **'Not bad! Try again for more stars.'**
+  String get completion1Star;
+
+  /// No description provided for @completion0Stars.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep going, you can do it! Try again.'**
+  String get completion0Stars;
+
+  /// No description provided for @completionHintSuggestion.
+  ///
+  /// In en, this message translates to:
+  /// **'Tip: Use hints to improve your score.'**
+  String get completionHintSuggestion;
+
+  /// No description provided for @sharePreviewTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Share Result'**
+  String get sharePreviewTitle;
+
+  /// No description provided for @sharePreviewCopy.
+  ///
+  /// In en, this message translates to:
+  /// **'Copy'**
+  String get sharePreviewCopy;
+
+  /// No description provided for @sharePreviewCopied.
+  ///
+  /// In en, this message translates to:
+  /// **'Copied!'**
+  String get sharePreviewCopied;
+
+  /// No description provided for @sharePreviewClose.
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get sharePreviewClose;
+
+  /// No description provided for @settingsHighContrast.
+  ///
+  /// In en, this message translates to:
+  /// **'High Contrast Mode'**
+  String get settingsHighContrast;
+
+  /// No description provided for @settingsHighContrastDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Increase color contrast for better readability'**
+  String get settingsHighContrastDesc;
+
+  /// No description provided for @semanticsDragInstruction.
+  ///
+  /// In en, this message translates to:
+  /// **'Double tap and hold to drag and reorder'**
+  String get semanticsDragInstruction;
+
+  /// No description provided for @semanticsComboMultiplier.
+  ///
+  /// In en, this message translates to:
+  /// **'Combo: {count} in a row, {multiplier}x multiplier'**
+  String semanticsComboMultiplier(int count, String multiplier);
+
+  /// No description provided for @semanticsLevelCard.
+  ///
+  /// In en, this message translates to:
+  /// **'Level {id}, {status}, {stars} stars'**
+  String semanticsLevelCard(int id, String status, int stars);
+
+  /// No description provided for @semanticsLocked.
+  ///
+  /// In en, this message translates to:
+  /// **'locked'**
+  String get semanticsLocked;
+
+  /// No description provided for @semanticsUnlocked.
+  ///
+  /// In en, this message translates to:
+  /// **'unlocked'**
+  String get semanticsUnlocked;
+
+  /// No description provided for @semanticsCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'completed'**
+  String get semanticsCompleted;
 }
 
 class _AppLocalizationsDelegate

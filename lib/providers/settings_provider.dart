@@ -12,6 +12,7 @@ class SettingsState {
   final bool autoCheck;
   final bool autoSort;
   final bool useCustomKeyboard;
+  final bool highContrast;
   final String? customTheme;
 
   SettingsState({
@@ -22,6 +23,7 @@ class SettingsState {
     this.autoCheck = false,
     this.autoSort = false,
     this.useCustomKeyboard = false,
+    this.highContrast = false,
     this.customTheme,
   });
 
@@ -33,6 +35,7 @@ class SettingsState {
     bool? autoCheck,
     bool? autoSort,
     bool? useCustomKeyboard,
+    bool? highContrast,
     Object? customTheme = _customThemeSentinel,
   }) {
     return SettingsState(
@@ -43,6 +46,7 @@ class SettingsState {
       autoCheck: autoCheck ?? this.autoCheck,
       autoSort: autoSort ?? this.autoSort,
       useCustomKeyboard: useCustomKeyboard ?? this.useCustomKeyboard,
+      highContrast: highContrast ?? this.highContrast,
       customTheme: identical(customTheme, _customThemeSentinel)
           ? this.customTheme
           : customTheme as String?,
@@ -68,6 +72,7 @@ class SettingsNotifier extends Notifier<SettingsState> {
     final autoSort = prefs.getBool('autoSort') ?? false;
     final customKeyboard = prefs.getBool('customKeyboard') ?? false;
     final customTheme = prefs.getString('customTheme');
+    final highContrast = prefs.getBool('highContrast') ?? false;
 
     ThemeMode mode;
     switch (themeIndex) {
@@ -89,6 +94,7 @@ class SettingsNotifier extends Notifier<SettingsState> {
       autoCheck: autoCheck,
       autoSort: autoSort,
       useCustomKeyboard: customKeyboard,
+      highContrast: highContrast,
       customTheme: customTheme,
     );
   }
@@ -146,6 +152,12 @@ class SettingsNotifier extends Notifier<SettingsState> {
     state = state.copyWith(useCustomKeyboard: value);
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool('customKeyboard', value);
+  }
+
+  Future<void> toggleHighContrast(bool value) async {
+    state = state.copyWith(highContrast: value);
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('highContrast', value);
   }
 }
 

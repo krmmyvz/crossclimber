@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:crossclimber/l10n/app_localizations.dart';
 import 'package:crossclimber/providers/game_provider.dart';
 import 'package:crossclimber/models/level.dart';
 import 'package:crossclimber/screens/game/game_screen_widgets.dart';
@@ -130,13 +131,14 @@ class MiddleWordTile extends StatelessWidget {
       content = ReorderableDragStartListener(index: index, child: content);
     }
 
+    final l10n = AppLocalizations.of(context)!;
     String semanticsLabel;
     if (gameState.phase == GamePhase.sorting) {
-      semanticsLabel = 'Word $word. Double tap and hold to reorder.';
+      semanticsLabel = 'Word $word. ${l10n.semanticsDragInstruction}';
     } else if (isGuessed) {
-      semanticsLabel = 'Word $word, correct.';
+      semanticsLabel = 'Word $word, ${l10n.semanticsCompleted}';
     } else {
-      semanticsLabel = 'Empty word slot ${index + 1}, length $wordLength. Double tap to select.';
+      semanticsLabel = '${l10n.semanticsUnlocked}: ${l10n.semanticsLevelCard(index + 1, l10n.semanticsUnlocked, 0)}';
     }
 
     return Listener(

@@ -1027,4 +1027,73 @@ class AppLocalizationsEn extends AppLocalizations {
   String homeAchievementsProgress(int unlocked, int total) {
     return '$unlocked/$total';
   }
+
+  @override
+  String zoneProgress(int completed, int total) {
+    return '$completed/$total completed';
+  }
+
+  @override
+  String get phaseSortBanner => 'Sort Now!';
+
+  @override
+  String get phaseFinalBanner => 'Find Final Words!';
+
+  @override
+  String get completion3Stars => 'Perfect! All stars! 🌟';
+
+  @override
+  String get completion2Stars => 'Great job! 👏';
+
+  @override
+  String get completion1Star => 'Not bad! Try again for more stars.';
+
+  @override
+  String get completion0Stars => 'Keep going, you can do it! Try again.';
+
+  @override
+  String get completionHintSuggestion =>
+      'Tip: Use hints to improve your score.';
+
+  @override
+  String get sharePreviewTitle => 'Share Result';
+
+  @override
+  String get sharePreviewCopy => 'Copy';
+
+  @override
+  String get sharePreviewCopied => 'Copied!';
+
+  @override
+  String get sharePreviewClose => 'Close';
+
+  @override
+  String get settingsHighContrast => 'High Contrast Mode';
+
+  @override
+  String get settingsHighContrastDesc =>
+      'Increase color contrast for better readability';
+
+  @override
+  String get semanticsDragInstruction =>
+      'Double tap and hold to drag and reorder';
+
+  @override
+  String semanticsComboMultiplier(int count, String multiplier) {
+    return 'Combo: $count in a row, ${multiplier}x multiplier';
+  }
+
+  @override
+  String semanticsLevelCard(int id, String status, int stars) {
+    return 'Level $id, $status, $stars stars';
+  }
+
+  @override
+  String get semanticsLocked => 'locked';
+
+  @override
+  String get semanticsUnlocked => 'unlocked';
+
+  @override
+  String get semanticsCompleted => 'completed';
 }

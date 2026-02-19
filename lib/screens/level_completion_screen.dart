@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:confetti/confetti.dart';
 import 'package:crossclimber/l10n/app_localizations.dart';
@@ -68,10 +69,8 @@ class _LevelCompletionScreenState extends ConsumerState<LevelCompletionScreen>
     Future.delayed(AnimDurations.slowest, () {
       if (mounted) {
         _creditController.forward();
-        // Play confetti if 3 stars or new best time
-        if (widget.stars >= 3 || widget.isNewBestTime) {
-          _confettiController.play();
-        }
+        // Always play confetti; intensity is naturally higher for 3 stars
+        _confettiController.play();
       }
     });
   }
@@ -87,6 +86,35 @@ class _LevelCompletionScreenState extends ConsumerState<LevelCompletionScreen>
     final minutes = duration.inMinutes;
     final seconds = duration.inSeconds % 60;
     return '$minutes:${seconds.toString().padLeft(2, '0')}';
+  }
+
+  void _showSharePreview(BuildContext context, AppLocalizations l10n) {
+    if (widget.levelId == null) return;
+    final emojiText = ShareService.buildEmojiGrid(
+      levelId: widget.levelId!,
+      stars: widget.stars,
+      time: widget.timeElapsed,
+      score: widget.score,
+    );
+
+    showDialog<void>(
+      context: context,
+      builder: (ctx) {
+        return _SharePreviewDialog(
+          l10n: l10n,
+          emojiText: emojiText,
+          onShare: () {
+            Navigator.of(ctx).pop();
+            ShareService.shareWithEmojiGrid(
+              levelId: widget.levelId!,
+              stars: widget.stars,
+              time: widget.timeElapsed,
+              score: widget.score,
+            );
+          },
+        );
+      },
+    );
   }
 
   @override
@@ -170,6 +198,14 @@ class _LevelCompletionScreenState extends ConsumerState<LevelCompletionScreen>
                       );
                 }),
               ),
+
+              VerticalSpacing.xl,
+
+              // Star-count feedback message
+              _StarFeedbackMessage(stars: widget.stars)
+                  .animate(delay: 1100.ms)
+                  .fadeIn(duration: 400.ms)
+                  .slideY(begin: 0.3, end: 0, duration: 400.ms),
 
               VerticalSpacing.xl,
 
@@ -303,13 +339,7 @@ class _LevelCompletionScreenState extends ConsumerState<LevelCompletionScreen>
                             .read(hapticServiceProvider)
                             .trigger(HapticType.selection);
                         if (widget.levelId != null) {
-                          ShareService.shareResult(
-                            l10n: l10n,
-                            levelId: widget.levelId!,
-                            stars: widget.stars,
-                            time: widget.timeElapsed,
-                            score: widget.score,
-                          );
+                          _showSharePreview(context, l10n);
                         }
                       },
                       icon: const Icon(Icons.share),
@@ -392,6 +422,120 @@ class _StatRow extends StatelessWidget {
                 valueColor ??
                 (isHighlight ? gameColors.success : theme.colorScheme.primary),
           ),
+        ),
+      ],
+    );
+  }
+}
+
+// ── Star count feedback message ───────────────────────────────────────────────
+
+class _StarFeedbackMessage extends StatelessWidget {
+  final int stars;
+  const _StarFeedbackMessage({required this.stars});
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final gameColors = theme.gameColors;
+
+    String message;
+    Color color;
+    switch (stars) {
+      case 3:
+        message = l10n.completion3Stars;
+        color = gameColors.star;
+      case 2:
+        message = l10n.completion2Stars;
+        color = theme.colorScheme.primary;
+      case 1:
+        message = l10n.completion1Star;
+        color = theme.colorScheme.secondary;
+      default:
+        message = '${l10n.completion0Stars}\n${l10n.completionHintSuggestion}';
+        color = theme.colorScheme.onSurface.withValues(alpha: 0.7);
+    }
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 32),
+      child: Text(
+        message,
+        textAlign: TextAlign.center,
+        style: theme.textTheme.titleMedium?.copyWith(
+          color: color,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+    );
+  }
+}
+
+// ── Share Preview Dialog ──────────────────────────────────────────────────────
+
+class _SharePreviewDialog extends StatefulWidget {
+  final AppLocalizations l10n;
+  final String emojiText;
+  final VoidCallback onShare;
+
+  const _SharePreviewDialog({
+    required this.l10n,
+    required this.emojiText,
+    required this.onShare,
+  });
+
+  @override
+  State<_SharePreviewDialog> createState() => _SharePreviewDialogState();
+}
+
+class _SharePreviewDialogState extends State<_SharePreviewDialog> {
+  bool _copied = false;
+
+  void _handleCopy() async {
+    await Clipboard.setData(ClipboardData(text: widget.emojiText));
+    if (mounted) {
+      setState(() => _copied = true);
+      Future.delayed(const Duration(seconds: 2), () {
+        if (mounted) setState(() => _copied = false);
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = widget.l10n;
+    final theme = Theme.of(context);
+    return AlertDialog(
+      title: Text(l10n.sharePreviewTitle),
+      content: Container(
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: theme.colorScheme.surfaceContainerHighest,
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Text(
+          widget.emojiText,
+          style: const TextStyle(
+            fontFamily: 'monospace',
+            fontSize: 16,
+            height: 1.8,
+          ),
+        ),
+      ),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.of(context).pop(),
+          child: Text(l10n.sharePreviewClose),
+        ),
+        OutlinedButton.icon(
+          onPressed: _copied ? null : _handleCopy,
+          icon: Icon(_copied ? Icons.check : Icons.copy, size: 18),
+          label: Text(_copied ? l10n.sharePreviewCopied : l10n.sharePreviewCopy),
+        ),
+        FilledButton.icon(
+          onPressed: widget.onShare,
+          icon: const Icon(Icons.share, size: 18),
+          label: Text(l10n.share),
         ),
       ],
     );

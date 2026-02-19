@@ -526,5 +526,45 @@
             "unlocked": { "type": "int" },
             "total": { "type": "int" }
         }
-    }
+    },
+
+    "zoneProgress": "{completed}/{total} tamamlandı",
+    "@zoneProgress": {
+        "placeholders": {
+            "completed": { "type": "int" },
+            "total": { "type": "int" }
+        }
+    },
+    "phaseSortBanner": "Şimdi Sırala!",
+    "phaseFinalBanner": "Son Kelimeleri Bul!",
+    "completion3Stars": "Mükemmel! Tüm yıldızlar! 🌟",
+    "completion2Stars": "Harika iş! 👏",
+    "completion1Star": "Fena değil! Daha fazla yıldız için tekrar dene.",
+    "completion0Stars": "Devam et, yapabilirsin! Tekrar dene.",
+    "completionHintSuggestion": "İpucu: Puanını artırmak için ipucu kullan.",
+    "sharePreviewTitle": "Sonucu Paylaş",
+    "sharePreviewCopy": "Kopyala",
+    "sharePreviewCopied": "Kopyalandı!",
+    "sharePreviewClose": "Kapat",
+    "settingsHighContrast": "Yüksek Kontrast Modu",
+    "settingsHighContrastDesc": "Daha iyi okunabilirlik için renk kontrastını artır",
+    "semanticsDragInstruction": "Sürükleyip yeniden sıralamak için çift dokunun ve basılı tutun",
+    "semanticsComboMultiplier": "Kombo: arka arkaya {count}, {multiplier}x çarpan",
+    "@semanticsComboMultiplier": {
+        "placeholders": {
+            "count": { "type": "int" },
+            "multiplier": { "type": "String" }
+        }
+    },
+    "semanticsLevelCard": "Level {id}, {status}, {stars} yıldız",
+    "@semanticsLevelCard": {
+        "placeholders": {
+            "id": { "type": "int" },
+            "status": { "type": "String" },
+            "stars": { "type": "int" }
+        }
+    },
+    "semanticsLocked": "kilitli",
+    "semanticsUnlocked": "kilidi açık",
+    "semanticsCompleted": "tamamlandı"
 }

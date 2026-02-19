@@ -30,7 +30,12 @@ class ComboIndicator extends StatelessWidget {
     final color = _getComboColor(context, comboCount);
     final icon = _getComboIcon(comboCount);
 
-    return Container(
+    return Semantics(
+      label: l10n.semanticsComboMultiplier(
+        comboCount,
+        multiplier.toStringAsFixed(1),
+      ),
+      child: Container(
           padding: const EdgeInsets.symmetric(
             horizontal: Spacing.m,
             vertical: Spacing.s,
@@ -92,7 +97,8 @@ class ComboIndicator extends StatelessWidget {
           end: const Offset(1.0, 1.0),
           curve: Curves.elasticOut,
         )
-        .fadeIn(duration: 200.ms);
+        .fadeIn(duration: 200.ms),
+    );
   }
 
   Color _getComboColor(BuildContext context, int combo) {

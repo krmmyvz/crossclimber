@@ -171,6 +171,17 @@ class SettingsScreen extends ConsumerWidget {
                       .toggleCustomKeyboard(value);
                 },
               ),
+              SwitchListTile(
+                title: Text(l10n.settingsHighContrast),
+                subtitle: Text(l10n.settingsHighContrastDesc),
+                value: settings.highContrast,
+                secondary: const Icon(Icons.contrast),
+                onChanged: (value) {
+                  ref
+                      .read(settingsProvider.notifier)
+                      .toggleHighContrast(value);
+                },
+              ),
             ],
           ),
 

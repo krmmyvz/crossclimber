@@ -59,6 +59,8 @@ class HintQuickAccessBar extends ConsumerWidget {
                 hintType: 'revealWord',
                 stockCount: hintStocks['revealWord'] ?? 0,
                 isEnabled: isEnabled,
+                semanticsLabel:
+                    'Reveal word hint, ${hintStocks['revealWord'] ?? 0} remaining',
                 onTap: () async {
                   if (!isEnabled) return;
                   final stock = hintStocks['revealWord'] ?? 0;
@@ -78,6 +80,8 @@ class HintQuickAccessBar extends ConsumerWidget {
                 hintType: 'undo',
                 stockCount: hintStocks['undo'] ?? 0,
                 isEnabled: isEnabled && gameState.undoHistory.isNotEmpty,
+                semanticsLabel:
+                    'Undo hint, ${hintStocks['undo'] ?? 0} remaining',
                 onTap: () async {
                   if (!isEnabled || gameState.undoHistory.isEmpty) return;
                   final stock = hintStocks['undo'] ?? 0;
@@ -107,6 +111,7 @@ class _CircularHintButton extends StatelessWidget {
   final int stockCount;
   final bool isEnabled;
   final VoidCallback onTap;
+  final String? semanticsLabel;
 
   const _CircularHintButton({
     required this.icon,
@@ -114,6 +119,7 @@ class _CircularHintButton extends StatelessWidget {
     required this.stockCount,
     this.isEnabled = true,
     required this.onTap,
+    this.semanticsLabel,
   });
 
   @override
@@ -122,7 +128,11 @@ class _CircularHintButton extends StatelessWidget {
     final hasStock = stockCount > 0;
     final canUse = hasStock && isEnabled;
 
-    return Opacity(
+    return Semantics(
+      label: semanticsLabel ?? '$hintType hint, $stockCount remaining',
+      button: true,
+      enabled: isEnabled,
+      child: Opacity(
       opacity: isEnabled ? 1.0 : 0.5,
       child: Stack(
         clipBehavior: Clip.none,
@@ -201,6 +211,7 @@ class _CircularHintButton extends StatelessWidget {
             ),
         ],
       ),
-    );
+    ),    // closes Opacity
+    );    // closes Semantics
   }
 }

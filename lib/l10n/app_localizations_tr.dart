@@ -1026,4 +1026,74 @@ class AppLocalizationsTr extends AppLocalizations {
   String homeAchievementsProgress(int unlocked, int total) {
     return '$unlocked/$total';
   }
+
+  @override
+  String zoneProgress(int completed, int total) {
+    return '$completed/$total tamamlandı';
+  }
+
+  @override
+  String get phaseSortBanner => 'Şimdi Sırala!';
+
+  @override
+  String get phaseFinalBanner => 'Son Kelimeleri Bul!';
+
+  @override
+  String get completion3Stars => 'Mükemmel! Tüm yıldızlar! 🌟';
+
+  @override
+  String get completion2Stars => 'Harika iş! 👏';
+
+  @override
+  String get completion1Star =>
+      'Fena değil! Daha fazla yıldız için tekrar dene.';
+
+  @override
+  String get completion0Stars => 'Devam et, yapabilirsin! Tekrar dene.';
+
+  @override
+  String get completionHintSuggestion =>
+      'İpucu: Puanını artırmak için ipucu kullan.';
+
+  @override
+  String get sharePreviewTitle => 'Sonucu Paylaş';
+
+  @override
+  String get sharePreviewCopy => 'Kopyala';
+
+  @override
+  String get sharePreviewCopied => 'Kopyalandı!';
+
+  @override
+  String get sharePreviewClose => 'Kapat';
+
+  @override
+  String get settingsHighContrast => 'Yüksek Kontrast Modu';
+
+  @override
+  String get settingsHighContrastDesc =>
+      'Daha iyi okunabilirlik için renk kontrastını artır';
+
+  @override
+  String get semanticsDragInstruction =>
+      'Sürükleyip yeniden sıralamak için çift dokunun ve basılı tutun';
+
+  @override
+  String semanticsComboMultiplier(int count, String multiplier) {
+    return 'Kombo: arka arkaya $count, ${multiplier}x çarpan';
+  }
+
+  @override
+  String semanticsLevelCard(int id, String status, int stars) {
+    return 'Level $id, $status, $stars yıldız';
+  }
+
+  @override
+  String get semanticsLocked => 'kilitli';
+
+  @override
+  String get semanticsUnlocked => 'kilidi açık';
+
+  @override
+  String get semanticsCompleted => 'tamamlandı';
 }
