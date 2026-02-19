@@ -5,6 +5,7 @@ import 'package:crossclimber/services/statistics_repository.dart';
 import 'package:crossclimber/services/achievement_service.dart';
 import 'package:crossclimber/services/share_service.dart';
 import 'package:crossclimber/widgets/common_app_bar.dart';
+import 'package:crossclimber/widgets/empty_state_widget.dart';
 import 'package:crossclimber/theme/spacing.dart';
 import 'package:crossclimber/widgets/statistics/stats_overview_card.dart';
 import 'package:crossclimber/widgets/statistics/performance_grid.dart';
@@ -58,6 +59,15 @@ class StatisticsScreen extends ConsumerWidget {
           final stats = snapshot.data![0] as Statistics;
           final achievements = snapshot.data![1] as List<Achievement>;
           final unlockedCount = achievements.where((a) => a.isUnlocked).length;
+
+          // Empty state when no games played yet
+          if (stats.totalGamesPlayed == 0) {
+            return EmptyStateWidget(
+              icon: Icons.bar_chart_outlined,
+              title: l10n.emptyStatisticsTitle,
+              description: l10n.emptyStatisticsDesc,
+            );
+          }
 
           return SingleChildScrollView(
             padding: SpacingInsets.m,

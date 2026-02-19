@@ -950,4 +950,55 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get onboardingStart => 'Let\'s Go!';
+
+  @override
+  String get tutorialDontShowAgain => 'Don\'t show again';
+
+  @override
+  String get emptyAchievementsTitle => 'No Achievements Yet';
+
+  @override
+  String get emptyAchievementsDesc =>
+      'Play games to start unlocking achievements and earning bonus credits!';
+
+  @override
+  String get emptyStatisticsTitle => 'No Stats Yet';
+
+  @override
+  String get emptyStatisticsDesc =>
+      'Your statistics will appear here after your first game.';
+
+  @override
+  String get dailyMotivationTitle => 'Ready for Today\'s Challenge?';
+
+  @override
+  String get dailyMotivationDesc =>
+      'A new puzzle every day. Complete it to keep your streak alive!';
+
+  @override
+  String get dailyMotivationButton => 'Play Now';
+
+  @override
+  String get discoveryShopTitle => 'Welcome to the Shop!';
+
+  @override
+  String get discoveryShopDesc =>
+      'Use your credits to buy hints and lives. Watch ads for free daily rewards!';
+
+  @override
+  String get discoveryAchievementsTitle => 'Unlock Achievements!';
+
+  @override
+  String get discoveryAchievementsDesc =>
+      'Complete milestones to unlock badges and earn bonus credits.';
+
+  @override
+  String get discoveryDailyTitle => 'Build Your Streak!';
+
+  @override
+  String get discoveryDailyDesc =>
+      'Complete the daily challenge every day to keep your streak alive and earn rewards.';
+
+  @override
+  String get discoveryGotIt => 'Got it!';
 }

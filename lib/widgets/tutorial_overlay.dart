@@ -6,10 +6,11 @@ import 'package:crossclimber/theme/border_radius.dart';
 import 'package:crossclimber/theme/spacing.dart';
 
 /// Overlay that displays tutorial steps with highlighting and animations
-class TutorialOverlay extends StatelessWidget {
+class TutorialOverlay extends StatefulWidget {
   final TutorialStep step;
   final VoidCallback onNext;
   final VoidCallback onSkip;
+  final VoidCallback? onDontShowAgain;
   final int currentStep;
   final int totalSteps;
   final GlobalKey? highlightKey;
@@ -23,6 +24,7 @@ class TutorialOverlay extends StatelessWidget {
     required this.step,
     required this.onNext,
     required this.onSkip,
+    this.onDontShowAgain,
     required this.currentStep,
     required this.totalSteps,
     this.highlightKey,
@@ -33,7 +35,17 @@ class TutorialOverlay extends StatelessWidget {
   });
 
   @override
+  State<TutorialOverlay> createState() => _TutorialOverlayState();
+}
+
+class _TutorialOverlayState extends State<TutorialOverlay> {
+  @override
   Widget build(BuildContext context) {
+    final step = widget.step;
+    final showCard = widget.showCard;
+    final onSkip = widget.onSkip;
+    final highlightKey = widget.highlightKey;
+    final additionalHighlightKeys = widget.additionalHighlightKeys;
     final theme = Theme.of(context);
     final size = MediaQuery.of(context).size;
 
@@ -60,11 +72,11 @@ class TutorialOverlay extends StatelessWidget {
     }
 
     if (highlightKey != null) {
-      addHighlight(highlightKey!);
+      addHighlight(highlightKey);
     }
 
     if (additionalHighlightKeys != null) {
-      for (final key in additionalHighlightKeys!) {
+      for (final key in additionalHighlightKeys) {
         addHighlight(key);
       }
     }
@@ -276,6 +288,12 @@ class TutorialOverlay extends StatelessWidget {
   }
 
   Widget _buildTutorialCard(BuildContext context, ThemeData theme) {
+    final step = widget.step;
+    final currentStep = widget.currentStep;
+    final totalSteps = widget.totalSteps;
+    final title = widget.title;
+    final description = widget.description;
+    final onNext = widget.onNext;
     final isInteractive = step.action != TutorialAction.tapContinue;
     final bottomInset = MediaQuery.of(context).viewInsets.bottom;
     final screenHeight = MediaQuery.of(context).size.height;
@@ -298,28 +316,26 @@ class TutorialOverlay extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Step indicator & Icon
+                    // Progress dots
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 10,
-                            vertical: 4,
-                          ),
-                          decoration: BoxDecoration(
-                            color: theme.colorScheme.primary.withValues(
-                              alpha: 0.1,
-                            ),
-                            borderRadius: RadiiBR.sm,
-                          ),
-                          child: Text(
-                            'Step ${currentStep + 1}/$totalSteps',
-                            style: theme.textTheme.labelSmall?.copyWith(
-                              color: theme.colorScheme.primary,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
+                        Row(
+                          children: List.generate(totalSteps, (i) {
+                            final isActive = i == currentStep;
+                            return AnimatedContainer(
+                              duration: const Duration(milliseconds: 250),
+                              margin: const EdgeInsets.only(right: 5),
+                              width: isActive ? 16 : 7,
+                              height: 7,
+                              decoration: BoxDecoration(
+                                color: isActive
+                                    ? theme.colorScheme.primary
+                                    : theme.colorScheme.outlineVariant,
+                                borderRadius: BorderRadius.circular(4),
+                              ),
+                            );
+                          }),
                         ),
                         _getPhaseIcon(step.phase, theme),
                       ],
@@ -417,6 +433,30 @@ class TutorialOverlay extends StatelessWidget {
                           ],
                         ),
                       ),
+                    // Don't show again
+                    if (widget.onDontShowAgain != null) ...[
+                      const SizedBox(height: 8),
+                      Center(
+                        child: TextButton(
+                          onPressed: widget.onDontShowAgain,
+                          style: TextButton.styleFrom(
+                            minimumSize: Size.zero,
+                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 12,
+                              vertical: 4,
+                            ),
+                          ),
+                          child: Text(
+                            AppLocalizations.of(context)!.tutorialDontShowAgain,
+                            style: theme.textTheme.labelSmall?.copyWith(
+                              color: theme.colorScheme.onSurface
+                                  .withValues(alpha: 0.45),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ],
                 ),
               ),

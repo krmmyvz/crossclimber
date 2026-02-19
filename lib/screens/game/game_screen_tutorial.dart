@@ -115,6 +115,10 @@ mixin GameScreenTutorial<T extends ConsumerStatefulWidget> on ConsumerState<T> {
           dismissTutorial();
           ref.read(tutorialProgressProvider.notifier).skipTutorial();
         },
+        onDontShowAgain: () {
+          dismissTutorial();
+          ref.read(tutorialProgressProvider.notifier).toggleShowTips();
+        },
       ),
     );
 

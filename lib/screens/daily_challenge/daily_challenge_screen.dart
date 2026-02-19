@@ -14,6 +14,8 @@ import 'package:crossclimber/screens/daily_challenge/daily_challenge_stats.dart'
 import 'package:crossclimber/screens/daily_challenge/daily_challenge_calendar.dart';
 import 'package:crossclimber/widgets/skeleton_loading.dart';
 import 'package:crossclimber/services/share_service.dart';
+import 'package:crossclimber/widgets/discovery_banner.dart';
+import 'package:crossclimber/providers/discovery_tip_provider.dart';
 
 class DailyChallengeScreen extends ConsumerWidget
     with DailyChallengeStats, DailyChallengeCalendar {
@@ -77,8 +79,20 @@ class DailyChallengeScreen extends ConsumerWidget
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
+                // Discovery banner (first visit only)
+                DiscoveryBanner(
+                  feature: DiscoveryFeature.daily,
+                  icon: Icons.calendar_today_rounded,
+                  title: l10n.discoveryDailyTitle,
+                  description: l10n.discoveryDailyDesc,
+                  ctaLabel: l10n.discoveryGotIt,
+                ),
+
                 // Streak Card
                 _buildStreakCard(theme, l10n, currentStreak, isCompleted),
+
+                // Motivation card (shown when not yet completed today)
+                if (!isCompleted) ...[VerticalSpacing.m, _buildMotivationCard(theme, l10n)],
 
                 VerticalSpacing.l,
 
@@ -260,6 +274,49 @@ class DailyChallengeScreen extends ConsumerWidget
         ],
       ),
     ).animate().fadeIn().slideY(begin: -0.2, end: 0);
+  }
+
+  Widget _buildMotivationCard(ThemeData theme, AppLocalizations l10n) {
+    return Container(
+      padding: SpacingInsets.m,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            theme.colorScheme.primaryContainer.withValues(alpha: 0.7),
+            theme.colorScheme.tertiaryContainer.withValues(alpha: 0.7),
+          ],
+        ),
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Row(
+        children: [
+          const Icon(Icons.local_fire_department_rounded, size: 32, color: Colors.orange),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  l10n.dailyMotivationTitle,
+                  style: theme.textTheme.titleSmall?.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: theme.colorScheme.onPrimaryContainer,
+                  ),
+                ),
+                const SizedBox(height: 2),
+                Text(
+                  l10n.dailyMotivationDesc,
+                  style: theme.textTheme.bodySmall?.copyWith(
+                    color: theme.colorScheme.onPrimaryContainer
+                        .withValues(alpha: 0.8),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    ).animate(delay: 200.ms).fadeIn(duration: 350.ms).slideY(begin: 0.1, end: 0);
   }
 
   Widget _buildChallengeCard(

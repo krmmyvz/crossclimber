@@ -484,6 +484,21 @@
     "onboardingPage4Desc": "Guess correctly in a row to multiply your score — 2x, 3x, 4x bonus points!",
     "onboardingSkip": "Skip",
     "onboardingNext": "Next",
-    "onboardingStart": "Let's Go!"
+    "onboardingStart": "Let's Go!",
+    "tutorialDontShowAgain": "Don't show again",
+    "emptyAchievementsTitle": "No Achievements Yet",
+    "emptyAchievementsDesc": "Play games to start unlocking achievements and earning bonus credits!",
+    "emptyStatisticsTitle": "No Stats Yet",
+    "emptyStatisticsDesc": "Your statistics will appear here after your first game.",
+    "dailyMotivationTitle": "Ready for Today's Challenge?",
+    "dailyMotivationDesc": "A new puzzle every day. Complete it to keep your streak alive!",
+    "dailyMotivationButton": "Play Now",
+    "discoveryShopTitle": "Welcome to the Shop!",
+    "discoveryShopDesc": "Use your credits to buy hints and lives. Watch ads for free daily rewards!",
+    "discoveryAchievementsTitle": "Unlock Achievements!",
+    "discoveryAchievementsDesc": "Complete milestones to unlock badges and earn bonus credits.",
+    "discoveryDailyTitle": "Build Your Streak!",
+    "discoveryDailyDesc": "Complete the daily challenge every day to keep your streak alive and earn rewards.",
+    "discoveryGotIt": "Got it!"
 }
 

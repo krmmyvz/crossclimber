@@ -7,6 +7,9 @@ import 'package:crossclimber/widgets/common_app_bar.dart';
 import 'package:crossclimber/widgets/skeleton_loading.dart';
 import 'package:crossclimber/widgets/achievements/achievement_progress_header.dart';
 import 'package:crossclimber/widgets/achievements/achievement_card.dart';
+import 'package:crossclimber/widgets/empty_state_widget.dart';
+import 'package:crossclimber/widgets/discovery_banner.dart';
+import 'package:crossclimber/providers/discovery_tip_provider.dart';
 
 class AchievementsScreen extends ConsumerWidget {
   const AchievementsScreen({super.key});
@@ -36,25 +39,44 @@ class AchievementsScreen extends ConsumerWidget {
 
           return Column(
             children: [
+              DiscoveryBanner(
+                feature: DiscoveryFeature.achievements,
+                icon: Icons.emoji_events_rounded,
+                title: l10n.discoveryAchievementsTitle,
+                description: l10n.discoveryAchievementsDesc,
+                ctaLabel: l10n.discoveryGotIt,
+              ),
+
               // Progress Header
               AchievementProgressHeader(
                 unlocked: unlockedCount,
                 total: totalCount,
               ),
 
-              // Achievements List
-              Expanded(
-                child: ListView.builder(
+              // Empty state if nothing unlocked yet
+              if (unlockedCount == 0)
+                Padding(
                   padding: SpacingInsets.m,
-                  itemCount: achievements.length,
-                  itemBuilder: (context, index) {
-                    return AchievementCard(
-                      achievement: achievements[index],
-                      index: index,
-                    );
-                  },
+                  child: EmptyStateWidget(
+                    icon: Icons.emoji_events_outlined,
+                    title: l10n.emptyAchievementsTitle,
+                    description: l10n.emptyAchievementsDesc,
+                  ),
+                )
+              else
+                // Achievements List
+                Expanded(
+                  child: ListView.builder(
+                    padding: SpacingInsets.m,
+                    itemCount: achievements.length,
+                    itemBuilder: (context, index) {
+                      return AchievementCard(
+                        achievement: achievements[index],
+                        index: index,
+                      );
+                    },
+                  ),
                 ),
-              ),
             ],
           );
         },

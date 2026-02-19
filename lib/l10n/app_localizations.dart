@@ -1801,6 +1801,96 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Let\'s Go!'**
   String get onboardingStart;
+
+  /// No description provided for @tutorialDontShowAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t show again'**
+  String get tutorialDontShowAgain;
+
+  /// No description provided for @emptyAchievementsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No Achievements Yet'**
+  String get emptyAchievementsTitle;
+
+  /// No description provided for @emptyAchievementsDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Play games to start unlocking achievements and earning bonus credits!'**
+  String get emptyAchievementsDesc;
+
+  /// No description provided for @emptyStatisticsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No Stats Yet'**
+  String get emptyStatisticsTitle;
+
+  /// No description provided for @emptyStatisticsDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Your statistics will appear here after your first game.'**
+  String get emptyStatisticsDesc;
+
+  /// No description provided for @dailyMotivationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Ready for Today\'s Challenge?'**
+  String get dailyMotivationTitle;
+
+  /// No description provided for @dailyMotivationDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'A new puzzle every day. Complete it to keep your streak alive!'**
+  String get dailyMotivationDesc;
+
+  /// No description provided for @dailyMotivationButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Play Now'**
+  String get dailyMotivationButton;
+
+  /// No description provided for @discoveryShopTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome to the Shop!'**
+  String get discoveryShopTitle;
+
+  /// No description provided for @discoveryShopDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Use your credits to buy hints and lives. Watch ads for free daily rewards!'**
+  String get discoveryShopDesc;
+
+  /// No description provided for @discoveryAchievementsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock Achievements!'**
+  String get discoveryAchievementsTitle;
+
+  /// No description provided for @discoveryAchievementsDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete milestones to unlock badges and earn bonus credits.'**
+  String get discoveryAchievementsDesc;
+
+  /// No description provided for @discoveryDailyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Build Your Streak!'**
+  String get discoveryDailyTitle;
+
+  /// No description provided for @discoveryDailyDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete the daily challenge every day to keep your streak alive and earn rewards.'**
+  String get discoveryDailyDesc;
+
+  /// No description provided for @discoveryGotIt.
+  ///
+  /// In en, this message translates to:
+  /// **'Got it!'**
+  String get discoveryGotIt;
 }
 
 class _AppLocalizationsDelegate

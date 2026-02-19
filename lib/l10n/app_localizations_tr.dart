@@ -949,4 +949,55 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get onboardingStart => 'Başla!';
+
+  @override
+  String get tutorialDontShowAgain => 'Bir daha gösterme';
+
+  @override
+  String get emptyAchievementsTitle => 'Henüz Başarım Yok';
+
+  @override
+  String get emptyAchievementsDesc =>
+      'Başarımları açmak ve bonus kredi kazanmak için oynamaya başla!';
+
+  @override
+  String get emptyStatisticsTitle => 'Henüz İstatistik Yok';
+
+  @override
+  String get emptyStatisticsDesc =>
+      'İstatistiklerin ilk oyunun ardından burada görünecek.';
+
+  @override
+  String get dailyMotivationTitle => 'Bugünün Meydan Okumasına Hazır mısın?';
+
+  @override
+  String get dailyMotivationDesc =>
+      'Her gün yeni bir bulmaca. Serini devam ettirmek için tamamla!';
+
+  @override
+  String get dailyMotivationButton => 'Hemen Oyna';
+
+  @override
+  String get discoveryShopTitle => 'Mağazaya Hoş Geldin!';
+
+  @override
+  String get discoveryShopDesc =>
+      'Kredilerinle ipucu ve can satın al. Reklamlar izleyerek günlük ücretsiz ödüller kazan!';
+
+  @override
+  String get discoveryAchievementsTitle => 'Başarımları Aç!';
+
+  @override
+  String get discoveryAchievementsDesc =>
+      'Dönüm noktalarını tamamlayarak rozetler aç ve bonus kredi kazan.';
+
+  @override
+  String get discoveryDailyTitle => 'Serini Gündeme Taşı!';
+
+  @override
+  String get discoveryDailyDesc =>
+      'Serinizi canlı tutmak ve ödüller kazanmak için günlük meydan okumayı her gün tamamlayın.';
+
+  @override
+  String get discoveryGotIt => 'Anlaştık!';
 }

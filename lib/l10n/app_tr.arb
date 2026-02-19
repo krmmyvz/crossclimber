@@ -484,5 +484,20 @@
     "onboardingPage4Desc": "Art arda doğru tahminler puanını çarpar — 2x, 3x, 4x bonus puan kazan!",
     "onboardingSkip": "Atla",
     "onboardingNext": "İleri",
-    "onboardingStart": "Başla!"
+    "onboardingStart": "Başla!",
+    "tutorialDontShowAgain": "Bir daha gösterme",
+    "emptyAchievementsTitle": "Henüz Başarım Yok",
+    "emptyAchievementsDesc": "Başarımları açmak ve bonus kredi kazanmak için oynamaya başla!",
+    "emptyStatisticsTitle": "Henüz İstatistik Yok",
+    "emptyStatisticsDesc": "İstatistiklerin ilk oyunun ardından burada görünecek.",
+    "dailyMotivationTitle": "Bugünün Meydan Okumasına Hazır mısın?",
+    "dailyMotivationDesc": "Her gün yeni bir bulmaca. Serini devam ettirmek için tamamla!",
+    "dailyMotivationButton": "Hemen Oyna",
+    "discoveryShopTitle": "Mağazaya Hoş Geldin!",
+    "discoveryShopDesc": "Kredilerinle ipucu ve can satın al. Reklamlar izleyerek günlük ücretsiz ödüller kazan!",
+    "discoveryAchievementsTitle": "Başarımları Aç!",
+    "discoveryAchievementsDesc": "Dönüm noktalarını tamamlayarak rozetler aç ve bonus kredi kazan.",
+    "discoveryDailyTitle": "Serini Gündeme Taşı!",
+    "discoveryDailyDesc": "Serinizi canlı tutmak ve ödüller kazanmak için günlük meydan okumayı her gün tamamlayın.",
+    "discoveryGotIt": "Anlaştık!"
 }

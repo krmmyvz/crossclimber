@@ -10,6 +10,8 @@ import 'package:crossclimber/services/daily_reward_service.dart';
 import 'package:crossclimber/services/ad_reward_service.dart';
 import 'package:crossclimber/screens/shop/shop_screen_cards.dart';
 import 'package:crossclimber/screens/shop/shop_screen_rewards.dart';
+import 'package:crossclimber/widgets/discovery_banner.dart';
+import 'package:crossclimber/providers/discovery_tip_provider.dart';
 
 class ShopScreen extends ConsumerStatefulWidget {
   const ShopScreen({super.key});
@@ -305,6 +307,16 @@ class _ShopScreenState extends ConsumerState<ShopScreen>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              // Discovery tip (first visit only)
+              DiscoveryBanner(
+                feature: DiscoveryFeature.shop,
+                icon: Icons.storefront_rounded,
+                title: AppLocalizations.of(context)!.discoveryShopTitle,
+                description: AppLocalizations.of(context)!.discoveryShopDesc,
+                ctaLabel: AppLocalizations.of(context)!.discoveryGotIt,
+              ),
+              VerticalSpacing.s,
+
               // Daily Reward Section
               if (_canClaimDaily) ...[
                 buildDailyRewardCard(

@@ -51,7 +51,18 @@ class TutorialData {
         order: 3,
       ),
 
-      // 5. Sorting Intro (Merged with Action)
+      // 4. Combo System Introduction
+      const TutorialStep(
+        id: 'combo_intro',
+        titleKey: 'tutorial_combo_intro_title',
+        descriptionKey: 'tutorial_combo_intro_desc',
+        phase: TutorialPhase.guessing,
+        highlight: TutorialHighlight.combo,
+        action: TutorialAction.tapContinue,
+        order: 4,
+      ),
+
+            // 5. Sorting Intro (Merged with Action)
       const TutorialStep(
         id: 'sort_interactive',
         titleKey: 'tutorial_sort_intro_title',
@@ -61,7 +72,7 @@ class TutorialData {
         highlight: TutorialHighlight.middleWords,
         action: TutorialAction.reorderWords, // Requires actual sort
         allowInteractionEverywhere: true,
-        order: 4,
+        order: 5,
       ),
 
       // 6. Final Solve - Start
@@ -73,7 +84,7 @@ class TutorialData {
         phase: TutorialPhase.finalSolve,
         highlight: TutorialHighlight.topInput,
         action: TutorialAction.guessStartWord,
-        order: 5,
+        order: 6,
         allowInteractionEverywhere: true,
       ),
 
@@ -86,7 +97,7 @@ class TutorialData {
         phase: TutorialPhase.finalSolve,
         highlight: TutorialHighlight.bottomInput,
         action: TutorialAction.guessEndWord,
-        order: 6,
+        order: 7,
         allowInteractionEverywhere: true,
       ),
 
@@ -98,7 +109,7 @@ class TutorialData {
             'tutorial_complete_congrats_desc', // "You did it! You're ready to climb."
         phase: TutorialPhase.completion,
         action: TutorialAction.tapContinue,
-        order: 7,
+        order: 8,
       ),
     ];
   }

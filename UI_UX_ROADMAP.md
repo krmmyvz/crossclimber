@@ -89,19 +89,19 @@
 - [x] Onboarding tamamlandıktan sonra otomatik ilk level'a yönlendirme
 
 ### 2.2 Tutorial İyileştirmesi
-- [ ] Eksik kombo tutorial adımını aktifleştir (`tutorial_combo_intro_*` stringler mevcut ama kullanılmıyor)
-- [ ] Tutorial dışı özellikler için keşif ipuçları ekle:
+- [x] Eksik kombo tutorial adımını aktifleştir (`tutorial_combo_intro_*` stringler mevcut ama kullanılmıyor)
+- [x] Tutorial dışı özellikler için keşif ipuçları ekle:
   - Shop'a ilk girişte context tooltip
   - Achievements'a ilk girişte kısa açıklama
   - Daily Challenge ilk girişte streak açıklaması
-- [ ] Tutorial adımlarında progress dots (●●●○○) göster
-- [ ] Tutorial "Bir daha gösterme" checkbox'ı her adımda
+- [x] Tutorial adımlarında progress dots (●●●○○) göster
+- [x] Tutorial "Bir daha gösterme" checkbox'ı her adımda
 
 ### 2.3 Empty States (Boş Durumlar)
-- [ ] 0 başarım açılmış → İllüstrasyon + "İlk başarımına ulaşmak için oynamaya başla!" mesajı
-- [ ] 0 oyun oynandı (Statistics) → İllüstrasyon + "İstatistiklerin burada görünecek"
-- [ ] Daily Challenge tamamlanmamış → Motivasyon kartı
-- [ ] Her empty state için tutarlı illüstrasyon stili (outlined, tema renkleriyle uyumlu)
+- [x] 0 başarım açılmış → İllüstrasyon + "İlk başarımına ulaşmak için oynamaya başla!" mesajı
+- [x] 0 oyun oynandı (Statistics) → İllüstrasyon + "İstatistiklerin burada görünecek"
+- [x] Daily Challenge tamamlanmamış → Motivasyon kartı
+- [x] Her empty state için tutarlı illüstrasyon stili (outlined, tema renkleriyle uyumlu)
 
 ---
 
