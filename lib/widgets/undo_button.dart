@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:crossclimber/l10n/app_localizations.dart';
 import 'package:crossclimber/providers/game_provider.dart';
 import 'package:crossclimber/theme/border_radius.dart';
 import 'package:crossclimber/theme/spacing.dart';
@@ -17,11 +18,14 @@ class UndoButton extends ConsumerWidget {
     final canUndo = gameState.canUndo;
     final undosRemaining = gameState.maxUndos - gameState.undosUsed;
     final lastAction = ref.read(gameProvider.notifier).getLastUndoAction();
+    final l10n = AppLocalizations.of(context)!;
 
     return Tooltip(
       message: canUndo
-          ? 'Undo: $lastAction\n$undosRemaining undos remaining'
-          : 'No more undos available',
+          ? (lastAction != null
+              ? l10n.undoTooltipMessage(lastAction, undosRemaining)
+              : l10n.undosRemainingCount(undosRemaining))
+          : l10n.noUndosAvailable,
       child:
           Material(
                 color: Colors.transparent,
@@ -65,7 +69,7 @@ class UndoButton extends ConsumerWidget {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Text(
-                              'Undo',
+                              l10n.undoMove,
                               style: theme.textTheme.labelLarge?.copyWith(
                                 color: canUndo
                                     ? theme.colorScheme.secondary
@@ -105,21 +109,22 @@ class UndoButton extends ConsumerWidget {
     String? action,
   ) {
     final theme = Theme.of(context);
+    final l10n = AppLocalizations.of(context)!;
     final gameState = ref.read(gameProvider);
     final undosRemaining = gameState.maxUndos - gameState.undosUsed - 1;
 
     ModernDialog.show(
       context: context,
-      title: 'Geri Al?',
+      title: l10n.undoConfirmTitle,
       message: action != null
-          ? 'Bu işlemi geri alacaksınız:\n\n"$action"\n\nKalan geri alma hakkı: $undosRemaining'
-          : 'Son işleminizi geri almak istiyor musunuz?\n\nKalan geri alma hakkı: $undosRemaining',
+          ? l10n.undoConfirmMessageWithAction(action, undosRemaining)
+          : l10n.undoConfirmMessage(undosRemaining),
       icon: Icons.undo,
       iconColor: theme.colorScheme.secondary,
       actions: [
-        const ModernDialogAction(label: 'İptal', result: false),
+        ModernDialogAction(label: l10n.cancel, result: false),
         ModernDialogAction(
-          label: 'Geri Al',
+          label: l10n.undoMove,
           isPrimary: true,
           result: true,
           onPressed: () {
@@ -128,7 +133,7 @@ class UndoButton extends ConsumerWidget {
             // Show modern notification
             ModernNotification.show(
               context: context,
-              message: action ?? 'İşlem geri alındı',
+              message: action ?? l10n.undoReverted,
               icon: Icons.undo,
               backgroundColor: theme.colorScheme.secondary,
               iconColor: Colors.white,
@@ -151,6 +156,7 @@ class CompactUndoButton extends ConsumerWidget {
 
     final canUndo = gameState.canUndo;
     final undosRemaining = gameState.maxUndos - gameState.undosUsed;
+    final l10n = AppLocalizations.of(context)!;
 
     return IconButton(
       onPressed: canUndo
@@ -167,8 +173,8 @@ class CompactUndoButton extends ConsumerWidget {
         ),
       ),
       tooltip: canUndo
-          ? '$undosRemaining undos remaining'
-          : 'No undos available',
+          ? l10n.undosRemainingCount(undosRemaining)
+          : l10n.noUndosAvailable,
     ).animate(target: canUndo ? 1 : 0).shake(duration: 300.ms);
   }
 }

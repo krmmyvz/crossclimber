@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:crossclimber/l10n/app_localizations.dart';
 import 'package:crossclimber/theme/border_radius.dart';
 import 'package:crossclimber/theme/game_colors.dart';
 import 'package:crossclimber/theme/spacing.dart';
@@ -25,6 +26,7 @@ class ComboIndicator extends StatelessWidget {
     }
 
     final theme = Theme.of(context);
+    final l10n = AppLocalizations.of(context)!;
     final color = _getComboColor(context, comboCount);
     final icon = _getComboIcon(comboCount);
 
@@ -61,7 +63,7 @@ class ComboIndicator extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    '$comboCount COMBO',
+                    l10n.comboLabel(comboCount),
                     style: theme.textTheme.titleMedium?.copyWith(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -70,7 +72,7 @@ class ComboIndicator extends StatelessWidget {
                   ),
                   if (multiplier > 1.0)
                     Text(
-                      '${multiplier.toStringAsFixed(1)}x Multiplier',
+                      l10n.comboMultiplierLabel(multiplier.toStringAsFixed(1)),
                       style: theme.textTheme.bodySmall?.copyWith(
                         color: Colors.white.withValues(alpha: 0.9),
                         fontWeight: FontWeight.w500,
@@ -125,6 +127,7 @@ class ComboPopup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final l10n = AppLocalizations.of(context)!;
     final color = _getComboColor(context, comboCount);
 
     return Container(
@@ -162,7 +165,7 @@ class ComboPopup extends StatelessWidget {
               ),
               VerticalSpacing.xs,
               Text(
-                'Combo x$comboCount (${multiplier.toStringAsFixed(1)}x)',
+                l10n.comboXLabel(comboCount, multiplier.toStringAsFixed(1)),
                 style: theme.textTheme.bodySmall?.copyWith(
                   color: Colors.white.withValues(alpha: 0.9),
                   fontWeight: FontWeight.w600,
@@ -208,6 +211,7 @@ class ComboBreakIndicator extends StatelessWidget {
     final theme = Theme.of(context);
 
     final gameColors = theme.gameColors;
+    final l10n = AppLocalizations.of(context)!;
 
     return Container(
           padding: const EdgeInsets.symmetric(
@@ -231,7 +235,7 @@ class ComboBreakIndicator extends StatelessWidget {
               const Icon(Icons.close, color: Colors.white, size: 32),
               VerticalSpacing.xs,
               Text(
-                'COMBO BREAK',
+                l10n.comboBreak,
                 style: theme.textTheme.titleMedium?.copyWith(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
@@ -239,7 +243,7 @@ class ComboBreakIndicator extends StatelessWidget {
                 ),
               ),
               Text(
-                'Lost ${lostCombo}x combo',
+                l10n.comboLostLabel(lostCombo),
                 style: theme.textTheme.bodySmall?.copyWith(
                   color: Colors.white.withValues(alpha: 0.9),
                 ),

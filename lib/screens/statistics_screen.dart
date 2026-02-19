@@ -34,6 +34,7 @@ class StatisticsScreen extends ConsumerWidget {
             onPressed: () async {
               final stats = await statisticsRepo.getStatistics();
               ShareService.shareStatistics(
+                l10n: l10n,
                 totalGames: stats.totalGamesPlayed,
                 totalWins: stats.totalGamesWon,
                 totalStars: stats.totalStars,

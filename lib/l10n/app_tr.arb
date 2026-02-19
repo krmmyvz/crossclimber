@@ -341,5 +341,137 @@
 
     "yourStats": "İstatistiklerin",
     "completedLabel": "Tamamlanan",
-    "bestStreak": "En İyi Seri"
+    "bestStreak": "En İyi Seri",
+
+    "comboLabel": "{count} KOMBO",
+    "@comboLabel": {
+        "placeholders": {
+            "count": { "type": "int" }
+        }
+    },
+    "comboMultiplierLabel": "{multiplier}x Çarpan",
+    "@comboMultiplierLabel": {
+        "placeholders": {
+            "multiplier": { "type": "String" }
+        }
+    },
+    "comboXLabel": "Kombo x{count} ({multiplier}x)",
+    "@comboXLabel": {
+        "placeholders": {
+            "count": { "type": "int" },
+            "multiplier": { "type": "String" }
+        }
+    },
+    "comboBreak": "KOMBO BOZULDU",
+    "comboLostLabel": "{count}x kombo kaybedildi",
+    "@comboLostLabel": {
+        "placeholders": {
+            "count": { "type": "int" }
+        }
+    },
+    "undoTooltipMessage": "Geri Al: {action}\n{count} geri alma hakkı kaldı",
+    "@undoTooltipMessage": {
+        "placeholders": {
+            "action": { "type": "String" },
+            "count": { "type": "int" }
+        }
+    },
+    "noUndosAvailable": "Geri alma hakkı kalmadı",
+    "undoConfirmTitle": "Geri Al?",
+    "undoConfirmMessageWithAction": "Bu işlemi geri alacaksınız:\n\n\"{action}\"\n\nKalan geri alma hakkı: {count}",
+    "@undoConfirmMessageWithAction": {
+        "placeholders": {
+            "action": { "type": "String" },
+            "count": { "type": "int" }
+        }
+    },
+    "undoConfirmMessage": "Son işleminizi geri almak istiyor musunuz?\n\nKalan geri alma hakkı: {count}",
+    "@undoConfirmMessage": {
+        "placeholders": {
+            "count": { "type": "int" }
+        }
+    },
+    "undoReverted": "İşlem geri alındı",
+    "undosRemainingCount": "{count} geri alma hakkı kaldı",
+    "@undosRemainingCount": {
+        "placeholders": {
+            "count": { "type": "int" }
+        }
+    },
+    "rewardCreditsLabel": "+{amount} Kredi",
+    "@rewardCreditsLabel": {
+        "placeholders": {
+            "amount": { "type": "int" }
+        }
+    },
+    "rewardRevealHints": "+{count} Reveal İpucu",
+    "@rewardRevealHints": {
+        "placeholders": {
+            "count": { "type": "int" }
+        }
+    },
+    "rewardUndoHints": "+{count} Undo İpucu",
+    "@rewardUndoHints": {
+        "placeholders": {
+            "count": { "type": "int" }
+        }
+    },
+    "dailyAdLimitReached": "Günlük limit doldu! (5/5)",
+    "creditsEarnedNotification": "+{amount} kredi kazandın!",
+    "@creditsEarnedNotification": {
+        "placeholders": {
+            "amount": { "type": "int" }
+        }
+    },
+    "revealHintEarned": "+1 Reveal ipucu kazandın!",
+    "undoHintEarned": "+1 Undo ipucu kazandın!",
+    "hintsPurchasedNotification": "{amount} ipucu satın alındı!",
+    "@hintsPurchasedNotification": {
+        "placeholders": {
+            "amount": { "type": "int" }
+        }
+    },
+    "livesPurchasedNotification": "{amount} can satın alındı!",
+    "@livesPurchasedNotification": {
+        "placeholders": {
+            "amount": { "type": "int" }
+        }
+    },
+    "creditPurchaseComingSoon": "Gerçek para ile {amount} kredi satın alma: {price} (Yakında!)",
+    "@creditPurchaseComingSoon": {
+        "placeholders": {
+            "amount": { "type": "int" },
+            "price": { "type": "String" }
+        }
+    },
+    "levelsLabel": "Seviyeler",
+    "streakLabel": "Seri",
+    "creditsEarnedLabel": "Kazanılan Kredi",
+    "completedToday": "Bugün Tamamlandı!",
+    "todaysChallenge": "Bugünün Challenge'ı",
+    "shareResultHeader": "CrossClimber Seviye {levelId} Tamamlandı!",
+    "@shareResultHeader": {
+        "placeholders": {
+            "levelId": { "type": "int" }
+        }
+    },
+    "shareAchievementUnlocked": "\ud83c\udfc6 Başarım Açıldı!",
+    "shareAchievementCTA": "CrossClimber oynuyorum - En zorlu kelime bulmaca oyunu!",
+    "shareDailyChallengeTitle": "\ud83d\udcc5 CrossClimber Günlük Challenge",
+    "shareDailyLevelCompleted": "Seviye {levelId}: Tamamlandı!",
+    "@shareDailyLevelCompleted": {
+        "placeholders": {
+            "levelId": { "type": "int" }
+        }
+    },
+    "shareDailyLevelFailed": "Seviye {levelId}: Başarısız",
+    "@shareDailyLevelFailed": {
+        "placeholders": {
+            "levelId": { "type": "int" }
+        }
+    },
+    "shareDailyChallengeCTA": "Günlük challenge'a katıl!",
+    "shareMyStatsTitle": "\ud83d\udcca CrossClimber İstatistiklerim",
+    "shareStatsCTA": "CrossClimber'da benimle yarış!",
+    "shareStatisticsCTA": "Benim istatistiklerimi geçebilir misin?"
 }

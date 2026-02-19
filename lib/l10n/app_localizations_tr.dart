@@ -764,4 +764,152 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get bestStreak => 'En İyi Seri';
+
+  @override
+  String comboLabel(int count) {
+    return '$count KOMBO';
+  }
+
+  @override
+  String comboMultiplierLabel(String multiplier) {
+    return '${multiplier}x Çarpan';
+  }
+
+  @override
+  String comboXLabel(int count, String multiplier) {
+    return 'Kombo x$count (${multiplier}x)';
+  }
+
+  @override
+  String get comboBreak => 'KOMBO BOZULDU';
+
+  @override
+  String comboLostLabel(int count) {
+    return '${count}x kombo kaybedildi';
+  }
+
+  @override
+  String undoTooltipMessage(String action, int count) {
+    return 'Geri Al: $action\n$count geri alma hakkı kaldı';
+  }
+
+  @override
+  String get noUndosAvailable => 'Geri alma hakkı kalmadı';
+
+  @override
+  String get undoConfirmTitle => 'Geri Al?';
+
+  @override
+  String undoConfirmMessageWithAction(String action, int count) {
+    return 'Bu işlemi geri alacaksınız:\n\n\"$action\"\n\nKalan geri alma hakkı: $count';
+  }
+
+  @override
+  String undoConfirmMessage(int count) {
+    return 'Son işleminizi geri almak istiyor musunuz?\n\nKalan geri alma hakkı: $count';
+  }
+
+  @override
+  String get undoReverted => 'İşlem geri alındı';
+
+  @override
+  String undosRemainingCount(int count) {
+    return '$count geri alma hakkı kaldı';
+  }
+
+  @override
+  String rewardCreditsLabel(int amount) {
+    return '+$amount Kredi';
+  }
+
+  @override
+  String rewardRevealHints(int count) {
+    return '+$count Reveal İpucu';
+  }
+
+  @override
+  String rewardUndoHints(int count) {
+    return '+$count Undo İpucu';
+  }
+
+  @override
+  String get dailyAdLimitReached => 'Günlük limit doldu! (5/5)';
+
+  @override
+  String creditsEarnedNotification(int amount) {
+    return '+$amount kredi kazandın!';
+  }
+
+  @override
+  String get revealHintEarned => '+1 Reveal ipucu kazandın!';
+
+  @override
+  String get undoHintEarned => '+1 Undo ipucu kazandın!';
+
+  @override
+  String hintsPurchasedNotification(int amount) {
+    return '$amount ipucu satın alındı!';
+  }
+
+  @override
+  String livesPurchasedNotification(int amount) {
+    return '$amount can satın alındı!';
+  }
+
+  @override
+  String creditPurchaseComingSoon(int amount, String price) {
+    return 'Gerçek para ile $amount kredi satın alma: $price (Yakında!)';
+  }
+
+  @override
+  String get levelsLabel => 'Seviyeler';
+
+  @override
+  String get streakLabel => 'Seri';
+
+  @override
+  String get creditsEarnedLabel => 'Kazanılan Kredi';
+
+  @override
+  String get completedToday => 'Bugün Tamamlandı!';
+
+  @override
+  String get todaysChallenge => 'Bugünün Challenge\'ı';
+
+  @override
+  String shareResultHeader(int levelId) {
+    return 'CrossClimber Seviye $levelId Tamamlandı!';
+  }
+
+  @override
+  String get shareAchievementUnlocked => '🏆 Başarım Açıldı!';
+
+  @override
+  String get shareAchievementCTA =>
+      'CrossClimber oynuyorum - En zorlu kelime bulmaca oyunu!';
+
+  @override
+  String get shareDailyChallengeTitle => '📅 CrossClimber Günlük Challenge';
+
+  @override
+  String shareDailyLevelCompleted(int levelId) {
+    return 'Seviye $levelId: Tamamlandı!';
+  }
+
+  @override
+  String shareDailyLevelFailed(int levelId) {
+    return 'Seviye $levelId: Başarısız';
+  }
+
+  @override
+  String get shareDailyChallengeCTA => 'Günlük challenge\'a katıl!';
+
+  @override
+  String get shareMyStatsTitle => '📊 CrossClimber İstatistiklerim';
+
+  @override
+  String get shareStatsCTA => 'CrossClimber\'da benimle yarış!';
+
+  @override
+  String get shareStatisticsCTA => 'Benim istatistiklerimi geçebilir misin?';
 }

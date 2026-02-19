@@ -1,7 +1,9 @@
 import 'package:share_plus/share_plus.dart';
+import 'package:crossclimber/l10n/app_localizations.dart';
 
 class ShareService {
   static Future<void> shareResult({
+    required AppLocalizations l10n,
     required int levelId,
     required int stars,
     required Duration time,
@@ -15,10 +17,10 @@ class ShareService {
 
     final text =
         '''
-CrossClimber Level $levelId Completed!
-Score: $score
-Time: $timeStr
-Stars: $starEmoji
+${l10n.shareResultHeader(levelId)}
+${l10n.scoreLabel}: $score
+${l10n.timeLabel}: $timeStr
+${l10n.starsLabel}: $starEmoji
 
 #CrossClimber #WordGame #PuzzleGame
 ''';
@@ -27,16 +29,17 @@ Stars: $starEmoji
   }
 
   static Future<void> shareAchievement({
+    required AppLocalizations l10n,
     required String achievementName,
     required String achievementIcon,
   }) async {
     final text =
         '''
-🏆 Achievement Unlocked!
+${l10n.shareAchievementUnlocked}
 
 $achievementIcon $achievementName
 
-Playing CrossClimber - The ultimate word puzzle game!
+${l10n.shareAchievementCTA}
 #CrossClimber #Achievement
 ''';
 
@@ -44,20 +47,31 @@ Playing CrossClimber - The ultimate word puzzle game!
   }
 
   static Future<void> shareDailyChallenge({
+    required AppLocalizations l10n,
     required int levelId,
     required bool completed,
     required int stars,
+    int? score,
+    Duration? time,
   }) async {
     final starEmoji = completed ? '⭐' * stars : '❌';
 
+    final scoreStr = score != null ? '\n🏆 ${l10n.scoreLabel}: $score' : '';
+    String timeStr = '';
+    if (time != null) {
+      final minutes = time.inMinutes;
+      final seconds = time.inSeconds % 60;
+      timeStr = '\n⏱️ ${l10n.timeLabel}: $minutes:${seconds.toString().padLeft(2, '0')}';
+    }
+
     final text =
         '''
-📅 CrossClimber Daily Challenge
+${l10n.shareDailyChallengeTitle}
 
-Level $levelId: ${completed ? 'Completed!' : 'Failed'}
-$starEmoji ${completed ? '$stars/3 Stars' : ''}
+${completed ? l10n.shareDailyLevelCompleted(levelId) : l10n.shareDailyLevelFailed(levelId)}
+$starEmoji ${completed ? '$stars/3 Stars' : ''}$scoreStr$timeStr
 
-Join the daily challenge!
+${l10n.shareDailyChallengeCTA}
 #CrossClimber #DailyChallenge
 ''';
 
@@ -65,6 +79,7 @@ Join the daily challenge!
   }
 
   static Future<void> shareStats({
+    required AppLocalizations l10n,
     required int totalLevels,
     required int totalStars,
     required int currentStreak,
@@ -72,14 +87,14 @@ Join the daily challenge!
   }) async {
     final text =
         '''
-📊 My CrossClimber Stats
+${l10n.shareMyStatsTitle}
 
-🏆 Levels Completed: $totalLevels
-⭐ Total Stars: $totalStars
-🔥 Current Streak: $currentStreak
-📈 Win Rate: ${winRate.toStringAsFixed(1)}%
+🏆 ${l10n.levelsLabel}: $totalLevels
+⭐ ${l10n.totalStarsEarned}: $totalStars
+🔥 ${l10n.currentStreak}: $currentStreak
+📈 ${l10n.winRate}: ${winRate.toStringAsFixed(1)}%
 
-Challenge me in CrossClimber!
+${l10n.shareStatsCTA}
 #CrossClimber #GameStats
 ''';
 
@@ -87,6 +102,7 @@ Challenge me in CrossClimber!
   }
 
   static Future<void> shareStatistics({
+    required AppLocalizations l10n,
     required int totalGames,
     required int totalWins,
     required int totalStars,
@@ -99,15 +115,15 @@ Challenge me in CrossClimber!
 
     final text =
         '''
-📊 My CrossClimber Stats
+${l10n.shareMyStatsTitle}
 
-🎮 Games Played: $totalGames
-🏆 Games Won: $totalWins
-📈 Win Rate: ${winRate.toStringAsFixed(1)}%
-⭐ Total Stars: $totalStars
-⚡ Best Time: $timeStr
+🎮 ${l10n.gamesPlayed}: $totalGames
+🏆 ${l10n.gamesWon}: $totalWins
+📈 ${l10n.winRate}: ${winRate.toStringAsFixed(1)}%
+⭐ ${l10n.totalStarsEarned}: $totalStars
+⚡ ${l10n.bestTime}: $timeStr
 
-Can you beat my stats?
+${l10n.shareStatisticsCTA}
 #CrossClimber #WordLadder
 ''';
 

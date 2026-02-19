@@ -93,7 +93,7 @@ mixin ShopScreenCards {
                     Row(
                       children: [
                         Text(
-                          '$amount Kredi',
+                          AppLocalizations.of(context)!.nCredits(amount),
                           style: theme.textTheme.titleMedium?.copyWith(
                             fontWeight: FontWeight.bold,
                           ),
@@ -205,7 +205,7 @@ mixin ShopScreenCards {
                     Row(
                       children: [
                         Text(
-                          '$amount Can',
+                          AppLocalizations.of(context)!.nLives(amount),
                           style: theme.textTheme.titleMedium?.copyWith(
                             fontWeight: FontWeight.bold,
                             color: canAfford

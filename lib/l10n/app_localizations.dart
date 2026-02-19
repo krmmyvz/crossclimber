@@ -1513,6 +1513,228 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Best Streak'**
   String get bestStreak;
+
+  /// No description provided for @comboLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} COMBO'**
+  String comboLabel(int count);
+
+  /// No description provided for @comboMultiplierLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'{multiplier}x Multiplier'**
+  String comboMultiplierLabel(String multiplier);
+
+  /// No description provided for @comboXLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Combo x{count} ({multiplier}x)'**
+  String comboXLabel(int count, String multiplier);
+
+  /// No description provided for @comboBreak.
+  ///
+  /// In en, this message translates to:
+  /// **'COMBO BREAK'**
+  String get comboBreak;
+
+  /// No description provided for @comboLostLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Lost {count}x combo'**
+  String comboLostLabel(int count);
+
+  /// No description provided for @undoTooltipMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Undo: {action}\n{count} undos remaining'**
+  String undoTooltipMessage(String action, int count);
+
+  /// No description provided for @noUndosAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'No more undos available'**
+  String get noUndosAvailable;
+
+  /// No description provided for @undoConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Undo?'**
+  String get undoConfirmTitle;
+
+  /// No description provided for @undoConfirmMessageWithAction.
+  ///
+  /// In en, this message translates to:
+  /// **'This action will be undone:\n\n\"{action}\"\n\nUndos remaining: {count}'**
+  String undoConfirmMessageWithAction(String action, int count);
+
+  /// No description provided for @undoConfirmMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Undo the last action?\n\nUndos remaining: {count}'**
+  String undoConfirmMessage(int count);
+
+  /// No description provided for @undoReverted.
+  ///
+  /// In en, this message translates to:
+  /// **'Action undone'**
+  String get undoReverted;
+
+  /// No description provided for @undosRemainingCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} undos remaining'**
+  String undosRemainingCount(int count);
+
+  /// No description provided for @rewardCreditsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'+{amount} Credits'**
+  String rewardCreditsLabel(int amount);
+
+  /// No description provided for @rewardRevealHints.
+  ///
+  /// In en, this message translates to:
+  /// **'+{count} Reveal Hint'**
+  String rewardRevealHints(int count);
+
+  /// No description provided for @rewardUndoHints.
+  ///
+  /// In en, this message translates to:
+  /// **'+{count} Undo Hint'**
+  String rewardUndoHints(int count);
+
+  /// No description provided for @dailyAdLimitReached.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily limit reached! (5/5)'**
+  String get dailyAdLimitReached;
+
+  /// No description provided for @creditsEarnedNotification.
+  ///
+  /// In en, this message translates to:
+  /// **'+{amount} credits earned!'**
+  String creditsEarnedNotification(int amount);
+
+  /// No description provided for @revealHintEarned.
+  ///
+  /// In en, this message translates to:
+  /// **'+1 Reveal hint earned!'**
+  String get revealHintEarned;
+
+  /// No description provided for @undoHintEarned.
+  ///
+  /// In en, this message translates to:
+  /// **'+1 Undo hint earned!'**
+  String get undoHintEarned;
+
+  /// No description provided for @hintsPurchasedNotification.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} hints purchased!'**
+  String hintsPurchasedNotification(int amount);
+
+  /// No description provided for @livesPurchasedNotification.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} lives purchased!'**
+  String livesPurchasedNotification(int amount);
+
+  /// No description provided for @creditPurchaseComingSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Buying {amount} credits for {price} (Coming soon!)'**
+  String creditPurchaseComingSoon(int amount, String price);
+
+  /// No description provided for @levelsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Levels'**
+  String get levelsLabel;
+
+  /// No description provided for @streakLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Streak'**
+  String get streakLabel;
+
+  /// No description provided for @creditsEarnedLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Credits Earned'**
+  String get creditsEarnedLabel;
+
+  /// No description provided for @completedToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed Today!'**
+  String get completedToday;
+
+  /// No description provided for @todaysChallenge.
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'s Challenge'**
+  String get todaysChallenge;
+
+  /// No description provided for @shareResultHeader.
+  ///
+  /// In en, this message translates to:
+  /// **'CrossClimber Level {levelId} Completed!'**
+  String shareResultHeader(int levelId);
+
+  /// No description provided for @shareAchievementUnlocked.
+  ///
+  /// In en, this message translates to:
+  /// **'🏆 Achievement Unlocked!'**
+  String get shareAchievementUnlocked;
+
+  /// No description provided for @shareAchievementCTA.
+  ///
+  /// In en, this message translates to:
+  /// **'Playing CrossClimber - The ultimate word puzzle game!'**
+  String get shareAchievementCTA;
+
+  /// No description provided for @shareDailyChallengeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'📅 CrossClimber Daily Challenge'**
+  String get shareDailyChallengeTitle;
+
+  /// No description provided for @shareDailyLevelCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Level {levelId}: Completed!'**
+  String shareDailyLevelCompleted(int levelId);
+
+  /// No description provided for @shareDailyLevelFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Level {levelId}: Failed'**
+  String shareDailyLevelFailed(int levelId);
+
+  /// No description provided for @shareDailyChallengeCTA.
+  ///
+  /// In en, this message translates to:
+  /// **'Join the daily challenge!'**
+  String get shareDailyChallengeCTA;
+
+  /// No description provided for @shareMyStatsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'📊 My CrossClimber Stats'**
+  String get shareMyStatsTitle;
+
+  /// No description provided for @shareStatsCTA.
+  ///
+  /// In en, this message translates to:
+  /// **'Challenge me in CrossClimber!'**
+  String get shareStatsCTA;
+
+  /// No description provided for @shareStatisticsCTA.
+  ///
+  /// In en, this message translates to:
+  /// **'Can you beat my stats?'**
+  String get shareStatisticsCTA;
 }
 
 class _AppLocalizationsDelegate

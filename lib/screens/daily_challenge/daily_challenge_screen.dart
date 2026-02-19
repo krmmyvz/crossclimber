@@ -13,6 +13,7 @@ import 'package:crossclimber/theme/game_colors.dart';
 import 'package:crossclimber/screens/daily_challenge/daily_challenge_stats.dart';
 import 'package:crossclimber/screens/daily_challenge/daily_challenge_calendar.dart';
 import 'package:crossclimber/widgets/skeleton_loading.dart';
+import 'package:crossclimber/services/share_service.dart';
 
 class DailyChallengeScreen extends ConsumerWidget
     with DailyChallengeStats, DailyChallengeCalendar {
@@ -246,7 +247,7 @@ class DailyChallengeScreen extends ConsumerWidget
                   ),
                   HorizontalSpacing.s,
                   Text(
-                    'Completed Today!',
+                    l10n.completedToday,
                     style: theme.textTheme.bodyMedium?.copyWith(
                       color: theme.gameColors.onStreak,
                       fontWeight: FontWeight.bold,
@@ -309,7 +310,7 @@ class DailyChallengeScreen extends ConsumerWidget
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Today\'s Challenge',
+                      l10n.todaysChallenge,
                       style: theme.textTheme.titleLarge?.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
@@ -472,7 +473,14 @@ class DailyChallengeScreen extends ConsumerWidget
             VerticalSpacing.s,
             OutlinedButton.icon(
               onPressed: () {
-                // TODO: Add share functionality with completion data
+                ShareService.shareDailyChallenge(
+                  l10n: AppLocalizations.of(context)!,
+                  levelId: challenge.levelId,
+                  completed: true,
+                  stars: challenge.completionStars ?? 0,
+                  score: challenge.completionScore,
+                  time: challenge.completionTime,
+                );
               },
               icon: const Icon(Icons.share),
               label: Text(AppLocalizations.of(context)!.shareResult),

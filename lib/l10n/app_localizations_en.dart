@@ -765,4 +765,152 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get bestStreak => 'Best Streak';
+
+  @override
+  String comboLabel(int count) {
+    return '$count COMBO';
+  }
+
+  @override
+  String comboMultiplierLabel(String multiplier) {
+    return '${multiplier}x Multiplier';
+  }
+
+  @override
+  String comboXLabel(int count, String multiplier) {
+    return 'Combo x$count (${multiplier}x)';
+  }
+
+  @override
+  String get comboBreak => 'COMBO BREAK';
+
+  @override
+  String comboLostLabel(int count) {
+    return 'Lost ${count}x combo';
+  }
+
+  @override
+  String undoTooltipMessage(String action, int count) {
+    return 'Undo: $action\n$count undos remaining';
+  }
+
+  @override
+  String get noUndosAvailable => 'No more undos available';
+
+  @override
+  String get undoConfirmTitle => 'Undo?';
+
+  @override
+  String undoConfirmMessageWithAction(String action, int count) {
+    return 'This action will be undone:\n\n\"$action\"\n\nUndos remaining: $count';
+  }
+
+  @override
+  String undoConfirmMessage(int count) {
+    return 'Undo the last action?\n\nUndos remaining: $count';
+  }
+
+  @override
+  String get undoReverted => 'Action undone';
+
+  @override
+  String undosRemainingCount(int count) {
+    return '$count undos remaining';
+  }
+
+  @override
+  String rewardCreditsLabel(int amount) {
+    return '+$amount Credits';
+  }
+
+  @override
+  String rewardRevealHints(int count) {
+    return '+$count Reveal Hint';
+  }
+
+  @override
+  String rewardUndoHints(int count) {
+    return '+$count Undo Hint';
+  }
+
+  @override
+  String get dailyAdLimitReached => 'Daily limit reached! (5/5)';
+
+  @override
+  String creditsEarnedNotification(int amount) {
+    return '+$amount credits earned!';
+  }
+
+  @override
+  String get revealHintEarned => '+1 Reveal hint earned!';
+
+  @override
+  String get undoHintEarned => '+1 Undo hint earned!';
+
+  @override
+  String hintsPurchasedNotification(int amount) {
+    return '$amount hints purchased!';
+  }
+
+  @override
+  String livesPurchasedNotification(int amount) {
+    return '$amount lives purchased!';
+  }
+
+  @override
+  String creditPurchaseComingSoon(int amount, String price) {
+    return 'Buying $amount credits for $price (Coming soon!)';
+  }
+
+  @override
+  String get levelsLabel => 'Levels';
+
+  @override
+  String get streakLabel => 'Streak';
+
+  @override
+  String get creditsEarnedLabel => 'Credits Earned';
+
+  @override
+  String get completedToday => 'Completed Today!';
+
+  @override
+  String get todaysChallenge => 'Today\'s Challenge';
+
+  @override
+  String shareResultHeader(int levelId) {
+    return 'CrossClimber Level $levelId Completed!';
+  }
+
+  @override
+  String get shareAchievementUnlocked => '🏆 Achievement Unlocked!';
+
+  @override
+  String get shareAchievementCTA =>
+      'Playing CrossClimber - The ultimate word puzzle game!';
+
+  @override
+  String get shareDailyChallengeTitle => '📅 CrossClimber Daily Challenge';
+
+  @override
+  String shareDailyLevelCompleted(int levelId) {
+    return 'Level $levelId: Completed!';
+  }
+
+  @override
+  String shareDailyLevelFailed(int levelId) {
+    return 'Level $levelId: Failed';
+  }
+
+  @override
+  String get shareDailyChallengeCTA => 'Join the daily challenge!';
+
+  @override
+  String get shareMyStatsTitle => '📊 My CrossClimber Stats';
+
+  @override
+  String get shareStatsCTA => 'Challenge me in CrossClimber!';
+
+  @override
+  String get shareStatisticsCTA => 'Can you beat my stats?';
 }

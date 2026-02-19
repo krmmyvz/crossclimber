@@ -93,21 +93,21 @@ class _ShopScreenState extends ConsumerState<ShopScreen>
             buildRewardItem(
               theme,
               Icons.monetization_on,
-              '+${reward.credits} Kredi',
+              AppLocalizations.of(context)!.rewardCreditsLabel(reward.credits),
               theme.colorScheme.primary,
             ),
             if (reward.revealHints > 0)
               buildRewardItem(
                 theme,
                 Icons.style,
-                '+${reward.revealHints} Reveal İpucu',
+                AppLocalizations.of(context)!.rewardRevealHints(reward.revealHints),
                 gameColors.success,
               ),
             if (reward.undoHints > 0)
               buildRewardItem(
                 theme,
                 Icons.undo,
-                '+${reward.undoHints} Undo İpucu',
+                AppLocalizations.of(context)!.rewardUndoHints(reward.undoHints),
                 gameColors.success,
               ),
           ],
@@ -131,7 +131,7 @@ class _ShopScreenState extends ConsumerState<ShopScreen>
         final gameColors = Theme.of(context).gameColors;
         ModernNotification.show(
           context: context,
-          message: 'Günlük limit doldu! (5/5)',
+          message: AppLocalizations.of(context)!.dailyAdLimitReached,
           icon: Icons.info_outline,
           backgroundColor: gameColors.warning,
           iconColor: gameColors.onWarning,
@@ -147,7 +147,7 @@ class _ShopScreenState extends ConsumerState<ShopScreen>
       final gameColors = Theme.of(context).gameColors;
       ModernNotification.show(
         context: context,
-        message: '+$credits kredi kazandın!',
+        message: AppLocalizations.of(context)!.creditsEarnedNotification(credits),
         icon: Icons.check_circle_outline,
         backgroundColor: gameColors.success,
         iconColor: gameColors.onSuccess,
@@ -163,7 +163,7 @@ class _ShopScreenState extends ConsumerState<ShopScreen>
         final gameColors = Theme.of(context).gameColors;
         ModernNotification.show(
           context: context,
-          message: 'Günlük limit doldu! (5/5)',
+          message: AppLocalizations.of(context)!.dailyAdLimitReached,
           icon: Icons.info_outline,
           backgroundColor: gameColors.warning,
           iconColor: gameColors.onWarning,
@@ -177,10 +177,11 @@ class _ShopScreenState extends ConsumerState<ShopScreen>
 
     if (mounted) {
       final gameColors = Theme.of(context).gameColors;
-      final hintName = hintType == 'revealWord' ? 'Reveal' : 'Undo';
       ModernNotification.show(
         context: context,
-        message: '+1 $hintName ipucu kazandın!',
+        message: hintType == 'revealWord'
+            ? AppLocalizations.of(context)!.revealHintEarned
+            : AppLocalizations.of(context)!.undoHintEarned,
         icon: Icons.check_circle_outline,
         backgroundColor: gameColors.success,
         iconColor: gameColors.onSuccess,
@@ -214,7 +215,7 @@ class _ShopScreenState extends ConsumerState<ShopScreen>
         final gameColors = Theme.of(context).gameColors;
         ModernNotification.show(
           context: context,
-          message: '$amount ipucu satın alındı!',
+        message: AppLocalizations.of(context)!.hintsPurchasedNotification(amount),
           icon: Icons.check_circle_outline,
           backgroundColor: gameColors.success,
           iconColor: gameColors.onSuccess,
@@ -229,7 +230,7 @@ class _ShopScreenState extends ConsumerState<ShopScreen>
       ModernNotification.show(
         context: context,
         message:
-            'Gerçek para ile $amount kredi satın alma: $realPrice (Yakında!)',
+            AppLocalizations.of(context)!.creditPurchaseComingSoon(amount, realPrice),
         icon: Icons.info_outline,
       );
     }
@@ -280,7 +281,7 @@ class _ShopScreenState extends ConsumerState<ShopScreen>
       final gameColors = Theme.of(context).gameColors;
       ModernNotification.show(
         context: context,
-        message: '$amount can satın alındı!',
+        message: AppLocalizations.of(context)!.livesPurchasedNotification(amount),
         icon: Icons.check_circle_outline,
         backgroundColor: gameColors.success,
         iconColor: gameColors.onSuccess,

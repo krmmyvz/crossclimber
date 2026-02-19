@@ -221,7 +221,7 @@ class _LevelCompletionScreenState extends ConsumerState<LevelCompletionScreen>
                           builder: (context, child) {
                             return _StatRow(
                               icon: Icons.monetization_on,
-                              label: 'Credits Earned',
+                              label: l10n.creditsEarnedLabel,
                               value: '+${_creditAnimation.value}',
                               valueColor: gameColors.star,
                             );
@@ -304,6 +304,7 @@ class _LevelCompletionScreenState extends ConsumerState<LevelCompletionScreen>
                             .trigger(HapticType.selection);
                         if (widget.levelId != null) {
                           ShareService.shareResult(
+                            l10n: l10n,
                             levelId: widget.levelId!,
                             stars: widget.stars,
                             time: widget.timeElapsed,

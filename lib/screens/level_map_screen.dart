@@ -106,20 +106,20 @@ class LevelMapScreen extends ConsumerWidget {
                         children: [
                           _ProgressStat(
                             icon: Icons.emoji_events,
-                            label: 'Levels',
+                            label: l10n.levelsLabel,
                             value: '${unlockedLevelCount - 1}',
                             color: gameColors.warning,
                           ),
                           _ProgressStat(
                             icon: Icons.star,
-                            label: 'Stars',
+                            label: l10n.starsLabel,
                             value:
                                 '${(statistics?.threeStarLevels ?? 0) * 3 + (statistics?.twoStarLevels ?? 0) * 2 + (statistics?.oneStarLevels ?? 0)}',
                             color: gameColors.star,
                           ),
                           _ProgressStat(
                             icon: Icons.local_fire_department,
-                            label: 'Streak',
+                            label: l10n.streakLabel,
                             value: '${statistics?.currentStreak ?? 0}',
                             color: gameColors.streak,
                           ),
