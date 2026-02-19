@@ -224,6 +224,30 @@ class AppLocalizationsTr extends AppLocalizations {
   String get dailyChallenge => 'Günlük Challenge';
 
   @override
+  String get profile => 'Profil';
+
+  @override
+  String get guestUser => 'Misafir Kullanıcı';
+
+  @override
+  String loggedInAs(String email) {
+    return 'Giriş yapıldı: $email';
+  }
+
+  @override
+  String get linkAccount => 'Hesabı Bağla';
+
+  @override
+  String get linkAccountDesc =>
+      'İlerlemeni buluta kaydetmek için hesabını bağla.';
+
+  @override
+  String get signOut => 'Çıkış Yap';
+
+  @override
+  String get googleSignIn => 'Google ile Giriş Yap';
+
+  @override
   String get tutorial_intro_welcome_title => 'CrossClimber\'a Hoş Geldiniz!';
 
   @override
@@ -270,7 +294,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get tutorial_guess_hints_desc =>
-      'Her seviyede 3 ipucunuz var. Takıldığınızda harfleri göstermek veya ipucu almak için akıllıca kullanın.';
+      'Seviye başına 3 ipucunuz var. Takıldığınızda harfleri açığa çıkarmak veya ipucu almak için onları akıllıca kullanın.';
 
   @override
   String get tutorial_guess_timer_title => 'Zamanla Yarışın';
@@ -353,7 +377,7 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get buyOneLife => 'Tek can satın al';
+  String get buyOneLife => '1 Can Al (50 💰)';
 
   @override
   String get buyAllLives => 'Tüm Canları Al (100 💰)';
@@ -419,6 +443,9 @@ class AppLocalizationsTr extends AppLocalizations {
   String nLives(int amount) {
     return '$amount Can';
   }
+
+  @override
+  String get buyOneLifeDesc => 'Tek can satın al';
 
   @override
   String get buyFiveLives => '5 cana çıkar';

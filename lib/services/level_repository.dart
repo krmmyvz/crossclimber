@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/foundation.dart';
 import 'package:crossclimber/models/level.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'remote_config_service.dart';
+import 'package:crossclimber/services/remote_config_service.dart';
 
 class LevelRepository {
   final RemoteConfigService? _remoteConfigService;
@@ -12,9 +12,9 @@ class LevelRepository {
 
   Future<List<Level>> loadLevels(String languageCode) async {
     if (_remoteConfigService != null) {
-      return _remoteConfigService!.getLevels(languageCode);
+      return _remoteConfigService.getLevels(languageCode);
     }
-    
+
     final String fileName = languageCode == 'tr'
         ? 'levels_tr.json'
         : 'levels_en.json';
@@ -27,7 +27,7 @@ class LevelRepository {
 
   Future<List<Level>> loadDailyLevels(String languageCode) async {
     if (_remoteConfigService != null) {
-      return _remoteConfigService!.getDailyLevels(languageCode);
+      return _remoteConfigService.getDailyLevels(languageCode);
     }
 
     final String fileName = languageCode == 'tr'

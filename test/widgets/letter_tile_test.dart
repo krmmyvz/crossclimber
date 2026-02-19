@@ -41,7 +41,7 @@ void main() {
   testWidgets('LetterTile shows correct style for correct state', (WidgetTester tester) async {
     await tester.pumpWidget(
       MaterialApp(
-        theme: ThemeData(extensions: [GameColors.light]),
+        theme: ThemeData(extensions: const [GameColors.light]),
         home: const Scaffold(
           body: LetterTile(letter: 'C', isCorrect: true),
         ),

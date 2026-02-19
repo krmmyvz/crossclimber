@@ -217,7 +217,7 @@
             }
         }
     },
-    "buyOneLife": "Buy a single life",
+    "buyOneLifeDesc": "Buy a single life",
     "buyFiveLives": "Upgrade to 5 lives",
     "revealWord": "Reveal Word",
     "revealWordDesc": "Fully reveals the selected word",

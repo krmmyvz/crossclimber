@@ -20,7 +20,6 @@ class StatisticsScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
     final statisticsRepo = StatisticsRepository();
     final achievementService = AchievementService();
 

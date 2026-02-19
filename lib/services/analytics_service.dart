@@ -6,7 +6,7 @@ final analyticsServiceProvider = Provider((ref) => AnalyticsService());
 class AnalyticsService {
   final FirebaseAnalytics _analytics = FirebaseAnalytics.instance;
 
-  Future<void> logEvent(String name, Map<String, dynamic>? parameters) async {
+  Future<void> logEvent(String name, Map<String, Object>? parameters) async {
     await _analytics.logEvent(name: name, parameters: parameters);
   }
 

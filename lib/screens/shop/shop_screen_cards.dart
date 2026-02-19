@@ -238,7 +238,7 @@ mixin ShopScreenCards {
                     VerticalSpacing.xs,
                     Text(
                       amount == 1
-                          ? AppLocalizations.of(context)!.buyOneLife
+                          ? AppLocalizations.of(context)!.buyOneLifeDesc
                           : AppLocalizations.of(context)!.buyFiveLives,
                       style: theme.textTheme.bodyMedium?.copyWith(
                         color: theme.colorScheme.onSurfaceVariant,

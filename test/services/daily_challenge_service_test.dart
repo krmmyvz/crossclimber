@@ -50,7 +50,7 @@ void main() {
     test('resets challenge if date changed', () async {
       // Create a fake stored challenge from yesterday
       final yesterday = DateTime.now().subtract(const Duration(days: 1));
-      final yesterdayChallenge = DailyChallenge(
+      DailyChallenge(
         levelId: 5,
         date: DateTime(yesterday.year, yesterday.month, yesterday.day),
         completed: true,

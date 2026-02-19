@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:crossclimber/l10n/app_localizations.dart';
 import 'package:crossclimber/providers/game_provider.dart';
-import 'package:crossclimber/providers/progress_repository.dart';
 import 'package:crossclimber/theme/spacing.dart';
 
 class HintQuickAccessBar extends ConsumerWidget {
@@ -66,7 +65,7 @@ class HintQuickAccessBar extends ConsumerWidget {
                   if (stock > 0) {
                     await ref
                         .read(gameProvider.notifier)
-                        .useAdvancedHint('revealWord', selectedRowIndex);
+                        .useAdvancedHint('revealWord', selectedRowIndex!);
                     ref.invalidate(hintStocksProvider);
                     onHintUsed();
                   } else {

@@ -500,6 +500,48 @@ abstract class AppLocalizations {
   /// **'Daily Challenge'**
   String get dailyChallenge;
 
+  /// No description provided for @profile.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profile;
+
+  /// No description provided for @guestUser.
+  ///
+  /// In en, this message translates to:
+  /// **'Guest User'**
+  String get guestUser;
+
+  /// No description provided for @loggedInAs.
+  ///
+  /// In en, this message translates to:
+  /// **'Logged in as: {email}'**
+  String loggedInAs(String email);
+
+  /// No description provided for @linkAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Link Account'**
+  String get linkAccount;
+
+  /// No description provided for @linkAccountDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Link your account to save progress to the cloud.'**
+  String get linkAccountDesc;
+
+  /// No description provided for @signOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign Out'**
+  String get signOut;
+
+  /// No description provided for @googleSignIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in with Google'**
+  String get googleSignIn;
+
   /// No description provided for @tutorial_intro_welcome_title.
   ///
   /// In en, this message translates to:
@@ -725,7 +767,7 @@ abstract class AppLocalizations {
   /// No description provided for @buyOneLife.
   ///
   /// In en, this message translates to:
-  /// **'Buy a single life'**
+  /// **'Buy 1 Life (50 💰)'**
   String get buyOneLife;
 
   /// No description provided for @buyAllLives.
@@ -847,6 +889,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{amount} Lives'**
   String nLives(int amount);
+
+  /// No description provided for @buyOneLifeDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Buy a single life'**
+  String get buyOneLifeDesc;
 
   /// No description provided for @buyFiveLives.
   ///

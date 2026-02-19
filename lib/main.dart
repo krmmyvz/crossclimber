@@ -7,7 +7,6 @@ import 'package:crossclimber/screens/home_screen.dart';
 import 'package:crossclimber/providers/locale_provider.dart';
 import 'package:crossclimber/providers/settings_provider.dart';
 import 'package:crossclimber/theme/app_theme.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';

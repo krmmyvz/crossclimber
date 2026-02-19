@@ -15,6 +15,7 @@ import 'package:crossclimber/services/statistics_repository.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:crossclimber/services/sound_service.dart';
 import 'package:crossclimber/services/haptic_service.dart';
+import 'package:crossclimber/theme/responsive.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
@@ -185,8 +186,6 @@ class HomeScreen extends ConsumerWidget {
     );
   }
 }
-
-import 'package:crossclimber/theme/responsive.dart';
 
 class _QuickAccessButton extends StatelessWidget {
   final IconData icon;

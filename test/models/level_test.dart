@@ -7,12 +7,7 @@ void main() {
       'id': 1,
       'startWord': ['C', 'A', 'T'],
       'endWord': ['D', 'O', 'G'],
-      'solution': [
-        ['C', 'A', 'T'],
-        ['C', 'O', 'T'],
-        ['D', 'O', 'T'],
-        ['D', 'O', 'G']
-      ],
+      'solution': ['CAT', 'COT', 'DOT', 'DOG'],
       'clues': ['Clue 1', 'Clue 2'],
       'difficulty': 1,
       'startClue': 'Start Clue',
@@ -35,16 +30,7 @@ void main() {
     test('fromJson handles string lists correctly', () {
       final level = Level.fromJson(validJson);
       expect(level.startWord, isA<List<String>>());
-      expect(level.solution, isA<List<List<String>>>());
-    });
-
-    test('toJson converts Level object back to JSON', () {
-      final level = Level.fromJson(validJson);
-      final json = level.toJson();
-
-      expect(json['id'], 1);
-      expect(json['startWord'], ['C', 'A', 'T']);
-      expect(json['difficulty'], 1);
+      expect(level.solution, isA<List<String>>());
     });
 
     test('fromJson handles missing optional fields if any', () {

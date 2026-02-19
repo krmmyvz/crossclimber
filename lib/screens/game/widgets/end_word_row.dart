@@ -136,6 +136,7 @@ class EndWordRow extends StatelessWidget {
           ],
         ),
       ),
+      ),
     );
   }
 }

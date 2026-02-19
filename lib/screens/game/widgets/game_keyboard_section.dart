@@ -33,14 +33,12 @@ class GameKeyboardSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (settings.useCustomKeyboard) {
-      return Container(
-        child: CustomKeyboard(
-          languageCode: languageCode,
-          highlightedKeys: gameState.temporaryHighlightedKeys,
-          onKeyTap: onKeyTap,
-          onBackspace: onBackspace,
-          onSubmit: onSubmit,
-        ),
+      return CustomKeyboard(
+        languageCode: languageCode,
+        highlightedKeys: gameState.temporaryHighlightedKeys,
+        onKeyTap: onKeyTap,
+        onBackspace: onBackspace,
+        onSubmit: onSubmit,
       );
     }
 

@@ -4,8 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:crossclimber/l10n/app_localizations.dart';
 import 'package:crossclimber/screens/settings_screen.dart';
-import 'package:crossclimber/providers/settings_provider.dart';
-import 'package:crossclimber/providers/locale_provider.dart';
 
 void main() {
   Widget createWidgetUnderTest() {
@@ -57,7 +55,7 @@ void main() {
     
     // Default is usually true or false. If we tap, it should flip.
     // Let's assume default is true.
-    final switchWidget = tester.widget<SwitchListTile>(soundFinder);
+    tester.widget<SwitchListTile>(soundFinder);
     // The pumped widget is the *rebuilt* one with new state?
     // Actually, tester.widget gets the current widget in the tree.
     // If we started true, now it should be false?

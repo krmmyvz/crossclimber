@@ -145,9 +145,6 @@
     "tutorial_guess_keyboard_desc": "Klavyeyi kullanarak bir kelime yazın. Unutmayın: komşu kelimelerden sadece bir harf farklı olmalı!",
     "tutorial_guess_hints_title": "Yardıma İhtiyacınız Var mı?",
     "tutorial_guess_hints_desc": "Seviye başına 3 ipucunuz var. Takıldığınızda harfleri açığa çıkarmak veya ipucu almak için onları akıllıca kullanın.",
-    "tutorial_guess_keyboard_desc": "Klavyeyi kullanarak bir kelime yazın. Unutmayın: komşu kelimelerden sadece bir harf farklı olmalı!",
-    "tutorial_guess_hints_title": "Yardıma İhtiyacınız Var mı?",
-    "tutorial_guess_hints_desc": "Her seviyede 3 ipucunuz var. Takıldığınızda harfleri göstermek veya ipucu almak için akıllıca kullanın.",
     "tutorial_guess_timer_title": "Zamanla Yarışın",
     "tutorial_guess_timer_desc": "Daha hızlı tamamlama daha fazla yıldız kazandırır! Merak etmeyin, zaman sınırı yok.",
     
@@ -220,7 +217,7 @@
             }
         }
     },
-    "buyOneLife": "Tek can satın al",
+    "buyOneLifeDesc": "Tek can satın al",
     "buyFiveLives": "5 cana çıkar",
     "revealWord": "Kelimeyi Göster",
     "revealWordDesc": "Seçili kelimeyi tamamen açar",

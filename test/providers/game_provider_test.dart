@@ -32,10 +32,10 @@ void main() {
     startWord: ['C', 'A', 'T'],
     endWord: ['D', 'O', 'G'],
     solution: [
-      ['C', 'A', 'T'], // Start
-      ['C', 'O', 'T'], // Middle 1
-      ['D', 'O', 'T'], // Middle 2
-      ['D', 'O', 'G'], // End
+      'CAT', // Start
+      'COT', // Middle 1
+      'DOT', // Middle 2
+      'DOG', // End
     ],
     clues: ['A small bed', 'A point or speck'],
     difficulty: 1,

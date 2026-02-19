@@ -21,7 +21,9 @@ class AuthService {
     try {
       return await _auth.signInAnonymously();
     } catch (e) {
-      debugPrint("Anonim giriş hatası: $e");
+      if (kDebugMode) {
+        debugPrint('Anonim giriş hatası: $e');
+      }
       return null;
     }
   }
@@ -45,7 +47,9 @@ class AuthService {
         return await _auth.signInWithCredential(credential);
       }
     } catch (e) {
-      debugPrint("Google bağlama hatası: $e");
+      if (kDebugMode) {
+        debugPrint('Google bağlama hatası: $e');
+      }
       return null;
     }
   }

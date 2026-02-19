@@ -222,6 +222,30 @@ class AppLocalizationsEn extends AppLocalizations {
   String get dailyChallenge => 'Daily Challenge';
 
   @override
+  String get profile => 'Profile';
+
+  @override
+  String get guestUser => 'Guest User';
+
+  @override
+  String loggedInAs(String email) {
+    return 'Logged in as: $email';
+  }
+
+  @override
+  String get linkAccount => 'Link Account';
+
+  @override
+  String get linkAccountDesc =>
+      'Link your account to save progress to the cloud.';
+
+  @override
+  String get signOut => 'Sign Out';
+
+  @override
+  String get googleSignIn => 'Sign in with Google';
+
+  @override
   String get tutorial_intro_welcome_title => 'Welcome to CrossClimber!';
 
   @override
@@ -351,7 +375,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get buyOneLife => 'Buy a single life';
+  String get buyOneLife => 'Buy 1 Life (50 💰)';
 
   @override
   String get buyAllLives => 'Buy All Lives (100 💰)';
@@ -417,6 +441,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String nLives(int amount) {
     return '$amount Lives';
   }
+
+  @override
+  String get buyOneLifeDesc => 'Buy a single life';
 
   @override
   String get buyFiveLives => 'Upgrade to 5 lives';

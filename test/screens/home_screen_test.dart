@@ -34,15 +34,15 @@ void main() {
         soundServiceProvider.overrideWithValue(mockSoundService),
         hapticServiceProvider.overrideWithValue(mockHapticService),
       ],
-      child: MaterialApp(
-        localizationsDelegates: const [
+      child: const MaterialApp(
+        localizationsDelegates: [
           AppLocalizations.delegate,
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,
         ],
-        supportedLocales: const [Locale('en')],
-        home: const HomeScreen(),
+        supportedLocales: [Locale('en')],
+        home: HomeScreen(),
       ),
     );
   }

@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/foundation.dart';
-import '../models/level.dart';
+import 'package:crossclimber/models/level.dart';
 
 class RemoteConfigService {
   final FirebaseRemoteConfig _remoteConfig;
@@ -60,12 +60,12 @@ class RemoteConfigService {
     final jsonString = _remoteConfig.getString('economy_config');
     if (jsonString.isEmpty) {
       return {
-        "dailyLoginReward": 20,
-        "dailyChallengeReward": 50,
-        "adRewardCredits": 25,
-        "lifeCost": 50,
-        "allLivesCost": 100,
-        "maxAdsPerDay": 5
+        'dailyLoginReward': 20,
+        'dailyChallengeReward': 50,
+        'adRewardCredits': 25,
+        'lifeCost': 50,
+        'allLivesCost': 100,
+        'maxAdsPerDay': 5,
       };
     }
     return json.decode(jsonString);
