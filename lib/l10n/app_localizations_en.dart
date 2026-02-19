@@ -913,4 +913,41 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get shareStatisticsCTA => 'Can you beat my stats?';
+
+  @override
+  String get onboardingPage1Title => 'Climb the Words!';
+
+  @override
+  String get onboardingPage1Desc =>
+      'Climb from the starting word to the end word — find the hidden steps!';
+
+  @override
+  String get onboardingPage2Title => 'Guess, Sort, Solve!';
+
+  @override
+  String get onboardingPage2Desc =>
+      '3 phases to win: Guess hidden words → Sort them correctly → Solve the final word!';
+
+  @override
+  String get onboardingPage3Title => 'Daily Challenge';
+
+  @override
+  String get onboardingPage3Desc =>
+      'A brand new puzzle every day. Build your streak and beat your own record!';
+
+  @override
+  String get onboardingPage4Title => 'Build Combos!';
+
+  @override
+  String get onboardingPage4Desc =>
+      'Guess correctly in a row to multiply your score — 2x, 3x, 4x bonus points!';
+
+  @override
+  String get onboardingSkip => 'Skip';
+
+  @override
+  String get onboardingNext => 'Next';
+
+  @override
+  String get onboardingStart => 'Let\'s Go!';
 }

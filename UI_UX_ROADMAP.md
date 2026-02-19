@@ -77,16 +77,16 @@
 > **Hedef:** İlk açılışta kullanıcıyı kaybetmemek. Rakipler 30 saniyede oyunu öğretiyor.
 
 ### 2.1 Splash → Onboarding Akışı
-- [ ] Native splash → Flutter geçişi düzgün animate et (fade-through)
-- [ ] İlk açılış tespiti (`SharedPreferences` ile `isFirstLaunch` flag)
-- [ ] 3-4 sayfalık onboarding carousel tasarla:
+- [x] Native splash → Flutter geçişi düzgün animate et (fade-through)
+- [x] İlk açılış tespiti (`SharedPreferences` ile `isFirstLaunch` flag)
+- [x] 3-4 sayfalık onboarding carousel tasarla:
   - Sayfa 1: "Kelimeleri Tırman!" — Oyun konsepti görseli
   - Sayfa 2: "Tahmin Et, Sırala, Çöz!" — 3 faz görseli
   - Sayfa 3: "Günlük Meydan Okuma" — Daily Challenge tanıtımı
   - Sayfa 4: "Kombo Zinciri Kur!" — Kombo sistemi tanıtımı
-- [ ] Onboarding skip butonu (sağ üst) + son sayfada "Başla!" butonu
-- [ ] Onboarding animasyonları: her sayfa `flutter_animate` ile `fadeIn` + `slideX`
-- [ ] Onboarding tamamlandıktan sonra otomatik ilk level'a yönlendirme
+- [x] Onboarding skip butonu (sağ üst) + son sayfada "Başla!" butonu
+- [x] Onboarding animasyonları: her sayfa `flutter_animate` ile `fadeIn` + `slideX`
+- [x] Onboarding tamamlandıktan sonra otomatik ilk level'a yönlendirme
 
 ### 2.2 Tutorial İyileştirmesi
 - [ ] Eksik kombo tutorial adımını aktifleştir (`tutorial_combo_intro_*` stringler mevcut ama kullanılmıyor)

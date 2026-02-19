@@ -473,5 +473,16 @@
     "shareDailyChallengeCTA": "Günlük challenge'a katıl!",
     "shareMyStatsTitle": "\ud83d\udcca CrossClimber İstatistiklerim",
     "shareStatsCTA": "CrossClimber'da benimle yarış!",
-    "shareStatisticsCTA": "Benim istatistiklerimi geçebilir misin?"
+    "shareStatisticsCTA": "Benim istatistiklerimi geçebilir misin?",
+    "onboardingPage1Title": "Kelimeleri Tırman!",
+    "onboardingPage1Desc": "Başlangıç kelimesinden bitiş kelimesine gizli adımlarla tırman!",
+    "onboardingPage2Title": "Tahmin Et, Sırala, Çöz!",
+    "onboardingPage2Desc": "3 adımda kazan: Gizli kelimeleri tahmin et → Doğru sırala → Son kelimeyi çöz!",
+    "onboardingPage3Title": "Günlük Meydan Okuma",
+    "onboardingPage3Desc": "Her gün yeni bir bulmaca. Serisini kır, rekorunu geçmeye bak!",
+    "onboardingPage4Title": "Kombo Zinciri Kur!",
+    "onboardingPage4Desc": "Art arda doğru tahminler puanını çarpar — 2x, 3x, 4x bonus puan kazan!",
+    "onboardingSkip": "Atla",
+    "onboardingNext": "İleri",
+    "onboardingStart": "Başla!"
 }

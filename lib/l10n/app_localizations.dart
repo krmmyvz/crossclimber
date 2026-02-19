@@ -1735,6 +1735,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Can you beat my stats?'**
   String get shareStatisticsCTA;
+
+  /// No description provided for @onboardingPage1Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Climb the Words!'**
+  String get onboardingPage1Title;
+
+  /// No description provided for @onboardingPage1Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Climb from the starting word to the end word — find the hidden steps!'**
+  String get onboardingPage1Desc;
+
+  /// No description provided for @onboardingPage2Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Guess, Sort, Solve!'**
+  String get onboardingPage2Title;
+
+  /// No description provided for @onboardingPage2Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'3 phases to win: Guess hidden words → Sort them correctly → Solve the final word!'**
+  String get onboardingPage2Desc;
+
+  /// No description provided for @onboardingPage3Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily Challenge'**
+  String get onboardingPage3Title;
+
+  /// No description provided for @onboardingPage3Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'A brand new puzzle every day. Build your streak and beat your own record!'**
+  String get onboardingPage3Desc;
+
+  /// No description provided for @onboardingPage4Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Build Combos!'**
+  String get onboardingPage4Title;
+
+  /// No description provided for @onboardingPage4Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Guess correctly in a row to multiply your score — 2x, 3x, 4x bonus points!'**
+  String get onboardingPage4Desc;
+
+  /// No description provided for @onboardingSkip.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get onboardingSkip;
+
+  /// No description provided for @onboardingNext.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get onboardingNext;
+
+  /// No description provided for @onboardingStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s Go!'**
+  String get onboardingStart;
 }
 
 class _AppLocalizationsDelegate

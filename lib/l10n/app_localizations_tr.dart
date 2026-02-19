@@ -912,4 +912,41 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get shareStatisticsCTA => 'Benim istatistiklerimi geçebilir misin?';
+
+  @override
+  String get onboardingPage1Title => 'Kelimeleri Tırman!';
+
+  @override
+  String get onboardingPage1Desc =>
+      'Başlangıç kelimesinden bitiş kelimesine gizli adımlarla tırman!';
+
+  @override
+  String get onboardingPage2Title => 'Tahmin Et, Sırala, Çöz!';
+
+  @override
+  String get onboardingPage2Desc =>
+      '3 adımda kazan: Gizli kelimeleri tahmin et → Doğru sırala → Son kelimeyi çöz!';
+
+  @override
+  String get onboardingPage3Title => 'Günlük Meydan Okuma';
+
+  @override
+  String get onboardingPage3Desc =>
+      'Her gün yeni bir bulmaca. Serisini kır, rekorunu geçmeye bak!';
+
+  @override
+  String get onboardingPage4Title => 'Kombo Zinciri Kur!';
+
+  @override
+  String get onboardingPage4Desc =>
+      'Art arda doğru tahminler puanını çarpar — 2x, 3x, 4x bonus puan kazan!';
+
+  @override
+  String get onboardingSkip => 'Atla';
+
+  @override
+  String get onboardingNext => 'İleri';
+
+  @override
+  String get onboardingStart => 'Başla!';
 }

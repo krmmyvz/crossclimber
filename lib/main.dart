@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:crossclimber/l10n/app_localizations.dart';
 
 import 'package:crossclimber/screens/home_screen.dart';
+import 'package:crossclimber/screens/onboarding_screen.dart';
 import 'package:crossclimber/providers/locale_provider.dart';
 import 'package:crossclimber/providers/settings_provider.dart';
+import 'package:crossclimber/providers/onboarding_provider.dart';
 import 'package:crossclimber/theme/app_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
@@ -64,7 +67,28 @@ class CrossclimbApp extends ConsumerWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: const [Locale('en'), Locale('tr')],
-      home: const HomeScreen(),
+      home: const _StartupRouter(),
+    );
+  }
+}
+
+/// Routes to [OnboardingScreen] on first launch, [HomeScreen] otherwise.
+/// Provides a smooth fade-in transition from the native splash screen.
+class _StartupRouter extends ConsumerWidget {
+  const _StartupRouter();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final isFirstLaunch = ref.watch(isFirstLaunchProvider);
+
+    return isFirstLaunch.when(
+      loading: () => const Scaffold(body: SizedBox.shrink()),
+      error: (_, __) => const HomeScreen(),
+      data: (bool firstLaunch) => (firstLaunch
+              ? const OnboardingScreen()
+              : const HomeScreen())
+          .animate()
+          .fadeIn(duration: 500.ms, curve: Curves.easeIn),
     );
   }
 }

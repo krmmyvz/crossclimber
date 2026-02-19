@@ -2,5 +2,10 @@
     "java.configuration.updateBuildConfiguration": "disabled",
     "java.autobuild.enabled": false,
     "python.languageServer": "None",
-    "dart.analyzeExternalPackageFiles": false
+    "dart.analyzeExternalPackageFiles": false,
+    "chat.tools.terminal.autoApprove": {
+        "git config": true,
+        "git remote": true,
+        "git fetch": true
+    }
 }

@@ -473,6 +473,17 @@
     "shareDailyChallengeCTA": "Join the daily challenge!",
     "shareMyStatsTitle": "\ud83d\udcca My CrossClimber Stats",
     "shareStatsCTA": "Challenge me in CrossClimber!",
-    "shareStatisticsCTA": "Can you beat my stats?"
+    "shareStatisticsCTA": "Can you beat my stats?",
+    "onboardingPage1Title": "Climb the Words!",
+    "onboardingPage1Desc": "Climb from the starting word to the end word — find the hidden steps!",
+    "onboardingPage2Title": "Guess, Sort, Solve!",
+    "onboardingPage2Desc": "3 phases to win: Guess hidden words → Sort them correctly → Solve the final word!",
+    "onboardingPage3Title": "Daily Challenge",
+    "onboardingPage3Desc": "A brand new puzzle every day. Build your streak and beat your own record!",
+    "onboardingPage4Title": "Build Combos!",
+    "onboardingPage4Desc": "Guess correctly in a row to multiply your score — 2x, 3x, 4x bonus points!",
+    "onboardingSkip": "Skip",
+    "onboardingNext": "Next",
+    "onboardingStart": "Let's Go!"
 }
 
