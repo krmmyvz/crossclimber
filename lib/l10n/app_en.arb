@@ -499,6 +499,33 @@
     "discoveryAchievementsDesc": "Complete milestones to unlock badges and earn bonus credits.",
     "discoveryDailyTitle": "Build Your Streak!",
     "discoveryDailyDesc": "Complete the daily challenge every day to keep your streak alive and earn rewards.",
-    "discoveryGotIt": "Got it!"
+    "discoveryGotIt": "Got it!",
+    "homeSubtitle": "Climb the words to the top!",
+    "homeQuickPlay": "Quick Play",
+    "homeContinueLevel": "Continue: Level {level}",
+    "@homeContinueLevel": {
+        "placeholders": {
+            "level": { "type": "int" }
+        }
+    },
+    "homeStreakDays": "{days}\uD83D\uDD25",
+    "@homeStreakDays": {
+        "placeholders": {
+            "days": { "type": "int" }
+        }
+    },
+    "homeTotalStars": "{count} \u2605",
+    "@homeTotalStars": {
+        "placeholders": {
+            "count": { "type": "int" }
+        }
+    },
+    "homeAchievementsProgress": "{unlocked}/{total}",
+    "@homeAchievementsProgress": {
+        "placeholders": {
+            "unlocked": { "type": "int" },
+            "total": { "type": "int" }
+        }
+    }
 }
 

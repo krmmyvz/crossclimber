@@ -499,5 +499,32 @@
     "discoveryAchievementsDesc": "Dönüm noktalarını tamamlayarak rozetler aç ve bonus kredi kazan.",
     "discoveryDailyTitle": "Serini Gündeme Taşı!",
     "discoveryDailyDesc": "Serinizi canlı tutmak ve ödüller kazanmak için günlük meydan okumayı her gün tamamlayın.",
-    "discoveryGotIt": "Anlaştık!"
+    "discoveryGotIt": "Anlaştık!",
+    "homeSubtitle": "Kelimelere zirveye tırman!",
+    "homeQuickPlay": "Hızlı Oyna",
+    "homeContinueLevel": "Devam Et: Level {level}",
+    "@homeContinueLevel": {
+        "placeholders": {
+            "level": { "type": "int" }
+        }
+    },
+    "homeStreakDays": "{days}\uD83D\uDD25",
+    "@homeStreakDays": {
+        "placeholders": {
+            "days": { "type": "int" }
+        }
+    },
+    "homeTotalStars": "{count} \u2605",
+    "@homeTotalStars": {
+        "placeholders": {
+            "count": { "type": "int" }
+        }
+    },
+    "homeAchievementsProgress": "{unlocked}/{total}",
+    "@homeAchievementsProgress": {
+        "placeholders": {
+            "unlocked": { "type": "int" },
+            "total": { "type": "int" }
+        }
+    }
 }

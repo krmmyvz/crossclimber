@@ -110,15 +110,15 @@
 > **Hedef:** Profesyonel, mağaza vitrinine layık görsel kalite.
 
 ### 3.1 HomeScreen Yeniden Tasarım
-- [ ] Hero banner: Animasyonlu gradient arka plan + CrossClimber logo
-- [ ] "Oyna" butonu: Büyük, merkezi, pulsing glow efekti (mevcut ama geliştirilecek)
-- [ ] Quick access butonları: İkon kartları yerine **grid layout** (2×2):
+- [x] Hero banner: Animasyonlu gradient arka plan + CrossClimber logo
+- [x] "Oyna" butonu: Büyük, merkezi, pulsing glow efekti (mevcut ama geliştirilecek)
+- [x] Quick access butonları: İkon kartları yerine **grid layout** (2×2):
   - 📅 Günlük Meydan Okuma (streak badge ile)
   - 🏆 Başarımlar (kilit açma yüzdesi ile)
   - 📊 İstatistikler (toplam yıldız ile)
   - 🛒 Mağaza (kredi sayısı ile)
-- [ ] Alt kısım: "Devam Et" butonu (son kaldığın level) + "Hızlı Oyna" (rastgele level)
-- [ ] HomeScreen loading state: Skeleton loading ekle (diğer ekranlarda var, burada yok)
+- [x] Alt kısım: "Devam Et" butonu (son kaldığın level) + "Hızlı Oyna" (rastgele level)
+- [x] HomeScreen loading state: Skeleton loading ekle (diğer ekranlarda var, burada yok)
 - [ ] Günün sözü / motivasyon kartı (opsiyonel, Firebase Remote Config ile)
 
 ### 3.2 Level Map Yeniden Tasarım  

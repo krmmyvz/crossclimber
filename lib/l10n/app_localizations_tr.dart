@@ -1000,4 +1000,30 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get discoveryGotIt => 'Anlaştık!';
+
+  @override
+  String get homeSubtitle => 'Kelimelere zirveye tırman!';
+
+  @override
+  String get homeQuickPlay => 'Hızlı Oyna';
+
+  @override
+  String homeContinueLevel(int level) {
+    return 'Devam Et: Level $level';
+  }
+
+  @override
+  String homeStreakDays(int days) {
+    return '$days🔥';
+  }
+
+  @override
+  String homeTotalStars(int count) {
+    return '$count ★';
+  }
+
+  @override
+  String homeAchievementsProgress(int unlocked, int total) {
+    return '$unlocked/$total';
+  }
 }

@@ -1001,4 +1001,30 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get discoveryGotIt => 'Got it!';
+
+  @override
+  String get homeSubtitle => 'Climb the words to the top!';
+
+  @override
+  String get homeQuickPlay => 'Quick Play';
+
+  @override
+  String homeContinueLevel(int level) {
+    return 'Continue: Level $level';
+  }
+
+  @override
+  String homeStreakDays(int days) {
+    return '$days🔥';
+  }
+
+  @override
+  String homeTotalStars(int count) {
+    return '$count ★';
+  }
+
+  @override
+  String homeAchievementsProgress(int unlocked, int total) {
+    return '$unlocked/$total';
+  }
 }

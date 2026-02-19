@@ -1891,6 +1891,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Got it!'**
   String get discoveryGotIt;
+
+  /// No description provided for @homeSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Climb the words to the top!'**
+  String get homeSubtitle;
+
+  /// No description provided for @homeQuickPlay.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick Play'**
+  String get homeQuickPlay;
+
+  /// No description provided for @homeContinueLevel.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue: Level {level}'**
+  String homeContinueLevel(int level);
+
+  /// No description provided for @homeStreakDays.
+  ///
+  /// In en, this message translates to:
+  /// **'{days}🔥'**
+  String homeStreakDays(int days);
+
+  /// No description provided for @homeTotalStars.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} ★'**
+  String homeTotalStars(int count);
+
+  /// No description provided for @homeAchievementsProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'{unlocked}/{total}'**
+  String homeAchievementsProgress(int unlocked, int total);
 }
 
 class _AppLocalizationsDelegate
