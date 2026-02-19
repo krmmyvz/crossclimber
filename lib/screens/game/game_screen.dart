@@ -17,7 +17,6 @@ import 'package:crossclimber/screens/level_completion_screen.dart';
 import 'package:crossclimber/widgets/common_app_bar.dart';
 import 'package:crossclimber/screens/game/game_screen_dialogs.dart';
 import 'package:crossclimber/screens/game/game_screen_tutorial.dart';
-import 'package:crossclimber/screens/game/game_screen_hints.dart';
 import 'package:crossclimber/screens/game/widgets/game_status_bar.dart';
 import 'package:crossclimber/screens/game/widgets/middle_words_section.dart';
 import 'package:crossclimber/screens/game/widgets/end_word_row.dart';
@@ -45,8 +44,7 @@ class _GameScreenState extends ConsumerState<GameScreen>
         WidgetsBindingObserver,
         SingleTickerProviderStateMixin,
         GameScreenDialogs,
-        GameScreenTutorial,
-        GameScreenHints {
+        GameScreenTutorial {
   final TextEditingController _inputController = TextEditingController();
   final FocusNode _focusNode = FocusNode();
   bool _keyboardVisible = false;

@@ -60,9 +60,9 @@
 - [x] `daily_challenge_screen.dart` — `'Completed Today!'`, `'Today\'s Challenge'` → l10n'a taşındı
 
 ### 1.2 Ölü Kod Temizliği
-- [ ] `game_keyboard.dart` — Kullanılmayan `GameKeyboard` widget'ını kaldır veya deprecated işaretle
-- [ ] `game_screen_hints.dart` — Boş deprecated mixin'i temizle, `GameScreen`'den kaldır
-- [ ] Kullanılmayan import'ları temizle (`dart fix --apply`)
+- [x] `game_keyboard.dart` — Kullanılmayan `GameKeyboard` widget'ını kaldır veya deprecated işaretle
+- [x] `game_screen_hints.dart` — Boş deprecated mixin'i temizle, `GameScreen`'den kaldır
+- [x] Kullanılmayan import'ları temizle (`dart fix --apply`)
 
 ### 1.3 Ses Sistemi Düzeltmesi
 - [ ] `sound_service.dart` — Tek `AudioPlayer` yerine audio pool (en az 3 player) kullan
