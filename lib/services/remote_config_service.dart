@@ -75,6 +75,69 @@ class RemoteConfigService {
     return _remoteConfig.getString('content_version');
   }
 
+  /// Returns today's quote for the given locale.
+  /// Rotates through the list using day-of-year so every day is different.
+  /// Falls back to local hardcoded list when Remote Config is empty.
+  Map<String, String> getDailyQuote(String languageCode) {
+    final key = 'daily_quotes_$languageCode';
+    final jsonString = _remoteConfig.getString(key);
+
+    List<dynamic> quotes;
+    try {
+      quotes = jsonString.isNotEmpty
+          ? json.decode(jsonString) as List<dynamic>
+          : _localQuotes[languageCode] ?? _localQuotes['en']!;
+    } catch (_) {
+      quotes = _localQuotes[languageCode] ?? _localQuotes['en']!;
+    }
+
+    if (quotes.isEmpty) quotes = _localQuotes['en']!;
+
+    final epoch = DateTime(2026, 1, 1);
+    final dayIndex = DateTime.now().difference(epoch).inDays.abs();
+    final q = quotes[dayIndex % quotes.length] as Map<String, dynamic>;
+
+    return {
+      'text': q['text'] as String? ?? '',
+      'author': q['author'] as String? ?? '',
+    };
+  }
+
+  static const _localQuotes = <String, List<Map<String, String?>>>{
+    'en': [
+      {'text': 'Every word is a step up the mountain.', 'author': 'CrossClimber'},
+      {'text': 'Climb with words, reach the summit.', 'author': null},
+      {'text': 'The best vocabulary is built one puzzle at a time.', 'author': null},
+      {'text': 'Words are the rungs of the ladder to mastery.', 'author': null},
+      {'text': 'Start with one word. The summit will follow.', 'author': 'CrossClimber'},
+      {'text': 'Language is the map; words are the path.', 'author': null},
+      {'text': 'Every solved puzzle is a new peak conquered.', 'author': 'CrossClimber'},
+      {'text': 'Challenge your mind, one word ladder at a time.', 'author': null},
+      {'text': 'The journey of a thousand words begins with one.', 'author': null},
+      {'text': 'Sharp minds climb the sharpest word mountains.', 'author': 'CrossClimber'},
+      {'text': 'Play every day, grow every day.', 'author': null},
+      {'text': 'Words connect us — so does CrossClimber.', 'author': 'CrossClimber'},
+      {'text': 'Think. Guess. Climb. Repeat.', 'author': 'CrossClimber'},
+      {'text': 'Each puzzle is a new adventure in language.', 'author': null},
+    ],
+    'tr': [
+      {'text': 'Her kelime dağın bir basamağıdır.', 'author': 'CrossClimber'},
+      {'text': 'Kelimelerle tırman, zirveye ulaş.', 'author': null},
+      {'text': 'En iyi kelime dağarcığı her bulmacada gelişir.', 'author': null},
+      {'text': 'Kelimeler, ustalığa giden merdivenin basamaklarıdır.', 'author': null},
+      {'text': 'Bir kelimeyle başla, zirve peşinden gelir.', 'author': 'CrossClimber'},
+      {'text': 'Dil bir harita, kelimeler ise yoldur.', 'author': null},
+      {'text': 'Çözülen her bulmaca, fethedilen yeni bir zirve demektir.', 'author': 'CrossClimber'},
+      {'text': 'Zihnini zorluyorsun, her kelime merdiveninde.', 'author': null},
+      {'text': 'Bin kelimelik yolculuk tek bir kelimeyle başlar.', 'author': null},
+      {'text': 'Keskin zihinler, en dik kelime dağlarını tırmanır.', 'author': 'CrossClimber'},
+      {'text': 'Her gün oyna, her gün büyü.', 'author': null},
+      {'text': 'Kelimeler bizi birbirine bağlar — CrossClimber de öyle.', 'author': 'CrossClimber'},
+      {'text': 'Düşün. Tahmin Et. Tırman. Tekrarla.', 'author': 'CrossClimber'},
+      {'text': 'Her bulmaca, dilde yeni bir macera.', 'author': null},
+    ],
+  };
+
   // Fallback methods
   Future<List<Level>> _loadLocalLevels(String languageCode) async {
     final String fileName = languageCode == 'tr' ? 'levels_tr.json' : 'levels_en.json';

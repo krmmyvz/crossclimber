@@ -119,38 +119,38 @@
   - 🛒 Mağaza (kredi sayısı ile)
 - [x] Alt kısım: "Devam Et" butonu (son kaldığın level) + "Hızlı Oyna" (rastgele level)
 - [x] HomeScreen loading state: Skeleton loading ekle (diğer ekranlarda var, burada yok)
-- [ ] Günün sözü / motivasyon kartı (opsiyonel, Firebase Remote Config ile)
+- [x] Günün sözü / motivasyon kartı (opsiyonel, Firebase Remote Config ile)
 
 ### 3.2 Level Map Yeniden Tasarım  
 - [ ] Mevcut grid → **yol/patika bazlı** ilerleme haritası (Wordscapes benzeri)
-- [ ] Zorluk bölgeleri: Kolay (yeşil), Orta (mavi), Zor (mor), Uzman (kırmızı) renk kodlaması
-- [ ] Kilitli level'larda kilit ikonu + hafif blur/desatürasyon
-- [ ] Mevcut level vurgulama: Parlayan border + pulsing animasyon
+- [x] Zorluk bölgeleri: Kolay (yeşil), Orta (mavi), Zor (mor), Uzman (kırmızı) renk kodlaması
+- [x] Kilitli level'larda kilit ikonu + hafif blur/desatürasyon
+- [x] Mevcut level vurgulama: Parlayan border + pulsing animasyon
 - [ ] Bölüm arası "Boss Level" veya "Checkpoint" görselleştirmesi
-- [ ] İlerleme çubuğu: Her zorluk bölgesinin üst kısmında mini progress bar
-- [ ] Level kartında: Yıldızlar altın renkli (mevcut), en iyi süre küçük text, tamamlanma tarihi tooltip
-- [ ] Scroll pozisyonunu kaydet: Kullanıcı geri geldiğinde son kaldığı yer
+- [x] İlerleme çubuğu: Her zorluk bölgesinin üst kısmında mini progress bar
+- [x] Level kartında: Yıldızlar altın renkli (mevcut), en iyi süre küçük text, tamamlanma tarihi tooltip
+- [x] Scroll pozisyonunu kaydet: Kullanıcı geri geldiğinde son kaldığı yer
 
 ### 3.3 Game Screen Polish
 - [ ] Kelime satırları arası **bağlantı çizgisi** veya merdiven görselleştirmesi
 - [ ] Doğru tahmin: Confetti particle (küçük, lokal — level sonu confetti'den farklı)
 - [ ] Yanlış tahmin: Kırmızı flash + hafif ekran sallanması (screen shake)
-- [ ] Sıralama fazı geçişi: Phase banner animasyonu ("Şimdi Sırala!" slide-in + fade-out)
-- [ ] Final çözüm fazı geçişi: Dramatik reveal (üst/alt kelimeler kilit açma animasyonuyla ortaya çıkar)
-- [ ] Timer: Son 30 saniyede kırmızıya dönsün + hafif pulse
+- [x] Sıralama fazı geçişi: Phase banner animasyonu ("Şimdi Sırala!" slide-in + fade-out)
+- [x] Final çözüm fazı geçişi: Dramatik reveal (üst/alt kelimeler kilit açma animasyonuyla ortaya çıkar)
+- [x] Timer: Son 30 saniyede kırmızıya dönsün + hafif pulse
 - [ ] Skor artışı: Sayı artış animasyonu (count-up, mevcut LevelCompletion'da var ama game içinde yok)
 
 ### 3.4 Level Completion Screen Polish
-- [ ] 3 yıldız → Tam ekran confetti + altın parıltı efekti (mevcut confetti geliştirilecek)
-- [ ] 2 yıldız → Hafif confetti + "Harika!" mesajı
-- [ ] 1 yıldız → Minimal kutlama + "Tekrar Dene" vurgusu
-- [ ] 0 yıldız → Teşvik mesajı + ipucu önerisi
-- [ ] Yıldız animasyonu: Her yıldız sırayla dolsun (1→2→3) + bounce + shimmer
+- [x] 3 yıldız → Tam ekran confetti + altın parıltı efekti (mevcut confetti geliştirilecek)
+- [x] 2 yıldız → Hafif confetti + "Harika!" mesajı
+- [x] 1 yıldız → Minimal kutlama + "Tekrar Dene" vurgusu
+- [x] 0 yıldız → Teşvik mesajı + ipucu önerisi
+- [x] Yıldız animasyonu: Her yıldız sırayla dolsun (1→2→3) + bounce + shimmer
 - [ ] XP bar / Rank ilerleme göstergesi (Phase 6 ile entegre)
 - [ ] "Sonraki Level" butonuna otomatik ön-yükleme (level verisini)
 
 ### 3.5 Wordle-Tarzı Emoji Grid Paylaşımı
-- [ ] Level tamamlandığında emoji grid oluştur:
+- [x] Level tamamlandığında emoji grid oluştur:
   ```
   CrossClimber #42 ⭐⭐⭐
   🟩🟩🟩🟩 (doğru tahmin)
@@ -159,8 +159,8 @@
   ⏱️ 2:35 | 🔥 x5 Combo
   #CrossClimber
   ```
-- [ ] Paylaşım butonuna basınca önce preview göster, sonra paylaş
-- [ ] Clipboard'a kopyalama seçeneği (Share Sheet'e ek olarak)
+- [x] Paylaşım butonuna basınca önce preview göster, sonra paylaş
+- [x] Clipboard'a kopyalama seçeneği (Share Sheet'e ek olarak)
 
 ---
 
@@ -169,31 +169,31 @@
 > **Hedef:** Tüm kullanıcıların oyunu oynayabilmesi. App Store'da erişilebilirlik puanı artırma.
 
 ### 4.1 Semantics Kapsamını Genişlet
-- [ ] `ComboIndicator` — Combo durumu ve çarpan bilgisi için `Semantics` ekle
-- [ ] `GameStatusBar` — Timer, skor, combo için `Semantics` sarmalayıcı
-- [ ] `HintQuickAccessBar` — Her buton için `Semantics(label, button: true)`
+- [x] `ComboIndicator` — Combo durumu ve çarpan bilgisi için `Semantics` ekle
+- [x] `GameStatusBar` — Timer, skor, combo için `Semantics` sarmalayıcı
+- [x] `HintQuickAccessBar` — Her buton için `Semantics(label, button: true)`
 - [ ] `CommonAppBar` status chip'leri — Kredi, can, streak için `Semantics`
-- [ ] Level kartları (`LevelMapScreen`) — Level numarası, yıldız, durum
+- [x] Level kartları (`LevelMapScreen`) — Level numarası, yıldız, durum
 - [ ] `HomeScreen` quick access butonları — Her birine `Semantics(label, button: true)`
 - [ ] `TutorialOverlay` — Tutorial içerik kartı + navigasyon butonları
-- [ ] `ConfettiOverlay` — `excludeSemantics: true` (dekoratif)
+- [x] `ConfettiOverlay` — `excludeSemantics: true` (dekoratif)
 - [ ] `CustomKeyboard` — Her harf tuşuna `Semantics(label: 'Harf X', keyboardKey: true)`
 - [ ] `ShopScreen` — Tüm ürün kartları ve butonlar
 
 ### 4.2 Metin Ölçekleme Güvenliği
-- [ ] `MediaQuery.textScaleFactorOf(context)` ile kritik alanlarda max scale kontrolü
+- [x] `MediaQuery.textScaleFactorOf(context)` ile kritik alanlarda max scale kontrolü
 - [ ] Tüm önemli label'larda `maxLines` + `overflow: TextOverflow.ellipsis`
 - [ ] Büyük metin (200%+) ile test: Level haritası, game board, keyboard, status bar
-- [ ] `LetterTile` font boyutunu text scale factor'a göre clamp et
+- [x] `LetterTile` font boyutunu text scale factor'a göre clamp et
 
 ### 4.3 Renk & Kontrast
 - [ ] Her temada WCAG AA kontrast oranlarını doğrula (4.5:1 metin, 3:1 büyük metin)
 - [ ] Renk körlüğü alternatifleri: Doğru/yanlış durumlarında renk + şekil/ikon kombinasyonu
-- [ ] Yüksek kontrast modu ekle (Settings'e toggle olarak)
+- [x] Yüksek kontrast modu ekle (Settings'e toggle olarak)
 
 ### 4.4 Ekran Okuyucu Desteği  
 - [ ] TalkBack (Android) ve VoiceOver (iOS) ile tam oyun akışı testi
-- [ ] Sıralama fazında: "Kelimeyi yukarı/aşağı taşımak için çift dokunun ve sürükleyin" talimatı
+- [x] Sıralama fazında: "Kelimeyi yukarı/aşağı taşımak için çift dokunun ve sürükleyin" talimatı
 - [ ] Focus sıralamasını doğrula: Mantıklı tab order (yukarıdan aşağı, soldan sağa)
 - [ ] Semantics aksiyonları: `onTap`, `onLongPress` label'ları
 

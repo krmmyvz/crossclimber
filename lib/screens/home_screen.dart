@@ -20,6 +20,7 @@ import 'package:crossclimber/services/statistics_repository.dart';
 import 'package:crossclimber/services/achievement_service.dart';
 import 'package:crossclimber/services/daily_reward_service.dart';
 import 'package:crossclimber/providers/game_provider.dart';
+import 'package:crossclimber/providers/locale_provider.dart';
 import 'package:crossclimber/services/sound_service.dart';
 import 'package:crossclimber/services/haptic_service.dart';
 
@@ -46,6 +47,12 @@ final _homeAchievementsProvider =
     unlocked: achievements.where((a) => a.isUnlocked).length,
     total: achievements.length,
   );
+});
+
+final _homeQuoteProvider = Provider.autoDispose<Map<String, String>>((ref) {
+  final locale = ref.watch(localeProvider).languageCode;
+  final remoteConfig = ref.read(remoteConfigServiceProvider);
+  return remoteConfig.getDailyQuote(locale);
 });
 
 // ─── HomeScreen ──────────────────────────────────────────────────────────────
@@ -275,7 +282,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
                 ],
               ),
             ).animate().fadeIn(delay: 250.ms),
-
+            // ── Daily Quote ──────────────────────────────────────────────
+            _QuoteCard(quote: ref.watch(_homeQuoteProvider))
+                .animate()
+                .fadeIn(delay: 280.ms)
+                .slideY(begin: 0.06, end: 0, delay: 280.ms),
             // ── Settings ─────────────────────────────────────────────────
             Padding(
               padding: const EdgeInsets.fromLTRB(
@@ -563,6 +574,76 @@ class _GridCard extends StatelessWidget {
               ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+// ─── Daily Quote Card ─────────────────────────────────────────────────────────
+
+class _QuoteCard extends StatelessWidget {
+  final Map<String, String> quote;
+
+  const _QuoteCard({required this.quote});
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final text = quote['text'] ?? '';
+    final author = quote['author'] ?? '';
+    if (text.isEmpty) return const SizedBox.shrink();
+
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(Spacing.m, Spacing.s, Spacing.m, 0),
+      child: Container(
+        padding: const EdgeInsets.symmetric(
+          horizontal: Spacing.l,
+          vertical: Spacing.m,
+        ),
+        decoration: BoxDecoration(
+          color: theme.colorScheme.surfaceContainerLow,
+          borderRadius: RadiiBR.lg,
+          border: Border.all(
+            color: theme.colorScheme.outlineVariant.withValues(alpha: 0.5),
+          ),
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Icon(
+              Icons.format_quote_rounded,
+              color: theme.colorScheme.primary.withValues(alpha: 0.7),
+              size: 28,
+            ),
+            HorizontalSpacing.s,
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    text,
+                    style: theme.textTheme.bodyMedium?.copyWith(
+                      fontStyle: FontStyle.italic,
+                      color: theme.colorScheme.onSurface.withValues(alpha: 0.85),
+                      height: 1.45,
+                    ),
+                  ),
+                  if (author.isNotEmpty) ...[
+                    VerticalSpacing.xs,
+                    Text(
+                      '— $author',
+                      style: theme.textTheme.labelSmall?.copyWith(
+                        color: theme.colorScheme.primary,
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: 0.3,
+                      ),
+                    ),
+                  ],
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );
