@@ -29,6 +29,10 @@ migrate_working_dir/
 # Android build outputs
 android/build/
 
+# Firebase / Google Services (contain API keys - do not commit)
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+
 # Flutter/Dart/Pub related
 **/doc/api/
 **/ios/Flutter/.last_build_id
