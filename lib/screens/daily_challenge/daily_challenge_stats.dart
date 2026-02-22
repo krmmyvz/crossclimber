@@ -5,6 +5,10 @@ import 'package:crossclimber/services/daily_challenge_service.dart';
 import 'package:crossclimber/theme/border_radius.dart';
 import 'package:crossclimber/theme/game_colors.dart';
 import 'package:crossclimber/theme/spacing.dart';
+import 'package:crossclimber/theme/icon_sizes.dart';
+import 'package:crossclimber/widgets/section_header.dart';
+import 'package:crossclimber/theme/animations.dart';
+import 'package:crossclimber/theme/opacities.dart';
 
 /// Mixin for daily challenge statistics widgets
 mixin DailyChallengeStats {
@@ -25,17 +29,9 @@ mixin DailyChallengeStats {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            children: [
-              Icon(Icons.bar_chart, color: theme.colorScheme.primary),
-              HorizontalSpacing.s,
-              Text(
-                l10n.yourStats,
-                style: theme.textTheme.titleLarge?.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
+          SectionHeader.large(
+            icon: Icons.bar_chart,
+            title: l10n.yourStats,
           ),
           VerticalSpacing.l,
           Row(
@@ -69,9 +65,47 @@ mixin DailyChallengeStats {
               ),
             ],
           ),
+          // Streak freeze info (D-2 fix: make freeze count visible)
+          FutureBuilder<int>(
+            future: DailyChallengeService().getStreakFreezeCount(),
+            builder: (context, snapshot) {
+              final freezeCount = snapshot.data ?? 0;
+              if (freezeCount <= 0) return const SizedBox.shrink();
+              return Padding(
+                padding: const EdgeInsets.only(top: Spacing.m),
+                child: Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: Spacing.m,
+                    vertical: Spacing.s,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.lightBlue.withValues(alpha: Opacities.faint),
+                    borderRadius: RadiiBR.md,
+                    border: Border.all(
+                      color: Colors.lightBlue.withValues(alpha: Opacities.quarter),
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Icon(Icons.ac_unit, size: IconSizes.smd, color: Colors.lightBlue),
+                      const SizedBox(width: Spacing.s),
+                      Text(
+                        l10n.streakFreezeCount(freezeCount),
+                        style: theme.textTheme.labelLarge?.copyWith(
+                          color: Colors.lightBlue,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            },
+          ),
         ],
       ),
-    ).animate().fadeIn(delay: 200.ms).slideX(begin: -0.2, end: 0);
+    ).animate().fadeIn(delay: AnimDurations.fast).slideX(begin: -0.2, end: 0);
   }
 
   Widget buildStatItem(
@@ -86,10 +120,10 @@ mixin DailyChallengeStats {
         Container(
           padding: const EdgeInsets.all(Spacing.s + Spacing.xs),
           decoration: BoxDecoration(
-            color: color.withValues(alpha: 0.1),
+            color: color.withValues(alpha: Opacities.subtle),
             shape: BoxShape.circle,
           ),
-          child: Icon(icon, color: color, size: 24),
+          child: Icon(icon, color: color, size: IconSizes.lg),
         ),
         VerticalSpacing.s,
         Text(
@@ -104,6 +138,7 @@ mixin DailyChallengeStats {
           style: theme.textTheme.bodySmall?.copyWith(
             color: theme.colorScheme.onSurfaceVariant,
           ),
+          textAlign: TextAlign.center,
         ),
       ],
     );
@@ -122,10 +157,10 @@ mixin DailyChallengeStats {
         Container(
           padding: SpacingInsets.s,
           decoration: BoxDecoration(
-            color: color.withValues(alpha: 0.1),
+            color: color.withValues(alpha: Opacities.subtle),
             shape: BoxShape.circle,
           ),
-          child: Icon(icon, size: 20, color: color),
+          child: Icon(icon, size: IconSizes.md, color: color),
         ),
         VerticalSpacing.xs,
         Text(

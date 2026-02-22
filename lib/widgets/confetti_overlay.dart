@@ -2,6 +2,8 @@ import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 
+import 'package:crossclimber/theme/game_colors.dart';
+
 class ConfettiOverlay extends StatelessWidget {
   final ConfettiController controller;
   final bool loop;
@@ -14,6 +16,8 @@ class ConfettiOverlay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final gameColors = theme.gameColors;
     return ExcludeSemantics(
       child: Align(
       alignment: Alignment.topCenter,
@@ -26,13 +30,13 @@ class ConfettiOverlay extends StatelessWidget {
         numberOfParticles: 20,
         gravity: 0.2, // slower fall
         shouldLoop: loop,
-        colors: const [
-          Colors.green,
-          Colors.blue,
-          Colors.pink,
-          Colors.orange,
-          Colors.purple,
-          Colors.yellow,
+        colors: [
+          gameColors.success,
+          theme.colorScheme.primary,
+          theme.colorScheme.tertiary,
+          gameColors.warning,
+          theme.colorScheme.secondary,
+          gameColors.star,
         ],
       ),
       ),

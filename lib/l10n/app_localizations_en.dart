@@ -363,6 +363,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get resetTutorial => 'Reset Tutorial';
 
   @override
+  String get tutorialResetSuccess => 'Tutorial progress has been reset.';
+
+  @override
   String get outOfLivesTitle => 'Out of Lives!';
 
   @override
@@ -375,10 +378,10 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get buyOneLife => 'Buy 1 Life (50 💰)';
+  String get buyOneLife => 'Buy 1 Life (50 Credits)';
 
   @override
-  String get buyAllLives => 'Buy All Lives (100 💰)';
+  String get buyAllLives => 'Buy All Lives (100 Credits)';
 
   @override
   String get exitGame => 'Exit Game';
@@ -439,7 +442,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String nLives(int amount) {
-    return '$amount Lives';
+    String _temp0 = intl.Intl.pluralLogic(
+      amount,
+      locale: localeName,
+      other: '$amount Lives',
+      one: '1 Life',
+    );
+    return '$_temp0';
   }
 
   @override
@@ -461,14 +470,20 @@ class AppLocalizationsEn extends AppLocalizations {
   String get undoMoveDesc => 'Undo your last move';
 
   @override
-  String get dailyRewardClaim => 'Claim Your Daily Reward! 🎁';
+  String get dailyRewardClaim => 'Claim Your Daily Reward!';
 
   @override
   String get dailyRewardAmount => '20+ Credits + Bonuses';
 
   @override
   String dailyRewardStreak(int days) {
-    return 'Streak: $days days';
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: '$days days',
+      one: '1 day',
+    );
+    return 'Streak: $_temp0';
   }
 
   @override
@@ -633,6 +648,204 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get achievementDescNoHintsMaster =>
       'Complete 50 levels without using hints';
+
+  @override
+  String get achievementStreak7Days => 'Week Warrior';
+
+  @override
+  String get achievementStreak14Days => 'Fortnight Fighter';
+
+  @override
+  String get achievementStreak30Days => 'Monthly Champion';
+
+  @override
+  String get achievementStreak60Days => '2-Month Streak';
+
+  @override
+  String get achievementStreak100Days => 'Centurion';
+
+  @override
+  String get achievementCombo5x => 'Combo Starter';
+
+  @override
+  String get achievementCombo8x => 'Combo Artist';
+
+  @override
+  String get achievementCombo10x => 'Combo Master';
+
+  @override
+  String get achievementSpeed60s => 'Speed Runner';
+
+  @override
+  String get achievementSpeed45s => 'Lightning Fast';
+
+  @override
+  String get achievementAllLevels => 'All Levels Cleared';
+
+  @override
+  String get achievementLegendaryRank => 'Legendary';
+
+  @override
+  String get achievementShareResults => 'Sharer';
+
+  @override
+  String get achievementDailyChallengeFirst => 'Daily Challenger';
+
+  @override
+  String get achievementDailyChallenge30 => 'Daily Champion';
+
+  @override
+  String get achievementDescStreak7Days => 'Log in 7 days in a row';
+
+  @override
+  String get achievementDescStreak14Days => 'Log in 14 days in a row';
+
+  @override
+  String get achievementDescStreak30Days => 'Log in 30 days in a row';
+
+  @override
+  String get achievementDescStreak60Days => 'Log in 60 days in a row';
+
+  @override
+  String get achievementDescStreak100Days => 'Log in 100 days in a row';
+
+  @override
+  String get achievementDescCombo5x => 'Reach a 5x combo';
+
+  @override
+  String get achievementDescCombo8x => 'Reach an 8x combo';
+
+  @override
+  String get achievementDescCombo10x => 'Reach a 10x combo';
+
+  @override
+  String get achievementDescSpeed60s => 'Complete a level in under 60 seconds';
+
+  @override
+  String get achievementDescSpeed45s => 'Complete a level in under 45 seconds';
+
+  @override
+  String get achievementDescAllLevels => 'Complete all available levels';
+
+  @override
+  String get achievementDescLegendaryRank => 'Reach the Legendary rank';
+
+  @override
+  String get achievementDescShareResults => 'Share your results 5 times';
+
+  @override
+  String get achievementDescDailyChallengeFirst =>
+      'Complete your first daily challenge';
+
+  @override
+  String get achievementDescDailyChallenge30 => 'Complete 30 daily challenges';
+
+  @override
+  String get achievementRarityCommon => 'Common';
+
+  @override
+  String get achievementRarityRare => 'Rare';
+
+  @override
+  String get achievementRarityLegendary => 'Legendary';
+
+  @override
+  String get achievementBadgeSelect => 'Set Badge';
+
+  @override
+  String get achievementBadgeActive => 'Active Badge';
+
+  @override
+  String get achievementBadgeRemove => 'Remove Badge';
+
+  @override
+  String get achievementBadgeRemoved => 'Badge removed';
+
+  @override
+  String get achievementBadgeSelected => 'Badge set!';
+
+  @override
+  String get achievementUnlocked => 'Achievement Unlocked';
+
+  @override
+  String get streakMilestoneTitle => 'Streak Milestone!';
+
+  @override
+  String streakMilestoneDesc(int days, int credits) {
+    return '$days-day streak! +$credits credits!';
+  }
+
+  @override
+  String get streakFreezeTitle => 'Streak Freeze';
+
+  @override
+  String get streakFreezeDesc => 'Protects your streak for 1 missed day';
+
+  @override
+  String streakFreezeCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count freezes available',
+      one: '1 freeze available',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get streakFreezeAutoUsed => 'Streak freeze used! Your streak is safe.';
+
+  @override
+  String get streakLossWarningTitle => 'Streak at risk!';
+
+  @override
+  String get streakLossWarning => 'Don\'t lose your streak! Play today!';
+
+  @override
+  String get streakDays => 'day streak';
+
+  @override
+  String get streakTodayCompleted => 'Today done';
+
+  @override
+  String get streakTodayIncomplete => 'Play today!';
+
+  @override
+  String get streakFreezeAvailable => 'freeze';
+
+  @override
+  String streakNextMilestone(int days) {
+    return 'Next milestone: $days days';
+  }
+
+  @override
+  String streakMilestoneReward(int credits) {
+    return 'Reward: $credits credits';
+  }
+
+  @override
+  String get streakMilestones => 'Milestones';
+
+  @override
+  String get streakAllMilestonesReached => 'All milestones reached!';
+
+  @override
+  String get streakFreezeShopTitle => 'Streak Protection';
+
+  @override
+  String get streakFreezeShopSubtitle => 'Never lose your streak again';
+
+  @override
+  String get buyStreakFreeze1 => '1 Freeze';
+
+  @override
+  String get buyStreakFreeze3 => '3 Freezes';
+
+  @override
+  String get streakFreezePurchased => 'Streak freeze purchased!';
+
+  @override
+  String get streakFreezeZero => 'No freezes';
 
   @override
   String get yourStatistics => 'Your Statistics';
@@ -883,14 +1096,14 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get shareAchievementUnlocked => '🏆 Achievement Unlocked!';
+  String get shareAchievementUnlocked => 'Achievement Unlocked!';
 
   @override
   String get shareAchievementCTA =>
       'Playing CrossClimber - The ultimate word puzzle game!';
 
   @override
-  String get shareDailyChallengeTitle => '📅 CrossClimber Daily Challenge';
+  String get shareDailyChallengeTitle => 'CrossClimber Daily Challenge';
 
   @override
   String shareDailyLevelCompleted(int levelId) {
@@ -906,7 +1119,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get shareDailyChallengeCTA => 'Join the daily challenge!';
 
   @override
-  String get shareMyStatsTitle => '📊 My CrossClimber Stats';
+  String get shareMyStatsTitle => 'My CrossClimber Stats';
 
   @override
   String get shareStatsCTA => 'Challenge me in CrossClimber!';
@@ -1009,18 +1222,23 @@ class AppLocalizationsEn extends AppLocalizations {
   String get homeQuickPlay => 'Quick Play';
 
   @override
+  String homeLevelsWithProgress(int level) {
+    return 'Levels (Level $level)';
+  }
+
+  @override
   String homeContinueLevel(int level) {
     return 'Continue: Level $level';
   }
 
   @override
   String homeStreakDays(int days) {
-    return '$days🔥';
+    return '$days';
   }
 
   @override
   String homeTotalStars(int count) {
-    return '$count ★';
+    return '$count';
   }
 
   @override
@@ -1040,10 +1258,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get phaseFinalBanner => 'Find Final Words!';
 
   @override
-  String get completion3Stars => 'Perfect! All stars! 🌟';
+  String get completion3Stars => 'Perfect! All stars!';
 
   @override
-  String get completion2Stars => 'Great job! 👏';
+  String get completion2Stars => 'Great job!';
 
   @override
   String get completion1Star => 'Not bad! Try again for more stars.';
@@ -1096,4 +1314,350 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get semanticsCompleted => 'completed';
+
+  @override
+  String get semanticsActionPlay => 'play';
+
+  @override
+  String get semanticsActionOpen => 'open';
+
+  @override
+  String get semanticsActionAddLetter => 'add letter';
+
+  @override
+  String get rankNovice => 'Novice';
+
+  @override
+  String get rankWordStudent => 'Word Student';
+
+  @override
+  String get rankWordMaster => 'Word Master';
+
+  @override
+  String get rankPuzzleSolver => 'Puzzle Solver';
+
+  @override
+  String get rankMountainClimber => 'Mountain Climber';
+
+  @override
+  String get rankWordEagle => 'Word Eagle';
+
+  @override
+  String get rankWordKing => 'Word King';
+
+  @override
+  String get rankDiamondMind => 'Diamond Mind';
+
+  @override
+  String get rankLegend => 'Legend';
+
+  @override
+  String get rankCrossClimberMaster => 'CrossClimber Master';
+
+  @override
+  String xpGained(int amount) {
+    return '+$amount XP';
+  }
+
+  @override
+  String totalXpLabel(int amount) {
+    return 'Total XP: $amount';
+  }
+
+  @override
+  String get rankUpTitle => 'Rank Up!';
+
+  @override
+  String rankUpMessage(String rankName) {
+    return 'You\'ve reached $rankName!';
+  }
+
+  @override
+  String get profileCardTitle => 'Player Profile';
+
+  @override
+  String xpProgress(int current, int target) {
+    return '$current / $target XP';
+  }
+
+  @override
+  String get dailyChallengeXp => 'Daily Challenge XP';
+
+  @override
+  String comboXpBonus(int amount) {
+    return 'Combo Bonus: +$amount XP';
+  }
+
+  @override
+  String get dailyCalendarTitle => 'Daily Reward Calendar';
+
+  @override
+  String dailyCalendarDay(int day) {
+    return 'Day $day';
+  }
+
+  @override
+  String get dailyCalendarClaim => 'Claim!';
+
+  @override
+  String get dailyCalendarClaimed => 'Claimed';
+
+  @override
+  String dailyCalendarNextIn(String time) {
+    return 'Next in $time';
+  }
+
+  @override
+  String get dailyCalendarStreakReset => 'Streak reset — back to Day 1!';
+
+  @override
+  String dailyCalendarRewardCredits(int amount) {
+    return '$amount credits';
+  }
+
+  @override
+  String get dailyCalendarRewardReveal => '1 Reveal';
+
+  @override
+  String get dailyCalendarRewardUndo => '1 Undo';
+
+  @override
+  String get dailyCalendarRewardSpecial => 'Special Theme!';
+
+  @override
+  String get dailyCalendarRewardSummary => 'Reward claimed!';
+
+  @override
+  String get dailyCalendarFomoWarning => 'Don\'t miss tomorrow!';
+
+  @override
+  String get tournamentTitle => 'Weekly Tournament';
+
+  @override
+  String tournamentWeek(String week) {
+    return 'Week $week';
+  }
+
+  @override
+  String get tournamentActive => 'Active';
+
+  @override
+  String get tournamentEnded => 'Ended';
+
+  @override
+  String tournamentEndsIn(String time) {
+    return 'Ends in $time';
+  }
+
+  @override
+  String tournamentNextIn(String time) {
+    return 'Next in $time';
+  }
+
+  @override
+  String get tournamentLeaderboard => 'Leaderboard';
+
+  @override
+  String get tournamentLevels => 'Tournament Levels';
+
+  @override
+  String get tournamentMyRank => 'Your Rank';
+
+  @override
+  String tournamentRank(int rank) {
+    return '#$rank';
+  }
+
+  @override
+  String tournamentScore(int score) {
+    return '$score pts';
+  }
+
+  @override
+  String get tournamentRewards => 'Rewards';
+
+  @override
+  String get tournamentPlay => 'Play';
+
+  @override
+  String get tournamentLevelCompleted => 'Done';
+
+  @override
+  String get tournamentNotParticipating => 'Not participating yet';
+
+  @override
+  String tournamentLevelsProgress(int count) {
+    return '$count/7 levels';
+  }
+
+  @override
+  String tournamentCreditsReward(int amount) {
+    return '$amount Credits';
+  }
+
+  @override
+  String get tournamentParticipation => 'Participation';
+
+  @override
+  String get tournamentOffline => 'Tournament requires an internet connection';
+
+  @override
+  String get tournamentLoadError => 'Could not load tournament';
+
+  @override
+  String get tournamentScoreSubmitted => 'Score saved to leaderboard!';
+
+  @override
+  String get tournamentHomeBanner => 'Weekly Tournament';
+
+  @override
+  String get tournamentJoin => 'Join!';
+
+  @override
+  String get tournamentDifficultyEasy => 'Easy';
+
+  @override
+  String get tournamentDifficultyMedium => 'Medium';
+
+  @override
+  String get tournamentDifficultyHard => 'Hard';
+
+  @override
+  String get idleMotivation1 => 'One more word?';
+
+  @override
+  String get idleMotivation2 => 'You can do it!';
+
+  @override
+  String get idleMotivation3 => 'Try a different approach?';
+
+  @override
+  String get settingsGroupProfile => 'Profile & Account';
+
+  @override
+  String get settingsGroupAppearance => 'Appearance';
+
+  @override
+  String get settingsGroupGameplay => 'Gameplay';
+
+  @override
+  String get settingsGroupSoundHaptic => 'Sound & Haptics';
+
+  @override
+  String get settingsGroupHelp => 'Help & Info';
+
+  @override
+  String get chooseTheme => 'Choose Theme';
+
+  @override
+  String get premiumTheme => 'Premium';
+
+  @override
+  String get unlockInShop => 'Unlock in Shop';
+
+  @override
+  String get themeUnlocked => 'Theme unlocked!';
+
+  @override
+  String get profileTitle => 'Profile';
+
+  @override
+  String get editProfile => 'Edit Profile';
+
+  @override
+  String get chooseAvatar => 'Choose Avatar';
+
+  @override
+  String get displayName => 'Display Name';
+
+  @override
+  String get displayNameHint => 'Enter your name';
+
+  @override
+  String get saveProfile => 'Save';
+
+  @override
+  String get profileSaved => 'Profile saved!';
+
+  @override
+  String get connectedAccounts => 'Connected Accounts';
+
+  @override
+  String get googleConnected => 'Google — Connected';
+
+  @override
+  String get googleNotConnected => 'Google — Not connected';
+
+  @override
+  String get connectGoogle => 'Connect';
+
+  @override
+  String get disconnectGoogle => 'Disconnect';
+
+  @override
+  String get deleteAccount => 'Delete Account';
+
+  @override
+  String get deleteAccountDesc =>
+      'Permanently delete your account and all data. This action cannot be undone.';
+
+  @override
+  String get deleteAccountConfirm =>
+      'Are you sure you want to delete your account? All progress, achievements, and purchases will be permanently lost.';
+
+  @override
+  String get deleteAccountButton => 'Delete Forever';
+
+  @override
+  String get rankLabel => 'Rank';
+
+  @override
+  String get totalXp => 'Total XP';
+
+  @override
+  String get faq => 'FAQ';
+
+  @override
+  String get licenses => 'Licenses';
+
+  @override
+  String get privacyPolicy => 'Privacy Policy';
+
+  @override
+  String unlockThemeTitle(String themeName) {
+    return 'Unlock $themeName';
+  }
+
+  @override
+  String unlockThemeDesc(int cost) {
+    return 'Unlock this premium theme for $cost credits.';
+  }
+
+  @override
+  String get unlockButton => 'Unlock';
+
+  @override
+  String yourCredits(int amount) {
+    return 'Your credits: $amount';
+  }
+
+  @override
+  String get solveMiddleWordsFirst => 'Solve middle words first to unlock';
+
+  @override
+  String get offlineBanner =>
+      'You are offline. Some features may be unavailable.';
+
+  @override
+  String get backOnline => 'You are back online!';
+
+  @override
+  String get doubleRewards => 'Double Rewards';
+
+  @override
+  String get watchAdForLife => 'Watch Ad for Free Life';
+
+  @override
+  String get adNotAvailable =>
+      'Ad not available right now. Please try again later.';
 }

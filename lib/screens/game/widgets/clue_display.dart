@@ -4,6 +4,8 @@ import 'package:crossclimber/models/level.dart';
 import 'package:crossclimber/providers/game_provider.dart';
 import 'package:crossclimber/theme/spacing.dart';
 import 'package:crossclimber/theme/border_radius.dart';
+import 'package:crossclimber/theme/icon_sizes.dart';
+import 'package:crossclimber/theme/animations.dart';
 
 class ClueDisplay extends StatelessWidget {
   final GameState gameState;
@@ -56,7 +58,7 @@ class ClueDisplay extends StatelessWidget {
           Icon(
             Icons.lightbulb_outline,
             color: theme.colorScheme.primary,
-            size: 16,
+            size: IconSizes.sm,
           ),
           HorizontalSpacing.xs,
           Expanded(
@@ -70,6 +72,6 @@ class ClueDisplay extends StatelessWidget {
           ),
         ],
       ),
-    ).animate().fadeIn(duration: 200.ms).slideY(begin: -0.2, end: 0);
+    ).animate().fadeIn(duration: AnimDurations.fast).slideY(begin: -0.2, end: 0);
   }
 }

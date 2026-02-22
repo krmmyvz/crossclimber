@@ -7,6 +7,7 @@ import 'package:crossclimber/providers/tutorial_provider.dart';
 import 'package:crossclimber/screens/game/game_screen_widgets.dart';
 import 'package:crossclimber/services/tutorial_data.dart';
 import 'package:crossclimber/theme/spacing.dart';
+import 'package:crossclimber/theme/animations.dart';
 import 'package:crossclimber/widgets/combo_indicator.dart';
 
 class GameStatusBar extends ConsumerWidget {
@@ -28,7 +29,8 @@ class GameStatusBar extends ConsumerWidget {
     final clampedTextScaler = MediaQuery.textScalerOf(context)
         .clamp(minScaleFactor: 0.85, maxScaleFactor: 1.3);
 
-    return MediaQuery(
+    return RepaintBoundary(
+      child: MediaQuery(
       data: MediaQuery.of(context).copyWith(textScaler: clampedTextScaler),
       child: Container(
       padding: const EdgeInsets.symmetric(
@@ -56,11 +58,9 @@ class GameStatusBar extends ConsumerWidget {
               ),
               Semantics(
                 label: 'Score: ${gameState.score}',
-                child: StatusItem(
-                  icon: Icons.star,
-                  label: '${gameState.score}',
+                child: _AnimatedScoreCounter(
+                  score: gameState.score,
                   color: theme.colorScheme.tertiary,
-                  isProminent: true,
                 ),
               ),
             ],
@@ -82,7 +82,8 @@ class GameStatusBar extends ConsumerWidget {
         ],
       ),
     ),    // closes Container
-    );    // closes MediaQuery
+    ),    // closes MediaQuery
+    );    // closes RepaintBoundary
   }
 
 }
@@ -128,9 +129,67 @@ class _TimerStatusItem extends StatelessWidget {
     if (totalSec >= 240) {
       item = item
           .animate(onPlay: (ctrl) => ctrl.repeat(reverse: true))
-          .scaleXY(end: 1.08, duration: 700.ms, curve: Curves.easeInOut);
+          .scaleXY(end: 1.08, duration: AnimDurations.slower, curve: AppCurves.standard);
     }
 
     return item;
+  }
+}
+
+// ── Animated Score Counter ────────────────────────────────────────────────────
+
+class _AnimatedScoreCounter extends StatefulWidget {
+  final int score;
+  final Color color;
+
+  const _AnimatedScoreCounter({required this.score, required this.color});
+
+  @override
+  State<_AnimatedScoreCounter> createState() => _AnimatedScoreCounterState();
+}
+
+class _AnimatedScoreCounterState extends State<_AnimatedScoreCounter>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _ctrl;
+  late Animation<int> _anim;
+
+  @override
+  void initState() {
+    super.initState();
+    _ctrl = AnimationController(
+      vsync: this,
+      duration: AnimDurations.mediumSlow,
+    );
+    _anim = IntTween(begin: 0, end: widget.score)
+        .animate(CurvedAnimation(parent: _ctrl, curve: Curves.easeOut));
+  }
+
+  @override
+  void didUpdateWidget(covariant _AnimatedScoreCounter old) {
+    super.didUpdateWidget(old);
+    if (old.score != widget.score) {
+      _anim = IntTween(begin: old.score, end: widget.score)
+          .animate(CurvedAnimation(parent: _ctrl, curve: Curves.easeOut));
+      _ctrl.forward(from: 0);
+    }
+  }
+
+  @override
+  void dispose() {
+    _ctrl.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: _anim,
+      builder: (context, _) => StatusItem(
+        icon: Icons.star,
+        label: '${_anim.value}',
+        color: widget.color,
+        isProminent: true,
+      ),
+    );
   }
 }

@@ -98,1955 +98,2945 @@ abstract class AppLocalizations {
     Locale('tr'),
   ];
 
-  /// No description provided for @appTitle.
+  /// App Title
   ///
   /// In en, this message translates to:
   /// **'CrossClimber'**
   String get appTitle;
 
-  /// No description provided for @play.
+  /// Play
   ///
   /// In en, this message translates to:
   /// **'Play'**
   String get play;
 
-  /// No description provided for @settings.
+  /// Settings
   ///
   /// In en, this message translates to:
   /// **'Settings'**
   String get settings;
 
-  /// No description provided for @language.
+  /// Language
   ///
   /// In en, this message translates to:
   /// **'Language'**
   String get language;
 
-  /// No description provided for @english.
+  /// English
   ///
   /// In en, this message translates to:
   /// **'English'**
   String get english;
 
-  /// No description provided for @turkish.
+  /// Turkish
   ///
   /// In en, this message translates to:
   /// **'Turkish'**
   String get turkish;
 
-  /// No description provided for @level.
+  /// Level number label
   ///
   /// In en, this message translates to:
   /// **'Level {levelNumber}'**
   String level(int levelNumber);
 
-  /// No description provided for @nextLevel.
+  /// Next Level
   ///
   /// In en, this message translates to:
   /// **'Next Level'**
   String get nextLevel;
 
-  /// No description provided for @allLevelsCompleted.
+  /// All Levels Completed
   ///
   /// In en, this message translates to:
   /// **'Amazing! You\'ve Completed All Levels!'**
   String get allLevelsCompleted;
 
-  /// No description provided for @allLevelsCompletedDesc.
+  /// Message shown when all levels are completed
   ///
   /// In en, this message translates to:
   /// **'You\'ve mastered all {totalLevels} levels! Stay tuned for more challenges coming soon.'**
   String allLevelsCompletedDesc(int totalLevels);
 
-  /// No description provided for @hint.
+  /// Hint
   ///
   /// In en, this message translates to:
   /// **'Hint'**
   String get hint;
 
-  /// No description provided for @correct.
+  /// Correct
   ///
   /// In en, this message translates to:
   /// **'Correct!'**
   String get correct;
 
-  /// No description provided for @wrong.
+  /// Wrong
   ///
   /// In en, this message translates to:
   /// **'Wrong!'**
   String get wrong;
 
-  /// No description provided for @congratulations.
+  /// Congratulations
   ///
   /// In en, this message translates to:
   /// **'Congratulations!'**
   String get congratulations;
 
-  /// No description provided for @youWon.
+  /// You Won
   ///
   /// In en, this message translates to:
   /// **'You completed the level!'**
   String get youWon;
 
-  /// No description provided for @phase1Title.
+  /// Phase1 Title
   ///
   /// In en, this message translates to:
   /// **'Guess the Words'**
   String get phase1Title;
 
-  /// No description provided for @phase2Title.
+  /// Phase2 Title
   ///
   /// In en, this message translates to:
   /// **'Sort the Words'**
   String get phase2Title;
 
-  /// No description provided for @phase3Title.
+  /// Phase3 Title
   ///
   /// In en, this message translates to:
   /// **'Find Final Words'**
   String get phase3Title;
 
-  /// No description provided for @phaseProgress.
+  /// Phase step indicator
   ///
   /// In en, this message translates to:
   /// **'Step {current} / {total}'**
   String phaseProgress(int current, int total);
 
-  /// No description provided for @wordsFound.
+  /// Words found progress indicator
   ///
   /// In en, this message translates to:
   /// **'{found} / {total} words found'**
   String wordsFound(int found, int total);
 
-  /// No description provided for @pause.
+  /// Pause
   ///
   /// In en, this message translates to:
   /// **'Pause'**
   String get pause;
 
-  /// No description provided for @resume.
+  /// Resume
   ///
   /// In en, this message translates to:
   /// **'Resume'**
   String get resume;
 
-  /// No description provided for @restart.
+  /// Restart
   ///
   /// In en, this message translates to:
   /// **'Restart'**
   String get restart;
 
-  /// No description provided for @mainMenu.
+  /// Main Menu
   ///
   /// In en, this message translates to:
   /// **'Main Menu'**
   String get mainMenu;
 
-  /// No description provided for @paused.
+  /// Paused
   ///
   /// In en, this message translates to:
   /// **'Paused'**
   String get paused;
 
-  /// No description provided for @useHint.
+  /// Use Hint
   ///
   /// In en, this message translates to:
   /// **'Use Hint'**
   String get useHint;
 
-  /// No description provided for @hintsRemaining.
+  /// Hints remaining count
   ///
   /// In en, this message translates to:
   /// **'{count} hints remaining'**
   String hintsRemaining(int count);
 
-  /// No description provided for @noHintsLeft.
+  /// No Hints Left
   ///
   /// In en, this message translates to:
   /// **'No hints left'**
   String get noHintsLeft;
 
-  /// No description provided for @hintUsed.
+  /// Hint Used
   ///
   /// In en, this message translates to:
   /// **'Hint used!'**
   String get hintUsed;
 
-  /// No description provided for @tapToGuess.
+  /// Tap To Guess
   ///
   /// In en, this message translates to:
   /// **'Tap to guess'**
   String get tapToGuess;
 
-  /// No description provided for @enterWord.
+  /// Enter Word
   ///
   /// In en, this message translates to:
   /// **'Enter word'**
   String get enterWord;
 
-  /// No description provided for @locked.
+  /// Locked
   ///
   /// In en, this message translates to:
   /// **'Locked'**
   String get locked;
 
-  /// No description provided for @completed.
+  /// Completed
   ///
   /// In en, this message translates to:
   /// **'Completed!'**
   String get completed;
 
-  /// No description provided for @timeElapsed.
+  /// Time Elapsed
   ///
   /// In en, this message translates to:
   /// **'Time Elapsed'**
   String get timeElapsed;
 
-  /// No description provided for @yourScore.
+  /// Your Score
   ///
   /// In en, this message translates to:
   /// **'Your Score'**
   String get yourScore;
 
-  /// No description provided for @stars.
+  /// Stars count label
   ///
   /// In en, this message translates to:
   /// **'{count} Stars'**
   String stars(int count);
 
-  /// No description provided for @newBestTime.
+  /// New Best Time
   ///
   /// In en, this message translates to:
   /// **'New Best Time!'**
   String get newBestTime;
 
-  /// No description provided for @playAgain.
+  /// Play Again
   ///
   /// In en, this message translates to:
   /// **'Play Again'**
   String get playAgain;
 
-  /// No description provided for @dragToReorder.
+  /// Drag To Reorder
   ///
   /// In en, this message translates to:
   /// **'Drag to reorder'**
   String get dragToReorder;
 
-  /// No description provided for @checkOrder.
+  /// Check Order
   ///
   /// In en, this message translates to:
   /// **'Check Order'**
   String get checkOrder;
 
-  /// No description provided for @orderCorrect.
+  /// Order Correct
   ///
   /// In en, this message translates to:
   /// **'Order is correct!'**
   String get orderCorrect;
 
-  /// No description provided for @orderIncorrect.
+  /// Order Incorrect
   ///
   /// In en, this message translates to:
   /// **'Order is incorrect, try again'**
   String get orderIncorrect;
 
-  /// No description provided for @invalidWord.
+  /// Invalid Word
   ///
   /// In en, this message translates to:
   /// **'Invalid word!'**
   String get invalidWord;
 
-  /// No description provided for @alreadyGuessed.
+  /// Already Guessed
   ///
   /// In en, this message translates to:
   /// **'Word already guessed'**
   String get alreadyGuessed;
 
-  /// No description provided for @theme.
+  /// Theme
   ///
   /// In en, this message translates to:
   /// **'Theme'**
   String get theme;
 
-  /// No description provided for @system.
+  /// System
   ///
   /// In en, this message translates to:
   /// **'System'**
   String get system;
 
-  /// No description provided for @light.
+  /// Light
   ///
   /// In en, this message translates to:
   /// **'Light'**
   String get light;
 
-  /// No description provided for @dark.
+  /// Dark
   ///
   /// In en, this message translates to:
   /// **'Dark'**
   String get dark;
 
-  /// No description provided for @vibration.
+  /// Vibration
   ///
   /// In en, this message translates to:
   /// **'Vibration'**
   String get vibration;
 
-  /// No description provided for @showTimer.
+  /// Show Timer
   ///
   /// In en, this message translates to:
   /// **'Show Timer'**
   String get showTimer;
 
-  /// No description provided for @autoCheck.
+  /// Auto Check
   ///
   /// In en, this message translates to:
   /// **'Auto Check'**
   String get autoCheck;
 
-  /// No description provided for @autoCheckDesc.
+  /// Auto Check Desc
   ///
   /// In en, this message translates to:
   /// **'Auto-check when you complete a word'**
   String get autoCheckDesc;
 
-  /// No description provided for @autoSort.
+  /// Auto Sort
   ///
   /// In en, this message translates to:
   /// **'Auto Sort'**
   String get autoSort;
 
-  /// No description provided for @autoSortDesc.
+  /// Auto Sort Desc
   ///
   /// In en, this message translates to:
   /// **'Auto-sort when you find all words'**
   String get autoSortDesc;
 
-  /// No description provided for @appearance.
+  /// Appearance
   ///
   /// In en, this message translates to:
   /// **'Appearance'**
   String get appearance;
 
-  /// No description provided for @soundEffects.
+  /// Sound Effects
   ///
   /// In en, this message translates to:
   /// **'Sound Effects'**
   String get soundEffects;
 
-  /// No description provided for @music.
+  /// Music
   ///
   /// In en, this message translates to:
   /// **'Music'**
   String get music;
 
-  /// No description provided for @tutorial.
+  /// Tutorial
   ///
   /// In en, this message translates to:
   /// **'How to Play'**
   String get tutorial;
 
-  /// No description provided for @about.
+  /// About
   ///
   /// In en, this message translates to:
   /// **'About'**
   String get about;
 
-  /// No description provided for @version.
+  /// Version
   ///
   /// In en, this message translates to:
   /// **'Version'**
   String get version;
 
-  /// No description provided for @difficulty.
+  /// Difficulty
   ///
   /// In en, this message translates to:
   /// **'Difficulty'**
   String get difficulty;
 
-  /// No description provided for @easy.
+  /// Easy
   ///
   /// In en, this message translates to:
   /// **'Easy'**
   String get easy;
 
-  /// No description provided for @medium.
+  /// Medium
   ///
   /// In en, this message translates to:
   /// **'Medium'**
   String get medium;
 
-  /// No description provided for @hard.
+  /// Hard
   ///
   /// In en, this message translates to:
   /// **'Hard'**
   String get hard;
 
-  /// No description provided for @achievements.
+  /// Achievements
   ///
   /// In en, this message translates to:
   /// **'Achievements'**
   String get achievements;
 
-  /// No description provided for @statistics.
+  /// Statistics
   ///
   /// In en, this message translates to:
   /// **'Statistics'**
   String get statistics;
 
-  /// No description provided for @dailyChallenge.
+  /// Daily Challenge
   ///
   /// In en, this message translates to:
   /// **'Daily Challenge'**
   String get dailyChallenge;
 
-  /// No description provided for @profile.
+  /// Profile
   ///
   /// In en, this message translates to:
   /// **'Profile'**
   String get profile;
 
-  /// No description provided for @guestUser.
+  /// Guest User
   ///
   /// In en, this message translates to:
   /// **'Guest User'**
   String get guestUser;
 
-  /// No description provided for @loggedInAs.
+  /// Logged in as email
   ///
   /// In en, this message translates to:
   /// **'Logged in as: {email}'**
   String loggedInAs(String email);
 
-  /// No description provided for @linkAccount.
+  /// Link Account
   ///
   /// In en, this message translates to:
   /// **'Link Account'**
   String get linkAccount;
 
-  /// No description provided for @linkAccountDesc.
+  /// Link Account Desc
   ///
   /// In en, this message translates to:
   /// **'Link your account to save progress to the cloud.'**
   String get linkAccountDesc;
 
-  /// No description provided for @signOut.
+  /// Sign Out
   ///
   /// In en, this message translates to:
   /// **'Sign Out'**
   String get signOut;
 
-  /// No description provided for @googleSignIn.
+  /// Google Sign In
   ///
   /// In en, this message translates to:
   /// **'Sign in with Google'**
   String get googleSignIn;
 
-  /// No description provided for @tutorial_intro_welcome_title.
+  /// Tutorial intro welcome title
   ///
   /// In en, this message translates to:
   /// **'Welcome to CrossClimber!'**
   String get tutorial_intro_welcome_title;
 
-  /// No description provided for @tutorial_intro_welcome_desc.
+  /// Tutorial intro welcome desc
   ///
   /// In en, this message translates to:
   /// **'Learn how to play this fun word puzzle game. Connect words by changing one letter at a time!'**
   String get tutorial_intro_welcome_desc;
 
-  /// No description provided for @tutorial_intro_objective_title.
+  /// Tutorial intro objective title
   ///
   /// In en, this message translates to:
   /// **'Game Objective'**
   String get tutorial_intro_objective_title;
 
-  /// No description provided for @tutorial_intro_objective_desc.
+  /// Tutorial intro objective desc
   ///
   /// In en, this message translates to:
   /// **'Your goal is to find the missing words between the START and END words. Each word differs by exactly one letter from the previous word.'**
   String get tutorial_intro_objective_desc;
 
-  /// No description provided for @tutorial_intro_rule_title.
+  /// Tutorial intro rule title
   ///
   /// In en, this message translates to:
   /// **'The Golden Rule'**
   String get tutorial_intro_rule_title;
 
-  /// No description provided for @tutorial_intro_rule_desc.
+  /// Tutorial intro rule desc
   ///
   /// In en, this message translates to:
   /// **'You can only change ONE letter at a time. For example: CAT → BAT → BAD → BED'**
   String get tutorial_intro_rule_desc;
 
-  /// No description provided for @tutorial_guess_intro_title.
+  /// Tutorial guess intro title
   ///
   /// In en, this message translates to:
   /// **'Phase 1: Guessing'**
   String get tutorial_guess_intro_title;
 
-  /// No description provided for @tutorial_guess_intro_desc.
+  /// Tutorial guess intro desc
   ///
   /// In en, this message translates to:
   /// **'First, you need to guess all the middle words. Tap on any empty slot to start guessing.'**
   String get tutorial_guess_intro_desc;
 
-  /// No description provided for @tutorial_guess_success_title.
+  /// Tutorial guess success title
   ///
   /// In en, this message translates to:
   /// **'Great Job!'**
   String get tutorial_guess_success_title;
 
-  /// No description provided for @tutorial_guess_success_desc.
+  /// Tutorial guess success desc
   ///
   /// In en, this message translates to:
   /// **'You found your first word! Keep going to complete the puzzle.'**
   String get tutorial_guess_success_desc;
 
-  /// No description provided for @tutorial_guess_keyboard_title.
+  /// Tutorial guess keyboard title
   ///
   /// In en, this message translates to:
   /// **'Type Your Guess'**
   String get tutorial_guess_keyboard_title;
 
-  /// No description provided for @tutorial_guess_keyboard_desc.
+  /// Tutorial guess keyboard desc
   ///
   /// In en, this message translates to:
   /// **'Use the keyboard to type a word. Remember: it must differ by only one letter from neighboring words!'**
   String get tutorial_guess_keyboard_desc;
 
-  /// No description provided for @tutorial_guess_hints_title.
+  /// Tutorial guess hints title
   ///
   /// In en, this message translates to:
   /// **'Need Help?'**
   String get tutorial_guess_hints_title;
 
-  /// No description provided for @tutorial_guess_hints_desc.
+  /// Tutorial guess hints desc
   ///
   /// In en, this message translates to:
   /// **'You have 3 hints per level. Use them wisely to reveal letters or get clues when stuck.'**
   String get tutorial_guess_hints_desc;
 
-  /// No description provided for @tutorial_guess_timer_title.
+  /// Tutorial guess timer title
   ///
   /// In en, this message translates to:
   /// **'Beat the Clock'**
   String get tutorial_guess_timer_title;
 
-  /// No description provided for @tutorial_guess_timer_desc.
+  /// Tutorial guess timer desc
   ///
   /// In en, this message translates to:
   /// **'Faster completion gives more stars! Don\'t worry, there\'s no time limit.'**
   String get tutorial_guess_timer_desc;
 
-  /// No description provided for @tutorial_combo_intro_title.
+  /// Tutorial combo intro title
   ///
   /// In en, this message translates to:
   /// **'Combo System!'**
   String get tutorial_combo_intro_title;
 
-  /// No description provided for @tutorial_combo_intro_desc.
+  /// Tutorial combo intro desc
   ///
   /// In en, this message translates to:
   /// **'Keep guessing correctly to build combos and multiply your score! Each correct answer in a row increases your multiplier.'**
   String get tutorial_combo_intro_desc;
 
-  /// No description provided for @tutorial_sort_intro_title.
+  /// Tutorial sort intro title
   ///
   /// In en, this message translates to:
   /// **'Phase 2: Sorting'**
   String get tutorial_sort_intro_title;
 
-  /// No description provided for @tutorial_sort_intro_desc.
+  /// Tutorial sort intro desc
   ///
   /// In en, this message translates to:
   /// **'Excellent! You found all the middle words. Now arrange them in the correct order - each word must differ by only ONE letter from the next.'**
   String get tutorial_sort_intro_desc;
 
-  /// No description provided for @tutorial_sort_action_title.
+  /// Tutorial sort action title
   ///
   /// In en, this message translates to:
   /// **'Real-time Validation'**
   String get tutorial_sort_action_title;
 
-  /// No description provided for @tutorial_sort_action_desc.
+  /// Tutorial sort action desc
   ///
   /// In en, this message translates to:
   /// **'Drag and reorder the words. You\'ll see green borders for correct positions and red for incorrect ones. When all words are green, the START and END will unlock automatically!'**
   String get tutorial_sort_action_desc;
 
-  /// No description provided for @tutorial_final_intro_title.
+  /// Tutorial final intro title
   ///
   /// In en, this message translates to:
   /// **'Phase 3: Final Challenge'**
   String get tutorial_final_intro_title;
 
-  /// No description provided for @tutorial_final_intro_desc.
+  /// Tutorial final intro desc
   ///
   /// In en, this message translates to:
   /// **'Almost done! Now figure out what the START and END words are based on the sorted middle words.'**
   String get tutorial_final_intro_desc;
 
-  /// No description provided for @tutorial_final_start_title.
+  /// Tutorial final start title
   ///
   /// In en, this message translates to:
   /// **'Guess the Start Word'**
   String get tutorial_final_start_title;
 
-  /// No description provided for @tutorial_final_start_desc.
+  /// Tutorial final start desc
   ///
   /// In en, this message translates to:
   /// **'What word comes before the first middle word? It should differ by one letter.'**
   String get tutorial_final_start_desc;
 
-  /// No description provided for @tutorial_final_end_title.
+  /// Tutorial final end title
   ///
   /// In en, this message translates to:
   /// **'Guess the End Word'**
   String get tutorial_final_end_title;
 
-  /// No description provided for @tutorial_final_end_desc.
+  /// Tutorial final end desc
   ///
   /// In en, this message translates to:
   /// **'What word comes after the last middle word? Complete the ladder!'**
   String get tutorial_final_end_desc;
 
-  /// No description provided for @tutorial_complete_congrats_title.
+  /// Tutorial complete congrats title
   ///
   /// In en, this message translates to:
   /// **'You\'re Ready!'**
   String get tutorial_complete_congrats_title;
 
-  /// No description provided for @tutorial_complete_congrats_desc.
+  /// Tutorial complete congrats desc
   ///
   /// In en, this message translates to:
   /// **'Congratulations! You now know how to play CrossClimber. Have fun and challenge yourself!'**
   String get tutorial_complete_congrats_desc;
 
-  /// No description provided for @skipTutorial.
+  /// Skip Tutorial
   ///
   /// In en, this message translates to:
   /// **'Skip Tutorial'**
   String get skipTutorial;
 
-  /// No description provided for @continueButton.
+  /// Continue Button
   ///
   /// In en, this message translates to:
   /// **'Continue'**
   String get continueButton;
 
-  /// No description provided for @showTips.
+  /// Show Tips
   ///
   /// In en, this message translates to:
   /// **'Show Tips'**
   String get showTips;
 
-  /// No description provided for @resetTutorial.
+  /// Reset Tutorial
   ///
   /// In en, this message translates to:
   /// **'Reset Tutorial'**
   String get resetTutorial;
 
-  /// No description provided for @outOfLivesTitle.
+  /// Tutorial Reset Success
+  ///
+  /// In en, this message translates to:
+  /// **'Tutorial progress has been reset.'**
+  String get tutorialResetSuccess;
+
+  /// Out Of Lives Title
   ///
   /// In en, this message translates to:
   /// **'Out of Lives!'**
   String get outOfLivesTitle;
 
-  /// No description provided for @outOfLivesMessage.
+  /// Out Of Lives Message
   ///
   /// In en, this message translates to:
   /// **'You\'ve run out of lives. Wait for regeneration or use credits to continue.'**
   String get outOfLivesMessage;
 
-  /// No description provided for @nextLifeIn.
+  /// Next life regeneration timer
   ///
   /// In en, this message translates to:
   /// **'Next life in: {time}'**
   String nextLifeIn(String time);
 
-  /// No description provided for @buyOneLife.
+  /// Buy One Life
   ///
   /// In en, this message translates to:
-  /// **'Buy 1 Life (50 💰)'**
+  /// **'Buy 1 Life (50 Credits)'**
   String get buyOneLife;
 
-  /// No description provided for @buyAllLives.
+  /// Buy All Lives
   ///
   /// In en, this message translates to:
-  /// **'Buy All Lives (100 💰)'**
+  /// **'Buy All Lives (100 Credits)'**
   String get buyAllLives;
 
-  /// No description provided for @exitGame.
+  /// Exit Game
   ///
   /// In en, this message translates to:
   /// **'Exit Game'**
   String get exitGame;
 
-  /// No description provided for @returnToMainMenu.
+  /// Return To Main Menu
   ///
   /// In en, this message translates to:
   /// **'Return to Main Menu?'**
   String get returnToMainMenu;
 
-  /// No description provided for @progressLostWarning.
+  /// Progress Lost Warning
   ///
   /// In en, this message translates to:
   /// **'Your current progress will be lost. Are you sure?'**
   String get progressLostWarning;
 
-  /// No description provided for @cancel.
+  /// Cancel button
   ///
   /// In en, this message translates to:
   /// **'Cancel'**
   String get cancel;
 
-  /// No description provided for @exit.
+  /// Exit
   ///
   /// In en, this message translates to:
   /// **'Exit'**
   String get exit;
 
-  /// No description provided for @startEndUnlocked.
+  /// Start End Unlocked
   ///
   /// In en, this message translates to:
   /// **'START & END Unlocked!'**
   String get startEndUnlocked;
 
-  /// No description provided for @shopTitle.
+  /// Shop Title
   ///
   /// In en, this message translates to:
   /// **'Market'**
   String get shopTitle;
 
-  /// No description provided for @freeCreditsTitle.
+  /// Free Credits Title
   ///
   /// In en, this message translates to:
   /// **'Earn Free'**
   String get freeCreditsTitle;
 
-  /// No description provided for @freeCreditsSubtitle.
+  /// Free Credits Subtitle
   ///
   /// In en, this message translates to:
   /// **'Watch ads, earn free credits'**
   String get freeCreditsSubtitle;
 
-  /// No description provided for @creditPackageTitle.
+  /// Credit Package Title
   ///
   /// In en, this message translates to:
   /// **'Credit Package'**
   String get creditPackageTitle;
 
-  /// No description provided for @creditPackageSubtitle.
+  /// Credit Package Subtitle
   ///
   /// In en, this message translates to:
   /// **'Buy credits with real money'**
   String get creditPackageSubtitle;
 
-  /// No description provided for @lifePackageTitle.
+  /// Life Package Title
   ///
   /// In en, this message translates to:
   /// **'Life Package'**
   String get lifePackageTitle;
 
-  /// No description provided for @lifePackageSubtitle.
+  /// Life Package Subtitle
   ///
   /// In en, this message translates to:
   /// **'Buy lives with credits'**
   String get lifePackageSubtitle;
 
-  /// No description provided for @hintPackageTitle.
+  /// Hint Package Title
   ///
   /// In en, this message translates to:
   /// **'Hint Package'**
   String get hintPackageTitle;
 
-  /// No description provided for @hintPackageSubtitle.
+  /// Hint Package Subtitle
   ///
   /// In en, this message translates to:
   /// **'Buy hints with credits'**
   String get hintPackageSubtitle;
 
-  /// No description provided for @nCredits.
+  /// Number of credits
   ///
   /// In en, this message translates to:
   /// **'{amount} Credits'**
   String nCredits(int amount);
 
-  /// No description provided for @mostPopular.
+  /// Most Popular
   ///
   /// In en, this message translates to:
   /// **'MOST POPULAR'**
   String get mostPopular;
 
-  /// No description provided for @popularLabel.
+  /// Popular Label
   ///
   /// In en, this message translates to:
   /// **'POPULAR'**
   String get popularLabel;
 
-  /// No description provided for @nLives.
+  /// Number of lives
   ///
   /// In en, this message translates to:
-  /// **'{amount} Lives'**
+  /// **'{amount, plural, =1{1 Life} other{{amount} Lives}}'**
   String nLives(int amount);
 
-  /// No description provided for @buyOneLifeDesc.
+  /// Buy One Life Desc
   ///
   /// In en, this message translates to:
   /// **'Buy a single life'**
   String get buyOneLifeDesc;
 
-  /// No description provided for @buyFiveLives.
+  /// Buy Five Lives
   ///
   /// In en, this message translates to:
   /// **'Upgrade to 5 lives'**
   String get buyFiveLives;
 
-  /// No description provided for @revealWord.
+  /// Reveal Word
   ///
   /// In en, this message translates to:
   /// **'Reveal Word'**
   String get revealWord;
 
-  /// No description provided for @revealWordDesc.
+  /// Reveal Word Desc
   ///
   /// In en, this message translates to:
   /// **'Fully reveals the selected word'**
   String get revealWordDesc;
 
-  /// No description provided for @undoMove.
+  /// Undo Move
   ///
   /// In en, this message translates to:
   /// **'Undo'**
   String get undoMove;
 
-  /// No description provided for @undoMoveDesc.
+  /// Undo Move Desc
   ///
   /// In en, this message translates to:
   /// **'Undo your last move'**
   String get undoMoveDesc;
 
-  /// No description provided for @dailyRewardClaim.
+  /// Daily Reward Claim
   ///
   /// In en, this message translates to:
-  /// **'Claim Your Daily Reward! 🎁'**
+  /// **'Claim Your Daily Reward!'**
   String get dailyRewardClaim;
 
-  /// No description provided for @dailyRewardAmount.
+  /// Daily Reward Amount
   ///
   /// In en, this message translates to:
   /// **'20+ Credits + Bonuses'**
   String get dailyRewardAmount;
 
-  /// No description provided for @dailyRewardStreak.
+  /// Daily reward streak days
   ///
   /// In en, this message translates to:
-  /// **'Streak: {days} days'**
+  /// **'Streak: {days, plural, =1{1 day} other{{days} days}}'**
   String dailyRewardStreak(int days);
 
-  /// No description provided for @watchAdsTitle.
+  /// Watch Ads Title
   ///
   /// In en, this message translates to:
   /// **'Watch Ads, Earn'**
   String get watchAdsTitle;
 
-  /// No description provided for @watchAdsSubtitle.
+  /// Watch Ads Subtitle
   ///
   /// In en, this message translates to:
   /// **'You can watch 5 ads per day'**
   String get watchAdsSubtitle;
 
-  /// No description provided for @watchAdCredits.
+  /// Watch Ad Credits
   ///
   /// In en, this message translates to:
   /// **'+10 Credits'**
   String get watchAdCredits;
 
-  /// No description provided for @watchAdHint.
+  /// Watch Ad Hint
   ///
   /// In en, this message translates to:
   /// **'+1 Hint'**
   String get watchAdHint;
 
-  /// No description provided for @dailyRewardTitle.
+  /// Daily Reward Title
   ///
   /// In en, this message translates to:
   /// **'Daily Reward!'**
   String get dailyRewardTitle;
 
-  /// No description provided for @alreadyClaimedToday.
+  /// Already Claimed Today
   ///
   /// In en, this message translates to:
   /// **'You already claimed today\'s reward!'**
   String get alreadyClaimedToday;
 
-  /// No description provided for @notEnoughCredits.
+  /// Not Enough Credits
   ///
   /// In en, this message translates to:
   /// **'Not enough credits!'**
   String get notEnoughCredits;
 
-  /// No description provided for @livesAlreadyFull.
+  /// Lives Already Full
   ///
   /// In en, this message translates to:
   /// **'Lives already full!'**
   String get livesAlreadyFull;
 
-  /// No description provided for @great.
+  /// Great
   ///
   /// In en, this message translates to:
   /// **'Great!'**
   String get great;
 
-  /// No description provided for @share.
+  /// Share
   ///
   /// In en, this message translates to:
   /// **'Share'**
   String get share;
 
-  /// No description provided for @shareResult.
+  /// Share Result
   ///
   /// In en, this message translates to:
   /// **'Share Result'**
   String get shareResult;
 
-  /// No description provided for @customKeyboard.
+  /// Custom Keyboard
   ///
   /// In en, this message translates to:
   /// **'Custom Keyboard'**
   String get customKeyboard;
 
-  /// No description provided for @customKeyboardDesc.
+  /// Custom Keyboard Desc
   ///
   /// In en, this message translates to:
   /// **'Use in-game QWERTY keyboard'**
   String get customKeyboardDesc;
 
-  /// No description provided for @hapticFeedback.
+  /// Haptic Feedback
   ///
   /// In en, this message translates to:
   /// **'Haptic Feedback'**
   String get hapticFeedback;
 
-  /// No description provided for @hapticFeedbackDesc.
+  /// Haptic Feedback Desc
   ///
   /// In en, this message translates to:
   /// **'Vibration and tactile feedback'**
   String get hapticFeedbackDesc;
 
-  /// No description provided for @gotIt.
+  /// Got It
   ///
   /// In en, this message translates to:
   /// **'Got it!'**
   String get gotIt;
 
-  /// No description provided for @skipLabel.
+  /// Skip Label
   ///
   /// In en, this message translates to:
   /// **'Skip'**
   String get skipLabel;
 
-  /// No description provided for @progress.
+  /// Progress
   ///
   /// In en, this message translates to:
   /// **'Progress'**
   String get progress;
 
-  /// No description provided for @today.
+  /// Today
   ///
   /// In en, this message translates to:
   /// **'Today'**
   String get today;
 
-  /// No description provided for @yesterday.
+  /// Yesterday
   ///
   /// In en, this message translates to:
   /// **'Yesterday'**
   String get yesterday;
 
-  /// No description provided for @daysAgo.
+  /// Days ago label
   ///
   /// In en, this message translates to:
   /// **'{count} days ago'**
   String daysAgo(int count);
 
-  /// No description provided for @achievementFirstWin.
+  /// Achievement First Win
   ///
   /// In en, this message translates to:
   /// **'First Win'**
   String get achievementFirstWin;
 
-  /// No description provided for @achievementTenLevels.
+  /// Achievement Ten Levels
   ///
   /// In en, this message translates to:
   /// **'Ten Levels'**
   String get achievementTenLevels;
 
-  /// No description provided for @achievementSpeedDemon.
+  /// Achievement Speed Demon
   ///
   /// In en, this message translates to:
   /// **'Speed Demon'**
   String get achievementSpeedDemon;
 
-  /// No description provided for @achievementMarathonRunner.
+  /// Achievement Marathon Runner
   ///
   /// In en, this message translates to:
   /// **'Marathon Runner'**
   String get achievementMarathonRunner;
 
-  /// No description provided for @achievementThirtyLevels.
+  /// Achievement Thirty Levels
   ///
   /// In en, this message translates to:
   /// **'Thirty Levels'**
   String get achievementThirtyLevels;
 
-  /// No description provided for @achievementPerfectStreak5.
+  /// Achievement Perfect Streak5
   ///
   /// In en, this message translates to:
   /// **'Perfect Streak 5'**
   String get achievementPerfectStreak5;
 
-  /// No description provided for @achievementCenturyClub.
+  /// Achievement Century Club
   ///
   /// In en, this message translates to:
   /// **'Century Club'**
   String get achievementCenturyClub;
 
-  /// No description provided for @achievementHintlessHero.
+  /// Achievement Hintless Hero
   ///
   /// In en, this message translates to:
   /// **'Hintless Hero'**
   String get achievementHintlessHero;
 
-  /// No description provided for @achievementErrorFree.
+  /// Achievement Error Free
   ///
   /// In en, this message translates to:
   /// **'Error Free'**
   String get achievementErrorFree;
 
-  /// No description provided for @achievementEarlyBird.
+  /// Achievement Early Bird
   ///
   /// In en, this message translates to:
   /// **'Early Bird'**
   String get achievementEarlyBird;
 
-  /// No description provided for @achievementNightOwl.
+  /// Achievement Night Owl
   ///
   /// In en, this message translates to:
   /// **'Night Owl'**
   String get achievementNightOwl;
 
-  /// No description provided for @achievementPerfectStreak10.
+  /// Achievement Perfect Streak10
   ///
   /// In en, this message translates to:
   /// **'Perfect Streak 10'**
   String get achievementPerfectStreak10;
 
-  /// No description provided for @achievementFiftyLevels.
+  /// Achievement Fifty Levels
   ///
   /// In en, this message translates to:
   /// **'Fifty Levels'**
   String get achievementFiftyLevels;
 
-  /// No description provided for @achievementThreeStarPerfectionist.
+  /// Achievement Three Star Perfectionist
   ///
   /// In en, this message translates to:
   /// **'Three Star Perfectionist'**
   String get achievementThreeStarPerfectionist;
 
-  /// No description provided for @achievementNoHintsMaster.
+  /// Achievement No Hints Master
   ///
   /// In en, this message translates to:
   /// **'No Hints Master'**
   String get achievementNoHintsMaster;
 
-  /// No description provided for @achievementDescFirstWin.
+  /// Achievement Desc First Win
   ///
   /// In en, this message translates to:
   /// **'Complete your first level'**
   String get achievementDescFirstWin;
 
-  /// No description provided for @achievementDescTenLevels.
+  /// Achievement Desc Ten Levels
   ///
   /// In en, this message translates to:
   /// **'Complete 10 levels'**
   String get achievementDescTenLevels;
 
-  /// No description provided for @achievementDescSpeedDemon.
+  /// Achievement Desc Speed Demon
   ///
   /// In en, this message translates to:
   /// **'Complete a level in under 30 seconds'**
   String get achievementDescSpeedDemon;
 
-  /// No description provided for @achievementDescMarathonRunner.
+  /// Achievement Desc Marathon Runner
   ///
   /// In en, this message translates to:
   /// **'Play 10 levels in a single session'**
   String get achievementDescMarathonRunner;
 
-  /// No description provided for @achievementDescThirtyLevels.
+  /// Achievement Desc Thirty Levels
   ///
   /// In en, this message translates to:
   /// **'Complete 30 levels'**
   String get achievementDescThirtyLevels;
 
-  /// No description provided for @achievementDescPerfectStreak5.
+  /// Achievement Desc Perfect Streak5
   ///
   /// In en, this message translates to:
   /// **'Get 3 stars on 5 consecutive levels'**
   String get achievementDescPerfectStreak5;
 
-  /// No description provided for @achievementDescCenturyClub.
+  /// Achievement Desc Century Club
   ///
   /// In en, this message translates to:
   /// **'Complete 100 levels'**
   String get achievementDescCenturyClub;
 
-  /// No description provided for @achievementDescHintlessHero.
+  /// Achievement Desc Hintless Hero
   ///
   /// In en, this message translates to:
   /// **'Complete 10 levels without using hints'**
   String get achievementDescHintlessHero;
 
-  /// No description provided for @achievementDescErrorFree.
+  /// Achievement Desc Error Free
   ///
   /// In en, this message translates to:
   /// **'Complete a level without any wrong attempts'**
   String get achievementDescErrorFree;
 
-  /// No description provided for @achievementDescEarlyBird.
+  /// Achievement Desc Early Bird
   ///
   /// In en, this message translates to:
   /// **'Complete a level before 9 AM'**
   String get achievementDescEarlyBird;
 
-  /// No description provided for @achievementDescNightOwl.
+  /// Achievement Desc Night Owl
   ///
   /// In en, this message translates to:
   /// **'Complete a level after 11 PM'**
   String get achievementDescNightOwl;
 
-  /// No description provided for @achievementDescPerfectStreak10.
+  /// Achievement Desc Perfect Streak10
   ///
   /// In en, this message translates to:
   /// **'Get 3 stars on 10 consecutive levels'**
   String get achievementDescPerfectStreak10;
 
-  /// No description provided for @achievementDescFiftyLevels.
+  /// Achievement Desc Fifty Levels
   ///
   /// In en, this message translates to:
   /// **'Complete 50 levels'**
   String get achievementDescFiftyLevels;
 
-  /// No description provided for @achievementDescThreeStarPerfectionist.
+  /// Achievement Desc Three Star Perfectionist
   ///
   /// In en, this message translates to:
   /// **'Get 3 stars on 20 levels'**
   String get achievementDescThreeStarPerfectionist;
 
-  /// No description provided for @achievementDescNoHintsMaster.
+  /// Achievement Desc No Hints Master
   ///
   /// In en, this message translates to:
   /// **'Complete 50 levels without using hints'**
   String get achievementDescNoHintsMaster;
 
-  /// No description provided for @yourStatistics.
+  /// Achievement Streak7 Days
+  ///
+  /// In en, this message translates to:
+  /// **'Week Warrior'**
+  String get achievementStreak7Days;
+
+  /// Achievement Streak14 Days
+  ///
+  /// In en, this message translates to:
+  /// **'Fortnight Fighter'**
+  String get achievementStreak14Days;
+
+  /// Achievement Streak30 Days
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly Champion'**
+  String get achievementStreak30Days;
+
+  /// Achievement Streak60 Days
+  ///
+  /// In en, this message translates to:
+  /// **'2-Month Streak'**
+  String get achievementStreak60Days;
+
+  /// Achievement Streak100 Days
+  ///
+  /// In en, this message translates to:
+  /// **'Centurion'**
+  String get achievementStreak100Days;
+
+  /// Achievement Combo5x
+  ///
+  /// In en, this message translates to:
+  /// **'Combo Starter'**
+  String get achievementCombo5x;
+
+  /// Achievement Combo8x
+  ///
+  /// In en, this message translates to:
+  /// **'Combo Artist'**
+  String get achievementCombo8x;
+
+  /// Achievement Combo10x
+  ///
+  /// In en, this message translates to:
+  /// **'Combo Master'**
+  String get achievementCombo10x;
+
+  /// Achievement Speed60s
+  ///
+  /// In en, this message translates to:
+  /// **'Speed Runner'**
+  String get achievementSpeed60s;
+
+  /// Achievement Speed45s
+  ///
+  /// In en, this message translates to:
+  /// **'Lightning Fast'**
+  String get achievementSpeed45s;
+
+  /// Achievement All Levels
+  ///
+  /// In en, this message translates to:
+  /// **'All Levels Cleared'**
+  String get achievementAllLevels;
+
+  /// Achievement Legendary Rank
+  ///
+  /// In en, this message translates to:
+  /// **'Legendary'**
+  String get achievementLegendaryRank;
+
+  /// Achievement Share Results
+  ///
+  /// In en, this message translates to:
+  /// **'Sharer'**
+  String get achievementShareResults;
+
+  /// Achievement Daily Challenge First
+  ///
+  /// In en, this message translates to:
+  /// **'Daily Challenger'**
+  String get achievementDailyChallengeFirst;
+
+  /// Achievement Daily Challenge30
+  ///
+  /// In en, this message translates to:
+  /// **'Daily Champion'**
+  String get achievementDailyChallenge30;
+
+  /// Achievement Desc Streak7 Days
+  ///
+  /// In en, this message translates to:
+  /// **'Log in 7 days in a row'**
+  String get achievementDescStreak7Days;
+
+  /// Achievement Desc Streak14 Days
+  ///
+  /// In en, this message translates to:
+  /// **'Log in 14 days in a row'**
+  String get achievementDescStreak14Days;
+
+  /// Achievement Desc Streak30 Days
+  ///
+  /// In en, this message translates to:
+  /// **'Log in 30 days in a row'**
+  String get achievementDescStreak30Days;
+
+  /// Achievement Desc Streak60 Days
+  ///
+  /// In en, this message translates to:
+  /// **'Log in 60 days in a row'**
+  String get achievementDescStreak60Days;
+
+  /// Achievement Desc Streak100 Days
+  ///
+  /// In en, this message translates to:
+  /// **'Log in 100 days in a row'**
+  String get achievementDescStreak100Days;
+
+  /// Achievement Desc Combo5x
+  ///
+  /// In en, this message translates to:
+  /// **'Reach a 5x combo'**
+  String get achievementDescCombo5x;
+
+  /// Achievement Desc Combo8x
+  ///
+  /// In en, this message translates to:
+  /// **'Reach an 8x combo'**
+  String get achievementDescCombo8x;
+
+  /// Achievement Desc Combo10x
+  ///
+  /// In en, this message translates to:
+  /// **'Reach a 10x combo'**
+  String get achievementDescCombo10x;
+
+  /// Achievement Desc Speed60s
+  ///
+  /// In en, this message translates to:
+  /// **'Complete a level in under 60 seconds'**
+  String get achievementDescSpeed60s;
+
+  /// Achievement Desc Speed45s
+  ///
+  /// In en, this message translates to:
+  /// **'Complete a level in under 45 seconds'**
+  String get achievementDescSpeed45s;
+
+  /// Achievement Desc All Levels
+  ///
+  /// In en, this message translates to:
+  /// **'Complete all available levels'**
+  String get achievementDescAllLevels;
+
+  /// Achievement Desc Legendary Rank
+  ///
+  /// In en, this message translates to:
+  /// **'Reach the Legendary rank'**
+  String get achievementDescLegendaryRank;
+
+  /// Achievement Desc Share Results
+  ///
+  /// In en, this message translates to:
+  /// **'Share your results 5 times'**
+  String get achievementDescShareResults;
+
+  /// Achievement Desc Daily Challenge First
+  ///
+  /// In en, this message translates to:
+  /// **'Complete your first daily challenge'**
+  String get achievementDescDailyChallengeFirst;
+
+  /// Achievement Desc Daily Challenge30
+  ///
+  /// In en, this message translates to:
+  /// **'Complete 30 daily challenges'**
+  String get achievementDescDailyChallenge30;
+
+  /// Achievement Rarity Common
+  ///
+  /// In en, this message translates to:
+  /// **'Common'**
+  String get achievementRarityCommon;
+
+  /// Achievement Rarity Rare
+  ///
+  /// In en, this message translates to:
+  /// **'Rare'**
+  String get achievementRarityRare;
+
+  /// Achievement Rarity Legendary
+  ///
+  /// In en, this message translates to:
+  /// **'Legendary'**
+  String get achievementRarityLegendary;
+
+  /// Achievement Badge Select
+  ///
+  /// In en, this message translates to:
+  /// **'Set Badge'**
+  String get achievementBadgeSelect;
+
+  /// Achievement Badge Active
+  ///
+  /// In en, this message translates to:
+  /// **'Active Badge'**
+  String get achievementBadgeActive;
+
+  /// Achievement Badge Remove
+  ///
+  /// In en, this message translates to:
+  /// **'Remove Badge'**
+  String get achievementBadgeRemove;
+
+  /// Achievement Badge Removed
+  ///
+  /// In en, this message translates to:
+  /// **'Badge removed'**
+  String get achievementBadgeRemoved;
+
+  /// Achievement Badge Selected
+  ///
+  /// In en, this message translates to:
+  /// **'Badge set!'**
+  String get achievementBadgeSelected;
+
+  /// Achievement Unlocked
+  ///
+  /// In en, this message translates to:
+  /// **'Achievement Unlocked'**
+  String get achievementUnlocked;
+
+  /// Streak Milestone Title
+  ///
+  /// In en, this message translates to:
+  /// **'Streak Milestone!'**
+  String get streakMilestoneTitle;
+
+  /// Streak milestone reached message
+  ///
+  /// In en, this message translates to:
+  /// **'{days}-day streak! +{credits} credits!'**
+  String streakMilestoneDesc(int days, int credits);
+
+  /// Streak Freeze Title
+  ///
+  /// In en, this message translates to:
+  /// **'Streak Freeze'**
+  String get streakFreezeTitle;
+
+  /// Streak Freeze Desc
+  ///
+  /// In en, this message translates to:
+  /// **'Protects your streak for 1 missed day'**
+  String get streakFreezeDesc;
+
+  /// Number of streak freezes available
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 freeze available} other{{count} freezes available}}'**
+  String streakFreezeCount(int count);
+
+  /// Streak Freeze Auto Used
+  ///
+  /// In en, this message translates to:
+  /// **'Streak freeze used! Your streak is safe.'**
+  String get streakFreezeAutoUsed;
+
+  /// Streak Loss Warning Title
+  ///
+  /// In en, this message translates to:
+  /// **'Streak at risk!'**
+  String get streakLossWarningTitle;
+
+  /// Streak Loss Warning
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t lose your streak! Play today!'**
+  String get streakLossWarning;
+
+  /// Streak Days
+  ///
+  /// In en, this message translates to:
+  /// **'day streak'**
+  String get streakDays;
+
+  /// Streak Today Completed
+  ///
+  /// In en, this message translates to:
+  /// **'Today done'**
+  String get streakTodayCompleted;
+
+  /// Streak Today Incomplete
+  ///
+  /// In en, this message translates to:
+  /// **'Play today!'**
+  String get streakTodayIncomplete;
+
+  /// Streak Freeze Available
+  ///
+  /// In en, this message translates to:
+  /// **'freeze'**
+  String get streakFreezeAvailable;
+
+  /// No description provided for @streakNextMilestone.
+  ///
+  /// In en, this message translates to:
+  /// **'Next milestone: {days} days'**
+  String streakNextMilestone(int days);
+
+  /// No description provided for @streakMilestoneReward.
+  ///
+  /// In en, this message translates to:
+  /// **'Reward: {credits} credits'**
+  String streakMilestoneReward(int credits);
+
+  /// Streak Milestones
+  ///
+  /// In en, this message translates to:
+  /// **'Milestones'**
+  String get streakMilestones;
+
+  /// Streak All Milestones Reached
+  ///
+  /// In en, this message translates to:
+  /// **'All milestones reached!'**
+  String get streakAllMilestonesReached;
+
+  /// Streak Freeze Shop Title
+  ///
+  /// In en, this message translates to:
+  /// **'Streak Protection'**
+  String get streakFreezeShopTitle;
+
+  /// Streak Freeze Shop Subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Never lose your streak again'**
+  String get streakFreezeShopSubtitle;
+
+  /// Buy Streak Freeze1
+  ///
+  /// In en, this message translates to:
+  /// **'1 Freeze'**
+  String get buyStreakFreeze1;
+
+  /// Buy Streak Freeze3
+  ///
+  /// In en, this message translates to:
+  /// **'3 Freezes'**
+  String get buyStreakFreeze3;
+
+  /// Streak Freeze Purchased
+  ///
+  /// In en, this message translates to:
+  /// **'Streak freeze purchased!'**
+  String get streakFreezePurchased;
+
+  /// Streak Freeze Zero
+  ///
+  /// In en, this message translates to:
+  /// **'No freezes'**
+  String get streakFreezeZero;
+
+  /// Your Statistics
   ///
   /// In en, this message translates to:
   /// **'Your Statistics'**
   String get yourStatistics;
 
-  /// No description provided for @gamesPlayed.
+  /// Games Played
   ///
   /// In en, this message translates to:
   /// **'Games Played'**
   String get gamesPlayed;
 
-  /// No description provided for @gamesWon.
+  /// Games Won
   ///
   /// In en, this message translates to:
   /// **'Games Won'**
   String get gamesWon;
 
-  /// No description provided for @performance.
+  /// Performance
   ///
   /// In en, this message translates to:
   /// **'Performance'**
   String get performance;
 
-  /// No description provided for @winRate.
+  /// Win Rate
   ///
   /// In en, this message translates to:
   /// **'Win Rate'**
   String get winRate;
 
-  /// No description provided for @avgStars.
+  /// Avg Stars
   ///
   /// In en, this message translates to:
   /// **'Avg Stars'**
   String get avgStars;
 
-  /// No description provided for @timeStatistics.
+  /// Time Statistics
   ///
   /// In en, this message translates to:
   /// **'Time Statistics'**
   String get timeStatistics;
 
-  /// No description provided for @totalTimePlayed.
+  /// Total Time Played
   ///
   /// In en, this message translates to:
   /// **'Total Time Played'**
   String get totalTimePlayed;
 
-  /// No description provided for @bestTime.
+  /// Best Time
   ///
   /// In en, this message translates to:
   /// **'Best Time'**
   String get bestTime;
 
-  /// No description provided for @averageTime.
+  /// Average Time
   ///
   /// In en, this message translates to:
   /// **'Average Time'**
   String get averageTime;
 
-  /// No description provided for @starDistribution.
+  /// Star Distribution
   ///
   /// In en, this message translates to:
   /// **'Star Distribution'**
   String get starDistribution;
 
-  /// No description provided for @totalStarsEarned.
+  /// Total Stars Earned
   ///
   /// In en, this message translates to:
   /// **'Total Stars Earned'**
   String get totalStarsEarned;
 
-  /// No description provided for @perfectGames.
+  /// Perfect Games
   ///
   /// In en, this message translates to:
   /// **'Perfect Games'**
   String get perfectGames;
 
-  /// No description provided for @noGamesPlayedYet.
+  /// No Games Played Yet
   ///
   /// In en, this message translates to:
   /// **'No games played yet'**
   String get noGamesPlayedYet;
 
-  /// No description provided for @wins.
+  /// Wins
   ///
   /// In en, this message translates to:
   /// **'Wins'**
   String get wins;
 
-  /// No description provided for @losses.
+  /// Losses
   ///
   /// In en, this message translates to:
   /// **'Losses'**
   String get losses;
 
-  /// No description provided for @shareStatistics.
+  /// Share Statistics
   ///
   /// In en, this message translates to:
   /// **'Share Statistics'**
   String get shareStatistics;
 
-  /// No description provided for @currentStreak.
+  /// Current Streak
   ///
   /// In en, this message translates to:
   /// **'Current Streak'**
   String get currentStreak;
 
-  /// No description provided for @failedToLoadDailyChallenge.
+  /// Failed To Load Daily Challenge
   ///
   /// In en, this message translates to:
   /// **'Failed to load daily challenge'**
   String get failedToLoadDailyChallenge;
 
-  /// No description provided for @failedToLoadChallenge.
+  /// Failed To Load Challenge
   ///
   /// In en, this message translates to:
   /// **'Failed to load challenge'**
   String get failedToLoadChallenge;
 
-  /// No description provided for @difficultyLabel.
+  /// Difficulty Label
   ///
   /// In en, this message translates to:
   /// **'Difficulty'**
   String get difficultyLabel;
 
-  /// No description provided for @wordsLabel.
+  /// Words Label
   ///
   /// In en, this message translates to:
   /// **'Words'**
   String get wordsLabel;
 
-  /// No description provided for @starsLabel.
+  /// Stars Label
   ///
   /// In en, this message translates to:
   /// **'Stars'**
   String get starsLabel;
 
-  /// No description provided for @timeLabel.
+  /// Time Label
   ///
   /// In en, this message translates to:
   /// **'Time'**
   String get timeLabel;
 
-  /// No description provided for @scoreLabel.
+  /// Score Label
   ///
   /// In en, this message translates to:
   /// **'Score'**
   String get scoreLabel;
 
-  /// No description provided for @viewResult.
+  /// View Result
   ///
   /// In en, this message translates to:
   /// **'View Result'**
   String get viewResult;
 
-  /// No description provided for @playNow.
+  /// Play Now
   ///
   /// In en, this message translates to:
   /// **'Play Now'**
   String get playNow;
 
-  /// No description provided for @expert.
+  /// Expert
   ///
   /// In en, this message translates to:
   /// **'Expert'**
   String get expert;
 
-  /// No description provided for @unknown.
+  /// Unknown
   ///
   /// In en, this message translates to:
   /// **'Unknown'**
   String get unknown;
 
-  /// No description provided for @monthJanuary.
+  /// Month January
   ///
   /// In en, this message translates to:
   /// **'January'**
   String get monthJanuary;
 
-  /// No description provided for @monthFebruary.
+  /// Month February
   ///
   /// In en, this message translates to:
   /// **'February'**
   String get monthFebruary;
 
-  /// No description provided for @monthMarch.
+  /// Month March
   ///
   /// In en, this message translates to:
   /// **'March'**
   String get monthMarch;
 
-  /// No description provided for @monthApril.
+  /// Month April
   ///
   /// In en, this message translates to:
   /// **'April'**
   String get monthApril;
 
-  /// No description provided for @monthMay.
+  /// Month May
   ///
   /// In en, this message translates to:
   /// **'May'**
   String get monthMay;
 
-  /// No description provided for @monthJune.
+  /// Month June
   ///
   /// In en, this message translates to:
   /// **'June'**
   String get monthJune;
 
-  /// No description provided for @monthJuly.
+  /// Month July
   ///
   /// In en, this message translates to:
   /// **'July'**
   String get monthJuly;
 
-  /// No description provided for @monthAugust.
+  /// Month August
   ///
   /// In en, this message translates to:
   /// **'August'**
   String get monthAugust;
 
-  /// No description provided for @monthSeptember.
+  /// Month September
   ///
   /// In en, this message translates to:
   /// **'September'**
   String get monthSeptember;
 
-  /// No description provided for @monthOctober.
+  /// Month October
   ///
   /// In en, this message translates to:
   /// **'October'**
   String get monthOctober;
 
-  /// No description provided for @monthNovember.
+  /// Month November
   ///
   /// In en, this message translates to:
   /// **'November'**
   String get monthNovember;
 
-  /// No description provided for @monthDecember.
+  /// Month December
   ///
   /// In en, this message translates to:
   /// **'December'**
   String get monthDecember;
 
-  /// No description provided for @yourStats.
+  /// Your Stats
   ///
   /// In en, this message translates to:
   /// **'Your Stats'**
   String get yourStats;
 
-  /// No description provided for @completedLabel.
+  /// Completed Label
   ///
   /// In en, this message translates to:
   /// **'Completed'**
   String get completedLabel;
 
-  /// No description provided for @bestStreak.
+  /// Best Streak
   ///
   /// In en, this message translates to:
   /// **'Best Streak'**
   String get bestStreak;
 
-  /// No description provided for @comboLabel.
+  /// Combo count label
   ///
   /// In en, this message translates to:
   /// **'{count} COMBO'**
   String comboLabel(int count);
 
-  /// No description provided for @comboMultiplierLabel.
+  /// Combo multiplier label
   ///
   /// In en, this message translates to:
   /// **'{multiplier}x Multiplier'**
   String comboMultiplierLabel(String multiplier);
 
-  /// No description provided for @comboXLabel.
+  /// Combo with count and multiplier label
   ///
   /// In en, this message translates to:
   /// **'Combo x{count} ({multiplier}x)'**
   String comboXLabel(int count, String multiplier);
 
-  /// No description provided for @comboBreak.
+  /// Combo Break
   ///
   /// In en, this message translates to:
   /// **'COMBO BREAK'**
   String get comboBreak;
 
-  /// No description provided for @comboLostLabel.
+  /// Lost combo count label
   ///
   /// In en, this message translates to:
   /// **'Lost {count}x combo'**
   String comboLostLabel(int count);
 
-  /// No description provided for @undoTooltipMessage.
+  /// Undo tooltip with action and remaining count
   ///
   /// In en, this message translates to:
   /// **'Undo: {action}\n{count} undos remaining'**
   String undoTooltipMessage(String action, int count);
 
-  /// No description provided for @noUndosAvailable.
+  /// No Undos Available
   ///
   /// In en, this message translates to:
   /// **'No more undos available'**
   String get noUndosAvailable;
 
-  /// No description provided for @undoConfirmTitle.
+  /// Undo Confirm Title
   ///
   /// In en, this message translates to:
   /// **'Undo?'**
   String get undoConfirmTitle;
 
-  /// No description provided for @undoConfirmMessageWithAction.
+  /// Undo confirmation with specific action
   ///
   /// In en, this message translates to:
   /// **'This action will be undone:\n\n\"{action}\"\n\nUndos remaining: {count}'**
   String undoConfirmMessageWithAction(String action, int count);
 
-  /// No description provided for @undoConfirmMessage.
+  /// Undo confirmation with remaining count
   ///
   /// In en, this message translates to:
   /// **'Undo the last action?\n\nUndos remaining: {count}'**
   String undoConfirmMessage(int count);
 
-  /// No description provided for @undoReverted.
+  /// Undo Reverted
   ///
   /// In en, this message translates to:
   /// **'Action undone'**
   String get undoReverted;
 
-  /// No description provided for @undosRemainingCount.
+  /// Undos remaining count
   ///
   /// In en, this message translates to:
   /// **'{count} undos remaining'**
   String undosRemainingCount(int count);
 
-  /// No description provided for @rewardCreditsLabel.
+  /// Reward credits amount label
   ///
   /// In en, this message translates to:
   /// **'+{amount} Credits'**
   String rewardCreditsLabel(int amount);
 
-  /// No description provided for @rewardRevealHints.
+  /// Reward reveal hints count
   ///
   /// In en, this message translates to:
   /// **'+{count} Reveal Hint'**
   String rewardRevealHints(int count);
 
-  /// No description provided for @rewardUndoHints.
+  /// Reward undo hints count
   ///
   /// In en, this message translates to:
   /// **'+{count} Undo Hint'**
   String rewardUndoHints(int count);
 
-  /// No description provided for @dailyAdLimitReached.
+  /// Daily Ad Limit Reached
   ///
   /// In en, this message translates to:
   /// **'Daily limit reached! (5/5)'**
   String get dailyAdLimitReached;
 
-  /// No description provided for @creditsEarnedNotification.
+  /// Credits earned notification
   ///
   /// In en, this message translates to:
   /// **'+{amount} credits earned!'**
   String creditsEarnedNotification(int amount);
 
-  /// No description provided for @revealHintEarned.
+  /// Reveal Hint Earned
   ///
   /// In en, this message translates to:
   /// **'+1 Reveal hint earned!'**
   String get revealHintEarned;
 
-  /// No description provided for @undoHintEarned.
+  /// Undo Hint Earned
   ///
   /// In en, this message translates to:
   /// **'+1 Undo hint earned!'**
   String get undoHintEarned;
 
-  /// No description provided for @hintsPurchasedNotification.
+  /// Hints purchased notification
   ///
   /// In en, this message translates to:
   /// **'{amount} hints purchased!'**
   String hintsPurchasedNotification(int amount);
 
-  /// No description provided for @livesPurchasedNotification.
+  /// Lives purchased notification
   ///
   /// In en, this message translates to:
   /// **'{amount} lives purchased!'**
   String livesPurchasedNotification(int amount);
 
-  /// No description provided for @creditPurchaseComingSoon.
+  /// Credit purchase coming soon message
   ///
   /// In en, this message translates to:
   /// **'Buying {amount} credits for {price} (Coming soon!)'**
   String creditPurchaseComingSoon(int amount, String price);
 
-  /// No description provided for @levelsLabel.
+  /// Levels Label
   ///
   /// In en, this message translates to:
   /// **'Levels'**
   String get levelsLabel;
 
-  /// No description provided for @streakLabel.
+  /// Streak Label
   ///
   /// In en, this message translates to:
   /// **'Streak'**
   String get streakLabel;
 
-  /// No description provided for @creditsEarnedLabel.
+  /// Credits Earned Label
   ///
   /// In en, this message translates to:
   /// **'Credits Earned'**
   String get creditsEarnedLabel;
 
-  /// No description provided for @completedToday.
+  /// Completed Today
   ///
   /// In en, this message translates to:
   /// **'Completed Today!'**
   String get completedToday;
 
-  /// No description provided for @todaysChallenge.
+  /// Todays Challenge
   ///
   /// In en, this message translates to:
   /// **'Today\'s Challenge'**
   String get todaysChallenge;
 
-  /// No description provided for @shareResultHeader.
+  /// Share result header with level ID
   ///
   /// In en, this message translates to:
   /// **'CrossClimber Level {levelId} Completed!'**
   String shareResultHeader(int levelId);
 
-  /// No description provided for @shareAchievementUnlocked.
+  /// Share Achievement Unlocked
   ///
   /// In en, this message translates to:
-  /// **'🏆 Achievement Unlocked!'**
+  /// **'Achievement Unlocked!'**
   String get shareAchievementUnlocked;
 
-  /// No description provided for @shareAchievementCTA.
+  /// Share Achievement C T A
   ///
   /// In en, this message translates to:
   /// **'Playing CrossClimber - The ultimate word puzzle game!'**
   String get shareAchievementCTA;
 
-  /// No description provided for @shareDailyChallengeTitle.
+  /// Share Daily Challenge Title
   ///
   /// In en, this message translates to:
-  /// **'📅 CrossClimber Daily Challenge'**
+  /// **'CrossClimber Daily Challenge'**
   String get shareDailyChallengeTitle;
 
-  /// No description provided for @shareDailyLevelCompleted.
+  /// Share daily level completed message
   ///
   /// In en, this message translates to:
   /// **'Level {levelId}: Completed!'**
   String shareDailyLevelCompleted(int levelId);
 
-  /// No description provided for @shareDailyLevelFailed.
+  /// Share daily level failed message
   ///
   /// In en, this message translates to:
   /// **'Level {levelId}: Failed'**
   String shareDailyLevelFailed(int levelId);
 
-  /// No description provided for @shareDailyChallengeCTA.
+  /// Share Daily Challenge C T A
   ///
   /// In en, this message translates to:
   /// **'Join the daily challenge!'**
   String get shareDailyChallengeCTA;
 
-  /// No description provided for @shareMyStatsTitle.
+  /// Share My Stats Title
   ///
   /// In en, this message translates to:
-  /// **'📊 My CrossClimber Stats'**
+  /// **'My CrossClimber Stats'**
   String get shareMyStatsTitle;
 
-  /// No description provided for @shareStatsCTA.
+  /// Share Stats C T A
   ///
   /// In en, this message translates to:
   /// **'Challenge me in CrossClimber!'**
   String get shareStatsCTA;
 
-  /// No description provided for @shareStatisticsCTA.
+  /// Share Statistics C T A
   ///
   /// In en, this message translates to:
   /// **'Can you beat my stats?'**
   String get shareStatisticsCTA;
 
-  /// No description provided for @onboardingPage1Title.
+  /// Onboarding Page1 Title
   ///
   /// In en, this message translates to:
   /// **'Climb the Words!'**
   String get onboardingPage1Title;
 
-  /// No description provided for @onboardingPage1Desc.
+  /// Onboarding Page1 Desc
   ///
   /// In en, this message translates to:
   /// **'Climb from the starting word to the end word — find the hidden steps!'**
   String get onboardingPage1Desc;
 
-  /// No description provided for @onboardingPage2Title.
+  /// Onboarding Page2 Title
   ///
   /// In en, this message translates to:
   /// **'Guess, Sort, Solve!'**
   String get onboardingPage2Title;
 
-  /// No description provided for @onboardingPage2Desc.
+  /// Onboarding Page2 Desc
   ///
   /// In en, this message translates to:
   /// **'3 phases to win: Guess hidden words → Sort them correctly → Solve the final word!'**
   String get onboardingPage2Desc;
 
-  /// No description provided for @onboardingPage3Title.
+  /// Onboarding Page3 Title
   ///
   /// In en, this message translates to:
   /// **'Daily Challenge'**
   String get onboardingPage3Title;
 
-  /// No description provided for @onboardingPage3Desc.
+  /// Onboarding Page3 Desc
   ///
   /// In en, this message translates to:
   /// **'A brand new puzzle every day. Build your streak and beat your own record!'**
   String get onboardingPage3Desc;
 
-  /// No description provided for @onboardingPage4Title.
+  /// Onboarding Page4 Title
   ///
   /// In en, this message translates to:
   /// **'Build Combos!'**
   String get onboardingPage4Title;
 
-  /// No description provided for @onboardingPage4Desc.
+  /// Onboarding Page4 Desc
   ///
   /// In en, this message translates to:
   /// **'Guess correctly in a row to multiply your score — 2x, 3x, 4x bonus points!'**
   String get onboardingPage4Desc;
 
-  /// No description provided for @onboardingSkip.
+  /// Onboarding Skip
   ///
   /// In en, this message translates to:
   /// **'Skip'**
   String get onboardingSkip;
 
-  /// No description provided for @onboardingNext.
+  /// Onboarding Next
   ///
   /// In en, this message translates to:
   /// **'Next'**
   String get onboardingNext;
 
-  /// No description provided for @onboardingStart.
+  /// Onboarding Start
   ///
   /// In en, this message translates to:
   /// **'Let\'s Go!'**
   String get onboardingStart;
 
-  /// No description provided for @tutorialDontShowAgain.
+  /// Tutorial Dont Show Again
   ///
   /// In en, this message translates to:
   /// **'Don\'t show again'**
   String get tutorialDontShowAgain;
 
-  /// No description provided for @emptyAchievementsTitle.
+  /// Empty Achievements Title
   ///
   /// In en, this message translates to:
   /// **'No Achievements Yet'**
   String get emptyAchievementsTitle;
 
-  /// No description provided for @emptyAchievementsDesc.
+  /// Empty Achievements Desc
   ///
   /// In en, this message translates to:
   /// **'Play games to start unlocking achievements and earning bonus credits!'**
   String get emptyAchievementsDesc;
 
-  /// No description provided for @emptyStatisticsTitle.
+  /// Empty Statistics Title
   ///
   /// In en, this message translates to:
   /// **'No Stats Yet'**
   String get emptyStatisticsTitle;
 
-  /// No description provided for @emptyStatisticsDesc.
+  /// Empty Statistics Desc
   ///
   /// In en, this message translates to:
   /// **'Your statistics will appear here after your first game.'**
   String get emptyStatisticsDesc;
 
-  /// No description provided for @dailyMotivationTitle.
+  /// Daily Motivation Title
   ///
   /// In en, this message translates to:
   /// **'Ready for Today\'s Challenge?'**
   String get dailyMotivationTitle;
 
-  /// No description provided for @dailyMotivationDesc.
+  /// Daily Motivation Desc
   ///
   /// In en, this message translates to:
   /// **'A new puzzle every day. Complete it to keep your streak alive!'**
   String get dailyMotivationDesc;
 
-  /// No description provided for @dailyMotivationButton.
+  /// Daily Motivation Button
   ///
   /// In en, this message translates to:
   /// **'Play Now'**
   String get dailyMotivationButton;
 
-  /// No description provided for @discoveryShopTitle.
+  /// Discovery Shop Title
   ///
   /// In en, this message translates to:
   /// **'Welcome to the Shop!'**
   String get discoveryShopTitle;
 
-  /// No description provided for @discoveryShopDesc.
+  /// Discovery Shop Desc
   ///
   /// In en, this message translates to:
   /// **'Use your credits to buy hints and lives. Watch ads for free daily rewards!'**
   String get discoveryShopDesc;
 
-  /// No description provided for @discoveryAchievementsTitle.
+  /// Discovery Achievements Title
   ///
   /// In en, this message translates to:
   /// **'Unlock Achievements!'**
   String get discoveryAchievementsTitle;
 
-  /// No description provided for @discoveryAchievementsDesc.
+  /// Discovery Achievements Desc
   ///
   /// In en, this message translates to:
   /// **'Complete milestones to unlock badges and earn bonus credits.'**
   String get discoveryAchievementsDesc;
 
-  /// No description provided for @discoveryDailyTitle.
+  /// Discovery Daily Title
   ///
   /// In en, this message translates to:
   /// **'Build Your Streak!'**
   String get discoveryDailyTitle;
 
-  /// No description provided for @discoveryDailyDesc.
+  /// Discovery Daily Desc
   ///
   /// In en, this message translates to:
   /// **'Complete the daily challenge every day to keep your streak alive and earn rewards.'**
   String get discoveryDailyDesc;
 
-  /// No description provided for @discoveryGotIt.
+  /// Discovery Got It
   ///
   /// In en, this message translates to:
   /// **'Got it!'**
   String get discoveryGotIt;
 
-  /// No description provided for @homeSubtitle.
+  /// Home Subtitle
   ///
   /// In en, this message translates to:
   /// **'Climb the words to the top!'**
   String get homeSubtitle;
 
-  /// No description provided for @homeQuickPlay.
+  /// Home Quick Play
   ///
   /// In en, this message translates to:
   /// **'Quick Play'**
   String get homeQuickPlay;
 
-  /// No description provided for @homeContinueLevel.
+  /// Levels button showing current progress
+  ///
+  /// In en, this message translates to:
+  /// **'Levels (Level {level})'**
+  String homeLevelsWithProgress(int level);
+
+  /// Continue button with level number
   ///
   /// In en, this message translates to:
   /// **'Continue: Level {level}'**
   String homeContinueLevel(int level);
 
-  /// No description provided for @homeStreakDays.
+  /// Home streak days badge
   ///
   /// In en, this message translates to:
-  /// **'{days}🔥'**
+  /// **'{days}'**
   String homeStreakDays(int days);
 
-  /// No description provided for @homeTotalStars.
+  /// Home total stars badge
   ///
   /// In en, this message translates to:
-  /// **'{count} ★'**
+  /// **'{count}'**
   String homeTotalStars(int count);
 
-  /// No description provided for @homeAchievementsProgress.
+  /// Home achievements unlocked/total
   ///
   /// In en, this message translates to:
   /// **'{unlocked}/{total}'**
   String homeAchievementsProgress(int unlocked, int total);
 
-  /// No description provided for @zoneProgress.
+  /// Zone completed/total progress
   ///
   /// In en, this message translates to:
   /// **'{completed}/{total} completed'**
   String zoneProgress(int completed, int total);
 
-  /// No description provided for @phaseSortBanner.
+  /// Phase Sort Banner
   ///
   /// In en, this message translates to:
   /// **'Sort Now!'**
   String get phaseSortBanner;
 
-  /// No description provided for @phaseFinalBanner.
+  /// Phase Final Banner
   ///
   /// In en, this message translates to:
   /// **'Find Final Words!'**
   String get phaseFinalBanner;
 
-  /// No description provided for @completion3Stars.
+  /// Completion3 Stars
   ///
   /// In en, this message translates to:
-  /// **'Perfect! All stars! 🌟'**
+  /// **'Perfect! All stars!'**
   String get completion3Stars;
 
-  /// No description provided for @completion2Stars.
+  /// Completion2 Stars
   ///
   /// In en, this message translates to:
-  /// **'Great job! 👏'**
+  /// **'Great job!'**
   String get completion2Stars;
 
-  /// No description provided for @completion1Star.
+  /// Completion1 Star
   ///
   /// In en, this message translates to:
   /// **'Not bad! Try again for more stars.'**
   String get completion1Star;
 
-  /// No description provided for @completion0Stars.
+  /// Completion0 Stars
   ///
   /// In en, this message translates to:
   /// **'Keep going, you can do it! Try again.'**
   String get completion0Stars;
 
-  /// No description provided for @completionHintSuggestion.
+  /// Completion Hint Suggestion
   ///
   /// In en, this message translates to:
   /// **'Tip: Use hints to improve your score.'**
   String get completionHintSuggestion;
 
-  /// No description provided for @sharePreviewTitle.
+  /// Share Preview Title
   ///
   /// In en, this message translates to:
   /// **'Share Result'**
   String get sharePreviewTitle;
 
-  /// No description provided for @sharePreviewCopy.
+  /// Share Preview Copy
   ///
   /// In en, this message translates to:
   /// **'Copy'**
   String get sharePreviewCopy;
 
-  /// No description provided for @sharePreviewCopied.
+  /// Share Preview Copied
   ///
   /// In en, this message translates to:
   /// **'Copied!'**
   String get sharePreviewCopied;
 
-  /// No description provided for @sharePreviewClose.
+  /// Share Preview Close
   ///
   /// In en, this message translates to:
   /// **'Close'**
   String get sharePreviewClose;
 
-  /// No description provided for @settingsHighContrast.
+  /// Settings High Contrast
   ///
   /// In en, this message translates to:
   /// **'High Contrast Mode'**
   String get settingsHighContrast;
 
-  /// No description provided for @settingsHighContrastDesc.
+  /// Settings High Contrast Desc
   ///
   /// In en, this message translates to:
   /// **'Increase color contrast for better readability'**
   String get settingsHighContrastDesc;
 
-  /// No description provided for @semanticsDragInstruction.
+  /// Semantics Drag Instruction
   ///
   /// In en, this message translates to:
   /// **'Double tap and hold to drag and reorder'**
   String get semanticsDragInstruction;
 
-  /// No description provided for @semanticsComboMultiplier.
+  /// Accessibility label for combo multiplier
   ///
   /// In en, this message translates to:
   /// **'Combo: {count} in a row, {multiplier}x multiplier'**
   String semanticsComboMultiplier(int count, String multiplier);
 
-  /// No description provided for @semanticsLevelCard.
+  /// Accessibility label for level card
   ///
   /// In en, this message translates to:
   /// **'Level {id}, {status}, {stars} stars'**
   String semanticsLevelCard(int id, String status, int stars);
 
-  /// No description provided for @semanticsLocked.
+  /// Semantics Locked
   ///
   /// In en, this message translates to:
   /// **'locked'**
   String get semanticsLocked;
 
-  /// No description provided for @semanticsUnlocked.
+  /// Semantics Unlocked
   ///
   /// In en, this message translates to:
   /// **'unlocked'**
   String get semanticsUnlocked;
 
-  /// No description provided for @semanticsCompleted.
+  /// Semantics Completed
   ///
   /// In en, this message translates to:
   /// **'completed'**
   String get semanticsCompleted;
+
+  /// Semantics Action Play
+  ///
+  /// In en, this message translates to:
+  /// **'play'**
+  String get semanticsActionPlay;
+
+  /// Semantics Action Open
+  ///
+  /// In en, this message translates to:
+  /// **'open'**
+  String get semanticsActionOpen;
+
+  /// Semantics Action Add Letter
+  ///
+  /// In en, this message translates to:
+  /// **'add letter'**
+  String get semanticsActionAddLetter;
+
+  /// Rank Novice
+  ///
+  /// In en, this message translates to:
+  /// **'Novice'**
+  String get rankNovice;
+
+  /// Rank Word Student
+  ///
+  /// In en, this message translates to:
+  /// **'Word Student'**
+  String get rankWordStudent;
+
+  /// Rank Word Master
+  ///
+  /// In en, this message translates to:
+  /// **'Word Master'**
+  String get rankWordMaster;
+
+  /// Rank Puzzle Solver
+  ///
+  /// In en, this message translates to:
+  /// **'Puzzle Solver'**
+  String get rankPuzzleSolver;
+
+  /// Rank Mountain Climber
+  ///
+  /// In en, this message translates to:
+  /// **'Mountain Climber'**
+  String get rankMountainClimber;
+
+  /// Rank Word Eagle
+  ///
+  /// In en, this message translates to:
+  /// **'Word Eagle'**
+  String get rankWordEagle;
+
+  /// Rank Word King
+  ///
+  /// In en, this message translates to:
+  /// **'Word King'**
+  String get rankWordKing;
+
+  /// Rank Diamond Mind
+  ///
+  /// In en, this message translates to:
+  /// **'Diamond Mind'**
+  String get rankDiamondMind;
+
+  /// Rank Legend
+  ///
+  /// In en, this message translates to:
+  /// **'Legend'**
+  String get rankLegend;
+
+  /// Rank Cross Climber Master
+  ///
+  /// In en, this message translates to:
+  /// **'CrossClimber Master'**
+  String get rankCrossClimberMaster;
+
+  /// XP gained amount
+  ///
+  /// In en, this message translates to:
+  /// **'+{amount} XP'**
+  String xpGained(int amount);
+
+  /// Total XP label with amount
+  ///
+  /// In en, this message translates to:
+  /// **'Total XP: {amount}'**
+  String totalXpLabel(int amount);
+
+  /// Rank Up Title
+  ///
+  /// In en, this message translates to:
+  /// **'Rank Up!'**
+  String get rankUpTitle;
+
+  /// Rank up celebration message
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ve reached {rankName}!'**
+  String rankUpMessage(String rankName);
+
+  /// Profile Card Title
+  ///
+  /// In en, this message translates to:
+  /// **'Player Profile'**
+  String get profileCardTitle;
+
+  /// XP progress current/target
+  ///
+  /// In en, this message translates to:
+  /// **'{current} / {target} XP'**
+  String xpProgress(int current, int target);
+
+  /// Daily Challenge Xp
+  ///
+  /// In en, this message translates to:
+  /// **'Daily Challenge XP'**
+  String get dailyChallengeXp;
+
+  /// Combo XP bonus amount
+  ///
+  /// In en, this message translates to:
+  /// **'Combo Bonus: +{amount} XP'**
+  String comboXpBonus(int amount);
+
+  /// Daily reward calendar section title
+  ///
+  /// In en, this message translates to:
+  /// **'Daily Reward Calendar'**
+  String get dailyCalendarTitle;
+
+  /// Day label in the 7-day calendar
+  ///
+  /// In en, this message translates to:
+  /// **'Day {day}'**
+  String dailyCalendarDay(int day);
+
+  /// Button label to claim today's daily reward
+  ///
+  /// In en, this message translates to:
+  /// **'Claim!'**
+  String get dailyCalendarClaim;
+
+  /// Status label shown when today's reward has been claimed
+  ///
+  /// In en, this message translates to:
+  /// **'Claimed'**
+  String get dailyCalendarClaimed;
+
+  /// Countdown label showing time until next daily reward
+  ///
+  /// In en, this message translates to:
+  /// **'Next in {time}'**
+  String dailyCalendarNextIn(String time);
+
+  /// FOMO warning shown when the streak was reset due to a missed day
+  ///
+  /// In en, this message translates to:
+  /// **'Streak reset — back to Day 1!'**
+  String get dailyCalendarStreakReset;
+
+  /// Credits reward amount in the calendar
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} credits'**
+  String dailyCalendarRewardCredits(int amount);
+
+  /// Reveal hint reward label in the calendar
+  ///
+  /// In en, this message translates to:
+  /// **'1 Reveal'**
+  String get dailyCalendarRewardReveal;
+
+  /// Undo hint reward label in the calendar
+  ///
+  /// In en, this message translates to:
+  /// **'1 Undo'**
+  String get dailyCalendarRewardUndo;
+
+  /// Special theme bonus reward label for Day 7
+  ///
+  /// In en, this message translates to:
+  /// **'Special Theme!'**
+  String get dailyCalendarRewardSpecial;
+
+  /// SnackBar message shown after successfully claiming a daily reward
+  ///
+  /// In en, this message translates to:
+  /// **'Reward claimed!'**
+  String get dailyCalendarRewardSummary;
+
+  /// FOMO reminder shown after claiming today's reward
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t miss tomorrow!'**
+  String get dailyCalendarFomoWarning;
+
+  /// Weekly tournament section title
+  ///
+  /// In en, this message translates to:
+  /// **'Weekly Tournament'**
+  String get tournamentTitle;
+
+  /// Tournament week label
+  ///
+  /// In en, this message translates to:
+  /// **'Week {week}'**
+  String tournamentWeek(String week);
+
+  /// Status label for an active tournament
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get tournamentActive;
+
+  /// Status label for an ended tournament
+  ///
+  /// In en, this message translates to:
+  /// **'Ended'**
+  String get tournamentEnded;
+
+  /// Countdown label showing time until tournament ends
+  ///
+  /// In en, this message translates to:
+  /// **'Ends in {time}'**
+  String tournamentEndsIn(String time);
+
+  /// Countdown label showing time until next tournament
+  ///
+  /// In en, this message translates to:
+  /// **'Next in {time}'**
+  String tournamentNextIn(String time);
+
+  /// Tournament leaderboard section title
+  ///
+  /// In en, this message translates to:
+  /// **'Leaderboard'**
+  String get tournamentLeaderboard;
+
+  /// Tournament levels section title
+  ///
+  /// In en, this message translates to:
+  /// **'Tournament Levels'**
+  String get tournamentLevels;
+
+  /// User's own rank in the tournament
+  ///
+  /// In en, this message translates to:
+  /// **'Your Rank'**
+  String get tournamentMyRank;
+
+  /// Rank number with hash prefix
+  ///
+  /// In en, this message translates to:
+  /// **'#{rank}'**
+  String tournamentRank(int rank);
+
+  /// Tournament score display
+  ///
+  /// In en, this message translates to:
+  /// **'{score} pts'**
+  String tournamentScore(int score);
+
+  /// Tournament rewards section title
+  ///
+  /// In en, this message translates to:
+  /// **'Rewards'**
+  String get tournamentRewards;
+
+  /// Button to play a tournament level
+  ///
+  /// In en, this message translates to:
+  /// **'Play'**
+  String get tournamentPlay;
+
+  /// Label shown on a completed tournament level card
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get tournamentLevelCompleted;
+
+  /// Shown when user hasn't played any tournament level yet
+  ///
+  /// In en, this message translates to:
+  /// **'Not participating yet'**
+  String get tournamentNotParticipating;
+
+  /// Number of completed tournament levels out of 7
+  ///
+  /// In en, this message translates to:
+  /// **'{count}/7 levels'**
+  String tournamentLevelsProgress(int count);
+
+  /// Credit reward amount in tournament tiers
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} Credits'**
+  String tournamentCreditsReward(int amount);
+
+  /// Participation tier label in tournament rewards
+  ///
+  /// In en, this message translates to:
+  /// **'Participation'**
+  String get tournamentParticipation;
+
+  /// Error message when tournament cannot be loaded offline
+  ///
+  /// In en, this message translates to:
+  /// **'Tournament requires an internet connection'**
+  String get tournamentOffline;
+
+  /// Error message when tournament data fails to load
+  ///
+  /// In en, this message translates to:
+  /// **'Could not load tournament'**
+  String get tournamentLoadError;
+
+  /// Confirmation shown when a tournament score is successfully submitted
+  ///
+  /// In en, this message translates to:
+  /// **'Score saved to leaderboard!'**
+  String get tournamentScoreSubmitted;
+
+  /// Tournament banner title on the home screen
+  ///
+  /// In en, this message translates to:
+  /// **'Weekly Tournament'**
+  String get tournamentHomeBanner;
+
+  /// Call-to-action button on the tournament home banner
+  ///
+  /// In en, this message translates to:
+  /// **'Join!'**
+  String get tournamentJoin;
+
+  /// Easy difficulty label
+  ///
+  /// In en, this message translates to:
+  /// **'Easy'**
+  String get tournamentDifficultyEasy;
+
+  /// Medium difficulty label
+  ///
+  /// In en, this message translates to:
+  /// **'Medium'**
+  String get tournamentDifficultyMedium;
+
+  /// Hard difficulty label
+  ///
+  /// In en, this message translates to:
+  /// **'Hard'**
+  String get tournamentDifficultyHard;
+
+  /// Idle motivation tooltip message 1
+  ///
+  /// In en, this message translates to:
+  /// **'One more word?'**
+  String get idleMotivation1;
+
+  /// Idle motivation tooltip message 2
+  ///
+  /// In en, this message translates to:
+  /// **'You can do it!'**
+  String get idleMotivation2;
+
+  /// Idle motivation tooltip message 3
+  ///
+  /// In en, this message translates to:
+  /// **'Try a different approach?'**
+  String get idleMotivation3;
+
+  /// Settings group: profile
+  ///
+  /// In en, this message translates to:
+  /// **'Profile & Account'**
+  String get settingsGroupProfile;
+
+  /// Settings group: appearance
+  ///
+  /// In en, this message translates to:
+  /// **'Appearance'**
+  String get settingsGroupAppearance;
+
+  /// Settings group: gameplay
+  ///
+  /// In en, this message translates to:
+  /// **'Gameplay'**
+  String get settingsGroupGameplay;
+
+  /// Settings group: sound
+  ///
+  /// In en, this message translates to:
+  /// **'Sound & Haptics'**
+  String get settingsGroupSoundHaptic;
+
+  /// Settings group: help
+  ///
+  /// In en, this message translates to:
+  /// **'Help & Info'**
+  String get settingsGroupHelp;
+
+  /// Theme section label
+  ///
+  /// In en, this message translates to:
+  /// **'Choose Theme'**
+  String get chooseTheme;
+
+  /// Premium theme badge
+  ///
+  /// In en, this message translates to:
+  /// **'Premium'**
+  String get premiumTheme;
+
+  /// Prompt to unlock premium theme
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock in Shop'**
+  String get unlockInShop;
+
+  /// Theme unlock confirmation
+  ///
+  /// In en, this message translates to:
+  /// **'Theme unlocked!'**
+  String get themeUnlocked;
+
+  /// Profile screen title
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profileTitle;
+
+  /// Edit profile button
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Profile'**
+  String get editProfile;
+
+  /// Avatar picker dialog title
+  ///
+  /// In en, this message translates to:
+  /// **'Choose Avatar'**
+  String get chooseAvatar;
+
+  /// Username field label
+  ///
+  /// In en, this message translates to:
+  /// **'Display Name'**
+  String get displayName;
+
+  /// Username field hint
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your name'**
+  String get displayNameHint;
+
+  /// Save profile button
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get saveProfile;
+
+  /// Profile save confirmation
+  ///
+  /// In en, this message translates to:
+  /// **'Profile saved!'**
+  String get profileSaved;
+
+  /// Connected accounts section
+  ///
+  /// In en, this message translates to:
+  /// **'Connected Accounts'**
+  String get connectedAccounts;
+
+  /// Google account connected
+  ///
+  /// In en, this message translates to:
+  /// **'Google — Connected'**
+  String get googleConnected;
+
+  /// Google account not connected
+  ///
+  /// In en, this message translates to:
+  /// **'Google — Not connected'**
+  String get googleNotConnected;
+
+  /// Connect Google account button
+  ///
+  /// In en, this message translates to:
+  /// **'Connect'**
+  String get connectGoogle;
+
+  /// Disconnect Google account button
+  ///
+  /// In en, this message translates to:
+  /// **'Disconnect'**
+  String get disconnectGoogle;
+
+  /// Delete account button
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Account'**
+  String get deleteAccount;
+
+  /// Delete account description
+  ///
+  /// In en, this message translates to:
+  /// **'Permanently delete your account and all data. This action cannot be undone.'**
+  String get deleteAccountDesc;
+
+  /// Delete account confirmation dialog
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete your account? All progress, achievements, and purchases will be permanently lost.'**
+  String get deleteAccountConfirm;
+
+  /// Confirm delete button
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Forever'**
+  String get deleteAccountButton;
+
+  /// Rank label
+  ///
+  /// In en, this message translates to:
+  /// **'Rank'**
+  String get rankLabel;
+
+  /// Total XP label
+  ///
+  /// In en, this message translates to:
+  /// **'Total XP'**
+  String get totalXp;
+
+  /// FAQ button
+  ///
+  /// In en, this message translates to:
+  /// **'FAQ'**
+  String get faq;
+
+  /// Licenses button
+  ///
+  /// In en, this message translates to:
+  /// **'Licenses'**
+  String get licenses;
+
+  /// Privacy policy button
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy'**
+  String get privacyPolicy;
+
+  /// Theme purchase dialog title
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock {themeName}'**
+  String unlockThemeTitle(String themeName);
+
+  /// Theme purchase dialog body
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock this premium theme for {cost} credits.'**
+  String unlockThemeDesc(int cost);
+
+  /// Unlock purchase button
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock'**
+  String get unlockButton;
+
+  /// Current credit balance
+  ///
+  /// In en, this message translates to:
+  /// **'Your credits: {amount}'**
+  String yourCredits(int amount);
+
+  /// Tooltip for locked end word rows
+  ///
+  /// In en, this message translates to:
+  /// **'Solve middle words first to unlock'**
+  String get solveMiddleWordsFirst;
+
+  /// Banner shown when device has no internet connection
+  ///
+  /// In en, this message translates to:
+  /// **'You are offline. Some features may be unavailable.'**
+  String get offlineBanner;
+
+  /// Snackbar shown when internet connection is restored
+  ///
+  /// In en, this message translates to:
+  /// **'You are back online!'**
+  String get backOnline;
+
+  /// Button to watch ad and double level completion credits
+  ///
+  /// In en, this message translates to:
+  /// **'Double Rewards'**
+  String get doubleRewards;
+
+  /// Button in out-of-lives dialog to watch rewarded ad for a free life
+  ///
+  /// In en, this message translates to:
+  /// **'Watch Ad for Free Life'**
+  String get watchAdForLife;
+
+  /// Shown when rewarded ad failed to load or is not ready
+  ///
+  /// In en, this message translates to:
+  /// **'Ad not available right now. Please try again later.'**
+  String get adNotAvailable;
 }
 
 class _AppLocalizationsDelegate

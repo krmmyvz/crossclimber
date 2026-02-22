@@ -365,6 +365,9 @@ class AppLocalizationsTr extends AppLocalizations {
   String get resetTutorial => 'Tutorial\'ı Sıfırla';
 
   @override
+  String get tutorialResetSuccess => 'Tutorial ilerlemesi sıfırlandı.';
+
+  @override
   String get outOfLivesTitle => 'Canın Bitti!';
 
   @override
@@ -377,10 +380,10 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get buyOneLife => '1 Can Al (50 💰)';
+  String get buyOneLife => '1 Can Al (50 Kredi)';
 
   @override
-  String get buyAllLives => 'Tüm Canları Al (100 💰)';
+  String get buyAllLives => 'Tüm Canları Al (100 Kredi)';
 
   @override
   String get exitGame => 'Oyundan Çık';
@@ -463,7 +466,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get undoMoveDesc => 'Son yaptığın hareketi geri alır';
 
   @override
-  String get dailyRewardClaim => 'Günlük Ödülünü Al! 🎁';
+  String get dailyRewardClaim => 'Günlük Ödülünü Al!';
 
   @override
   String get dailyRewardAmount => '20+ Kredi + Bonuslar';
@@ -632,6 +635,205 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get achievementDescNoHintsMaster =>
       'İpucu kullanmadan 50 seviye tamamla';
+
+  @override
+  String get achievementStreak7Days => 'Haftanın Savaşçısı';
+
+  @override
+  String get achievementStreak14Days => 'İki Hafta';
+
+  @override
+  String get achievementStreak30Days => 'Aylık Şampiyon';
+
+  @override
+  String get achievementStreak60Days => '2 Aylık Seri';
+
+  @override
+  String get achievementStreak100Days => 'Yüzüncü Gün';
+
+  @override
+  String get achievementCombo5x => 'Kombo Başlangıcı';
+
+  @override
+  String get achievementCombo8x => 'Kombo Ustası';
+
+  @override
+  String get achievementCombo10x => 'Kombo Efsanesi';
+
+  @override
+  String get achievementSpeed60s => 'Hızlı Koşucu';
+
+  @override
+  String get achievementSpeed45s => 'Yıldırım';
+
+  @override
+  String get achievementAllLevels => 'Tüm Seviyeler Tamam';
+
+  @override
+  String get achievementLegendaryRank => 'Efsanevi';
+
+  @override
+  String get achievementShareResults => 'Paylaşımcı';
+
+  @override
+  String get achievementDailyChallengeFirst => 'Günlük Meydan Okuyucu';
+
+  @override
+  String get achievementDailyChallenge30 => 'Günlük Şampiyon';
+
+  @override
+  String get achievementDescStreak7Days => '7 gün üst üste giriş yap';
+
+  @override
+  String get achievementDescStreak14Days => '14 gün üst üste giriş yap';
+
+  @override
+  String get achievementDescStreak30Days => '30 gün üst üste giriş yap';
+
+  @override
+  String get achievementDescStreak60Days => '60 gün üst üste giriş yap';
+
+  @override
+  String get achievementDescStreak100Days => '100 gün üst üste giriş yap';
+
+  @override
+  String get achievementDescCombo5x => '5x kombo yap';
+
+  @override
+  String get achievementDescCombo8x => '8x kombo yap';
+
+  @override
+  String get achievementDescCombo10x => '10x kombo yap';
+
+  @override
+  String get achievementDescSpeed60s => 'Bir seviyeyi 60 saniyede tamamla';
+
+  @override
+  String get achievementDescSpeed45s => 'Bir seviyeyi 45 saniyede tamamla';
+
+  @override
+  String get achievementDescAllLevels => 'Tüm mevcut seviyeleri tamamla';
+
+  @override
+  String get achievementDescLegendaryRank => 'Efsanevi rütbesine ulaş';
+
+  @override
+  String get achievementDescShareResults => 'Sonuçlarını 5 kez paylaş';
+
+  @override
+  String get achievementDescDailyChallengeFirst =>
+      'İlk günlük meydan okumanı tamamla';
+
+  @override
+  String get achievementDescDailyChallenge30 =>
+      '30 günlük meydan okuma tamamla';
+
+  @override
+  String get achievementRarityCommon => 'Yaygın';
+
+  @override
+  String get achievementRarityRare => 'Nadir';
+
+  @override
+  String get achievementRarityLegendary => 'Efsanevi';
+
+  @override
+  String get achievementBadgeSelect => 'Rozet Seç';
+
+  @override
+  String get achievementBadgeActive => 'Aktif Rozet';
+
+  @override
+  String get achievementBadgeRemove => 'Rozeti Kaldır';
+
+  @override
+  String get achievementBadgeRemoved => 'Rozet kaldırıldı';
+
+  @override
+  String get achievementBadgeSelected => 'Rozet seçildi!';
+
+  @override
+  String get achievementUnlocked => 'Başarım Açıldı';
+
+  @override
+  String get streakMilestoneTitle => 'Seri Kilometre Taşı!';
+
+  @override
+  String streakMilestoneDesc(int days, int credits) {
+    return '$days günlük seri! +$credits kredi!';
+  }
+
+  @override
+  String get streakFreezeTitle => 'Seri Dondurma';
+
+  @override
+  String get streakFreezeDesc => 'Harcanan 1 gün için serini korur';
+
+  @override
+  String streakFreezeCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count dondurma mevcut',
+      one: '1 dondurma mevcut',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get streakFreezeAutoUsed => 'Seri dondurma kullanıldı! Serin güvende.';
+
+  @override
+  String get streakLossWarningTitle => 'Serin tehlikede!';
+
+  @override
+  String get streakLossWarning => 'Serini kaybetme! Bugün oyna!';
+
+  @override
+  String get streakDays => 'günlük seri';
+
+  @override
+  String get streakTodayCompleted => 'Bugün tamam';
+
+  @override
+  String get streakTodayIncomplete => 'Bugün oyna!';
+
+  @override
+  String get streakFreezeAvailable => 'dondurma';
+
+  @override
+  String streakNextMilestone(int days) {
+    return 'Sonraki hedef: $days gün';
+  }
+
+  @override
+  String streakMilestoneReward(int credits) {
+    return 'Ödül: $credits kredi';
+  }
+
+  @override
+  String get streakMilestones => 'Kilometre Taşları';
+
+  @override
+  String get streakAllMilestonesReached => 'Tüm hedeflere ulaşıldı!';
+
+  @override
+  String get streakFreezeShopTitle => 'Seri Koruması';
+
+  @override
+  String get streakFreezeShopSubtitle => 'Bir daha seri asla kaybetme';
+
+  @override
+  String get buyStreakFreeze1 => '1 Dondurma';
+
+  @override
+  String get buyStreakFreeze3 => '3 Dondurma';
+
+  @override
+  String get streakFreezePurchased => 'Seri dondurma satın alındı!';
+
+  @override
+  String get streakFreezeZero => 'Dondurma yok';
 
   @override
   String get yourStatistics => 'İstatistiklerin';
@@ -882,14 +1084,14 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get shareAchievementUnlocked => '🏆 Başarım Açıldı!';
+  String get shareAchievementUnlocked => 'Başarım Açıldı!';
 
   @override
   String get shareAchievementCTA =>
       'CrossClimber oynuyorum - En zorlu kelime bulmaca oyunu!';
 
   @override
-  String get shareDailyChallengeTitle => '📅 CrossClimber Günlük Challenge';
+  String get shareDailyChallengeTitle => 'CrossClimber Günlük Challenge';
 
   @override
   String shareDailyLevelCompleted(int levelId) {
@@ -905,7 +1107,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get shareDailyChallengeCTA => 'Günlük challenge\'a katıl!';
 
   @override
-  String get shareMyStatsTitle => '📊 CrossClimber İstatistiklerim';
+  String get shareMyStatsTitle => 'CrossClimber İstatistiklerim';
 
   @override
   String get shareStatsCTA => 'CrossClimber\'da benimle yarış!';
@@ -1008,18 +1210,23 @@ class AppLocalizationsTr extends AppLocalizations {
   String get homeQuickPlay => 'Hızlı Oyna';
 
   @override
+  String homeLevelsWithProgress(int level) {
+    return 'Seviyeler (Level $level)';
+  }
+
+  @override
   String homeContinueLevel(int level) {
     return 'Devam Et: Level $level';
   }
 
   @override
   String homeStreakDays(int days) {
-    return '$days🔥';
+    return '$days';
   }
 
   @override
   String homeTotalStars(int count) {
-    return '$count ★';
+    return '$count';
   }
 
   @override
@@ -1039,10 +1246,10 @@ class AppLocalizationsTr extends AppLocalizations {
   String get phaseFinalBanner => 'Son Kelimeleri Bul!';
 
   @override
-  String get completion3Stars => 'Mükemmel! Tüm yıldızlar! 🌟';
+  String get completion3Stars => 'Mükemmel! Tüm yıldızlar!';
 
   @override
-  String get completion2Stars => 'Harika iş! 👏';
+  String get completion2Stars => 'Harika iş!';
 
   @override
   String get completion1Star =>
@@ -1096,4 +1303,351 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get semanticsCompleted => 'tamamlandı';
+
+  @override
+  String get semanticsActionPlay => 'oyna';
+
+  @override
+  String get semanticsActionOpen => 'aç';
+
+  @override
+  String get semanticsActionAddLetter => 'harf ekle';
+
+  @override
+  String get rankNovice => 'Acemi';
+
+  @override
+  String get rankWordStudent => 'Kelime Öğrencisi';
+
+  @override
+  String get rankWordMaster => 'Kelime Ustası';
+
+  @override
+  String get rankPuzzleSolver => 'Bulmaca Çözücü';
+
+  @override
+  String get rankMountainClimber => 'Dağ Tırmanıcısı';
+
+  @override
+  String get rankWordEagle => 'Kelime Kartalı';
+
+  @override
+  String get rankWordKing => 'Kelime Kralı';
+
+  @override
+  String get rankDiamondMind => 'Elmas Zeka';
+
+  @override
+  String get rankLegend => 'Efsane';
+
+  @override
+  String get rankCrossClimberMaster => 'CrossClimber Ustası';
+
+  @override
+  String xpGained(int amount) {
+    return '+$amount XP';
+  }
+
+  @override
+  String totalXpLabel(int amount) {
+    return 'Toplam XP: $amount';
+  }
+
+  @override
+  String get rankUpTitle => 'Seviye Atladın!';
+
+  @override
+  String rankUpMessage(String rankName) {
+    return '$rankName seviyesine ulaştın!';
+  }
+
+  @override
+  String get profileCardTitle => 'Oyuncu Profili';
+
+  @override
+  String xpProgress(int current, int target) {
+    return '$current / $target XP';
+  }
+
+  @override
+  String get dailyChallengeXp => 'Günlük Meydan Okuma XP';
+
+  @override
+  String comboXpBonus(int amount) {
+    return 'Kombo Bonusu: +$amount XP';
+  }
+
+  @override
+  String get dailyCalendarTitle => 'Günlük Ödül Takvimi';
+
+  @override
+  String dailyCalendarDay(int day) {
+    return '$day. Gün';
+  }
+
+  @override
+  String get dailyCalendarClaim => 'Al!';
+
+  @override
+  String get dailyCalendarClaimed => 'Alındı';
+
+  @override
+  String dailyCalendarNextIn(String time) {
+    return 'Sıradaki: $time';
+  }
+
+  @override
+  String get dailyCalendarStreakReset => 'Seri sıfırlandı — 1. Güne dönüldü!';
+
+  @override
+  String dailyCalendarRewardCredits(int amount) {
+    return '$amount kredi';
+  }
+
+  @override
+  String get dailyCalendarRewardReveal => '1 İpucu';
+
+  @override
+  String get dailyCalendarRewardUndo => '1 Geri Al';
+
+  @override
+  String get dailyCalendarRewardSpecial => 'Özel Tema!';
+
+  @override
+  String get dailyCalendarRewardSummary => 'Ödül alındı!';
+
+  @override
+  String get dailyCalendarFomoWarning => 'Yarını kaçırma!';
+
+  @override
+  String get tournamentTitle => 'Haftalık Turnuva';
+
+  @override
+  String tournamentWeek(String week) {
+    return 'Hafta $week';
+  }
+
+  @override
+  String get tournamentActive => 'Aktif';
+
+  @override
+  String get tournamentEnded => 'Bitti';
+
+  @override
+  String tournamentEndsIn(String time) {
+    return 'Bitiş: $time';
+  }
+
+  @override
+  String tournamentNextIn(String time) {
+    return 'Sıradaki: $time';
+  }
+
+  @override
+  String get tournamentLeaderboard => 'Sıralama';
+
+  @override
+  String get tournamentLevels => 'Turnuva Seviyeleri';
+
+  @override
+  String get tournamentMyRank => 'Sıralamanız';
+
+  @override
+  String tournamentRank(int rank) {
+    return '#$rank';
+  }
+
+  @override
+  String tournamentScore(int score) {
+    return '$score puan';
+  }
+
+  @override
+  String get tournamentRewards => 'Ödüller';
+
+  @override
+  String get tournamentPlay => 'Oyna';
+
+  @override
+  String get tournamentLevelCompleted => 'Tamam';
+
+  @override
+  String get tournamentNotParticipating => 'Henüz katılmadınız';
+
+  @override
+  String tournamentLevelsProgress(int count) {
+    return '$count/7 seviye';
+  }
+
+  @override
+  String tournamentCreditsReward(int amount) {
+    return '$amount Kredi';
+  }
+
+  @override
+  String get tournamentParticipation => 'Katılım';
+
+  @override
+  String get tournamentOffline => 'Turnuva internet bağlantısı gerektiriyor';
+
+  @override
+  String get tournamentLoadError => 'Turnuva yüklenemedi';
+
+  @override
+  String get tournamentScoreSubmitted => 'Puanın sıralamaya kaydedildi!';
+
+  @override
+  String get tournamentHomeBanner => 'Haftalık Turnuva';
+
+  @override
+  String get tournamentJoin => 'Katıl!';
+
+  @override
+  String get tournamentDifficultyEasy => 'Kolay';
+
+  @override
+  String get tournamentDifficultyMedium => 'Orta';
+
+  @override
+  String get tournamentDifficultyHard => 'Zor';
+
+  @override
+  String get idleMotivation1 => 'Bir kelime daha?';
+
+  @override
+  String get idleMotivation2 => 'Yapabilirsin!';
+
+  @override
+  String get idleMotivation3 => 'Farklı bir yaklaşım dene?';
+
+  @override
+  String get settingsGroupProfile => 'Profil & Hesap';
+
+  @override
+  String get settingsGroupAppearance => 'Görünüm';
+
+  @override
+  String get settingsGroupGameplay => 'Oyun Ayarları';
+
+  @override
+  String get settingsGroupSoundHaptic => 'Ses & Dokunsal';
+
+  @override
+  String get settingsGroupHelp => 'Yardım & Bilgi';
+
+  @override
+  String get chooseTheme => 'Tema Seç';
+
+  @override
+  String get premiumTheme => 'Premium';
+
+  @override
+  String get unlockInShop => 'Mağazadan Aç';
+
+  @override
+  String get themeUnlocked => 'Tema açıldı!';
+
+  @override
+  String get profileTitle => 'Profil';
+
+  @override
+  String get editProfile => 'Profili Düzenle';
+
+  @override
+  String get chooseAvatar => 'Avatar Seç';
+
+  @override
+  String get displayName => 'Görünen Ad';
+
+  @override
+  String get displayNameHint => 'Adınızı girin';
+
+  @override
+  String get saveProfile => 'Kaydet';
+
+  @override
+  String get profileSaved => 'Profil kaydedildi!';
+
+  @override
+  String get connectedAccounts => 'Bağlı Hesaplar';
+
+  @override
+  String get googleConnected => 'Google — Bağlı';
+
+  @override
+  String get googleNotConnected => 'Google — Bağlı değil';
+
+  @override
+  String get connectGoogle => 'Bağla';
+
+  @override
+  String get disconnectGoogle => 'Bağlantıyı Kes';
+
+  @override
+  String get deleteAccount => 'Hesabı Sil';
+
+  @override
+  String get deleteAccountDesc =>
+      'Hesabınızı ve tüm verilerinizi kalıcı olarak silin. Bu işlem geri alınamaz.';
+
+  @override
+  String get deleteAccountConfirm =>
+      'Hesabınızı silmek istediğinizden emin misiniz? Tüm ilerleme, başarımlar ve satın almalar kalıcı olarak kaybolacak.';
+
+  @override
+  String get deleteAccountButton => 'Kalıcı Olarak Sil';
+
+  @override
+  String get rankLabel => 'Rütbe';
+
+  @override
+  String get totalXp => 'Toplam XP';
+
+  @override
+  String get faq => 'SSS';
+
+  @override
+  String get licenses => 'Lisanslar';
+
+  @override
+  String get privacyPolicy => 'Gizlilik Politikası';
+
+  @override
+  String unlockThemeTitle(String themeName) {
+    return '$themeName Kilidini Aç';
+  }
+
+  @override
+  String unlockThemeDesc(int cost) {
+    return 'Bu premium temayı $cost kredi ile açın.';
+  }
+
+  @override
+  String get unlockButton => 'Kilidi Aç';
+
+  @override
+  String yourCredits(int amount) {
+    return 'Krediniz: $amount';
+  }
+
+  @override
+  String get solveMiddleWordsFirst =>
+      'Kilidi açmak için ortadaki kelimeleri çözün';
+
+  @override
+  String get offlineBanner =>
+      'Çevrimdışısınız. Bazı özellikler kullanılamayabilir.';
+
+  @override
+  String get backOnline => 'Tekrar çevrimiçisiniz!';
+
+  @override
+  String get doubleRewards => 'Ödülleri İkiye Katla';
+
+  @override
+  String get watchAdForLife => 'Reklam İzle, Can Kazan';
+
+  @override
+  String get adNotAvailable =>
+      'Reklam şu anda mevcut değil. Lütfen daha sonra tekrar deneyin.';
 }

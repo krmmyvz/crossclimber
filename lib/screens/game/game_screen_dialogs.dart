@@ -9,7 +9,10 @@ import 'package:crossclimber/theme/game_colors.dart';
 import 'package:crossclimber/theme/page_transitions.dart';
 import 'package:crossclimber/theme/spacing.dart';
 import 'package:crossclimber/theme/animations.dart';
+import 'package:crossclimber/theme/icon_sizes.dart';
+import 'package:crossclimber/theme/shadows.dart';
 import 'package:crossclimber/screens/shop_screen.dart';
+import 'package:crossclimber/services/ad_service.dart';
 
 /// Mixin providing dialog functionality for GameScreen
 mixin GameScreenDialogs<T extends ConsumerStatefulWidget> on ConsumerState<T> {
@@ -54,7 +57,7 @@ mixin GameScreenDialogs<T extends ConsumerStatefulWidget> on ConsumerState<T> {
             Icon(
               Icons.timer_outlined,
               color: theme.colorScheme.primary,
-              size: 20,
+              size: IconSizes.md,
             ),
             HorizontalSpacing.s,
             Text(
@@ -92,9 +95,14 @@ mixin GameScreenDialogs<T extends ConsumerStatefulWidget> on ConsumerState<T> {
           : null,
       actions: [
         ModernDialogAction(
+          label: l10n.watchAdForLife,
+          icon: Icons.play_circle_outline,
+          isPrimary: true,
+          result: 'watch_ad',
+        ),
+        ModernDialogAction(
           label: l10n.buyOneLife,
           icon: Icons.favorite,
-          isPrimary: true,
           isEnabled: canBuyLife,
           result: 'buy_one',
         ),
@@ -111,7 +119,26 @@ mixin GameScreenDialogs<T extends ConsumerStatefulWidget> on ConsumerState<T> {
         ),
       ],
     ).then((result) async {
-      if (result == 'buy_one') {
+      if (result == 'watch_ad') {
+        final adResult = await AdService.instance.showRewardedAd(
+          onRewarded: () {
+            ref.read(gameProvider.notifier).restoreLife(useCredits: false);
+          },
+        );
+        // If ad not available, show notification
+        if (adResult != AdResult.rewarded && mounted) {
+          final gameColors = Theme.of(context).gameColors;
+          ModernNotification.show(
+            context: context,
+            message: adResult == AdResult.dailyLimitReached
+                ? AppLocalizations.of(context)!.dailyAdLimitReached
+                : AppLocalizations.of(context)!.adNotAvailable,
+            icon: Icons.info_outline,
+            backgroundColor: gameColors.warning,
+            iconColor: gameColors.onWarning,
+          );
+        }
+      } else if (result == 'buy_one') {
         await ref
             .read(gameProvider.notifier)
             .restoreLife(useCredits: true, creditCost: 50);
@@ -156,11 +183,7 @@ mixin GameScreenDialogs<T extends ConsumerStatefulWidget> on ConsumerState<T> {
                         color: gameColors.success,
                         borderRadius: RadiiBR.lg,
                         boxShadow: [
-                          BoxShadow(
-                            color: gameColors.success.withValues(alpha: 0.4),
-                            blurRadius: 12,
-                            offset: const Offset(0, 4),
-                          ),
+                          AppShadows.colorStrong(gameColors.success),
                         ],
                       ),
                       child: Column(
@@ -172,15 +195,15 @@ mixin GameScreenDialogs<T extends ConsumerStatefulWidget> on ConsumerState<T> {
                               const Icon(
                                     Icons.lock_open_rounded,
                                     color: Colors.white,
-                                    size: 28,
+                                    size: IconSizes.xl,
                                   )
                                   .animate(
                                     onPlay: (controller) =>
                                         controller.repeat(reverse: true),
                                   )
                                   .scale(
-                                    duration: 500.ms,
-                                    curve: Curves.elasticOut,
+                                    duration: AnimDurations.slow,
+                                    curve: AppCurves.elastic,
                                   ),
                               HorizontalSpacing.s,
                               Text(
@@ -196,7 +219,7 @@ mixin GameScreenDialogs<T extends ConsumerStatefulWidget> on ConsumerState<T> {
                       ),
                     )
                     .animate()
-                    .scale(duration: 400.ms, curve: Curves.easeOutBack)
+                    .scale(duration: AnimDurations.medium, curve: AppCurves.spring)
                     .fadeIn(),
           ),
         );
@@ -257,7 +280,6 @@ mixin GameScreenDialogs<T extends ConsumerStatefulWidget> on ConsumerState<T> {
           ModernDialogAction(
             label: l10n.mainMenu,
             icon: Icons.exit_to_app,
-            isDestructive: true,
             onPressed: () async {
               final shouldExit = await ModernDialog.show<bool>(
                 context: context,
@@ -281,7 +303,7 @@ mixin GameScreenDialogs<T extends ConsumerStatefulWidget> on ConsumerState<T> {
             },
           ),
         ],
-      ).animate().scale(duration: 300.ms, curve: Curves.elasticOut),
+      ).animate().scale(duration: AnimDurations.normal, curve: AppCurves.elastic),
     );
   }
 }

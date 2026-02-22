@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:crossclimber/l10n/app_localizations.dart';
 
 import 'package:crossclimber/screens/home_screen.dart';
@@ -10,14 +11,20 @@ import 'package:crossclimber/providers/locale_provider.dart';
 import 'package:crossclimber/providers/settings_provider.dart';
 import 'package:crossclimber/providers/onboarding_provider.dart';
 import 'package:crossclimber/theme/app_theme.dart';
+import 'package:crossclimber/theme/animations.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:crossclimber/services/remote_config_service.dart';
 import 'package:crossclimber/services/auth_service.dart';
+import 'package:crossclimber/services/ad_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Use bundled Nunito font — no network fetch needed
+  GoogleFonts.config.allowRuntimeFetching = false;
+
   await Firebase.initializeApp();
   
   if (!kDebugMode) {
@@ -39,6 +46,9 @@ void main() async {
 
   final remoteConfigService = RemoteConfigService();
   await remoteConfigService.initialize();
+
+  // Initialize AdMob
+  await AdService.instance.initialize();
   
   runApp(const ProviderScope(child: CrossclimbApp()));
 }
@@ -59,6 +69,8 @@ class CrossclimbApp extends ConsumerWidget {
       themeMode: settings.customTheme != null
           ? ThemeMode.dark
           : settings.themeMode,
+      themeAnimationDuration: AnimDurations.normalSlow,
+      themeAnimationCurve: AppCurves.standard,
       locale: locale,
       localizationsDelegates: const [
         AppLocalizations.delegate,
@@ -94,7 +106,7 @@ class _StartupRouter extends ConsumerWidget {
               ? const OnboardingScreen()
               : const HomeScreen())
           .animate()
-          .fadeIn(duration: 500.ms, curve: Curves.easeIn),
+          .fadeIn(duration: AnimDurations.slow, curve: Curves.easeIn),
     );
   }
 }

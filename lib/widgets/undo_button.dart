@@ -3,7 +3,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:crossclimber/l10n/app_localizations.dart';
 import 'package:crossclimber/providers/game_provider.dart';
+import 'package:crossclimber/theme/animations.dart';
 import 'package:crossclimber/theme/border_radius.dart';
+import 'package:crossclimber/theme/icon_sizes.dart';
+import 'package:crossclimber/theme/opacities.dart';
 import 'package:crossclimber/theme/spacing.dart';
 import 'package:crossclimber/widgets/modern_dialog.dart';
 
@@ -12,11 +15,12 @@ class UndoButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final gameState = ref.watch(gameProvider);
+    final (:canUndo, :maxUndos, :undosUsed) = ref.watch(
+      gameProvider.select((s) => (canUndo: s.canUndo, maxUndos: s.maxUndos, undosUsed: s.undosUsed)),
+    );
     final theme = Theme.of(context);
 
-    final canUndo = gameState.canUndo;
-    final undosRemaining = gameState.maxUndos - gameState.undosUsed;
+    final undosRemaining = maxUndos - undosUsed;
     final lastAction = ref.read(gameProvider.notifier).getLastUndoAction();
     final l10n = AppLocalizations.of(context)!;
 
@@ -48,7 +52,7 @@ class UndoButton extends ConsumerWidget {
                       borderRadius: RadiiBR.md,
                       border: Border.all(
                         color: canUndo
-                            ? theme.colorScheme.secondary.withValues(alpha: 0.5)
+                            ? theme.colorScheme.secondary.withValues(alpha: Opacities.half)
                             : theme.colorScheme.outlineVariant,
                         width: 2,
                       ),
@@ -61,7 +65,7 @@ class UndoButton extends ConsumerWidget {
                           color: canUndo
                               ? theme.colorScheme.secondary
                               : theme.colorScheme.onSurfaceVariant,
-                          size: 20,
+                          size: IconSizes.md,
                         ),
                         HorizontalSpacing.s,
                         Column(
@@ -78,11 +82,11 @@ class UndoButton extends ConsumerWidget {
                               ),
                             ),
                             Text(
-                              '$undosRemaining/${gameState.maxUndos}',
+                              '$undosRemaining/$maxUndos',
                               style: theme.textTheme.labelSmall?.copyWith(
                                 color: canUndo
                                     ? theme.colorScheme.secondary.withValues(
-                                        alpha: 0.8,
+                                        alpha: Opacities.heavy,
                                       )
                                     : theme.colorScheme.onSurfaceVariant,
                               ),
@@ -96,7 +100,7 @@ class UndoButton extends ConsumerWidget {
               )
               .animate(target: canUndo ? 1 : 0)
               .scale(
-                duration: 200.ms,
+                duration: AnimDurations.fast,
                 begin: const Offset(0.95, 0.95),
                 end: const Offset(1.0, 1.0),
               ),
@@ -151,11 +155,12 @@ class CompactUndoButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final gameState = ref.watch(gameProvider);
+    final (:canUndo, :maxUndos, :undosUsed) = ref.watch(
+      gameProvider.select((s) => (canUndo: s.canUndo, maxUndos: s.maxUndos, undosUsed: s.undosUsed)),
+    );
     final theme = Theme.of(context);
 
-    final canUndo = gameState.canUndo;
-    final undosRemaining = gameState.maxUndos - gameState.undosUsed;
+    final undosRemaining = maxUndos - undosUsed;
     final l10n = AppLocalizations.of(context)!;
 
     return IconButton(
@@ -175,6 +180,6 @@ class CompactUndoButton extends ConsumerWidget {
       tooltip: canUndo
           ? l10n.undosRemainingCount(undosRemaining)
           : l10n.noUndosAvailable,
-    ).animate(target: canUndo ? 1 : 0).shake(duration: 300.ms);
+    ).animate(target: canUndo ? 1 : 0).shake(duration: AnimDurations.normal);
   }
 }

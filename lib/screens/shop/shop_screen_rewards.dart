@@ -3,6 +3,8 @@ import 'package:crossclimber/l10n/app_localizations.dart';
 import 'package:crossclimber/theme/border_radius.dart';
 import 'package:crossclimber/theme/game_colors.dart';
 import 'package:crossclimber/theme/spacing.dart';
+import 'package:crossclimber/theme/icon_sizes.dart';
+import 'package:crossclimber/theme/opacities.dart';
 
 /// Widget builders for rewards section in shop
 mixin ShopScreenRewards {
@@ -25,8 +27,8 @@ mixin ShopScreenRewards {
             borderRadius: RadiiBR.md,
             gradient: LinearGradient(
               colors: [
-                gameColors.success.withValues(alpha: 0.2),
-                gameColors.success.withValues(alpha: 0.1),
+                gameColors.success.withValues(alpha: Opacities.gentle),
+                gameColors.success.withValues(alpha: Opacities.subtle),
               ],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
@@ -43,7 +45,7 @@ mixin ShopScreenRewards {
                 ),
                 child: Icon(
                   Icons.card_giftcard,
-                  size: 32,
+                  size: IconSizes.xxl,
                   color: gameColors.onSuccess,
                 ),
               ),
@@ -96,7 +98,15 @@ mixin ShopScreenRewards {
     final theme = Theme.of(context);
 
     return Card(
-      child: Padding(
+      elevation: 1,
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: RadiiBR.md,
+          border: Border.all(
+            color: theme.colorScheme.outlineVariant.withValues(alpha: Opacities.half),
+          ),
+        ),
+        child: Padding(
         padding: SpacingInsets.m,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -106,7 +116,7 @@ mixin ShopScreenRewards {
                 Icon(
                   Icons.play_circle_filled,
                   color: theme.colorScheme.tertiary,
-                  size: 32,
+                  size: IconSizes.xxl,
                 ),
                 HorizontalSpacing.s,
                 Expanded(
@@ -134,15 +144,15 @@ mixin ShopScreenRewards {
             Row(
               children: [
                 Expanded(
-                  child: OutlinedButton.icon(
+                  child: FilledButton.tonalIcon(
                     onPressed: onWatchAdForCredits,
-                    icon: const Icon(Icons.monetization_on),
+                    icon: const Icon(Icons.diamond_rounded),
                     label: Text(AppLocalizations.of(context)!.watchAdCredits),
                   ),
                 ),
                 HorizontalSpacing.s,
                 Expanded(
-                  child: OutlinedButton.icon(
+                  child: FilledButton.tonalIcon(
                     onPressed: onWatchAdForHint,
                     icon: const Icon(Icons.lightbulb),
                     label: Text(AppLocalizations.of(context)!.watchAdHint),
@@ -152,6 +162,7 @@ mixin ShopScreenRewards {
             ),
           ],
         ),
+      ),
       ),
     );
   }
@@ -166,7 +177,7 @@ mixin ShopScreenRewards {
       padding: const EdgeInsets.symmetric(vertical: Spacing.xs),
       child: Row(
         children: [
-          Icon(icon, color: color, size: 24),
+          Icon(icon, color: color, size: IconSizes.lg),
           HorizontalSpacing.s,
           Text(
             text,

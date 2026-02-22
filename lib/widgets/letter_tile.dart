@@ -1,6 +1,12 @@
+import 'dart:math' show pi;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:crossclimber/l10n/app_localizations.dart';
+import 'package:crossclimber/theme/animations.dart';
 import 'package:crossclimber/theme/border_radius.dart';
+import 'package:crossclimber/theme/opacities.dart';
+import 'package:crossclimber/theme/shadows.dart';
 
 class LetterTile extends StatelessWidget {
   final String letter;
@@ -49,6 +55,9 @@ class LetterTile extends StatelessWidget {
     Widget tile = Semantics(
       label: letter.isEmpty ? 'Empty tile' : 'Letter $letter',
       hint: isLocked ? 'Locked' : (isCorrect ? 'Correct' : null),
+      onTapHint: (onTap != null && !isLocked && !isCorrect)
+          ? AppLocalizations.of(context)!.tapToGuess
+          : null,
       child: GestureDetector(
         onTap: onTap,
         child: AspectRatio(
@@ -61,11 +70,7 @@ class LetterTile extends StatelessWidget {
               border: border,
               boxShadow: isCorrect || shouldGlow
                   ? [
-                      BoxShadow(
-                        color: colorScheme.primary.withValues(alpha: 0.4),
-                        blurRadius: 8,
-                        spreadRadius: 1,
-                      ),
+                      AppShadows.colorMedium(colorScheme.primary),
                     ]
                   : null,
             ),
@@ -98,7 +103,7 @@ class LetterTile extends StatelessWidget {
     if (shouldShake) {
       tile = tile
           .animate(onPlay: (controller) => controller.repeat(reverse: true))
-          .shake(duration: 400.ms, hz: 5, rotation: 0.05);
+          .shake(duration: AnimDurations.medium, hz: 5, rotation: 0.05);
     }
 
     if (shouldGlow) {
@@ -106,31 +111,39 @@ class LetterTile extends StatelessWidget {
           .animate(onPlay: (controller) => controller.repeat())
           .shimmer(
             duration: 1.5.seconds,
-            color: Colors.white.withValues(alpha: 0.5),
+            color: Colors.white.withValues(alpha: Opacities.half),
           );
     }
 
     if (isCorrect && !shouldGlow) {
+      // Wordle-style 3D Y-axis flip reveal + shimmer
       tile = tile
           .animate()
-          .scale(
-            begin: const Offset(1.2, 1.2),
-            end: const Offset(1.0, 1.0),
-            duration: 300.ms,
-            curve: Curves.elasticOut,
+          .custom(
+            duration: AnimDurations.medium,
+            curve: AppCurves.fastOutSlowIn,
+            builder: (context, value, child) {
+              return Transform(
+                alignment: Alignment.center,
+                transform: Matrix4.identity()
+                  ..setEntry(3, 2, 0.001) // perspective
+                  ..rotateY(value * 2 * pi), // full 360° flip
+                child: child,
+              );
+            },
           )
           .then()
           .shimmer(
-            duration: 600.ms,
-            color: Colors.white.withValues(alpha: 0.6),
+            duration: AnimDurations.slower,
+            color: Colors.white.withValues(alpha: Opacities.strong),
           );
     }
 
     if (letter.isNotEmpty && !isLocked) {
       tile = tile
           .animate()
-          .fadeIn(duration: 200.ms)
-          .scale(begin: const Offset(0.8, 0.8), duration: 200.ms);
+          .fadeIn(duration: AnimDurations.fast)
+          .scale(begin: const Offset(0.8, 0.8), duration: AnimDurations.fast);
     }
 
     return tile;

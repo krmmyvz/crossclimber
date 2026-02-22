@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:crossclimber/l10n/app_localizations.dart';
 import 'package:crossclimber/services/haptic_service.dart';
+import 'package:crossclimber/services/sound_service.dart';
 import 'package:crossclimber/theme/animations.dart';
 import 'package:crossclimber/theme/border_radius.dart';
 import 'package:crossclimber/theme/game_colors.dart';
+import 'package:crossclimber/theme/opacities.dart';
+import 'package:crossclimber/theme/shadows.dart';
 import 'package:crossclimber/theme/spacing.dart';
 import 'package:crossclimber/theme/responsive.dart';
 
@@ -46,26 +50,35 @@ class CustomKeyboard extends ConsumerWidget {
     final theme = Theme.of(context);
     final layout = _getKeyboardLayout(languageCode);
     final hapticService = ref.read(hapticServiceProvider);
+    final soundService = ref.read(soundServiceProvider);
+    final isCompact = Responsive.isCompact(context);
 
     // Calculate the maximum keys in any row to determine sizing
     final maxKeysInRow = layout
         .map((row) => row.length)
         .reduce((a, b) => a > b ? a : b);
 
-    return SafeArea(
-      child:
-          Container(
-            padding: const EdgeInsets.only(top: 8, bottom: 16),
-            color: theme.colorScheme.surfaceContainerHigh,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
+    return RepaintBoundary(
+      child: Center(
+      child: ConstrainedBox(
+        constraints: BoxConstraints(
+          maxWidth: Responsive.getKeyboardMaxWidth(context),
+        ),
+        child: Container(
+          padding: EdgeInsets.only(
+            top: isCompact ? 4 : 8,
+            bottom: isCompact ? 8 : 16,
+          ),
+          color: theme.colorScheme.surfaceContainerHigh,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
                 // Row 1
-                _buildRow(context, layout[0], maxKeysInRow, hapticService),
-                const SizedBox(height: Spacing.xs + Spacing.xxs),
+                _buildRow(context, layout[0], maxKeysInRow, hapticService, soundService),
+                SizedBox(height: isCompact ? 3 : Spacing.xs + Spacing.xxs),
                 // Row 2
-                _buildRow(context, layout[1], maxKeysInRow, hapticService),
-                const SizedBox(height: 6),
+                _buildRow(context, layout[1], maxKeysInRow, hapticService, soundService),
+                SizedBox(height: isCompact ? 3 : 6),
                 // Row 3 with action buttons
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -84,6 +97,7 @@ class CustomKeyboard extends ConsumerWidget {
                       layout[2],
                       maxKeysInRow,
                       hapticService,
+                      soundService,
                     ),
                     _buildActionButton(
                       context,
@@ -104,7 +118,9 @@ class CustomKeyboard extends ConsumerWidget {
             duration: AnimDurations.normal,
             curve: Curves.easeOutQuad,
           ),
-    );
+        ),  // ConstrainedBox
+    ),     // Center
+    );     // RepaintBoundary
   }
 
   Widget _buildRow(
@@ -112,10 +128,11 @@ class CustomKeyboard extends ConsumerWidget {
     List<String> keys,
     int maxKeys,
     HapticService hapticService,
+    SoundService soundService,
   ) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: _buildKeyList(context, keys, maxKeys, hapticService),
+      children: _buildKeyList(context, keys, maxKeys, hapticService, soundService),
     );
   }
 
@@ -124,9 +141,10 @@ class CustomKeyboard extends ConsumerWidget {
     List<String> keys,
     int maxKeys,
     HapticService hapticService,
+    SoundService soundService,
   ) {
     return keys
-        .map((key) => _buildKey(context, key, maxKeys, hapticService))
+        .map((key) => _buildKey(context, key, maxKeys, hapticService, soundService))
         .toList();
   }
 
@@ -135,11 +153,13 @@ class CustomKeyboard extends ConsumerWidget {
     String key,
     int maxKeys,
     HapticService hapticService,
+    SoundService soundService,
   ) {
     return _KeyButton(
       letter: key,
       maxKeys: maxKeys,
       isHighlighted: highlightedKeys.contains(key),
+      soundService: soundService,
       onTap: () {
         hapticService.trigger(HapticType.selection);
         onKeyTap(key);
@@ -171,9 +191,9 @@ class CustomKeyboard extends ConsumerWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 1, vertical: 2),
       width: width,
-      height: Responsive.isTablet(context) ? 56 : 44,
+      height: Responsive.isCompact(context) ? 36 : (Responsive.isTablet(context) ? 56 : 44),
       child: Material(
-        color: color.withValues(alpha: 0.2),
+        color: color.withValues(alpha: Opacities.gentle),
         borderRadius: RadiiBR.xs,
         child: InkWell(
           onTap: () {
@@ -203,12 +223,14 @@ class _KeyButton extends StatefulWidget {
   final String letter;
   final int maxKeys;
   final bool isHighlighted;
+  final SoundService soundService;
   final VoidCallback onTap;
 
   const _KeyButton({
     required this.letter,
     required this.maxKeys,
     required this.isHighlighted,
+    required this.soundService,
     required this.onTap,
   });
 
@@ -232,64 +254,63 @@ class _KeyButtonState extends State<_KeyButton> {
       26.0,
       isTablet ? 64.0 : 42.0,
     );
-    final keyHeight = isTablet ? 56.0 : 44.0;
+    final keyHeight = isCompact ? 36.0 : (isTablet ? 56.0 : 44.0);
 
     // Background color with highlight support
     Color backgroundColor;
     if (widget.isHighlighted) {
       // Glowing green when highlighted by hint
-      backgroundColor = gameColors.correct.withValues(alpha: 0.3);
+      backgroundColor = gameColors.correct.withValues(alpha: Opacities.medium);
     } else if (_isPressed) {
-      backgroundColor = theme.colorScheme.primary.withValues(alpha: 0.4);
+      backgroundColor = theme.colorScheme.primary.withValues(alpha: Opacities.semi);
     } else {
       backgroundColor = theme.colorScheme.surfaceContainerHigh;
     }
 
-    return GestureDetector(
+    return Semantics(
+      label: 'Harf ${widget.letter}',
+      button: true,
+      onTapHint: AppLocalizations.of(context)!.semanticsActionAddLetter,
+      child: GestureDetector(
       onTapDown: (_) {
         setState(() => _isPressed = true);
       },
       onTapUp: (_) {
         setState(() => _isPressed = false);
+        widget.soundService.play(SoundEffect.tap);
         widget.onTap();
       },
       onTapCancel: () {
         setState(() => _isPressed = false);
       },
       child:
-          AnimatedContainer(
-                duration: AnimDurations.micro,
+          AnimatedScale(
+            scale: _isPressed ? 0.92 : 1.0,
+            duration: AnimDurations.micro,
+            curve: AppCurves.easeOut,
+            child: Container(
                 margin: const EdgeInsets.symmetric(horizontal: 1, vertical: 2),
                 width: keyWidth,
                 height: keyHeight,
-                transform: _isPressed
-                    ? (Matrix4.identity()..scale(0.95))
-                    : Matrix4.identity(),
                 decoration: BoxDecoration(
                   color: backgroundColor,
                   borderRadius: RadiiBR.xs,
                   boxShadow: widget.isHighlighted
                       ? [
                           // Glowing effect when highlighted
-                          BoxShadow(
-                            color: gameColors.correct.withValues(alpha: 0.5),
-                            blurRadius: 8,
-                            spreadRadius: 2,
-                          ),
+                          AppShadows.colorMedium(gameColors.correct),
                         ]
                       : _isPressed
                       ? []
-                      : [
-                          BoxShadow(
-                            color: Colors.black.withValues(alpha: 0.1),
-                            blurRadius: 2,
-                            offset: const Offset(0, 2),
-                          ),
-                        ],
+                      : AppShadows.elevation1,
                 ),
                 child: Center(
                   child: Text(
                     widget.letter,
+                    textScaler: MediaQuery.textScalerOf(context).clamp(
+                      minScaleFactor: 0.85,
+                      maxScaleFactor: 1.15,
+                    ),
                     style: theme.textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.bold,
                       fontSize: Responsive.getFontSize(
@@ -316,8 +337,10 @@ class _KeyButtonState extends State<_KeyButton> {
               .then()
               .shimmer(
                 duration: AnimDurations.slower,
-                color: gameColors.correct.withValues(alpha: 0.3),
+                color: gameColors.correct.withValues(alpha: Opacities.medium),
               ),
-    );
+          ), // AnimatedScale
+    ),
+  );
   }
 }

@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:crossclimber/providers/discovery_tip_provider.dart';
+import 'package:crossclimber/theme/animations.dart';
 import 'package:crossclimber/theme/border_radius.dart';
+import 'package:crossclimber/theme/icon_sizes.dart';
+import 'package:crossclimber/theme/opacities.dart';
 import 'package:crossclimber/theme/spacing.dart';
 
 /// Animated banner shown once on first visit to a feature screen.
@@ -90,12 +93,12 @@ class _DiscoveryBannerState extends ConsumerState<DiscoveryBanner> {
                     width: 40,
                     height: 40,
                     decoration: BoxDecoration(
-                      color: theme.colorScheme.primary.withValues(alpha: 0.15),
+                      color: theme.colorScheme.primary.withValues(alpha: Opacities.soft),
                       borderRadius: RadiiBR.md,
                     ),
                     child: Icon(
                       widget.icon,
-                      size: 22,
+                      size: IconSizes.mld,
                       color: theme.colorScheme.primary,
                     ),
                   ),
@@ -119,7 +122,7 @@ class _DiscoveryBannerState extends ConsumerState<DiscoveryBanner> {
                           widget.description,
                           style: theme.textTheme.bodySmall?.copyWith(
                             color: theme.colorScheme.onPrimaryContainer
-                                .withValues(alpha: 0.8),
+                                .withValues(alpha: Opacities.heavy),
                             height: 1.4,
                           ),
                         ),
@@ -135,7 +138,7 @@ class _DiscoveryBannerState extends ConsumerState<DiscoveryBanner> {
                             tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                             backgroundColor:
                                 theme.colorScheme.primary.withValues(
-                                  alpha: 0.15,
+                                  alpha: Opacities.soft,
                                 ),
                             foregroundColor: theme.colorScheme.primary,
                             shape: RoundedRectangleBorder(
@@ -158,9 +161,9 @@ class _DiscoveryBannerState extends ConsumerState<DiscoveryBanner> {
                     onTap: _dismiss,
                     child: Icon(
                       Icons.close_rounded,
-                      size: 18,
+                      size: IconSizes.smd,
                       color: theme.colorScheme.onPrimaryContainer
-                          .withValues(alpha: 0.6),
+                          .withValues(alpha: Opacities.strong),
                     ),
                   ),
                 ],
@@ -169,12 +172,12 @@ class _DiscoveryBannerState extends ConsumerState<DiscoveryBanner> {
           ),
         )
             .animate()
-            .fadeIn(duration: 400.ms, delay: 300.ms)
+            .fadeIn(duration: AnimDurations.medium, delay: AnimDurations.normal)
             .slideY(
               begin: -0.2,
               end: 0,
-              duration: 400.ms,
-              delay: 300.ms,
+              duration: AnimDurations.medium,
+              delay: AnimDurations.normal,
               curve: Curves.easeOut,
             );
       },

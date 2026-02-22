@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:crossclimber/theme/animations.dart';
 import 'package:crossclimber/theme/border_radius.dart';
+import 'package:crossclimber/theme/icon_sizes.dart';
+import 'package:crossclimber/theme/opacities.dart';
+import 'package:crossclimber/theme/shadows.dart';
 import 'package:crossclimber/theme/spacing.dart';
 
 /// Simple tooltip-style tutorial dialog
@@ -31,15 +35,9 @@ class TutorialTooltip extends StatelessWidget {
           decoration: BoxDecoration(
             color: theme.cardColor,
             borderRadius: RadiiBR.md,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.1),
-                blurRadius: 10,
-                offset: const Offset(0, 4),
-              ),
-            ],
+            boxShadow: AppShadows.elevation2,
             border: Border.all(
-              color: effectiveColor.withValues(alpha: 0.3),
+              color: effectiveColor.withValues(alpha: Opacities.medium),
               width: 2,
             ),
           ),
@@ -49,7 +47,7 @@ class TutorialTooltip extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Icon(icon, color: effectiveColor, size: 24),
+                  Icon(icon, color: effectiveColor, size: IconSizes.lg),
                   HorizontalSpacing.s,
                   Expanded(
                     child: Text(
@@ -61,7 +59,7 @@ class TutorialTooltip extends StatelessWidget {
                     ),
                   ),
                   IconButton(
-                    icon: const Icon(Icons.close, size: 20),
+                    icon: const Icon(Icons.close, size: IconSizes.md),
                     onPressed: onDismiss,
                     padding: EdgeInsets.zero,
                     constraints: const BoxConstraints(),
@@ -88,10 +86,10 @@ class TutorialTooltip extends StatelessWidget {
         .slideY(
           begin: -0.2,
           end: 0,
-          duration: 300.ms,
-          curve: Curves.easeOutCubic,
+          duration: AnimDurations.normal,
+          curve: AppCurves.easeOut,
         )
-        .fadeIn(duration: 200.ms);
+        .fadeIn(duration: AnimDurations.fast);
   }
 
   /// Show tooltip at the top of the screen
@@ -167,13 +165,13 @@ class TutorialDialog extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.all(Spacing.s + Spacing.xs),
                       decoration: BoxDecoration(
-                        color: theme.colorScheme.primary.withValues(alpha: 0.1),
+                        color: theme.colorScheme.primary.withValues(alpha: Opacities.subtle),
                         borderRadius: RadiiBR.md,
                       ),
                       child: Icon(
                         Icons.school,
                         color: theme.colorScheme.primary,
-                        size: 28,
+                        size: IconSizes.xl,
                       ),
                     ),
                     HorizontalSpacing.m,
@@ -224,10 +222,10 @@ class TutorialDialog extends StatelessWidget {
         .scale(
           begin: const Offset(0.8, 0.8),
           end: const Offset(1.0, 1.0),
-          duration: 300.ms,
-          curve: Curves.easeOutCubic,
+          duration: AnimDurations.normal,
+          curve: AppCurves.easeOut,
         )
-        .fadeIn(duration: 200.ms);
+        .fadeIn(duration: AnimDurations.fast);
   }
 
   Widget _buildPoint(TutorialPoint point, ThemeData theme) {
@@ -240,10 +238,10 @@ class TutorialDialog extends StatelessWidget {
             margin: const EdgeInsets.only(top: 4),
             padding: const EdgeInsets.all(6),
             decoration: BoxDecoration(
-              color: theme.colorScheme.primary.withValues(alpha: 0.1),
+              color: theme.colorScheme.primary.withValues(alpha: Opacities.subtle),
               borderRadius: RadiiBR.sm,
             ),
-            child: Icon(point.icon, size: 16, color: theme.colorScheme.primary),
+            child: Icon(point.icon, size: IconSizes.sm, color: theme.colorScheme.primary),
           ),
           const SizedBox(width: Spacing.s + Spacing.xs),
           Expanded(
@@ -260,7 +258,7 @@ class TutorialDialog extends StatelessWidget {
                 Text(
                   point.description,
                   style: theme.textTheme.bodyMedium?.copyWith(
-                    color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
+                    color: theme.colorScheme.onSurface.withValues(alpha: Opacities.bold),
                   ),
                 ),
               ],

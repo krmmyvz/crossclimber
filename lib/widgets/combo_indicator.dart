@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:crossclimber/l10n/app_localizations.dart';
+import 'package:crossclimber/theme/animations.dart';
 import 'package:crossclimber/theme/border_radius.dart';
 import 'package:crossclimber/theme/game_colors.dart';
+import 'package:crossclimber/theme/icon_sizes.dart';
+import 'package:crossclimber/theme/opacities.dart';
+import 'package:crossclimber/theme/shadows.dart';
 import 'package:crossclimber/theme/spacing.dart';
 
 /// Widget that displays the current combo count and multiplier
@@ -30,7 +34,8 @@ class ComboIndicator extends StatelessWidget {
     final color = _getComboColor(context, comboCount);
     final icon = _getComboIcon(comboCount);
 
-    return Semantics(
+    return RepaintBoundary(
+      child: Semantics(
       label: l10n.semanticsComboMultiplier(
         comboCount,
         multiplier.toStringAsFixed(1),
@@ -43,25 +48,21 @@ class ComboIndicator extends StatelessWidget {
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                color.withValues(alpha: 0.8),
-                color.withValues(alpha: 0.6),
+                color.withValues(alpha: Opacities.heavy),
+                color.withValues(alpha: Opacities.strong),
               ],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
             borderRadius: RadiiBR.xl,
             boxShadow: [
-              BoxShadow(
-                color: color.withValues(alpha: 0.3),
-                blurRadius: 8,
-                offset: const Offset(0, 2),
-              ),
+              AppShadows.colorMedium(color),
             ],
           ),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(icon, color: Colors.white, size: 24),
+              Icon(icon, color: Colors.white, size: IconSizes.lg),
               HorizontalSpacing.s,
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -79,7 +80,7 @@ class ComboIndicator extends StatelessWidget {
                     Text(
                       l10n.comboMultiplierLabel(multiplier.toStringAsFixed(1)),
                       style: theme.textTheme.bodySmall?.copyWith(
-                        color: Colors.white.withValues(alpha: 0.9),
+                        color: Colors.white.withValues(alpha: Opacities.near),
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -89,15 +90,16 @@ class ComboIndicator extends StatelessWidget {
           ),
         )
         .animate(onPlay: (controller) => controller.repeat())
-        .shimmer(duration: 2000.ms, color: Colors.white.withValues(alpha: 0.3))
+        .shimmer(duration: AnimDurations.ultraLong, color: Colors.white.withValues(alpha: Opacities.medium))
         .animate() // Entrance animation
         .scale(
-          duration: 300.ms,
+          duration: AnimDurations.normal,
           begin: const Offset(0.8, 0.8),
           end: const Offset(1.0, 1.0),
-          curve: Curves.elasticOut,
+          curve: AppCurves.elastic,
         )
-        .fadeIn(duration: 200.ms),
+        .fadeIn(duration: AnimDurations.fast),
+    ),
     );
   }
 
@@ -145,11 +147,7 @@ class ComboPopup extends StatelessWidget {
             color: color,
             borderRadius: RadiiBR.lg,
             boxShadow: [
-              BoxShadow(
-                color: color.withValues(alpha: 0.4),
-                blurRadius: 12,
-                offset: const Offset(0, 4),
-              ),
+              AppShadows.colorStrong(color),
             ],
           ),
           child: Column(
@@ -158,7 +156,7 @@ class ComboPopup extends StatelessWidget {
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Icon(Icons.add_circle, color: Colors.white, size: 20),
+                  const Icon(Icons.add_circle, color: Colors.white, size: IconSizes.md),
                   HorizontalSpacing.s,
                   Text(
                     '+$points',
@@ -173,7 +171,7 @@ class ComboPopup extends StatelessWidget {
               Text(
                 l10n.comboXLabel(comboCount, multiplier.toStringAsFixed(1)),
                 style: theme.textTheme.bodySmall?.copyWith(
-                  color: Colors.white.withValues(alpha: 0.9),
+                  color: Colors.white.withValues(alpha: Opacities.near),
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -182,15 +180,15 @@ class ComboPopup extends StatelessWidget {
         )
         .animate()
         .scale(
-          duration: 200.ms,
+          duration: AnimDurations.fast,
           begin: const Offset(0.5, 0.5),
           end: const Offset(1.0, 1.0),
-          curve: Curves.elasticOut,
+          curve: AppCurves.elastic,
         )
-        .fadeIn(duration: 150.ms)
-        .then(delay: 800.ms)
-        .slideY(begin: 0, end: -1, duration: 300.ms, curve: Curves.easeInBack)
-        .fadeOut(duration: 200.ms);
+        .fadeIn(duration: AnimDurations.microFast)
+        .then(delay: AnimDurations.slower)
+        .slideY(begin: 0, end: -1, duration: AnimDurations.normal, curve: Curves.easeInBack)
+        .fadeOut(duration: AnimDurations.fast);
   }
 
   Color _getComboColor(BuildContext context, int combo) {
@@ -228,17 +226,13 @@ class ComboBreakIndicator extends StatelessWidget {
             color: gameColors.incorrect,
             borderRadius: RadiiBR.lg,
             boxShadow: [
-              BoxShadow(
-                color: gameColors.incorrect.withValues(alpha: 0.4),
-                blurRadius: 12,
-                offset: const Offset(0, 4),
-              ),
+              AppShadows.colorStrong(gameColors.incorrect),
             ],
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Icon(Icons.close, color: Colors.white, size: 32),
+              const Icon(Icons.close, color: Colors.white, size: IconSizes.xxl),
               VerticalSpacing.xs,
               Text(
                 l10n.comboBreak,
@@ -251,17 +245,17 @@ class ComboBreakIndicator extends StatelessWidget {
               Text(
                 l10n.comboLostLabel(lostCombo),
                 style: theme.textTheme.bodySmall?.copyWith(
-                  color: Colors.white.withValues(alpha: 0.9),
+                  color: Colors.white.withValues(alpha: Opacities.near),
                 ),
               ),
             ],
           ),
         )
         .animate()
-        .shake(duration: 400.ms, hz: 5, rotation: 0.05)
-        .fadeIn(duration: 150.ms)
-        .then(delay: 1000.ms)
-        .fadeOut(duration: 300.ms);
+        .shake(duration: AnimDurations.medium, hz: 5, rotation: 0.05)
+        .fadeIn(duration: AnimDurations.microFast)
+        .then(delay: AnimDurations.long)
+        .fadeOut(duration: AnimDurations.normal);
   }
 }
 
@@ -285,7 +279,8 @@ class ComboCounter extends StatelessWidget {
     final theme = Theme.of(context);
     final color = _getComboColor(context, comboCount);
 
-    return Container(
+    return RepaintBoundary(
+      child: Container(
           padding: const EdgeInsets.symmetric(
             horizontal: Spacing.s + Spacing.xs,
             vertical: Spacing.xs + Spacing.xxs,
@@ -294,17 +289,13 @@ class ComboCounter extends StatelessWidget {
             color: color,
             borderRadius: RadiiBR.md,
             boxShadow: [
-              BoxShadow(
-                color: color.withValues(alpha: 0.3),
-                blurRadius: 6,
-                offset: const Offset(0, 2),
-              ),
+              AppShadows.colorMedium(color),
             ],
           ),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(_getComboIcon(comboCount), color: Colors.white, size: 16),
+              Icon(_getComboIcon(comboCount), color: Colors.white, size: IconSizes.sm),
               HorizontalSpacing.xs,
               Text(
                 '${comboCount}x',
@@ -318,7 +309,7 @@ class ComboCounter extends StatelessWidget {
                 Text(
                   '(${multiplier.toStringAsFixed(1)}x)',
                   style: theme.textTheme.bodySmall?.copyWith(
-                    color: Colors.white.withValues(alpha: 0.9),
+                    color: Colors.white.withValues(alpha: Opacities.near),
                     fontSize: 10,
                   ),
                 ),
@@ -327,9 +318,10 @@ class ComboCounter extends StatelessWidget {
           ),
         )
         .animate(onPlay: (controller) => controller.repeat())
-        .shimmer(duration: 1500.ms, color: Colors.white.withValues(alpha: 0.3))
+        .shimmer(duration: AnimDurations.extraLong, color: Colors.white.withValues(alpha: Opacities.medium))
         .animate()
-        .scale(duration: 200.ms, curve: Curves.elasticOut);
+        .scale(duration: AnimDurations.fast, curve: AppCurves.elastic),
+    );
   }
 
   Color _getComboColor(BuildContext context, int combo) {

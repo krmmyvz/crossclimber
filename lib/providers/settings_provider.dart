@@ -22,7 +22,7 @@ class SettingsState {
     this.timerEnabled = true,
     this.autoCheck = false,
     this.autoSort = false,
-    this.useCustomKeyboard = false,
+    this.useCustomKeyboard = true,
     this.highContrast = false,
     this.customTheme,
   });

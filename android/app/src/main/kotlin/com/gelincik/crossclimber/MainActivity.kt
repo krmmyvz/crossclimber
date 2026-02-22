@@ -1,4 +1,4 @@
-package com.example.crossclimber
+package com.gelincik.crossclimber
 
 import io.flutter.embedding.android.FlutterActivity
 

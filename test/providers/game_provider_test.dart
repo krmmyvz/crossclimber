@@ -76,7 +76,11 @@ void main() {
       hintsUsed: any(named: 'hintsUsed'),
       wrongAttempts: any(named: 'wrongAttempts'),
       totalPlayTime: any(named: 'totalPlayTime'),
-    )).thenAnswer((_) async {});
+      maxComboThisGame: any(named: 'maxComboThisGame'),
+      longestStreak: any(named: 'longestStreak'),
+      dailyChallengesCompleted: any(named: 'dailyChallengesCompleted'),
+      totalXp: any(named: 'totalXp'),
+    )).thenAnswer((_) async => <Achievement>[]);
 
     when(() => mockDailyChallengeService.getTodayChallenge()).thenAnswer((_) async => DailyChallenge(
       levelId: 99, 

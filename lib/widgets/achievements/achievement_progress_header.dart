@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:crossclimber/l10n/app_localizations.dart';
 import 'package:crossclimber/theme/border_radius.dart';
+import 'package:crossclimber/theme/opacities.dart';
+import 'package:crossclimber/theme/shadows.dart';
 import 'package:crossclimber/theme/spacing.dart';
+import 'package:crossclimber/widgets/app_progress_bar.dart';
 
 class AchievementProgressHeader extends StatelessWidget {
   final int unlocked;
@@ -31,11 +34,7 @@ class AchievementProgressHeader extends StatelessWidget {
         ),
         borderRadius: RadiiBR.lg,
         boxShadow: [
-          BoxShadow(
-            color: theme.colorScheme.primary.withValues(alpha: 0.3),
-            blurRadius: 8,
-            offset: const Offset(0, 4),
-          ),
+          AppShadows.colorMedium(theme.colorScheme.primary),
         ],
       ),
       child: Column(
@@ -60,21 +59,17 @@ class AchievementProgressHeader extends StatelessWidget {
             ],
           ),
           VerticalSpacing.s,
-          ClipRRect(
-            borderRadius: RadiiBR.sm,
-            child: LinearProgressIndicator(
-              value: total > 0 ? unlocked / total : 0,
-              minHeight: 12,
-              backgroundColor: theme.colorScheme.surfaceContainerHighest,
-              valueColor: AlwaysStoppedAnimation(theme.colorScheme.primary),
-            ),
+          AppProgressBar(
+            value: total > 0 ? unlocked / total : 0,
+            height: 16,
+            backgroundColor: theme.colorScheme.surfaceContainerHighest,
           ),
           VerticalSpacing.s,
           Text(
             '$percentage% Complete',
             style: theme.textTheme.bodyMedium?.copyWith(
               color: theme.colorScheme.onPrimaryContainer.withValues(
-                alpha: 0.8,
+                alpha: Opacities.heavy,
               ),
             ),
           ),

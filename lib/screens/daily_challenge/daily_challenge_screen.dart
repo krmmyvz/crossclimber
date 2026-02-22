@@ -10,6 +10,10 @@ import 'package:crossclimber/widgets/common_app_bar.dart';
 import 'package:crossclimber/theme/border_radius.dart';
 import 'package:crossclimber/theme/spacing.dart';
 import 'package:crossclimber/theme/game_colors.dart';
+import 'package:crossclimber/theme/icon_sizes.dart';
+import 'package:crossclimber/theme/animations.dart';
+import 'package:crossclimber/theme/opacities.dart';
+import 'package:crossclimber/theme/shadows.dart';
 import 'package:crossclimber/screens/daily_challenge/daily_challenge_stats.dart';
 import 'package:crossclimber/screens/daily_challenge/daily_challenge_calendar.dart';
 import 'package:crossclimber/widgets/skeleton_loading.dart';
@@ -28,295 +32,143 @@ class DailyChallengeScreen extends ConsumerWidget
     final dailyChallengeService = DailyChallengeService();
     final levelRepository = LevelRepository();
 
-    return Scaffold(
-      appBar: CommonAppBar(
-        title: l10n.dailyChallenge,
-        type: AppBarType.standard,
-      ),
-      body: FutureBuilder<DailyChallenge>(
-        future: dailyChallengeService.getDailyChallenge(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return _buildLoadingSkeleton(theme);
-          }
+    final clampedTextScaler = MediaQuery.textScalerOf(
+      context,
+    ).clamp(minScaleFactor: 0.85, maxScaleFactor: 1.3);
 
-          if (snapshot.hasError) {
-            return Center(
+    return MediaQuery(
+      data: MediaQuery.of(context).copyWith(textScaler: clampedTextScaler),
+      child: Scaffold(
+        appBar: CommonAppBar(
+          title: l10n.dailyChallenge,
+          type: AppBarType.standard,
+        ),
+        body: FutureBuilder<DailyChallenge>(
+          future: dailyChallengeService.getDailyChallenge(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return _buildLoadingSkeleton(theme);
+            }
+
+            if (snapshot.hasError) {
+              return Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.error_outline,
+                      size: Spacing.largeIconSize,
+                      color: theme.colorScheme.error,
+                    ),
+                    VerticalSpacing.m,
+                    Text(
+                      l10n.failedToLoadDailyChallenge,
+                      style: theme.textTheme.titleLarge,
+                    ),
+                    VerticalSpacing.s,
+                    Text(
+                      'Error: ${snapshot.error}',
+                      style: theme.textTheme.bodySmall,
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
+              );
+            }
+
+            if (!snapshot.hasData) {
+              return _buildLoadingSkeleton(theme);
+            }
+
+            final challenge = snapshot.data!;
+            final isCompleted = challenge.isCompleted;
+
+            return SingleChildScrollView(
+              padding: SpacingInsets.m,
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Icon(
-                    Icons.error_outline,
-                    size: Spacing.largeIconSize,
-                    color: theme.colorScheme.error,
+                  // Discovery banner (first visit only)
+                  DiscoveryBanner(
+                    feature: DiscoveryFeature.daily,
+                    icon: Icons.calendar_today_rounded,
+                    title: l10n.discoveryDailyTitle,
+                    description: l10n.discoveryDailyDesc,
+                    ctaLabel: l10n.discoveryGotIt,
                   ),
-                  VerticalSpacing.m,
-                  Text(
-                    l10n.failedToLoadDailyChallenge,
-                    style: theme.textTheme.titleLarge,
+
+                  // Today's Challenge Card
+                  FutureBuilder(
+                    future: levelRepository.getDailyLevelById(
+                      challenge.levelId,
+                    ),
+                    builder: (context, levelSnapshot) {
+                      if (levelSnapshot.connectionState ==
+                          ConnectionState.waiting) {
+                        return const Center(
+                          child: Padding(
+                            padding: EdgeInsets.all(Spacing.xl),
+                            child: CircularProgressIndicator(),
+                          ),
+                        );
+                      }
+
+                      if (levelSnapshot.hasError) {
+                        return Container(
+                          padding: SpacingInsets.l,
+                          decoration: BoxDecoration(
+                            color: theme.colorScheme.errorContainer,
+                            borderRadius: RadiiBR.xl,
+                          ),
+                          child: Column(
+                            children: [
+                              Icon(
+                                Icons.error_outline,
+                                color: theme.colorScheme.error,
+                                size: IconSizes.hero,
+                              ),
+                              VerticalSpacing.s,
+                              Text(
+                                l10n.failedToLoadChallenge,
+                                style: theme.textTheme.bodyLarge,
+                              ),
+                            ],
+                          ),
+                        );
+                      }
+
+                      if (!levelSnapshot.hasData) {
+                        return const SizedBox.shrink();
+                      }
+
+                      final level = levelSnapshot.data!;
+                      return _buildChallengeCard(
+                        context,
+                        theme,
+                        l10n,
+                        challenge,
+                        level,
+                        isCompleted,
+                      );
+                    },
                   ),
-                  VerticalSpacing.s,
-                  Text(
-                    'Error: ${snapshot.error}',
-                    style: theme.textTheme.bodySmall,
-                    textAlign: TextAlign.center,
-                  ),
+
+                  VerticalSpacing.l,
+
+                  // Stats Card
+                  buildStatsCard(theme, l10n, challenge),
+
+                  VerticalSpacing.l,
+
+                  // Calendar View
+                  buildCalendarView(theme, dailyChallengeService, challenge),
                 ],
               ),
             );
-          }
-
-          if (!snapshot.hasData) {
-            return _buildLoadingSkeleton(theme);
-          }
-
-          final challenge = snapshot.data!;
-          final isCompleted = challenge.isCompleted;
-          final currentStreak = challenge.streak;
-
-          return SingleChildScrollView(
-            padding: SpacingInsets.m,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                // Discovery banner (first visit only)
-                DiscoveryBanner(
-                  feature: DiscoveryFeature.daily,
-                  icon: Icons.calendar_today_rounded,
-                  title: l10n.discoveryDailyTitle,
-                  description: l10n.discoveryDailyDesc,
-                  ctaLabel: l10n.discoveryGotIt,
-                ),
-
-                // Streak Card
-                _buildStreakCard(theme, l10n, currentStreak, isCompleted),
-
-                // Motivation card (shown when not yet completed today)
-                if (!isCompleted) ...[VerticalSpacing.m, _buildMotivationCard(theme, l10n)],
-
-                VerticalSpacing.l,
-
-                // Today's Challenge Card
-                FutureBuilder(
-                  future: levelRepository.getDailyLevelById(challenge.levelId),
-                  builder: (context, levelSnapshot) {
-                    if (levelSnapshot.connectionState ==
-                        ConnectionState.waiting) {
-                      return const Center(
-                        child: Padding(
-                          padding: EdgeInsets.all(Spacing.xl),
-                          child: CircularProgressIndicator(),
-                        ),
-                      );
-                    }
-
-                    if (levelSnapshot.hasError) {
-                      return Container(
-                        padding: SpacingInsets.l,
-                        decoration: BoxDecoration(
-                          color: theme.colorScheme.errorContainer,
-                          borderRadius: RadiiBR.xl,
-                        ),
-                        child: Column(
-                          children: [
-                            Icon(
-                              Icons.error_outline,
-                              color: theme.colorScheme.error,
-                              size: 48,
-                            ),
-                            VerticalSpacing.s,
-                            Text(
-                              l10n.failedToLoadChallenge,
-                              style: theme.textTheme.bodyLarge,
-                            ),
-                          ],
-                        ),
-                      );
-                    }
-
-                    if (!levelSnapshot.hasData) {
-                      return const SizedBox.shrink();
-                    }
-
-                    final level = levelSnapshot.data!;
-                    return _buildChallengeCard(
-                      context,
-                      theme,
-                      l10n,
-                      challenge,
-                      level,
-                      isCompleted,
-                    );
-                  },
-                ),
-
-                VerticalSpacing.l,
-
-                // Stats Card
-                buildStatsCard(theme, l10n, challenge),
-
-                VerticalSpacing.l,
-
-                // Calendar View
-                buildCalendarView(theme, dailyChallengeService, challenge),
-              ],
-            ),
-          );
-        },
+          },
+        ),
       ),
     );
-  }
-
-  Widget _buildStreakCard(
-    ThemeData theme,
-    AppLocalizations l10n,
-    int streak,
-    bool completedToday,
-  ) {
-    return Container(
-      padding: SpacingInsets.l,
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            theme.gameColors.streak,
-            theme.gameColors.streak.withValues(alpha: 0.8),
-          ],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-        borderRadius: RadiiBR.xl,
-        boxShadow: [
-          BoxShadow(
-            color: theme.gameColors.streak.withValues(alpha: 0.3),
-            blurRadius: 12,
-            offset: const Offset(0, 6),
-          ),
-        ],
-      ),
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                    Icons.local_fire_department,
-                    color: theme.gameColors.onStreak,
-                    size: Spacing.buttonHeight,
-                  )
-                  .animate(onPlay: (controller) => controller.repeat())
-                  .shimmer(duration: 2.seconds, color: theme.gameColors.star)
-                  .scaleXY(
-                    begin: 1.0,
-                    end: 1.1,
-                    duration: 1.seconds,
-                    curve: Curves.easeInOut,
-                  )
-                  .then()
-                  .scaleXY(
-                    begin: 1.1,
-                    end: 1.0,
-                    duration: 1.seconds,
-                    curve: Curves.easeInOut,
-                  ),
-              HorizontalSpacing.m,
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    l10n.currentStreak,
-                    style: theme.textTheme.titleMedium?.copyWith(
-                      color: theme.gameColors.onStreak.withValues(alpha: 0.9),
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  Text(
-                    '$streak ${streak == 1 ? 'day' : 'days'}',
-                    style: theme.textTheme.headlineLarge?.copyWith(
-                      color: theme.gameColors.onStreak,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-          if (completedToday) ...[
-            VerticalSpacing.m,
-            Container(
-              padding: const EdgeInsets.symmetric(
-                horizontal: Spacing.m,
-                vertical: Spacing.s,
-              ),
-              decoration: BoxDecoration(
-                color: theme.gameColors.onStreak.withValues(alpha: 0.2),
-                borderRadius: RadiiBR.xl,
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(
-                    Icons.check_circle,
-                    color: theme.gameColors.onStreak,
-                    size: 20,
-                  ),
-                  HorizontalSpacing.s,
-                  Text(
-                    l10n.completedToday,
-                    style: theme.textTheme.bodyMedium?.copyWith(
-                      color: theme.gameColors.onStreak,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ],
-      ),
-    ).animate().fadeIn().slideY(begin: -0.2, end: 0);
-  }
-
-  Widget _buildMotivationCard(ThemeData theme, AppLocalizations l10n) {
-    return Container(
-      padding: SpacingInsets.m,
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            theme.colorScheme.primaryContainer.withValues(alpha: 0.7),
-            theme.colorScheme.tertiaryContainer.withValues(alpha: 0.7),
-          ],
-        ),
-        borderRadius: BorderRadius.circular(16),
-      ),
-      child: Row(
-        children: [
-          const Icon(Icons.local_fire_department_rounded, size: 32, color: Colors.orange),
-          const SizedBox(width: 12),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  l10n.dailyMotivationTitle,
-                  style: theme.textTheme.titleSmall?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: theme.colorScheme.onPrimaryContainer,
-                  ),
-                ),
-                const SizedBox(height: 2),
-                Text(
-                  l10n.dailyMotivationDesc,
-                  style: theme.textTheme.bodySmall?.copyWith(
-                    color: theme.colorScheme.onPrimaryContainer
-                        .withValues(alpha: 0.8),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    ).animate(delay: 200.ms).fadeIn(duration: 350.ms).slideY(begin: 0.1, end: 0);
   }
 
   Widget _buildChallengeCard(
@@ -330,18 +182,21 @@ class DailyChallengeScreen extends ConsumerWidget
     return Container(
       padding: const EdgeInsets.all(Spacing.m + Spacing.xs),
       decoration: BoxDecoration(
-        color: theme.colorScheme.surface,
         borderRadius: RadiiBR.lg,
+        gradient: LinearGradient(
+          colors: [
+            theme.gameColors.streak.withValues(alpha: Opacities.faint),
+            theme.colorScheme.surface,
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
         border: Border.all(
-          color: theme.colorScheme.primary.withValues(alpha: 0.3),
+          color: theme.gameColors.streak.withValues(alpha: Opacities.medium),
           width: 2,
         ),
         boxShadow: [
-          BoxShadow(
-            color: theme.colorScheme.primary.withValues(alpha: 0.1),
-            blurRadius: 8,
-            offset: const Offset(0, 4),
-          ),
+          AppShadows.colorMedium(theme.gameColors.streak),
         ],
       ),
       child: Column(
@@ -358,7 +213,7 @@ class DailyChallengeScreen extends ConsumerWidget
                 child: Icon(
                   Icons.calendar_today,
                   color: theme.colorScheme.primary,
-                  size: 28,
+                  size: IconSizes.xl,
                 ),
               ),
               HorizontalSpacing.m,
@@ -385,7 +240,7 @@ class DailyChallengeScreen extends ConsumerWidget
                 Container(
                   padding: SpacingInsets.s,
                   decoration: BoxDecoration(
-                    color: theme.gameColors.success.withValues(alpha: 0.1),
+                    color: theme.gameColors.success.withValues(alpha: Opacities.subtle),
                     shape: BoxShape.circle,
                   ),
                   child: Icon(
@@ -410,7 +265,7 @@ class DailyChallengeScreen extends ConsumerWidget
                   children: [
                     Icon(
                       Icons.flag,
-                      size: 20,
+                      size: IconSizes.md,
                       color: theme.colorScheme.primary,
                     ),
                     HorizontalSpacing.s,
@@ -426,18 +281,22 @@ class DailyChallengeScreen extends ConsumerWidget
                 VerticalSpacing.s,
                 Row(
                   children: [
-                    _buildLevelInfo(
-                      theme,
-                      Icons.trending_up,
-                      l10n.difficultyLabel,
-                      _getDifficultyText(l10n, level.difficulty),
+                    Expanded(
+                      child: _buildLevelInfo(
+                        theme,
+                        Icons.trending_up,
+                        l10n.difficultyLabel,
+                        _getDifficultyText(l10n, level.difficulty),
+                      ),
                     ),
-                    const SizedBox(width: Spacing.l),
-                    _buildLevelInfo(
-                      theme,
-                      Icons.format_list_numbered,
-                      l10n.wordsLabel,
-                      '${level.solution.length}',
+                    const SizedBox(width: Spacing.m),
+                    Expanded(
+                      child: _buildLevelInfo(
+                        theme,
+                        Icons.format_list_numbered,
+                        l10n.wordsLabel,
+                        '${level.solution.length}',
+                      ),
                     ),
                   ],
                 ),
@@ -446,10 +305,10 @@ class DailyChallengeScreen extends ConsumerWidget
                   Container(
                     padding: const EdgeInsets.all(Spacing.s + Spacing.xs),
                     decoration: BoxDecoration(
-                      color: theme.gameColors.success.withValues(alpha: 0.1),
+                      color: theme.gameColors.success.withValues(alpha: Opacities.subtle),
                       borderRadius: RadiiBR.md,
                       border: Border.all(
-                        color: theme.gameColors.success.withValues(alpha: 0.3),
+                        color: theme.gameColors.success.withValues(alpha: Opacities.medium),
                         width: 1,
                       ),
                     ),
@@ -546,7 +405,7 @@ class DailyChallengeScreen extends ConsumerWidget
           ],
         ],
       ),
-    ).animate().fadeIn(delay: 100.ms).slideX(begin: 0.2, end: 0);
+    ).animate().fadeIn(delay: AnimDurations.micro).slideX(begin: 0.2, end: 0);
   }
 
   Widget _buildLevelInfo(
@@ -557,7 +416,11 @@ class DailyChallengeScreen extends ConsumerWidget
   ) {
     return Row(
       children: [
-        Icon(icon, size: 16, color: theme.colorScheme.onSurfaceVariant),
+        Icon(
+          icon,
+          size: IconSizes.sm,
+          color: theme.colorScheme.onSurfaceVariant,
+        ),
         HorizontalSpacing.xs,
         Text(
           '$label: $value',

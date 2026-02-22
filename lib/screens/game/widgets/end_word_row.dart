@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:crossclimber/l10n/app_localizations.dart';
 import 'package:crossclimber/providers/game_provider.dart';
 import 'package:crossclimber/models/level.dart';
 import 'package:crossclimber/screens/game/game_screen_widgets.dart';
 import 'package:crossclimber/theme/game_colors.dart';
 import 'package:crossclimber/theme/spacing.dart';
 import 'package:crossclimber/theme/border_radius.dart';
+import 'package:crossclimber/theme/icon_sizes.dart';
+import 'package:crossclimber/theme/opacities.dart';
 
 class EndWordRow extends StatelessWidget {
   final bool isTop;
@@ -77,11 +80,11 @@ class EndWordRow extends StatelessWidget {
             color: isSelected
                 ? (gameState.lastError == 'wrong'
                       ? theme.gameColors.incorrect
-                      : theme.colorScheme.primary)
+                      : theme.colorScheme.primary.withValues(alpha: Opacities.bold))
                 : (isSolved
                       ? theme.colorScheme.outlineVariant
-                      : theme.colorScheme.outline),
-            width: isSelected ? 2 : 1,
+                      : theme.colorScheme.outline.withValues(alpha: Opacities.half)),
+            width: isSelected ? 2 : 1.5,
           ),
         ),
         child: Row(
@@ -89,11 +92,25 @@ class EndWordRow extends StatelessWidget {
             Expanded(
               child: Center(
                 child: isLocked
-                    ? Text(
-                        '?',
-                        style: theme.textTheme.titleLarge?.copyWith(
-                          color: theme.colorScheme.outline,
-                          fontWeight: FontWeight.bold,
+                    ? Tooltip(
+                        message: AppLocalizations.of(context)!.solveMiddleWordsFirst,
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              Icons.lock_outline,
+                              size: IconSizes.smd,
+                              color: theme.colorScheme.outline.withValues(alpha: Opacities.strong),
+                            ),
+                            const SizedBox(width: 4),
+                            Text(
+                              '?',
+                              style: theme.textTheme.titleLarge?.copyWith(
+                                color: theme.colorScheme.outline,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
                         ),
                       )
                     : (isSolved
@@ -103,6 +120,7 @@ class EndWordRow extends StatelessWidget {
                               false,
                               true,
                               tileSize,
+                              shouldWaveBounce: true,
                             )
                           : (isSelected && currentInput.isNotEmpty
                                 ? WordRowWidgets.buildWordRow(

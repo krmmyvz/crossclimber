@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:crossclimber/theme/animations.dart';
 import 'package:crossclimber/theme/border_radius.dart';
+import 'package:crossclimber/theme/icon_sizes.dart';
+import 'package:crossclimber/theme/opacities.dart';
+import 'package:crossclimber/theme/responsive.dart';
+import 'package:crossclimber/theme/shadows.dart';
 import 'package:crossclimber/theme/spacing.dart';
 
 /// Modern, stilize edilmiş diyalog widget'ı
@@ -36,6 +40,7 @@ class ModernDialog extends StatelessWidget {
     return showDialog<T>(
       context: context,
       barrierDismissible: false,
+      barrierColor: Colors.black54,
       builder: (context) => ModernDialog(
         title: title,
         message: message,
@@ -89,7 +94,9 @@ class ModernDialogContent extends StatelessWidget {
       elevation: 8,
       shape: RoundedRectangleBorder(borderRadius: RadiiBR.xxl),
       child: Container(
-        constraints: const BoxConstraints(maxWidth: 400),
+        constraints: BoxConstraints(
+          maxWidth: Responsive.getDialogMaxWidth(context).clamp(0, 500),
+        ),
         padding: SpacingInsets.l,
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -100,13 +107,13 @@ class ModernDialogContent extends StatelessWidget {
                 padding: SpacingInsets.m,
                 decoration: BoxDecoration(
                   color: (iconColor ?? theme.colorScheme.primary).withValues(
-                    alpha: 0.1,
+                    alpha: Opacities.subtle,
                   ),
                   shape: BoxShape.circle,
                 ),
                 child: Icon(
                   icon,
-                  size: 48,
+                  size: IconSizes.hero,
                   color: iconColor ?? theme.colorScheme.primary,
                 ),
               ),
@@ -138,123 +145,127 @@ class ModernDialogContent extends StatelessWidget {
             // Custom Content
             if (customContent != null) ...[customContent!, VerticalSpacing.l],
 
-            // Actions
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: actions.map((action) {
-                final buttonStyle = action.isDestructive
-                    ? (action.isPrimary
-                          ? FilledButton.styleFrom(
-                              backgroundColor: theme.colorScheme.error,
-                              foregroundColor: theme.colorScheme.onError,
-                              padding: const EdgeInsets.symmetric(
-                                vertical: Spacing.s + Spacing.xs,
-                              ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: RadiiBR.md,
-                              ),
-                            )
-                          : OutlinedButton.styleFrom(
-                              foregroundColor: theme.colorScheme.error,
-                              side: BorderSide(color: theme.colorScheme.error),
-                              padding: const EdgeInsets.symmetric(
-                                vertical: Spacing.s + Spacing.xs,
-                              ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: RadiiBR.md,
-                              ),
-                            ))
-                    : (action.isPrimary
-                          ? FilledButton.styleFrom(
-                              padding: const EdgeInsets.symmetric(
-                                vertical: Spacing.s + Spacing.xs,
-                              ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: RadiiBR.md,
-                              ),
-                            )
-                          : OutlinedButton.styleFrom(
-                              padding: const EdgeInsets.symmetric(
-                                vertical: Spacing.s + Spacing.xs,
-                              ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: RadiiBR.md,
-                              ),
-                            ));
-
-                Widget button;
-                if (action.isPrimary) {
-                  if (action.icon != null) {
-                    button = FilledButton.icon(
-                      onPressed: action.isEnabled
-                          ? () {
-                              if (action.result != null) {
-                                Navigator.of(context).pop(action.result);
-                              }
-                              action.onPressed?.call();
-                            }
-                          : null,
-                      style: buttonStyle,
-                      icon: Icon(action.icon, size: 18),
-                      label: Text(action.label),
-                    );
-                  } else {
-                    button = FilledButton(
-                      onPressed: action.isEnabled
-                          ? () {
-                              if (action.result != null) {
-                                Navigator.of(context).pop(action.result);
-                              }
-                              action.onPressed?.call();
-                            }
-                          : null,
-                      style: buttonStyle,
-                      child: Text(action.label),
-                    );
-                  }
-                } else {
-                  if (action.icon != null) {
-                    button = OutlinedButton.icon(
-                      onPressed: action.isEnabled
-                          ? () {
-                              if (action.result != null) {
-                                Navigator.of(context).pop(action.result);
-                              }
-                              action.onPressed?.call();
-                            }
-                          : null,
-                      style: buttonStyle,
-                      icon: Icon(action.icon, size: 18),
-                      label: Text(action.label),
-                    );
-                  } else {
-                    button = OutlinedButton(
-                      onPressed: action.isEnabled
-                          ? () {
-                              if (action.result != null) {
-                                Navigator.of(context).pop(action.result);
-                              }
-                              action.onPressed?.call();
-                            }
-                          : null,
-                      style: buttonStyle,
-                      child: Text(action.label),
-                    );
-                  }
-                }
-
-                return Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: Spacing.xs),
-                    child: button,
-                  ),
-                );
-              }).toList(),
-            ),
+            // Actions — Column for 3+ actions, Row for 1-2
+            ..._buildActions(context, theme),
           ],
         ),
       ),
     ).animate().scale(duration: AnimDurations.normal, curve: AppCurves.elastic);
+  }
+
+  List<Widget> _buildActions(BuildContext context, ThemeData theme) {
+    final useColumn = actions.length >= 3;
+
+    Widget buildButton(ModernDialogAction action) {
+      final buttonStyle = action.isDestructive
+          ? (action.isPrimary
+                ? FilledButton.styleFrom(
+                    backgroundColor: theme.colorScheme.error,
+                    foregroundColor: theme.colorScheme.onError,
+                    padding: const EdgeInsets.symmetric(
+                      vertical: Spacing.s + Spacing.xs,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: RadiiBR.md,
+                    ),
+                  )
+                : OutlinedButton.styleFrom(
+                    foregroundColor: theme.colorScheme.error,
+                    side: BorderSide(color: theme.colorScheme.error),
+                    padding: const EdgeInsets.symmetric(
+                      vertical: Spacing.s + Spacing.xs,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: RadiiBR.md,
+                    ),
+                  ))
+          : (action.isPrimary
+                ? FilledButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: Spacing.s + Spacing.xs,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: RadiiBR.md,
+                    ),
+                  )
+                : OutlinedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: Spacing.s + Spacing.xs,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: RadiiBR.md,
+                    ),
+                  ));
+
+      void Function()? onPressed = action.isEnabled
+          ? () {
+              if (action.result != null) {
+                Navigator.of(context).pop(action.result);
+              }
+              action.onPressed?.call();
+            }
+          : null;
+
+      if (action.isPrimary) {
+        if (action.icon != null) {
+          return FilledButton.icon(
+            onPressed: onPressed,
+            style: buttonStyle,
+            icon: Icon(action.icon, size: IconSizes.smd),
+            label: Text(action.label),
+          );
+        } else {
+          return FilledButton(
+            onPressed: onPressed,
+            style: buttonStyle,
+            child: Text(action.label),
+          );
+        }
+      } else {
+        if (action.icon != null) {
+          return OutlinedButton.icon(
+            onPressed: onPressed,
+            style: buttonStyle,
+            icon: Icon(action.icon, size: IconSizes.smd),
+            label: Text(action.label),
+          );
+        } else {
+          return OutlinedButton(
+            onPressed: onPressed,
+            style: buttonStyle,
+            child: Text(action.label),
+          );
+        }
+      }
+    }
+
+    if (useColumn) {
+      return [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: actions.map((action) {
+            return Padding(
+              padding: const EdgeInsets.only(bottom: Spacing.xs),
+              child: buildButton(action),
+            );
+          }).toList(),
+        ),
+      ];
+    }
+
+    return [
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: actions.map((action) {
+          return Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: Spacing.xs),
+              child: buildButton(action),
+            ),
+          );
+        }).toList(),
+      ),
+    ];
   }
 }
 
@@ -314,7 +325,7 @@ class ModernNotification extends StatelessWidget {
 
     overlay.insert(overlayEntry);
 
-    Future.delayed(duration + const Duration(milliseconds: 500), () {
+    Future.delayed(duration + AnimDurations.slow, () {
       overlayEntry.remove();
     });
   }
@@ -332,13 +343,7 @@ class ModernNotification extends StatelessWidget {
       decoration: BoxDecoration(
         color: backgroundColor ?? theme.colorScheme.surfaceContainerHighest,
         borderRadius: RadiiBR.md,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.2),
-            blurRadius: 8,
-            offset: const Offset(0, 4),
-          ),
-        ],
+        boxShadow: AppShadows.elevation2,
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -347,7 +352,7 @@ class ModernNotification extends StatelessWidget {
             Icon(
               icon,
               color: iconColor ?? theme.colorScheme.onSurface,
-              size: 24,
+              size: IconSizes.lg,
             ),
             HorizontalSpacing.s,
           ],

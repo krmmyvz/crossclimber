@@ -17,9 +17,12 @@ import 'package:crossclimber/services/life_manager.dart';
 import 'package:crossclimber/services/game_timer_service.dart';
 import 'package:crossclimber/services/hint_manager.dart';
 import 'package:crossclimber/providers/settings_provider.dart';
+import 'package:crossclimber/theme/animations.dart';
 
 import 'package:crossclimber/services/analytics_service.dart';
 import 'package:crossclimber/services/remote_config_service.dart';
+import 'package:crossclimber/services/tournament_service.dart';
+import 'package:crossclimber/services/xp_service.dart';
 
 // ... existing code ...
 
@@ -33,6 +36,13 @@ final levelRepositoryProvider = Provider((ref) {
   return LevelRepository(remoteConfig);
 });
 final progressRepositoryProvider = Provider((ref) => ProgressRepository());
+
+/// Global credits provider — watched by the app bar credit chip.
+/// Call `ref.invalidate(creditsProvider)` after any credit change to refresh.
+final creditsProvider = FutureProvider<int>((ref) async {
+  final repository = ref.watch(progressRepositoryProvider);
+  return repository.getCredits();
+});
 
 final unlockedLevelProvider = FutureProvider<int>((ref) async {
   final repository = ref.watch(progressRepositoryProvider);
@@ -48,6 +58,40 @@ final hintStocksProvider = FutureProvider<Map<String, int>>((ref) async {
   ]);
   return {'revealWord': stocks[0], 'undo': stocks[1]};
 });
+
+/// Provider for unlocked premium themes – watched by ThemeGridSelector.
+final unlockedThemesProvider = FutureProvider<Set<String>>((ref) async {
+  final repository = ref.watch(progressRepositoryProvider);
+  return repository.getUnlockedThemes();
+});
+
+/// Notifier for recently unlocked achievements.
+/// Consumed by LevelCompletionScreen and AchievementsScreen to show toast notifications.
+class RecentlyUnlockedAchievementsNotifier
+    extends Notifier<List<Achievement>> {
+  @override
+  List<Achievement> build() => const [];
+  void set(List<Achievement> achievements) => state = achievements;
+  void clear() => state = const [];
+}
+
+final recentlyUnlockedAchievementsProvider = NotifierProvider<
+    RecentlyUnlockedAchievementsNotifier, List<Achievement>>(
+  RecentlyUnlockedAchievementsNotifier.new,
+);
+
+/// Notifier for streak milestone notifications.
+/// Set when a daily challenge streak reaches 7 / 14 / 30 / 60 / 100 days.
+class StreakMilestoneNotifier extends Notifier<int?> {
+  @override
+  int? build() => null;
+  void set(int days) => state = days;
+  void clear() => state = null;
+}
+
+final streakMilestoneProvider = NotifierProvider<StreakMilestoneNotifier, int?>(
+  StreakMilestoneNotifier.new,
+);
 
 final levelsProvider = FutureProvider.family<List<Level>, String>((
   ref,
@@ -369,7 +413,7 @@ class GameNotifier extends Notifier<GameState> {
     state = state.copyWith(middleWordsValidOrder: validityMap, lastError: null);
 
     if (allValid) {
-      Future.delayed(const Duration(milliseconds: 500), () {
+      Future.delayed(AnimDurations.slow, () {
         if (state.phase == GamePhase.sorting) {
           state = state.copyWith(phase: GamePhase.finalSolve, lastError: null);
           _soundService.play(SoundEffect.correct);
@@ -494,7 +538,7 @@ class GameNotifier extends Notifier<GameState> {
     _hapticService.trigger(HapticType.success);
 
     // Star sounds
-    Future.delayed(const Duration(milliseconds: 500), () {
+    Future.delayed(AnimDurations.slow, () {
       for (int i = 0; i < state.starsEarned; i++) {
         Future.delayed(Duration(milliseconds: i * 200), () {
           _soundService.play(SoundEffect.star);
@@ -507,6 +551,7 @@ class GameNotifier extends Notifier<GameState> {
     progressRepo.setHighestUnlockedLevel(currentLevelId + 1);
     progressRepo.addScore(finalScore);
     progressRepo.addCredits(creditReward);
+    ref.invalidate(creditsProvider);
 
     // Record statistics
     _statisticsRepo.recordGameComplete(
@@ -520,23 +565,51 @@ class GameNotifier extends Notifier<GameState> {
 
     // Check achievements
     final stats = await _statisticsRepo.getStatistics();
-    _achievementService.checkAndUnlockAchievements(
+    final xpService = ref.read(xpServiceProvider);
+    final totalXp = await xpService.getXp();
+    final dailyChallengesTotal =
+        await _achievementService.getDailyChallengesCompleted();
+    final newlyUnlocked =
+        await _achievementService.checkAndUnlockAchievements(
       levelsCompleted: stats.totalGamesWon,
       threeStarCount: stats.threeStarLevels,
       completionTime: state.timeElapsed,
       hintsUsed: state.hintsUsed,
       wrongAttempts: state.wrongAttempts,
       totalPlayTime: stats.totalPlayTime,
+      maxComboThisGame: state.maxCombo,
+      longestStreak: stats.longestStreak,
+      dailyChallengesCompleted: dailyChallengesTotal,
+      totalXp: totalXp,
     );
+    if (newlyUnlocked.isNotEmpty) {
+      ref.read(recentlyUnlockedAchievementsProvider.notifier).set(newlyUnlocked);
+    }
 
     // Check daily challenge
     final dailyChallenge = await _dailyChallengeService.getTodayChallenge();
     if (!dailyChallenge.completed && dailyChallenge.levelId == currentLevelId) {
       await _dailyChallengeService.completeChallenge();
-      await _dailyChallengeService.updateStreak(true);
+      final streakResult = await _dailyChallengeService.updateStreak(true);
+      await _achievementService.incrementDailyChallengesCompleted();
+      if (streakResult.milestoneReached != null) {
+        ref
+            .read(streakMilestoneProvider.notifier)
+            .set(streakResult.milestoneReached!);
+      }
     }
 
     ref.invalidate(unlockedLevelProvider);
+
+    // Tournament score — best-effort, never blocks game flow
+    unawaited(
+      ref
+          .read(tournamentServiceProvider)
+          .submitLevelScoreIfTournament(
+            levelId: currentLevelId,
+            score: finalScore,
+          ),
+    );
   }
 
   // Advanced hint system
@@ -570,7 +643,7 @@ class GameNotifier extends Notifier<GameState> {
     _hapticService.trigger(HapticType.light);
 
     // Clear highlight after animation
-    Future.delayed(const Duration(milliseconds: 1500), () {
+    Future.delayed(AnimDurations.extraLong, () {
       if (state.temporaryHighlightedKeys.isNotEmpty) {
         state = state.copyWith(temporaryHighlightedKeys: {});
       }

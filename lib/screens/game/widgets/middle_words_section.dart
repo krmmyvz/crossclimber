@@ -1,3 +1,5 @@
+import 'dart:math' show pi;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:crossclimber/l10n/app_localizations.dart';
@@ -8,12 +10,16 @@ import 'package:crossclimber/theme/animations.dart';
 import 'package:crossclimber/theme/game_colors.dart';
 import 'package:crossclimber/theme/spacing.dart';
 import 'package:crossclimber/theme/border_radius.dart';
+import 'package:crossclimber/theme/icon_sizes.dart';
+import 'package:crossclimber/theme/opacities.dart';
+import 'package:crossclimber/theme/shadows.dart';
 
 class MiddleWordsSection extends StatelessWidget {
   final GameState gameState;
   final Level level;
   final double tileSize;
   final int? selectedRowIndex;
+  final String currentInput;
   final Function(int, int) onReorder;
   final Function(int) onSelect;
   final VoidCallback onPointerDown; // For hiding tutorial card
@@ -24,10 +30,42 @@ class MiddleWordsSection extends StatelessWidget {
     required this.level,
     required this.tileSize,
     required this.selectedRowIndex,
+    required this.currentInput,
     required this.onReorder,
     required this.onSelect,
     required this.onPointerDown,
   });
+
+  /// Proxy decorator for dragged items — elevated shadow + slight rotation.
+  static Widget _buildDragProxy(
+    Widget child,
+    int index,
+    Animation<double> animation,
+  ) {
+    return AnimatedBuilder(
+      animation: animation,
+      builder: (context, child) {
+        final t = AppCurves.standard.transform(animation.value);
+        final elevation = 1 + t * 12; // 1 → 13
+        final rotation = t * (index.isEven ? 0.02 : -0.02); // ±~1.15°
+        final scale = 1.0 + t * 0.04; // subtle 4% grow
+
+        return Transform(
+          alignment: Alignment.center,
+          transform: Matrix4.identity()
+            ..rotateZ(rotation * pi)
+            ..scale(scale),
+          child: Material(
+            elevation: elevation,
+            borderRadius: RadiiBR.sm,
+            shadowColor: Colors.black26,
+            child: child,
+          ),
+        );
+      },
+      child: child,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +75,7 @@ class MiddleWordsSection extends StatelessWidget {
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           buildDefaultDragHandles: false,
+          proxyDecorator: _buildDragProxy,
           itemCount: gameState.middleWords.length,
           onReorder: onReorder,
           itemBuilder: (context, index) {
@@ -47,6 +86,7 @@ class MiddleWordsSection extends StatelessWidget {
               level: level,
               tileSize: tileSize,
               isSelected: selectedRowIndex == index,
+              currentInput: selectedRowIndex == index ? currentInput : '',
               onSelect: () => onSelect(index),
               onPointerDown: onPointerDown,
             );
@@ -63,6 +103,7 @@ class MiddleWordTile extends StatelessWidget {
   final Level level;
   final double tileSize;
   final bool isSelected;
+  final String currentInput;
   final VoidCallback onSelect;
   final VoidCallback onPointerDown;
 
@@ -73,6 +114,7 @@ class MiddleWordTile extends StatelessWidget {
     required this.level,
     required this.tileSize,
     required this.isSelected,
+    required this.currentInput,
     required this.onSelect,
     required this.onPointerDown,
   });
@@ -104,7 +146,7 @@ class MiddleWordTile extends StatelessWidget {
             Icon(
               Icons.drag_indicator,
               color: Theme.of(context).colorScheme.outline,
-              size: 16,
+              size: IconSizes.sm,
             ),
             HorizontalSpacing.xxs,
           ],
@@ -122,6 +164,23 @@ class MiddleWordTile extends StatelessWidget {
               ),
             ),
           ),
+          // Sorting-phase validity icon — conveys state beyond color alone
+          if (gameState.phase == GamePhase.sorting &&
+              isGuessed &&
+              index < gameState.middleWordsValidOrder.length) ...[
+            HorizontalSpacing.xxs,
+            ExcludeSemantics(
+              child: Icon(
+                gameState.middleWordsValidOrder[index]
+                    ? Icons.check_circle_outline
+                    : Icons.cancel_outlined,
+                size: IconSizes.sm,
+                color: gameState.middleWordsValidOrder[index]
+                    ? Theme.of(context).gameColors.correct
+                    : Theme.of(context).gameColors.incorrect,
+              ),
+            ),
+          ],
         ],
       ),
     );
@@ -129,6 +188,29 @@ class MiddleWordTile extends StatelessWidget {
     // Wrap with drag listener only in sorting phase
     if (gameState.phase == GamePhase.sorting) {
       content = ReorderableDragStartListener(index: index, child: content);
+    }
+
+    // Satisfaction pulse when ALL words are in correct order
+    final allCorrect = gameState.phase == GamePhase.sorting &&
+        gameState.middleWordsValidOrder.isNotEmpty &&
+        gameState.middleWordsValidOrder.every((v) => v);
+    if (allCorrect) {
+      content = content
+          .animate()
+          .scaleXY(
+            begin: 1.0,
+            end: 1.03,
+            duration: AnimDurations.fast,
+            delay: StaggerDelay.extraFast(index),
+            curve: AppCurves.spring,
+          )
+          .then()
+          .scaleXY(begin: 1.03, end: 1.0, duration: AnimDurations.fast)
+          .shimmer(
+            duration: AnimDurations.slower,
+            delay: StaggerDelay.extraFast(index),
+            color: Theme.of(context).gameColors.correct.withValues(alpha: Opacities.medium),
+          );
     }
 
     final l10n = AppLocalizations.of(context)!;
@@ -176,8 +258,8 @@ class MiddleWordTile extends StatelessWidget {
     if (gameState.phase == GamePhase.sorting && isGuessed) {
       if (index < gameState.middleWordsValidOrder.length) {
         borderColor = gameState.middleWordsValidOrder[index]
-            ? gameColors.correct.withValues(alpha: 0.8)
-            : gameColors.incorrect.withValues(alpha: 0.8);
+            ? gameColors.correct.withValues(alpha: Opacities.heavy)
+            : gameColors.incorrect.withValues(alpha: Opacities.heavy);
       }
     } else if (isSelected) {
       borderColor = theme.colorScheme.primary;
@@ -193,13 +275,7 @@ class MiddleWordTile extends StatelessWidget {
       border: Border.all(color: borderColor, width: isSelected ? 2 : 1),
       boxShadow:
           isSelected || (gameState.phase == GamePhase.sorting && !isGuessed)
-          ? [
-              BoxShadow(
-                color: theme.shadowColor.withValues(alpha: 0.1),
-                blurRadius: 4,
-                offset: const Offset(0, 2),
-              ),
-            ]
+          ? AppShadows.elevation1
           : null,
     );
   }
@@ -222,12 +298,29 @@ class MiddleWordTile extends StatelessWidget {
         true, // isCorrect
         tileSize,
         shouldShake: false,
+        shouldWaveBounce: true,
+      );
+    }
+
+    // Show live typing feedback when selected and user is typing
+    if (isSelected && currentInput.isNotEmpty) {
+      final displayWord = currentInput.toUpperCase().padRight(wordLength);
+      final shouldShake =
+          gameState.lastError == 'wrong' &&
+          gameState.wrongAttempts > 0;
+      return WordRowWidgets.buildWordRow(
+        context,
+        displayWord,
+        false,
+        false,
+        tileSize,
+        shouldShake: shouldShake,
       );
     }
 
     final shouldShake =
         gameState.lastError == 'wrong' &&
-        gameState.wrongAttempts > 0 && // Ensure we only shake on active error
+        gameState.wrongAttempts > 0 &&
         isSelected;
 
     if (shouldShake) {
@@ -238,7 +331,7 @@ class MiddleWordTile extends StatelessWidget {
             tileSize,
           )
           .animate(onPlay: (controller) => controller.forward(from: 0))
-          .shake(duration: 500.ms, hz: 4, rotation: 0.05);
+          .shake(duration: AnimDurations.slow, hz: 4, rotation: 0.05);
     }
 
     return WordRowWidgets.buildEmptyWordRow(

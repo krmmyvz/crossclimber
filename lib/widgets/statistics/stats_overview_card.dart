@@ -3,6 +3,8 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:crossclimber/l10n/app_localizations.dart';
 import 'package:crossclimber/services/statistics_repository.dart';
 import 'package:crossclimber/theme/border_radius.dart';
+import 'package:crossclimber/theme/opacities.dart';
+import 'package:crossclimber/theme/shadows.dart';
 import 'package:crossclimber/theme/spacing.dart';
 
 class StatsOverviewCard extends StatelessWidget {
@@ -25,19 +27,15 @@ class StatsOverviewCard extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            theme.colorScheme.primary,
-            theme.colorScheme.primary.withValues(alpha: 0.7),
+            theme.colorScheme.primaryContainer,
+            theme.colorScheme.secondaryContainer,
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
         borderRadius: RadiiBR.xl,
         boxShadow: [
-          BoxShadow(
-            color: theme.colorScheme.primary.withValues(alpha: 0.3),
-            blurRadius: 12,
-            offset: const Offset(0, 6),
-          ),
+          AppShadows.colorMedium(theme.colorScheme.primary),
         ],
       ),
       child: Column(
@@ -45,7 +43,7 @@ class StatsOverviewCard extends StatelessWidget {
           Text(
             l10n.yourStatistics,
             style: theme.textTheme.headlineSmall?.copyWith(
-              color: theme.colorScheme.onPrimary,
+              color: theme.colorScheme.onPrimaryContainer,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -60,7 +58,7 @@ class StatsOverviewCard extends StatelessWidget {
               Container(
                 width: 1,
                 height: 40,
-                color: theme.colorScheme.onPrimary.withValues(alpha: 0.3),
+                color: theme.colorScheme.onPrimaryContainer.withValues(alpha: Opacities.medium),
               ),
               _OverviewStatItem(
                 value: '${stats.totalGamesWon}',
@@ -69,7 +67,7 @@ class StatsOverviewCard extends StatelessWidget {
               Container(
                 width: 1,
                 height: 40,
-                color: theme.colorScheme.onPrimary.withValues(alpha: 0.3),
+                color: theme.colorScheme.onPrimaryContainer.withValues(alpha: Opacities.medium),
               ),
               _OverviewStatItem(
                 value: '$unlockedAchievements',
@@ -97,7 +95,7 @@ class _OverviewStatItem extends StatelessWidget {
         Text(
           value,
           style: theme.textTheme.headlineMedium?.copyWith(
-            color: theme.colorScheme.onPrimary,
+            color: theme.colorScheme.onPrimaryContainer,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -105,7 +103,7 @@ class _OverviewStatItem extends StatelessWidget {
         Text(
           label,
           style: theme.textTheme.bodySmall?.copyWith(
-            color: theme.colorScheme.onPrimary.withValues(alpha: 0.9),
+            color: theme.colorScheme.onPrimaryContainer.withValues(alpha: Opacities.near),
           ),
           textAlign: TextAlign.center,
         ),

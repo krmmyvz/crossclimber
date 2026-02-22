@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:crossclimber/l10n/app_localizations.dart';
 import 'package:crossclimber/providers/game_provider.dart';
+import 'package:crossclimber/theme/icon_sizes.dart';
+import 'package:crossclimber/theme/responsive.dart';
 import 'package:crossclimber/theme/spacing.dart';
 
 class HintQuickAccessBar extends ConsumerWidget {
@@ -19,10 +21,11 @@ class HintQuickAccessBar extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
-    final gameState = ref.watch(gameProvider);
+    final phase = ref.watch(gameProvider.select((s) => s.phase));
+    final hasUndoHistory = ref.watch(gameProvider.select((s) => s.undoHistory.isNotEmpty));
     final l10n = AppLocalizations.of(context)!;
 
-    if (gameState.phase != GamePhase.guessing) {
+    if (phase != GamePhase.guessing) {
       return const SizedBox.shrink();
     }
 
@@ -33,15 +36,11 @@ class HintQuickAccessBar extends ConsumerWidget {
       loading: () => const SizedBox.shrink(),
       error: (_, __) => const SizedBox.shrink(),
       data: (hintStocks) {
-        final bottomInset = MediaQuery.of(context).viewInsets.bottom;
-        final isKeyboardOpen = bottomInset > 0;
-
         return Container(
           padding: const EdgeInsets.symmetric(
             horizontal: Spacing.m,
             vertical: Spacing.s,
           ),
-          margin: EdgeInsets.only(bottom: isKeyboardOpen ? 0 : Spacing.m),
           decoration: BoxDecoration(
             color: theme.colorScheme.surfaceContainerHighest,
             border: Border(
@@ -79,11 +78,11 @@ class HintQuickAccessBar extends ConsumerWidget {
                 icon: Icons.undo,
                 hintType: 'undo',
                 stockCount: hintStocks['undo'] ?? 0,
-                isEnabled: isEnabled && gameState.undoHistory.isNotEmpty,
+                isEnabled: isEnabled && hasUndoHistory,
                 semanticsLabel:
                     'Undo hint, ${hintStocks['undo'] ?? 0} remaining',
                 onTap: () async {
-                  if (!isEnabled || gameState.undoHistory.isEmpty) return;
+                  if (!isEnabled || !hasUndoHistory) return;
                   final stock = hintStocks['undo'] ?? 0;
                   if (stock > 0) {
                     final progressRepo = ref.read(progressRepositoryProvider);
@@ -127,13 +126,16 @@ class _CircularHintButton extends StatelessWidget {
     final theme = Theme.of(context);
     final hasStock = stockCount > 0;
     final canUse = hasStock && isEnabled;
+    final isCompact = Responsive.isCompact(context);
+    final buttonSize = isCompact ? 36.0 : Spacing.buttonHeight;
+    final iconSize = isCompact ? 18.0 : Spacing.iconSize;
 
     return Semantics(
       label: semanticsLabel ?? '$hintType hint, $stockCount remaining',
       button: true,
       enabled: isEnabled,
       child: Opacity(
-      opacity: isEnabled ? 1.0 : 0.5,
+      opacity: isEnabled ? 1.0 : 0.65,
       child: Stack(
         clipBehavior: Clip.none,
         children: [
@@ -146,12 +148,12 @@ class _CircularHintButton extends StatelessWidget {
               onTap: isEnabled ? onTap : null,
               customBorder: const CircleBorder(),
               child: Container(
-                width: Spacing.buttonHeight,
-                height: Spacing.buttonHeight,
+                width: buttonSize,
+                height: buttonSize,
                 alignment: Alignment.center,
                 child: Icon(
                   icon,
-                  size: Spacing.iconSize,
+                  size: iconSize,
                   color: canUse
                       ? theme.colorScheme.primary
                       : theme.colorScheme.outline,
@@ -204,7 +206,7 @@ class _CircularHintButton extends StatelessWidget {
                 ),
                 child: Icon(
                   Icons.add,
-                  size: 12,
+                  size: IconSizes.xs,
                   color: theme.colorScheme.error,
                 ),
               ),

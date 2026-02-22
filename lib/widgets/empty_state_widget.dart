@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:crossclimber/theme/animations.dart';
+import 'package:crossclimber/theme/icon_sizes.dart';
+import 'package:crossclimber/theme/opacities.dart';
 import 'package:crossclimber/theme/spacing.dart';
 
 /// A consistent, animated empty-state illustration widget.
@@ -46,18 +49,18 @@ class EmptyStateWidget extends StatelessWidget {
               ),
               child: Icon(
                 icon,
-                size: 48,
-                color: theme.colorScheme.onSurface.withValues(alpha: 0.35),
+                size: IconSizes.hero,
+                color: theme.colorScheme.onSurface.withValues(alpha: Opacities.medium),
               ),
             )
                 .animate()
                 .scale(
                   begin: const Offset(0.7, 0.7),
                   end: const Offset(1.0, 1.0),
-                  duration: 450.ms,
-                  curve: Curves.easeOutBack,
+                  duration: AnimDurations.slow,
+                  curve: AppCurves.spring,
                 )
-                .fadeIn(duration: 350.ms),
+                .fadeIn(duration: AnimDurations.normalSlow),
 
             VerticalSpacing.l,
 
@@ -70,9 +73,9 @@ class EmptyStateWidget extends StatelessWidget {
                 color: theme.colorScheme.onSurface,
               ),
             )
-                .animate(delay: 80.ms)
-                .fadeIn(duration: 350.ms)
-                .slideY(begin: 0.15, end: 0, duration: 350.ms),
+                .animate(delay: AnimDurations.micro)
+                .fadeIn(duration: AnimDurations.normalSlow)
+                .slideY(begin: 0.15, end: 0, duration: AnimDurations.normalSlow),
 
             VerticalSpacing.s,
 
@@ -81,20 +84,20 @@ class EmptyStateWidget extends StatelessWidget {
               description,
               textAlign: TextAlign.center,
               style: theme.textTheme.bodyMedium?.copyWith(
-                color: theme.colorScheme.onSurface.withValues(alpha: 0.6),
+                color: theme.colorScheme.onSurface.withValues(alpha: Opacities.strong),
                 height: 1.5,
               ),
             )
-                .animate(delay: 140.ms)
-                .fadeIn(duration: 350.ms)
-                .slideY(begin: 0.15, end: 0, duration: 350.ms),
+                .animate(delay: AnimDurations.microFast)
+                .fadeIn(duration: AnimDurations.normalSlow)
+                .slideY(begin: 0.15, end: 0, duration: AnimDurations.normalSlow),
 
             if (action != null) ...[
               VerticalSpacing.l,
               action!
-                  .animate(delay: 200.ms)
-                  .fadeIn(duration: 350.ms)
-                  .slideY(begin: 0.15, end: 0, duration: 350.ms),
+                  .animate(delay: AnimDurations.fast)
+                  .fadeIn(duration: AnimDurations.normalSlow)
+                  .slideY(begin: 0.15, end: 0, duration: AnimDurations.normalSlow),
             ],
           ],
         ),

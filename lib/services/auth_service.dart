@@ -34,7 +34,8 @@ class AuthService {
       final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
       if (googleUser == null) return null;
 
-      final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+      final GoogleSignInAuthentication googleAuth =
+          await googleUser.authentication;
       final AuthCredential credential = GoogleAuthProvider.credential(
         accessToken: googleAuth.accessToken,
         idToken: googleAuth.idToken,
@@ -42,7 +43,21 @@ class AuthService {
 
       // Mevcut anonim kullanıcıyı Google hesabına bağla
       if (_auth.currentUser != null) {
-        return await _auth.currentUser!.linkWithCredential(credential);
+        try {
+          return await _auth.currentUser!.linkWithCredential(credential);
+        } on FirebaseAuthException catch (e) {
+          if (e.code == 'provider-already-linked') {
+            // Already linked — treat as success, just sign in with Google
+            return await _auth.signInWithCredential(credential);
+          }
+          // Google account already linked to another Firebase user.
+          // Fall back to signing in with the existing account.
+          if (e.code == 'credential-already-in-use' ||
+              e.code == 'email-already-in-use') {
+            return await _auth.signInWithCredential(credential);
+          }
+          rethrow;
+        }
       } else {
         return await _auth.signInWithCredential(credential);
       }
@@ -54,9 +69,11 @@ class AuthService {
     }
   }
 
-  // 3. Çıkış Yap
+  // 3. Çıkış Yap — falls back to anonymous so providers never see null user
   Future<void> signOut() async {
     await _auth.signOut();
     await _googleSignIn.signOut();
+    // Re-create anonymous session so the app keeps working
+    await _auth.signInAnonymously();
   }
 }

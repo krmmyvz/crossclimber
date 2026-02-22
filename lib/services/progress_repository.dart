@@ -36,6 +36,10 @@ class ProgressRepository {
   static const int maxLives = 5;
   static const Duration lifeRegenDuration = Duration(minutes: 30); // 30 minutes per life
   
+  // Theme unlock keys
+  static const String _keyUnlockedThemes = 'unlocked_themes';
+  static const int themeCost = 200; // credits per premium theme
+
   // Hint stock keys
   static const String _keyRevealLetterHints = 'hint_reveal_letter';
   static const String _keyRevealWordHints = 'hint_reveal_word';
@@ -45,12 +49,12 @@ class ProgressRepository {
 
   Future<int> getCredits() async {
     final prefs = await SharedPreferences.getInstance();
-    // Start with 999 credits for testing
+    // New users start with 0 credits
     if (!prefs.containsKey(_keyCredits)) {
-      await prefs.setInt(_keyCredits, 999);
-      return 999;
+      await prefs.setInt(_keyCredits, 0);
+      return 0;
     }
-    return prefs.getInt(_keyCredits) ?? 999;
+    return prefs.getInt(_keyCredits) ?? 0;
   }
 
   Future<void> addCredits(int amount) async {
@@ -78,24 +82,24 @@ class ProgressRepository {
     switch (hintType) {
       case 'revealLetter':
         key = _keyRevealLetterHints;
-        defaultValue = 3; // Start with 3 free hints
+        defaultValue = 1; // Start with 1 free hint
         break;
       case 'revealWord':
         key = _keyRevealWordHints;
-        defaultValue = 1; // Start with 1 free hint
+        defaultValue = 0;
         break;
       case 'removeWrongLetters':
       case 'removeWrong':
         key = _keyRemoveWrongHints;
-        defaultValue = 2; // Start with 2 free hints
+        defaultValue = 1; // Start with 1 free hint
         break;
       case 'showFirst':
         key = _keyShowFirstHints;
-        defaultValue = 2; // Start with 2 free hints
+        defaultValue = 1; // Start with 1 free hint
         break;
       case 'undo':
         key = _keyUndoHints;
-        defaultValue = 5; // Start with 5 free undos
+        defaultValue = 2; // Start with 2 free undos
         break;
       default:
         return 0;
@@ -251,6 +255,38 @@ class ProgressRepository {
     await prefs.remove(_keyLastLifeRegenTime);
   }
 
+  // ── Premium Theme Unlock Management ──────────────────────────────────────
+
+  /// Returns the set of unlocked premium theme keys.
+  Future<Set<String>> getUnlockedThemes() async {
+    final prefs = await SharedPreferences.getInstance();
+    final list = prefs.getStringList(_keyUnlockedThemes) ?? [];
+    return list.toSet();
+  }
+
+  /// Unlocks a premium theme by spending [themeCost] credits.
+  /// Returns `true` if the purchase was successful.
+  Future<bool> purchaseTheme(String themeKey) async {
+    final prefs = await SharedPreferences.getInstance();
+    final unlocked = await getUnlockedThemes();
+
+    // Already unlocked — no need to charge again
+    if (unlocked.contains(themeKey)) return true;
+
+    final success = await removeCredits(themeCost);
+    if (!success) return false;
+
+    unlocked.add(themeKey);
+    await prefs.setStringList(_keyUnlockedThemes, unlocked.toList());
+    return true;
+  }
+
+  /// Checks whether a specific theme has been unlocked.
+  Future<bool> isThemeUnlocked(String themeKey) async {
+    final unlocked = await getUnlockedThemes();
+    return unlocked.contains(themeKey);
+  }
+
   Future<void> resetProgress() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove(_keyHighestLevel);
@@ -262,5 +298,6 @@ class ProgressRepository {
     await prefs.remove(_keyShowFirstHints);
     await prefs.remove(_keyLives);
     await prefs.remove(_keyLastLifeRegenTime);
+    await prefs.remove(_keyUnlockedThemes);
   }
 }

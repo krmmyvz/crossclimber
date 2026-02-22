@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:crossclimber/l10n/app_localizations.dart';
 import 'package:crossclimber/services/statistics_repository.dart';
+import 'package:crossclimber/theme/animations.dart';
 import 'package:crossclimber/theme/border_radius.dart';
+import 'package:crossclimber/theme/icon_sizes.dart';
+import 'package:crossclimber/theme/opacities.dart';
 import 'package:crossclimber/theme/spacing.dart';
 import 'package:crossclimber/theme/game_colors.dart';
 import 'package:crossclimber/theme/page_transitions.dart';
@@ -35,8 +38,8 @@ class WinRateCard extends StatelessWidget {
           children: [
             Icon(
               Icons.bar_chart,
-              size: 64,
-              color: theme.colorScheme.onSurfaceVariant.withValues(alpha: 0.5),
+              size: IconSizes.display,
+              color: theme.colorScheme.onSurfaceVariant.withValues(alpha: Opacities.half),
             ),
             VerticalSpacing.m,
             Text(
@@ -135,7 +138,7 @@ class WinRateCard extends StatelessWidget {
           ),
         ],
       ),
-    ).animate().fadeIn(delay: 250.ms).slideY(begin: 0.2, end: 0);
+    ).animate().fadeIn(delay: AnimDurations.fastNormal).slideY(begin: 0.2, end: 0);
   }
 }
 

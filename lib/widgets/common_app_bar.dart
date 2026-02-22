@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:crossclimber/providers/game_provider.dart';
 import 'package:crossclimber/screens/shop_screen.dart';
 import 'package:crossclimber/theme/border_radius.dart';
+import 'package:crossclimber/theme/icon_sizes.dart';
+import 'package:crossclimber/theme/opacities.dart';
 import 'package:crossclimber/theme/spacing.dart';
 import 'package:crossclimber/theme/page_transitions.dart';
 import 'package:crossclimber/theme/game_colors.dart';
@@ -122,13 +124,25 @@ class _CommonAppBarState extends ConsumerState<CommonAppBar> {
       // Leading (Left side)
       leading: _buildLeading(context, theme),
 
-      // Fixed leadingWidth to ensure title centering without layout shifts
-      leadingWidth: widget.type == AppBarType.game ? 130.0 : null,
+      // Responsive leadingWidth to prevent overflow with lives badge
+      leadingWidth: (widget.type == AppBarType.game || widget.showLives) ? 140.0 : null,
 
       // Title (Center)
       title: widget.heroTag != null
           ? Hero(
               tag: widget.heroTag!,
+              flightShuttleBuilder: (flightContext, animation, direction,
+                  fromHeroContext, toHeroContext) {
+                return AnimatedBuilder(
+                  animation: animation,
+                  builder: (context, child) {
+                    return FadeTransition(
+                      opacity: animation,
+                      child: toHeroContext.widget,
+                    );
+                  },
+                );
+              },
               child: Material(
                 type: MaterialType.transparency,
                 child: Text(
@@ -167,56 +181,54 @@ class _CommonAppBarState extends ConsumerState<CommonAppBar> {
     required Color color,
     required Color containerColor,
     required VoidCallback onTap,
-    String? heroTag,
+    required String semanticsLabel,
     bool showAddIcon =
         false, // Kept for API compatibility but unused in compact mode
   }) {
     final theme = Theme.of(context);
 
-    Widget chipContent = InkWell(
-      onTap: () {
-        ref.read(soundServiceProvider).play(SoundEffect.tap);
-        ref.read(hapticServiceProvider).trigger(HapticType.selection);
-        onTap();
-      },
-      borderRadius: RadiiBR.md,
-      child: Container(
-        padding: const EdgeInsets.symmetric(
-          horizontal: Spacing.xs, // Reduced padding
-          vertical: Spacing.xxs,
-        ),
-        decoration: BoxDecoration(
-          color: containerColor,
-          borderRadius: RadiiBR.md,
-          border: Border.all(color: color.withValues(alpha: 0.3), width: 1.5),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(icon, size: 14, color: color),
-            HorizontalSpacing.xxs,
-            Text(
-              value,
-              style: theme.textTheme.labelMedium?.copyWith(
-                fontWeight: FontWeight.bold,
-                color: color,
+    Widget chipContent = Semantics(
+      label: semanticsLabel,
+      button: true,
+      child: InkWell(
+        onTap: () {
+          ref.read(soundServiceProvider).play(SoundEffect.tap);
+          ref.read(hapticServiceProvider).trigger(HapticType.selection);
+          onTap();
+        },
+        borderRadius: RadiiBR.md,
+        child: Container(
+          padding: const EdgeInsets.symmetric(
+            horizontal: Spacing.s, // Slightly more padding for readability
+            vertical: Spacing.xxs + 1,
+          ),
+          decoration: BoxDecoration(
+            color: containerColor,
+            borderRadius: RadiiBR.md,
+            border: Border.all(color: color.withValues(alpha: Opacities.medium), width: 1.5),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(icon, size: IconSizes.sm, color: color),
+              HorizontalSpacing.xxs,
+              Text(
+                value,
+                style: theme.textTheme.labelLarge?.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: color,
+                ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
-            ),
-            // Removed add icon to save space
-          ],
+              // Removed add icon to save space
+            ],
+          ),
         ),
       ),
     );
 
-    return heroTag != null
-        ? Hero(
-            tag: heroTag,
-            child: Material(
-              type: MaterialType.transparency,
-              child: chipContent,
-            ),
-          )
-        : chipContent;
+    return chipContent;
   }
 
   Widget _buildLivesButton(ThemeData theme) {
@@ -231,6 +243,7 @@ class _CommonAppBarState extends ConsumerState<CommonAppBar> {
           color: theme.colorScheme.error,
           containerColor: theme.colorScheme.errorContainer,
           showAddIcon: currentLives < 5,
+          semanticsLabel: '$currentLives can, mağazaya git',
           onTap: () async {
             await Navigator.push(
               context,
@@ -244,26 +257,22 @@ class _CommonAppBarState extends ConsumerState<CommonAppBar> {
   }
 
   Widget _buildCreditsButton(ThemeData theme) {
-    return FutureBuilder<int>(
-      future: ref.read(progressRepositoryProvider).getCredits(),
-      builder: (context, snapshot) {
-        final credits = snapshot.data ?? 0;
-        return _buildStatusChip(
-          context: context,
-          icon: Icons.monetization_on,
-          value: '$credits',
-          color: theme.colorScheme.primary,
-          containerColor: theme.colorScheme.primaryContainer,
-          showAddIcon: true,
-          heroTag: 'credits_hero',
-          onTap: () async {
-            await Navigator.push(
-              context,
-              BottomSlidePageRoute(builder: (context) => const ShopScreen()),
-            );
-            if (mounted) setState(() {});
-          },
+    final creditsAsync = ref.watch(creditsProvider);
+    final credits = creditsAsync.whenOrNull(data: (v) => v) ?? 0;
+    return _buildStatusChip(
+      context: context,
+      icon: Icons.diamond_rounded,
+      value: '$credits',
+      color: theme.colorScheme.primary,
+      containerColor: theme.colorScheme.primaryContainer,
+      showAddIcon: true,
+      semanticsLabel: '$credits kredi, mağazaya git',
+      onTap: () async {
+        await Navigator.push(
+          context,
+          BottomSlidePageRoute(builder: (context) => const ShopScreen()),
         );
+        ref.invalidate(creditsProvider);
       },
     );
   }
@@ -284,6 +293,7 @@ class _CommonAppBarState extends ConsumerState<CommonAppBar> {
             value: '$streak',
             color: gameColors.streak,
             containerColor: gameColors.streakContainer,
+            semanticsLabel: '$streak günlük seri',
             onTap: () {
               // Optional: Navigate to Daily Challenge
             },

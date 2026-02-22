@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 enum HintType {
   revealWord,        // Current: reveals entire word
   revealFirstLetter, // Shows first letter only
@@ -93,20 +95,20 @@ class AdvancedHintService {
     }
   }
 
-  String getHintIcon(HintType type) {
+  IconData getHintIcon(HintType type) {
     switch (type) {
       case HintType.revealWord:
-        return '💡';
+        return Icons.lightbulb_rounded;
       case HintType.revealFirstLetter:
-        return '▶️';
+        return Icons.first_page_rounded;
       case HintType.revealLastLetter:
-        return '◀️';
+        return Icons.last_page_rounded;
       case HintType.revealRandomLetter:
-        return '🎲';
+        return Icons.casino_rounded;
       case HintType.showWordLength:
-        return '📏';
+        return Icons.straighten_rounded;
       case HintType.eliminateWrongLetters:
-        return '❌';
+        return Icons.block_rounded;
     }
   }
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:crossclimber/theme/animations.dart';
 import 'package:crossclimber/theme/border_radius.dart';
+import 'package:crossclimber/theme/opacities.dart';
 import 'package:crossclimber/theme/spacing.dart';
 
 class SkeletonCard extends StatelessWidget {
@@ -26,14 +28,14 @@ class SkeletonCard extends StatelessWidget {
           margin: margin,
           decoration: BoxDecoration(
             color: theme.colorScheme.surfaceContainerHighest.withValues(
-              alpha: 0.5,
+              alpha: Opacities.half,
             ),
             borderRadius: borderRadius ?? RadiiBR.lg,
           ),
         )
         .animate(onPlay: (controller) => controller.repeat())
         .shimmer(
-          duration: 1200.ms,
+          duration: AnimDurations.slowest,
           color: theme.colorScheme.surfaceContainerHighest,
         );
   }

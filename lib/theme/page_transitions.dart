@@ -115,3 +115,51 @@ class BottomSlidePageRoute<T> extends PageRouteBuilder<T> {
         reverseTransitionDuration: AnimDurations.normal,
       );
 }
+
+/// Spring bottom-to-top slide with overshoot — for bottom sheets and popups.
+///
+/// Uses [AppCurves.spring] (easeOutBack) for a playful bounce overshoot
+/// as the sheet enters from the bottom. Ideal for settings panels,
+/// confirmation dialogs, and any modal surface.
+class SpringBottomSheetRoute<T> extends PageRouteBuilder<T> {
+  SpringBottomSheetRoute({
+    required WidgetBuilder builder,
+    super.settings,
+    super.fullscreenDialog = true,
+  }) : super(
+         opaque: false,
+         barrierColor: Colors.black54,
+         barrierDismissible: true,
+         pageBuilder: (context, animation, secondaryAnimation) =>
+             builder(context),
+         transitionsBuilder: (context, animation, secondaryAnimation, child) {
+           final slideTween = Tween<Offset>(
+             begin: const Offset(0.0, 1.0),
+             end: Offset.zero,
+           ).chain(CurveTween(curve: AppCurves.spring));
+
+           final fadeTween = Tween<double>(
+             begin: 0.0,
+             end: 1.0,
+           ).chain(CurveTween(curve: AppCurves.easeOut));
+
+           final scaleTween = Tween<double>(
+             begin: 0.95,
+             end: 1.0,
+           ).chain(CurveTween(curve: AppCurves.spring));
+
+           return SlideTransition(
+             position: slideTween.animate(animation),
+             child: FadeTransition(
+               opacity: fadeTween.animate(animation),
+               child: ScaleTransition(
+                 scale: scaleTween.animate(animation),
+                 child: child,
+               ),
+             ),
+           );
+         },
+         transitionDuration: AnimDurations.medium,
+         reverseTransitionDuration: AnimDurations.normal,
+       );
+}

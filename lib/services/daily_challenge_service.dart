@@ -6,6 +6,29 @@ final dailyChallengeServiceProvider = Provider<DailyChallengeService>((ref) {
   return DailyChallengeService();
 });
 
+// ─── Streak update result ─────────────────────────────────────────────────────
+
+class StreakUpdateResult {
+  /// The streak value after the update.
+  final int newStreak;
+
+  /// If a milestone (7/14/30/60/100) was just reached for the first time.
+  final int? milestoneReached;
+
+  /// Credits granted for the milestone (0 if none).
+  final int creditsGranted;
+
+  /// True when a streak freeze was consumed to prevent a reset.
+  final bool freezeUsed;
+
+  const StreakUpdateResult({
+    required this.newStreak,
+    this.milestoneReached,
+    this.creditsGranted = 0,
+    this.freezeUsed = false,
+  });
+}
+
 class DailyChallenge {
   final int levelId;
   final DateTime date;
@@ -70,7 +93,25 @@ class DailyChallenge {
 class DailyChallengeService {
   static const String _key = 'daily_challenge';
 
+  // ── SharedPreferences keys ────────────────────────────────────────────────
+  static const String _keyStreakFreezeCount = 'streak_freeze_count';
+  static const String _keyMilestonesGranted = 'streak_milestones_granted';
+  static const String _keyLastCompletedDate = 'challenge_last_completed_date';
+  static const String _keyMissedDayProcessedPrefix = 'streak_missed_processed_';
+
+  // ── Milestone definitions: days → bonus credits ───────────────────────────
+  static const Map<int, int> kMilestoneCredits = {
+    7: 100,
+    14: 200,
+    30: 500,
+    60: 1000,
+    100: 2000,
+  };
+
   Future<DailyChallenge> getDailyChallenge() async {
+    // Auto-handle streak for missed days (freeze or reset)
+    await _checkAndHandleMissedDay();
+
     final prefs = await SharedPreferences.getInstance();
     final now = DateTime.now();
     final today = DateTime(now.year, now.month, now.day);
@@ -176,14 +217,58 @@ class DailyChallengeService {
     return prefs.getInt('challenge_streak') ?? 0;
   }
 
-  Future<void> updateStreak(bool completed) async {
+  Future<StreakUpdateResult> updateStreak(bool completed) async {
     final prefs = await SharedPreferences.getInstance();
     final currentStreak = await getCurrentStreak();
 
     if (completed) {
-      await prefs.setInt('challenge_streak', currentStreak + 1);
+      final newStreak = currentStreak + 1;
+      await prefs.setInt('challenge_streak', newStreak);
+
+      // Track last completed date for missed-day detection
+      final now = DateTime.now();
+      await prefs.setString(
+        _keyLastCompletedDate,
+        DateTime(now.year, now.month, now.day).toIso8601String(),
+      );
+
+      // Update best streak
+      final bestStreak = prefs.getInt('challenges_best_streak') ?? 0;
+      if (newStreak > bestStreak) {
+        await prefs.setInt('challenges_best_streak', newStreak);
+      }
+
+      // Check milestone
+      int? milestoneReached;
+      int creditsGranted = 0;
+      if (kMilestoneCredits.containsKey(newStreak)) {
+        final grantedStr = prefs.getString(_keyMilestonesGranted) ?? '[]';
+        final granted =
+            (jsonDecode(grantedStr) as List).map((e) => e as int).toList();
+        if (!granted.contains(newStreak)) {
+          milestoneReached = newStreak;
+          creditsGranted = kMilestoneCredits[newStreak]!;
+          final currentCredits = prefs.getInt('credits') ?? 10;
+          await prefs.setInt('credits', currentCredits + creditsGranted);
+          granted.add(newStreak);
+          await prefs.setString(_keyMilestonesGranted, jsonEncode(granted));
+        }
+      }
+
+      return StreakUpdateResult(
+        newStreak: newStreak,
+        milestoneReached: milestoneReached,
+        creditsGranted: creditsGranted,
+      );
     } else {
+      // Missed a day — try to consume a freeze first
+      final freezeCount = await getStreakFreezeCount();
+      if (currentStreak > 0 && freezeCount > 0) {
+        await prefs.setInt(_keyStreakFreezeCount, freezeCount - 1);
+        return StreakUpdateResult(newStreak: currentStreak, freezeUsed: true);
+      }
       await prefs.setInt('challenge_streak', 0);
+      return const StreakUpdateResult(newStreak: 0);
     }
   }
 
@@ -195,6 +280,61 @@ class DailyChallengeService {
       'bestStreak': prefs.getInt('challenges_best_streak') ?? 0,
       'totalStars': prefs.getInt('challenges_total_stars') ?? 0,
     };
+  }
+
+  // ── Streak freeze API ─────────────────────────────────────────────────────
+
+  Future<int> getStreakFreezeCount() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getInt(_keyStreakFreezeCount) ?? 0;
+  }
+
+  Future<void> addStreakFreezes(int count) async {
+    final prefs = await SharedPreferences.getInstance();
+    final current = prefs.getInt(_keyStreakFreezeCount) ?? 0;
+    await prefs.setInt(_keyStreakFreezeCount, current + count);
+  }
+
+  // ── Convenience helper ────────────────────────────────────────────────────
+
+  /// Returns true if today's daily challenge has already been completed.
+  Future<bool> isTodayChallengeCompleted() async {
+    final challenge = await getTodayChallenge();
+    return challenge.isCompleted;
+  }
+
+  // ── Private: missed-day detection ─────────────────────────────────────────
+
+  /// Called once per day when loading the challenge.
+  /// If the user missed ≥ 1 day and has a freeze, consumes the freeze
+  /// to preserve the streak; otherwise resets streak to 0.
+  Future<void> _checkAndHandleMissedDay() async {
+    final prefs = await SharedPreferences.getInstance();
+    final now = DateTime.now();
+    final todayStr =
+        DateTime(now.year, now.month, now.day).toIso8601String();
+    final processedKey = '$_keyMissedDayProcessedPrefix$todayStr';
+    if (prefs.getBool(processedKey) == true) return;
+    await prefs.setBool(processedKey, true);
+
+    final lastCompletedStr = prefs.getString(_keyLastCompletedDate);
+    if (lastCompletedStr == null) return; // Never completed a challenge
+
+    final lastCompleted = DateTime.parse(lastCompletedStr);
+    final daysSince =
+        DateTime(now.year, now.month, now.day).difference(lastCompleted).inDays;
+    if (daysSince <= 1) return; // Consecutive or same day — no miss
+
+    final currentStreak = await getCurrentStreak();
+    if (currentStreak == 0) return;
+
+    final freezeCount = prefs.getInt(_keyStreakFreezeCount) ?? 0;
+    if (freezeCount > 0) {
+      await prefs.setInt(_keyStreakFreezeCount, freezeCount - 1);
+      // Streak preserved — freeze consumed silently
+    } else {
+      await prefs.setInt('challenge_streak', 0);
+    }
   }
 
   Future<void> checkDailyLoginReward() async {

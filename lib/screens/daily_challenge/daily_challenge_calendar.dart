@@ -4,6 +4,9 @@ import 'package:crossclimber/services/daily_challenge_service.dart';
 import 'package:crossclimber/theme/border_radius.dart';
 import 'package:crossclimber/theme/game_colors.dart';
 import 'package:crossclimber/theme/spacing.dart';
+import 'package:crossclimber/theme/icon_sizes.dart';
+import 'package:crossclimber/widgets/section_header.dart';
+import 'package:crossclimber/theme/animations.dart';
 
 /// Mixin for daily challenge calendar widgets
 mixin DailyChallengeCalendar {
@@ -22,17 +25,9 @@ mixin DailyChallengeCalendar {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            children: [
-              Icon(Icons.calendar_month, color: theme.colorScheme.primary),
-              HorizontalSpacing.s,
-              Text(
-                'Last 7 Days',
-                style: theme.textTheme.titleLarge?.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
+          const SectionHeader.large(
+            icon: Icons.calendar_month,
+            title: 'Last 7 Days',
           ),
           VerticalSpacing.l,
           Row(
@@ -59,7 +54,7 @@ mixin DailyChallengeCalendar {
           ),
         ],
       ),
-    ).animate().fadeIn(delay: 300.ms).slideY(begin: 0.2, end: 0);
+    ).animate().fadeIn(delay: AnimDurations.normal).slideY(begin: 0.2, end: 0);
   }
 
   Widget buildCalendarDay(
@@ -69,6 +64,8 @@ mixin DailyChallengeCalendar {
     bool isToday,
   ) {
     final dayName = ['M', 'T', 'W', 'T', 'F', 'S', 'S'][date.weekday - 1];
+    final isPast = date.isBefore(DateTime.now().subtract(const Duration(hours: 12))) && !isToday;
+    final isMissed = isPast && !completed;
 
     return Column(
       children: [
@@ -86,9 +83,11 @@ mixin DailyChallengeCalendar {
           decoration: BoxDecoration(
             color: completed
                 ? theme.gameColors.success
-                : (isToday
-                      ? theme.colorScheme.primaryContainer
-                      : theme.colorScheme.surfaceContainerHighest),
+                : isMissed
+                    ? theme.colorScheme.errorContainer
+                    : (isToday
+                          ? theme.colorScheme.primaryContainer
+                          : theme.colorScheme.surfaceContainerHighest),
             shape: BoxShape.circle,
             border: isToday
                 ? Border.all(color: theme.colorScheme.primary, width: 2)
@@ -96,16 +95,18 @@ mixin DailyChallengeCalendar {
           ),
           child: Center(
             child: completed
-                ? const Icon(Icons.check, color: Colors.white, size: 20)
-                : Text(
-                    '${date.day}',
-                    style: theme.textTheme.bodyMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: isToday
-                          ? theme.colorScheme.primary
-                          : theme.colorScheme.onSurface,
-                    ),
-                  ),
+                ? const Icon(Icons.check, color: Colors.white, size: IconSizes.md)
+                : isMissed
+                    ? Icon(Icons.close, color: theme.colorScheme.error, size: IconSizes.smd)
+                    : Text(
+                        '${date.day}',
+                        style: theme.textTheme.bodyMedium?.copyWith(
+                          fontWeight: FontWeight.bold,
+                          color: isToday
+                              ? theme.colorScheme.primary
+                              : theme.colorScheme.onSurface,
+                        ),
+                      ),
           ),
         ),
       ],

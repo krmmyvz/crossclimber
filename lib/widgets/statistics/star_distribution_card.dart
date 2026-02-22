@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:crossclimber/l10n/app_localizations.dart';
 import 'package:crossclimber/services/statistics_repository.dart';
+import 'package:crossclimber/theme/animations.dart';
 import 'package:crossclimber/theme/border_radius.dart';
+import 'package:crossclimber/theme/opacities.dart';
 import 'package:crossclimber/theme/spacing.dart';
 import 'package:crossclimber/theme/game_colors.dart';
 
@@ -38,7 +40,7 @@ class StarDistributionCard extends StatelessWidget {
           ),
         ],
       ),
-    ).animate().fadeIn(delay: 300.ms).slideY(begin: 0.2, end: 0);
+    ).animate().fadeIn(delay: AnimDurations.normal).slideY(begin: 0.2, end: 0);
   }
 }
 
@@ -61,7 +63,7 @@ class _StarItem extends StatelessWidget {
         Container(
           padding: const EdgeInsets.all(Spacing.s + Spacing.xxs),
           decoration: BoxDecoration(
-            color: color.withValues(alpha: 0.1),
+            color: color.withValues(alpha: Opacities.subtle),
             shape: BoxShape.circle,
           ),
           child: Icon(Icons.star, color: color, size: Spacing.iconSize),

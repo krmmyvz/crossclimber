@@ -1,5 +1,6 @@
 import 'package:share_plus/share_plus.dart';
 import 'package:crossclimber/l10n/app_localizations.dart';
+import 'package:crossclimber/services/achievement_service.dart';
 
 class ShareService {
   static Future<void> shareResult({
@@ -26,6 +27,7 @@ ${l10n.starsLabel}: $starEmoji
 ''';
 
     await Share.share(text, subject: 'CrossClimber Level $levelId');
+    await AchievementService().incrementShareCount();
   }
 
   static Future<void> shareAchievement({
@@ -178,6 +180,7 @@ ${l10n.shareStatisticsCTA}
       score: score,
     );
     await Share.share(text, subject: 'CrossClimber #$levelId');
+    await AchievementService().incrementShareCount();
   }
 }
 

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:crossclimber/theme/animations.dart';
 import 'package:crossclimber/theme/border_radius.dart';
+import 'package:crossclimber/theme/opacities.dart';
 import 'package:crossclimber/theme/spacing.dart';
+import 'package:crossclimber/widgets/app_progress_bar.dart';
 
 class AchievementProgressCard extends StatelessWidget {
   final int unlocked;
@@ -25,7 +28,7 @@ class AchievementProgressCard extends StatelessWidget {
         color: theme.colorScheme.surfaceContainerLow,
         borderRadius: RadiiBR.lg,
         border: Border.all(
-          color: theme.colorScheme.primary.withValues(alpha: 0.3),
+          color: theme.colorScheme.primary.withValues(alpha: Opacities.medium),
           width: 2,
         ),
       ),
@@ -51,19 +54,13 @@ class AchievementProgressCard extends StatelessWidget {
             ],
           ),
           VerticalSpacing.m,
-          ClipRRect(
-            borderRadius: RadiiBR.sm,
-            child: LinearProgressIndicator(
-              value: progress,
-              minHeight: 12,
-              backgroundColor: theme.colorScheme.surfaceContainerHighest,
-              valueColor: AlwaysStoppedAnimation<Color>(
-                theme.colorScheme.primary,
-              ),
-            ),
+          AppProgressBar(
+            value: progress,
+            height: 16,
+            backgroundColor: theme.colorScheme.surfaceContainerHighest,
           ),
         ],
       ),
-    ).animate().fadeIn(delay: 200.ms).slideX(begin: 0.2, end: 0);
+    ).animate().fadeIn(delay: AnimDurations.fast).slideX(begin: 0.2, end: 0);
   }
 }

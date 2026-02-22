@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:crossclimber/l10n/app_localizations.dart';
 import 'package:crossclimber/models/tutorial_step.dart';
+import 'package:crossclimber/theme/animations.dart';
 import 'package:crossclimber/theme/border_radius.dart';
+import 'package:crossclimber/theme/icon_sizes.dart';
+import 'package:crossclimber/theme/opacities.dart';
 import 'package:crossclimber/theme/spacing.dart';
 
 /// Overlay that displays tutorial steps with highlighting and animations
@@ -205,9 +208,9 @@ class _TutorialOverlayState extends State<TutorialOverlay> {
                         ),
                       )
                       .animate(onPlay: (controller) => controller.repeat())
-                      .fadeIn(duration: 800.ms)
+                      .fadeIn(duration: AnimDurations.slower)
                       .then()
-                      .fadeOut(duration: 800.ms),
+                      .fadeOut(duration: AnimDurations.slower),
             ),
           ),
 
@@ -276,7 +279,7 @@ class _TutorialOverlayState extends State<TutorialOverlay> {
                   onPressed: onSkip,
                   style: TextButton.styleFrom(
                     foregroundColor: Colors.white,
-                    backgroundColor: Colors.black.withValues(alpha: 0.5),
+                    backgroundColor: Colors.black.withValues(alpha: Opacities.half),
                   ),
                   child: Text(AppLocalizations.of(context)!.skipTutorial),
                 ),
@@ -302,7 +305,10 @@ class _TutorialOverlayState extends State<TutorialOverlay> {
     final maxCardHeight =
         (screenHeight - bottomInset) * 0.4; // Max 40% of available height
 
-    return ConstrainedBox(
+    return Semantics(
+      liveRegion: true,
+      label: '$title. $description',
+      child: ConstrainedBox(
           constraints: BoxConstraints(
             maxHeight: maxCardHeight.clamp(150.0, 300.0), // Between 150-300px
           ),
@@ -324,7 +330,7 @@ class _TutorialOverlayState extends State<TutorialOverlay> {
                           children: List.generate(totalSteps, (i) {
                             final isActive = i == currentStep;
                             return AnimatedContainer(
-                              duration: const Duration(milliseconds: 250),
+                              duration: AnimDurations.fastNormal,
                               margin: const EdgeInsets.only(right: 5),
                               width: isActive ? 16 : 7,
                               height: 7,
@@ -332,7 +338,7 @@ class _TutorialOverlayState extends State<TutorialOverlay> {
                                 color: isActive
                                     ? theme.colorScheme.primary
                                     : theme.colorScheme.outlineVariant,
-                                borderRadius: BorderRadius.circular(4),
+                                borderRadius: RadiiBR.xs,
                               ),
                             );
                           }),
@@ -348,6 +354,8 @@ class _TutorialOverlayState extends State<TutorialOverlay> {
                       style: theme.textTheme.titleMedium?.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
                     ),
                     VerticalSpacing.s,
 
@@ -356,7 +364,7 @@ class _TutorialOverlayState extends State<TutorialOverlay> {
                       description,
                       style: theme.textTheme.bodyMedium?.copyWith(
                         color: theme.colorScheme.onSurface.withValues(
-                          alpha: 0.8,
+                          alpha: Opacities.heavy,
                         ),
                         height: 1.4,
                       ),
@@ -380,7 +388,7 @@ class _TutorialOverlayState extends State<TutorialOverlay> {
                             children: [
                               Text(_getActionText(step.action)),
                               HorizontalSpacing.s,
-                              const Icon(Icons.arrow_forward, size: 18),
+                              const Icon(Icons.arrow_forward, size: IconSizes.smd),
                             ],
                           ),
                         ),
@@ -392,11 +400,11 @@ class _TutorialOverlayState extends State<TutorialOverlay> {
                         padding: const EdgeInsets.symmetric(vertical: 12),
                         decoration: BoxDecoration(
                           color: theme.colorScheme.secondaryContainer
-                              .withValues(alpha: 0.5),
+                              .withValues(alpha: Opacities.half),
                           borderRadius: RadiiBR.md,
                           border: Border.all(
                             color: theme.colorScheme.secondary.withValues(
-                              alpha: 0.2,
+                              alpha: Opacities.gentle,
                             ),
                           ),
                         ),
@@ -405,22 +413,22 @@ class _TutorialOverlayState extends State<TutorialOverlay> {
                           children: [
                             Icon(
                                   Icons.touch_app,
-                                  size: 18,
+                                  size: IconSizes.smd,
                                   color: theme.colorScheme.secondary,
                                 )
                                 .animate(onPlay: (c) => c.repeat())
                                 .moveY(
                                   begin: 0,
                                   end: -4,
-                                  duration: 600.ms,
-                                  curve: Curves.easeInOut,
+                                  duration: AnimDurations.mediumSlow,
+                                  curve: AppCurves.standard,
                                 )
                                 .then()
                                 .moveY(
                                   begin: -4,
                                   end: 0,
-                                  duration: 600.ms,
-                                  curve: Curves.easeInOut,
+                                  duration: AnimDurations.mediumSlow,
+                                  curve: AppCurves.standard,
                                 ),
                             HorizontalSpacing.s,
                             Text(
@@ -451,7 +459,7 @@ class _TutorialOverlayState extends State<TutorialOverlay> {
                             AppLocalizations.of(context)!.tutorialDontShowAgain,
                             style: theme.textTheme.labelSmall?.copyWith(
                               color: theme.colorScheme.onSurface
-                                  .withValues(alpha: 0.45),
+                                  .withValues(alpha: Opacities.semi),
                             ),
                           ),
                         ),
@@ -467,10 +475,11 @@ class _TutorialOverlayState extends State<TutorialOverlay> {
         .slideY(
           begin: 0.2,
           end: 0,
-          duration: 400.ms,
-          curve: Curves.easeOutCubic,
+          duration: AnimDurations.medium,
+          curve: AppCurves.easeOut,
         )
-        .fadeIn(duration: 300.ms);
+        .fadeIn(duration: AnimDurations.normal),
+    );
   }
 
   Widget _getPhaseIcon(TutorialPhase phase, ThemeData theme) {
@@ -493,7 +502,7 @@ class _TutorialOverlayState extends State<TutorialOverlay> {
         break;
     }
 
-    return Icon(icon, color: theme.colorScheme.primary, size: 28);
+    return Icon(icon, color: theme.colorScheme.primary, size: IconSizes.xl);
   }
 
   String _getActionText(TutorialAction? action) {
@@ -527,7 +536,7 @@ class TutorialOverlayPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = Colors.black.withValues(alpha: 0.7)
+      ..color = Colors.black.withValues(alpha: Opacities.bold)
       ..style = PaintingStyle.fill;
 
     final path = Path()..addRect(Rect.fromLTWH(0, 0, size.width, size.height));

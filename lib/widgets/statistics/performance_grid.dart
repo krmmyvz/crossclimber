@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:crossclimber/l10n/app_localizations.dart';
 import 'package:crossclimber/services/statistics_repository.dart';
+import 'package:crossclimber/theme/animations.dart';
 import 'package:crossclimber/theme/border_radius.dart';
+import 'package:crossclimber/theme/opacities.dart';
 import 'package:crossclimber/theme/spacing.dart';
 import 'package:crossclimber/theme/game_colors.dart';
 import 'package:crossclimber/theme/responsive.dart';
@@ -33,7 +35,7 @@ class PerformanceGrid extends StatelessWidget {
             label: l10n.winRate,
             value: '$winRate%',
             color: theme.gameColors.success,
-          ).animate().fadeIn(delay: 50.ms).slideX(begin: -0.2, end: 0),
+          ).animate().fadeIn(delay: AnimDurations.micro).slideX(begin: -0.2, end: 0),
         ),
         HorizontalSpacing.s,
         Expanded(
@@ -42,7 +44,7 @@ class PerformanceGrid extends StatelessWidget {
             label: l10n.avgStars,
             value: avgStars,
             color: theme.gameColors.star,
-          ).animate().fadeIn(delay: 100.ms).slideX(begin: 0.2, end: 0),
+          ).animate().fadeIn(delay: AnimDurations.micro).slideX(begin: 0.2, end: 0),
         ),
       ],
     );
@@ -74,7 +76,7 @@ class _StatCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: theme.colorScheme.surfaceContainerLow,
         borderRadius: RadiiBR.lg,
-        border: Border.all(color: color.withValues(alpha: 0.3), width: 2),
+        border: Border.all(color: theme.colorScheme.outlineVariant, width: 1.5),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -82,7 +84,7 @@ class _StatCard extends StatelessWidget {
           Container(
             padding: SpacingInsets.s,
             decoration: BoxDecoration(
-              color: color.withValues(alpha: 0.1),
+              color: color.withValues(alpha: Opacities.subtle),
               shape: BoxShape.circle,
             ),
             child: Icon(

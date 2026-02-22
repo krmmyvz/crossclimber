@@ -1,37 +1,55 @@
 {
     "@@locale": "en",
     "appTitle": "CrossClimber",
+    "@appTitle": {"description": "App Title"},
     "play": "Play",
+    "@play": {"description": "Play"},
     "settings": "Settings",
+    "@settings": {"description": "Settings"},
     "language": "Language",
+    "@language": {"description": "Language"},
     "english": "English",
+    "@english": {"description": "English"},
     "turkish": "Turkish",
+    "@turkish": {"description": "Turkish"},
     "level": "Level {levelNumber}",
     "@level": {
         "placeholders": {
             "levelNumber": {
                 "type": "int"
             }
-        }
+        },
+        "description": "Level number label"
     },
     "nextLevel": "Next Level",
+    "@nextLevel": {"description": "Next Level"},
     "allLevelsCompleted": "Amazing! You've Completed All Levels!",
+    "@allLevelsCompleted": {"description": "All Levels Completed"},
     "allLevelsCompletedDesc": "You've mastered all {totalLevels} levels! Stay tuned for more challenges coming soon.",
     "@allLevelsCompletedDesc": {
         "placeholders": {
             "totalLevels": {
                 "type": "int"
             }
-        }
+        },
+        "description": "Message shown when all levels are completed"
     },
     "hint": "Hint",
+    "@hint": {"description": "Hint"},
     "correct": "Correct!",
+    "@correct": {"description": "Correct"},
     "wrong": "Wrong!",
+    "@wrong": {"description": "Wrong"},
     "congratulations": "Congratulations!",
+    "@congratulations": {"description": "Congratulations"},
     "youWon": "You completed the level!",
+    "@youWon": {"description": "You Won"},
     "phase1Title": "Guess the Words",
+    "@phase1Title": {"description": "Phase1 Title"},
     "phase2Title": "Sort the Words",
+    "@phase2Title": {"description": "Phase2 Title"},
     "phase3Title": "Find Final Words",
+    "@phase3Title": {"description": "Phase3 Title"},
     "phaseProgress": "Step {current} / {total}",
     "@phaseProgress": {
         "placeholders": {
@@ -41,7 +59,8 @@
             "total": {
                 "type": "int"
             }
-        }
+        },
+        "description": "Phase step indicator"
     },
     "wordsFound": "{found} / {total} words found",
     "@wordsFound": {
@@ -52,519 +71,1402 @@
             "total": {
                 "type": "int"
             }
-        }
+        },
+        "description": "Words found progress indicator"
     },
     "pause": "Pause",
+    "@pause": {"description": "Pause"},
     "resume": "Resume",
+    "@resume": {"description": "Resume"},
     "restart": "Restart",
+    "@restart": {"description": "Restart"},
     "mainMenu": "Main Menu",
+    "@mainMenu": {"description": "Main Menu"},
     "paused": "Paused",
+    "@paused": {"description": "Paused"},
     "useHint": "Use Hint",
+    "@useHint": {"description": "Use Hint"},
     "hintsRemaining": "{count} hints remaining",
     "@hintsRemaining": {
         "placeholders": {
             "count": {
                 "type": "int"
             }
-        }
+        },
+        "description": "Hints remaining count"
     },
     "noHintsLeft": "No hints left",
+    "@noHintsLeft": {"description": "No Hints Left"},
     "hintUsed": "Hint used!",
+    "@hintUsed": {"description": "Hint Used"},
     "tapToGuess": "Tap to guess",
+    "@tapToGuess": {"description": "Tap To Guess"},
     "enterWord": "Enter word",
+    "@enterWord": {"description": "Enter Word"},
     "locked": "Locked",
+    "@locked": {"description": "Locked"},
     "completed": "Completed!",
+    "@completed": {"description": "Completed"},
     "timeElapsed": "Time Elapsed",
+    "@timeElapsed": {"description": "Time Elapsed"},
     "yourScore": "Your Score",
+    "@yourScore": {"description": "Your Score"},
     "stars": "{count} Stars",
     "@stars": {
         "placeholders": {
             "count": {
                 "type": "int"
             }
-        }
+        },
+        "description": "Stars count label"
     },
     "newBestTime": "New Best Time!",
+    "@newBestTime": {"description": "New Best Time"},
     "playAgain": "Play Again",
+    "@playAgain": {"description": "Play Again"},
     "dragToReorder": "Drag to reorder",
+    "@dragToReorder": {"description": "Drag To Reorder"},
     "checkOrder": "Check Order",
+    "@checkOrder": {"description": "Check Order"},
     "orderCorrect": "Order is correct!",
+    "@orderCorrect": {"description": "Order Correct"},
     "orderIncorrect": "Order is incorrect, try again",
+    "@orderIncorrect": {"description": "Order Incorrect"},
     "invalidWord": "Invalid word!",
+    "@invalidWord": {"description": "Invalid Word"},
     "alreadyGuessed": "Word already guessed",
+    "@alreadyGuessed": {"description": "Already Guessed"},
     "theme": "Theme",
+    "@theme": {"description": "Theme"},
     "system": "System",
+    "@system": {"description": "System"},
     "light": "Light",
+    "@light": {"description": "Light"},
     "dark": "Dark",
+    "@dark": {"description": "Dark"},
     "vibration": "Vibration",
+    "@vibration": {"description": "Vibration"},
     "showTimer": "Show Timer",
+    "@showTimer": {"description": "Show Timer"},
     "autoCheck": "Auto Check",
+    "@autoCheck": {"description": "Auto Check"},
     "autoCheckDesc": "Auto-check when you complete a word",
+    "@autoCheckDesc": {"description": "Auto Check Desc"},
     "autoSort": "Auto Sort",
+    "@autoSort": {"description": "Auto Sort"},
     "autoSortDesc": "Auto-sort when you find all words",
+    "@autoSortDesc": {"description": "Auto Sort Desc"},
     "appearance": "Appearance",
+    "@appearance": {"description": "Appearance"},
     "soundEffects": "Sound Effects",
+    "@soundEffects": {"description": "Sound Effects"},
     "music": "Music",
+    "@music": {"description": "Music"},
     "tutorial": "How to Play",
+    "@tutorial": {"description": "Tutorial"},
     "about": "About",
+    "@about": {"description": "About"},
     "version": "Version",
+    "@version": {"description": "Version"},
     "difficulty": "Difficulty",
+    "@difficulty": {"description": "Difficulty"},
     "easy": "Easy",
+    "@easy": {"description": "Easy"},
     "medium": "Medium",
+    "@medium": {"description": "Medium"},
     "hard": "Hard",
+    "@hard": {"description": "Hard"},
     "achievements": "Achievements",
+    "@achievements": {"description": "Achievements"},
     "statistics": "Statistics",
+    "@statistics": {"description": "Statistics"},
     "dailyChallenge": "Daily Challenge",
+    "@dailyChallenge": {"description": "Daily Challenge"},
     "profile": "Profile",
+    "@profile": {"description": "Profile"},
     "guestUser": "Guest User",
+    "@guestUser": {"description": "Guest User"},
     "loggedInAs": "Logged in as: {email}",
     "@loggedInAs": {
         "placeholders": {
             "email": {
                 "type": "String"
             }
-        }
+        },
+        "description": "Logged in as email"
     },
     "linkAccount": "Link Account",
+    "@linkAccount": {"description": "Link Account"},
     "linkAccountDesc": "Link your account to save progress to the cloud.",
+    "@linkAccountDesc": {"description": "Link Account Desc"},
     "signOut": "Sign Out",
+    "@signOut": {"description": "Sign Out"},
     "googleSignIn": "Sign in with Google",
-
+    "@googleSignIn": {"description": "Google Sign In"},
     "tutorial_intro_welcome_title": "Welcome to CrossClimber!",
+    "@tutorial_intro_welcome_title": {"description": "Tutorial intro welcome title"},
     "tutorial_intro_welcome_desc": "Learn how to play this fun word puzzle game. Connect words by changing one letter at a time!",
+    "@tutorial_intro_welcome_desc": {"description": "Tutorial intro welcome desc"},
     "tutorial_intro_objective_title": "Game Objective",
+    "@tutorial_intro_objective_title": {"description": "Tutorial intro objective title"},
     "tutorial_intro_objective_desc": "Your goal is to find the missing words between the START and END words. Each word differs by exactly one letter from the previous word.",
+    "@tutorial_intro_objective_desc": {"description": "Tutorial intro objective desc"},
     "tutorial_intro_rule_title": "The Golden Rule",
+    "@tutorial_intro_rule_title": {"description": "Tutorial intro rule title"},
     "tutorial_intro_rule_desc": "You can only change ONE letter at a time. For example: CAT → BAT → BAD → BED",
-
+    "@tutorial_intro_rule_desc": {"description": "Tutorial intro rule desc"},
     "tutorial_guess_intro_title": "Phase 1: Guessing",
+    "@tutorial_guess_intro_title": {"description": "Tutorial guess intro title"},
     "tutorial_guess_intro_desc": "First, you need to guess all the middle words. Tap on any empty slot to start guessing.",
+    "@tutorial_guess_intro_desc": {"description": "Tutorial guess intro desc"},
     "tutorial_guess_success_title": "Great Job!",
+    "@tutorial_guess_success_title": {"description": "Tutorial guess success title"},
     "tutorial_guess_success_desc": "You found your first word! Keep going to complete the puzzle.",
+    "@tutorial_guess_success_desc": {"description": "Tutorial guess success desc"},
     "tutorial_guess_keyboard_title": "Type Your Guess",
+    "@tutorial_guess_keyboard_title": {"description": "Tutorial guess keyboard title"},
     "tutorial_guess_keyboard_desc": "Use the keyboard to type a word. Remember: it must differ by only one letter from neighboring words!",
+    "@tutorial_guess_keyboard_desc": {"description": "Tutorial guess keyboard desc"},
     "tutorial_guess_hints_title": "Need Help?",
+    "@tutorial_guess_hints_title": {"description": "Tutorial guess hints title"},
     "tutorial_guess_hints_desc": "You have 3 hints per level. Use them wisely to reveal letters or get clues when stuck.",
+    "@tutorial_guess_hints_desc": {"description": "Tutorial guess hints desc"},
     "tutorial_guess_timer_title": "Beat the Clock",
+    "@tutorial_guess_timer_title": {"description": "Tutorial guess timer title"},
     "tutorial_guess_timer_desc": "Faster completion gives more stars! Don't worry, there's no time limit.",
-
+    "@tutorial_guess_timer_desc": {"description": "Tutorial guess timer desc"},
     "tutorial_combo_intro_title": "Combo System!",
+    "@tutorial_combo_intro_title": {"description": "Tutorial combo intro title"},
     "tutorial_combo_intro_desc": "Keep guessing correctly to build combos and multiply your score! Each correct answer in a row increases your multiplier.",
-
+    "@tutorial_combo_intro_desc": {"description": "Tutorial combo intro desc"},
     "tutorial_sort_intro_title": "Phase 2: Sorting",
+    "@tutorial_sort_intro_title": {"description": "Tutorial sort intro title"},
     "tutorial_sort_intro_desc": "Excellent! You found all the middle words. Now arrange them in the correct order - each word must differ by only ONE letter from the next.",
+    "@tutorial_sort_intro_desc": {"description": "Tutorial sort intro desc"},
     "tutorial_sort_action_title": "Real-time Validation",
+    "@tutorial_sort_action_title": {"description": "Tutorial sort action title"},
     "tutorial_sort_action_desc": "Drag and reorder the words. You'll see green borders for correct positions and red for incorrect ones. When all words are green, the START and END will unlock automatically!",
-
+    "@tutorial_sort_action_desc": {"description": "Tutorial sort action desc"},
     "tutorial_final_intro_title": "Phase 3: Final Challenge",
+    "@tutorial_final_intro_title": {"description": "Tutorial final intro title"},
     "tutorial_final_intro_desc": "Almost done! Now figure out what the START and END words are based on the sorted middle words.",
+    "@tutorial_final_intro_desc": {"description": "Tutorial final intro desc"},
     "tutorial_final_start_title": "Guess the Start Word",
+    "@tutorial_final_start_title": {"description": "Tutorial final start title"},
     "tutorial_final_start_desc": "What word comes before the first middle word? It should differ by one letter.",
+    "@tutorial_final_start_desc": {"description": "Tutorial final start desc"},
     "tutorial_final_end_title": "Guess the End Word",
+    "@tutorial_final_end_title": {"description": "Tutorial final end title"},
     "tutorial_final_end_desc": "What word comes after the last middle word? Complete the ladder!",
-
+    "@tutorial_final_end_desc": {"description": "Tutorial final end desc"},
     "tutorial_complete_congrats_title": "You're Ready!",
+    "@tutorial_complete_congrats_title": {"description": "Tutorial complete congrats title"},
     "tutorial_complete_congrats_desc": "Congratulations! You now know how to play CrossClimber. Have fun and challenge yourself!",
-
+    "@tutorial_complete_congrats_desc": {"description": "Tutorial complete congrats desc"},
     "skipTutorial": "Skip Tutorial",
+    "@skipTutorial": {"description": "Skip Tutorial"},
     "continueButton": "Continue",
+    "@continueButton": {"description": "Continue Button"},
     "showTips": "Show Tips",
+    "@showTips": {"description": "Show Tips"},
     "resetTutorial": "Reset Tutorial",
-
+    "@resetTutorial": {"description": "Reset Tutorial"},
+    "tutorialResetSuccess": "Tutorial progress has been reset.",
+    "@tutorialResetSuccess": {"description": "Tutorial Reset Success"},
     "outOfLivesTitle": "Out of Lives!",
+    "@outOfLivesTitle": {"description": "Out Of Lives Title"},
     "outOfLivesMessage": "You've run out of lives. Wait for regeneration or use credits to continue.",
+    "@outOfLivesMessage": {"description": "Out Of Lives Message"},
     "nextLifeIn": "Next life in: {time}",
     "@nextLifeIn": {
         "placeholders": {
             "time": {
                 "type": "String"
             }
-        }
+        },
+        "description": "Next life regeneration timer"
     },
-    "buyOneLife": "Buy 1 Life (50 💰)",
-    "buyAllLives": "Buy All Lives (100 💰)",
+    "buyOneLife": "Buy 1 Life (50 Credits)",
+    "@buyOneLife": {"description": "Buy One Life"},
+    "buyAllLives": "Buy All Lives (100 Credits)",
+    "@buyAllLives": {"description": "Buy All Lives"},
     "exitGame": "Exit Game",
+    "@exitGame": {"description": "Exit Game"},
     "returnToMainMenu": "Return to Main Menu?",
+    "@returnToMainMenu": {"description": "Return To Main Menu"},
     "progressLostWarning": "Your current progress will be lost. Are you sure?",
+    "@progressLostWarning": {"description": "Progress Lost Warning"},
     "cancel": "Cancel",
     "exit": "Exit",
+    "@exit": {"description": "Exit"},
     "startEndUnlocked": "START & END Unlocked!",
-
+    "@startEndUnlocked": {"description": "Start End Unlocked"},
     "shopTitle": "Market",
+    "@shopTitle": {"description": "Shop Title"},
     "freeCreditsTitle": "Earn Free",
+    "@freeCreditsTitle": {"description": "Free Credits Title"},
     "freeCreditsSubtitle": "Watch ads, earn free credits",
+    "@freeCreditsSubtitle": {"description": "Free Credits Subtitle"},
     "creditPackageTitle": "Credit Package",
+    "@creditPackageTitle": {"description": "Credit Package Title"},
     "creditPackageSubtitle": "Buy credits with real money",
+    "@creditPackageSubtitle": {"description": "Credit Package Subtitle"},
     "lifePackageTitle": "Life Package",
+    "@lifePackageTitle": {"description": "Life Package Title"},
     "lifePackageSubtitle": "Buy lives with credits",
+    "@lifePackageSubtitle": {"description": "Life Package Subtitle"},
     "hintPackageTitle": "Hint Package",
+    "@hintPackageTitle": {"description": "Hint Package Title"},
     "hintPackageSubtitle": "Buy hints with credits",
+    "@hintPackageSubtitle": {"description": "Hint Package Subtitle"},
     "nCredits": "{amount} Credits",
     "@nCredits": {
         "placeholders": {
             "amount": {
                 "type": "int"
             }
-        }
+        },
+        "description": "Number of credits"
     },
     "mostPopular": "MOST POPULAR",
+    "@mostPopular": {"description": "Most Popular"},
     "popularLabel": "POPULAR",
-    "nLives": "{amount} Lives",
+    "@popularLabel": {"description": "Popular Label"},
+    "nLives": "{amount, plural, =1{1 Life} other{{amount} Lives}}",
     "@nLives": {
         "placeholders": {
             "amount": {
                 "type": "int"
             }
-        }
+        },
+        "description": "Number of lives"
     },
     "buyOneLifeDesc": "Buy a single life",
+    "@buyOneLifeDesc": {"description": "Buy One Life Desc"},
     "buyFiveLives": "Upgrade to 5 lives",
+    "@buyFiveLives": {"description": "Buy Five Lives"},
     "revealWord": "Reveal Word",
+    "@revealWord": {"description": "Reveal Word"},
     "revealWordDesc": "Fully reveals the selected word",
+    "@revealWordDesc": {"description": "Reveal Word Desc"},
     "undoMove": "Undo",
+    "@undoMove": {"description": "Undo Move"},
     "undoMoveDesc": "Undo your last move",
-    "dailyRewardClaim": "Claim Your Daily Reward! 🎁",
+    "@undoMoveDesc": {"description": "Undo Move Desc"},
+    "dailyRewardClaim": "Claim Your Daily Reward!",
+    "@dailyRewardClaim": {"description": "Daily Reward Claim"},
     "dailyRewardAmount": "20+ Credits + Bonuses",
-    "dailyRewardStreak": "Streak: {days} days",
+    "@dailyRewardAmount": {"description": "Daily Reward Amount"},
+    "dailyRewardStreak": "Streak: {days, plural, =1{1 day} other{{days} days}}",
     "@dailyRewardStreak": {
         "placeholders": {
             "days": {
                 "type": "int"
             }
-        }
+        },
+        "description": "Daily reward streak days"
     },
     "watchAdsTitle": "Watch Ads, Earn",
+    "@watchAdsTitle": {"description": "Watch Ads Title"},
     "watchAdsSubtitle": "You can watch 5 ads per day",
+    "@watchAdsSubtitle": {"description": "Watch Ads Subtitle"},
     "watchAdCredits": "+10 Credits",
+    "@watchAdCredits": {"description": "Watch Ad Credits"},
     "watchAdHint": "+1 Hint",
+    "@watchAdHint": {"description": "Watch Ad Hint"},
     "dailyRewardTitle": "Daily Reward!",
+    "@dailyRewardTitle": {"description": "Daily Reward Title"},
     "alreadyClaimedToday": "You already claimed today's reward!",
+    "@alreadyClaimedToday": {"description": "Already Claimed Today"},
     "notEnoughCredits": "Not enough credits!",
+    "@notEnoughCredits": {"description": "Not Enough Credits"},
     "livesAlreadyFull": "Lives already full!",
+    "@livesAlreadyFull": {"description": "Lives Already Full"},
     "great": "Great!",
+    "@great": {"description": "Great"},
     "share": "Share",
+    "@share": {"description": "Share"},
     "shareResult": "Share Result",
+    "@shareResult": {"description": "Share Result"},
     "customKeyboard": "Custom Keyboard",
+    "@customKeyboard": {"description": "Custom Keyboard"},
     "customKeyboardDesc": "Use in-game QWERTY keyboard",
+    "@customKeyboardDesc": {"description": "Custom Keyboard Desc"},
     "hapticFeedback": "Haptic Feedback",
+    "@hapticFeedback": {"description": "Haptic Feedback"},
     "hapticFeedbackDesc": "Vibration and tactile feedback",
+    "@hapticFeedbackDesc": {"description": "Haptic Feedback Desc"},
     "gotIt": "Got it!",
+    "@gotIt": {"description": "Got It"},
     "skipLabel": "Skip",
-
+    "@skipLabel": {"description": "Skip Label"},
     "progress": "Progress",
+    "@progress": {"description": "Progress"},
     "today": "Today",
+    "@today": {"description": "Today"},
     "yesterday": "Yesterday",
+    "@yesterday": {"description": "Yesterday"},
     "daysAgo": "{count} days ago",
     "@daysAgo": {
         "placeholders": {
             "count": {
                 "type": "int"
             }
+        },
+        "description": "Days ago label"
+    },
+    "achievementFirstWin": "First Win",
+    "@achievementFirstWin": {"description": "Achievement First Win"},
+    "achievementTenLevels": "Ten Levels",
+    "@achievementTenLevels": {"description": "Achievement Ten Levels"},
+    "achievementSpeedDemon": "Speed Demon",
+    "@achievementSpeedDemon": {"description": "Achievement Speed Demon"},
+    "achievementMarathonRunner": "Marathon Runner",
+    "@achievementMarathonRunner": {"description": "Achievement Marathon Runner"},
+    "achievementThirtyLevels": "Thirty Levels",
+    "@achievementThirtyLevels": {"description": "Achievement Thirty Levels"},
+    "achievementPerfectStreak5": "Perfect Streak 5",
+    "@achievementPerfectStreak5": {"description": "Achievement Perfect Streak5"},
+    "achievementCenturyClub": "Century Club",
+    "@achievementCenturyClub": {"description": "Achievement Century Club"},
+    "achievementHintlessHero": "Hintless Hero",
+    "@achievementHintlessHero": {"description": "Achievement Hintless Hero"},
+    "achievementErrorFree": "Error Free",
+    "@achievementErrorFree": {"description": "Achievement Error Free"},
+    "achievementEarlyBird": "Early Bird",
+    "@achievementEarlyBird": {"description": "Achievement Early Bird"},
+    "achievementNightOwl": "Night Owl",
+    "@achievementNightOwl": {"description": "Achievement Night Owl"},
+    "achievementPerfectStreak10": "Perfect Streak 10",
+    "@achievementPerfectStreak10": {"description": "Achievement Perfect Streak10"},
+    "achievementFiftyLevels": "Fifty Levels",
+    "@achievementFiftyLevels": {"description": "Achievement Fifty Levels"},
+    "achievementThreeStarPerfectionist": "Three Star Perfectionist",
+    "@achievementThreeStarPerfectionist": {"description": "Achievement Three Star Perfectionist"},
+    "achievementNoHintsMaster": "No Hints Master",
+    "@achievementNoHintsMaster": {"description": "Achievement No Hints Master"},
+    "achievementDescFirstWin": "Complete your first level",
+    "@achievementDescFirstWin": {"description": "Achievement Desc First Win"},
+    "achievementDescTenLevels": "Complete 10 levels",
+    "@achievementDescTenLevels": {"description": "Achievement Desc Ten Levels"},
+    "achievementDescSpeedDemon": "Complete a level in under 30 seconds",
+    "@achievementDescSpeedDemon": {"description": "Achievement Desc Speed Demon"},
+    "achievementDescMarathonRunner": "Play 10 levels in a single session",
+    "@achievementDescMarathonRunner": {"description": "Achievement Desc Marathon Runner"},
+    "achievementDescThirtyLevels": "Complete 30 levels",
+    "@achievementDescThirtyLevels": {"description": "Achievement Desc Thirty Levels"},
+    "achievementDescPerfectStreak5": "Get 3 stars on 5 consecutive levels",
+    "@achievementDescPerfectStreak5": {"description": "Achievement Desc Perfect Streak5"},
+    "achievementDescCenturyClub": "Complete 100 levels",
+    "@achievementDescCenturyClub": {"description": "Achievement Desc Century Club"},
+    "achievementDescHintlessHero": "Complete 10 levels without using hints",
+    "@achievementDescHintlessHero": {"description": "Achievement Desc Hintless Hero"},
+    "achievementDescErrorFree": "Complete a level without any wrong attempts",
+    "@achievementDescErrorFree": {"description": "Achievement Desc Error Free"},
+    "achievementDescEarlyBird": "Complete a level before 9 AM",
+    "@achievementDescEarlyBird": {"description": "Achievement Desc Early Bird"},
+    "achievementDescNightOwl": "Complete a level after 11 PM",
+    "@achievementDescNightOwl": {"description": "Achievement Desc Night Owl"},
+    "achievementDescPerfectStreak10": "Get 3 stars on 10 consecutive levels",
+    "@achievementDescPerfectStreak10": {"description": "Achievement Desc Perfect Streak10"},
+    "achievementDescFiftyLevels": "Complete 50 levels",
+    "@achievementDescFiftyLevels": {"description": "Achievement Desc Fifty Levels"},
+    "achievementDescThreeStarPerfectionist": "Get 3 stars on 20 levels",
+    "@achievementDescThreeStarPerfectionist": {"description": "Achievement Desc Three Star Perfectionist"},
+    "achievementDescNoHintsMaster": "Complete 50 levels without using hints",
+    "@achievementDescNoHintsMaster": {"description": "Achievement Desc No Hints Master"},
+    "achievementStreak7Days": "Week Warrior",
+    "@achievementStreak7Days": {"description": "Achievement Streak7 Days"},
+    "achievementStreak14Days": "Fortnight Fighter",
+    "@achievementStreak14Days": {"description": "Achievement Streak14 Days"},
+    "achievementStreak30Days": "Monthly Champion",
+    "@achievementStreak30Days": {"description": "Achievement Streak30 Days"},
+    "achievementStreak60Days": "2-Month Streak",
+    "@achievementStreak60Days": {"description": "Achievement Streak60 Days"},
+    "achievementStreak100Days": "Centurion",
+    "@achievementStreak100Days": {"description": "Achievement Streak100 Days"},
+    "achievementCombo5x": "Combo Starter",
+    "@achievementCombo5x": {"description": "Achievement Combo5x"},
+    "achievementCombo8x": "Combo Artist",
+    "@achievementCombo8x": {"description": "Achievement Combo8x"},
+    "achievementCombo10x": "Combo Master",
+    "@achievementCombo10x": {"description": "Achievement Combo10x"},
+    "achievementSpeed60s": "Speed Runner",
+    "@achievementSpeed60s": {"description": "Achievement Speed60s"},
+    "achievementSpeed45s": "Lightning Fast",
+    "@achievementSpeed45s": {"description": "Achievement Speed45s"},
+    "achievementAllLevels": "All Levels Cleared",
+    "@achievementAllLevels": {"description": "Achievement All Levels"},
+    "achievementLegendaryRank": "Legendary",
+    "@achievementLegendaryRank": {"description": "Achievement Legendary Rank"},
+    "achievementShareResults": "Sharer",
+    "@achievementShareResults": {"description": "Achievement Share Results"},
+    "achievementDailyChallengeFirst": "Daily Challenger",
+    "@achievementDailyChallengeFirst": {"description": "Achievement Daily Challenge First"},
+    "achievementDailyChallenge30": "Daily Champion",
+    "@achievementDailyChallenge30": {"description": "Achievement Daily Challenge30"},
+    "achievementDescStreak7Days": "Log in 7 days in a row",
+    "@achievementDescStreak7Days": {"description": "Achievement Desc Streak7 Days"},
+    "achievementDescStreak14Days": "Log in 14 days in a row",
+    "@achievementDescStreak14Days": {"description": "Achievement Desc Streak14 Days"},
+    "achievementDescStreak30Days": "Log in 30 days in a row",
+    "@achievementDescStreak30Days": {"description": "Achievement Desc Streak30 Days"},
+    "achievementDescStreak60Days": "Log in 60 days in a row",
+    "@achievementDescStreak60Days": {"description": "Achievement Desc Streak60 Days"},
+    "achievementDescStreak100Days": "Log in 100 days in a row",
+    "@achievementDescStreak100Days": {"description": "Achievement Desc Streak100 Days"},
+    "achievementDescCombo5x": "Reach a 5x combo",
+    "@achievementDescCombo5x": {"description": "Achievement Desc Combo5x"},
+    "achievementDescCombo8x": "Reach an 8x combo",
+    "@achievementDescCombo8x": {"description": "Achievement Desc Combo8x"},
+    "achievementDescCombo10x": "Reach a 10x combo",
+    "@achievementDescCombo10x": {"description": "Achievement Desc Combo10x"},
+    "achievementDescSpeed60s": "Complete a level in under 60 seconds",
+    "@achievementDescSpeed60s": {"description": "Achievement Desc Speed60s"},
+    "achievementDescSpeed45s": "Complete a level in under 45 seconds",
+    "@achievementDescSpeed45s": {"description": "Achievement Desc Speed45s"},
+    "achievementDescAllLevels": "Complete all available levels",
+    "@achievementDescAllLevels": {"description": "Achievement Desc All Levels"},
+    "achievementDescLegendaryRank": "Reach the Legendary rank",
+    "@achievementDescLegendaryRank": {"description": "Achievement Desc Legendary Rank"},
+    "achievementDescShareResults": "Share your results 5 times",
+    "@achievementDescShareResults": {"description": "Achievement Desc Share Results"},
+    "achievementDescDailyChallengeFirst": "Complete your first daily challenge",
+    "@achievementDescDailyChallengeFirst": {"description": "Achievement Desc Daily Challenge First"},
+    "achievementDescDailyChallenge30": "Complete 30 daily challenges",
+    "@achievementDescDailyChallenge30": {"description": "Achievement Desc Daily Challenge30"},
+    "achievementRarityCommon": "Common",
+    "@achievementRarityCommon": {"description": "Achievement Rarity Common"},
+    "achievementRarityRare": "Rare",
+    "@achievementRarityRare": {"description": "Achievement Rarity Rare"},
+    "achievementRarityLegendary": "Legendary",
+    "@achievementRarityLegendary": {"description": "Achievement Rarity Legendary"},
+    "achievementBadgeSelect": "Set Badge",
+    "@achievementBadgeSelect": {"description": "Achievement Badge Select"},
+    "achievementBadgeActive": "Active Badge",
+    "@achievementBadgeActive": {"description": "Achievement Badge Active"},
+    "achievementBadgeRemove": "Remove Badge",
+    "@achievementBadgeRemove": {"description": "Achievement Badge Remove"},
+    "achievementBadgeRemoved": "Badge removed",
+    "@achievementBadgeRemoved": {"description": "Achievement Badge Removed"},
+    "achievementBadgeSelected": "Badge set!",
+    "@achievementBadgeSelected": {"description": "Achievement Badge Selected"},
+    "achievementUnlocked": "Achievement Unlocked",
+    "@achievementUnlocked": {"description": "Achievement Unlocked"},
+    "streakMilestoneTitle": "Streak Milestone!",
+    "@streakMilestoneTitle": {"description": "Streak Milestone Title"},
+    "streakMilestoneDesc": "{days}-day streak! +{credits} credits!",
+    "@streakMilestoneDesc": {
+        "placeholders": {
+            "days": { "type": "int" },
+            "credits": { "type": "int" }
+        },
+        "description": "Streak milestone reached message"
+    },
+    "streakFreezeTitle": "Streak Freeze",
+    "@streakFreezeTitle": {"description": "Streak Freeze Title"},
+    "streakFreezeDesc": "Protects your streak for 1 missed day",
+    "@streakFreezeDesc": {"description": "Streak Freeze Desc"},
+    "streakFreezeCount": "{count, plural, =1{1 freeze available} other{{count} freezes available}}",
+    "@streakFreezeCount": {
+        "placeholders": {
+            "count": { "type": "int" }
+        },
+        "description": "Number of streak freezes available"
+    },
+    "streakFreezeAutoUsed": "Streak freeze used! Your streak is safe.",
+    "@streakFreezeAutoUsed": {"description": "Streak Freeze Auto Used"},
+    "streakLossWarningTitle": "Streak at risk!",
+    "@streakLossWarningTitle": {"description": "Streak Loss Warning Title"},
+    "streakLossWarning": "Don't lose your streak! Play today!",
+    "@streakLossWarning": {"description": "Streak Loss Warning"},
+    "streakDays": "day streak",
+    "@streakDays": {"description": "Streak Days"},
+    "streakTodayCompleted": "Today done",
+    "@streakTodayCompleted": {"description": "Streak Today Completed"},
+    "streakTodayIncomplete": "Play today!",
+    "@streakTodayIncomplete": {"description": "Streak Today Incomplete"},
+    "streakFreezeAvailable": "freeze",
+    "@streakFreezeAvailable": {"description": "Streak Freeze Available"},
+    "streakNextMilestone": "Next milestone: {days} days",
+    "@streakNextMilestone": {
+        "placeholders": {
+            "days": {"type": "int"}
         }
     },
-
-    "achievementFirstWin": "First Win",
-    "achievementTenLevels": "Ten Levels",
-    "achievementSpeedDemon": "Speed Demon",
-    "achievementMarathonRunner": "Marathon Runner",
-    "achievementThirtyLevels": "Thirty Levels",
-    "achievementPerfectStreak5": "Perfect Streak 5",
-    "achievementCenturyClub": "Century Club",
-    "achievementHintlessHero": "Hintless Hero",
-    "achievementErrorFree": "Error Free",
-    "achievementEarlyBird": "Early Bird",
-    "achievementNightOwl": "Night Owl",
-    "achievementPerfectStreak10": "Perfect Streak 10",
-    "achievementFiftyLevels": "Fifty Levels",
-    "achievementThreeStarPerfectionist": "Three Star Perfectionist",
-    "achievementNoHintsMaster": "No Hints Master",
-
-    "achievementDescFirstWin": "Complete your first level",
-    "achievementDescTenLevels": "Complete 10 levels",
-    "achievementDescSpeedDemon": "Complete a level in under 30 seconds",
-    "achievementDescMarathonRunner": "Play 10 levels in a single session",
-    "achievementDescThirtyLevels": "Complete 30 levels",
-    "achievementDescPerfectStreak5": "Get 3 stars on 5 consecutive levels",
-    "achievementDescCenturyClub": "Complete 100 levels",
-    "achievementDescHintlessHero": "Complete 10 levels without using hints",
-    "achievementDescErrorFree": "Complete a level without any wrong attempts",
-    "achievementDescEarlyBird": "Complete a level before 9 AM",
-    "achievementDescNightOwl": "Complete a level after 11 PM",
-    "achievementDescPerfectStreak10": "Get 3 stars on 10 consecutive levels",
-    "achievementDescFiftyLevels": "Complete 50 levels",
-    "achievementDescThreeStarPerfectionist": "Get 3 stars on 20 levels",
-    "achievementDescNoHintsMaster": "Complete 50 levels without using hints",
-
+    "streakMilestoneReward": "Reward: {credits} credits",
+    "@streakMilestoneReward": {
+        "placeholders": {
+            "credits": {"type": "int"}
+        }
+    },
+    "streakMilestones": "Milestones",
+    "@streakMilestones": {"description": "Streak Milestones"},
+    "streakAllMilestonesReached": "All milestones reached!",
+    "@streakAllMilestonesReached": {"description": "Streak All Milestones Reached"},
+    "streakFreezeShopTitle": "Streak Protection",
+    "@streakFreezeShopTitle": {"description": "Streak Freeze Shop Title"},
+    "streakFreezeShopSubtitle": "Never lose your streak again",
+    "@streakFreezeShopSubtitle": {"description": "Streak Freeze Shop Subtitle"},
+    "buyStreakFreeze1": "1 Freeze",
+    "@buyStreakFreeze1": {"description": "Buy Streak Freeze1"},
+    "buyStreakFreeze3": "3 Freezes",
+    "@buyStreakFreeze3": {"description": "Buy Streak Freeze3"},
+    "streakFreezePurchased": "Streak freeze purchased!",
+    "@streakFreezePurchased": {"description": "Streak Freeze Purchased"},
+    "streakFreezeZero": "No freezes",
+    "@streakFreezeZero": {"description": "Streak Freeze Zero"},
     "yourStatistics": "Your Statistics",
+    "@yourStatistics": {"description": "Your Statistics"},
     "gamesPlayed": "Games Played",
+    "@gamesPlayed": {"description": "Games Played"},
     "gamesWon": "Games Won",
+    "@gamesWon": {"description": "Games Won"},
     "performance": "Performance",
+    "@performance": {"description": "Performance"},
     "winRate": "Win Rate",
+    "@winRate": {"description": "Win Rate"},
     "avgStars": "Avg Stars",
+    "@avgStars": {"description": "Avg Stars"},
     "timeStatistics": "Time Statistics",
+    "@timeStatistics": {"description": "Time Statistics"},
     "totalTimePlayed": "Total Time Played",
+    "@totalTimePlayed": {"description": "Total Time Played"},
     "bestTime": "Best Time",
+    "@bestTime": {"description": "Best Time"},
     "averageTime": "Average Time",
+    "@averageTime": {"description": "Average Time"},
     "starDistribution": "Star Distribution",
+    "@starDistribution": {"description": "Star Distribution"},
     "totalStarsEarned": "Total Stars Earned",
+    "@totalStarsEarned": {"description": "Total Stars Earned"},
     "perfectGames": "Perfect Games",
+    "@perfectGames": {"description": "Perfect Games"},
     "noGamesPlayedYet": "No games played yet",
+    "@noGamesPlayedYet": {"description": "No Games Played Yet"},
     "wins": "Wins",
+    "@wins": {"description": "Wins"},
     "losses": "Losses",
+    "@losses": {"description": "Losses"},
     "shareStatistics": "Share Statistics",
-
+    "@shareStatistics": {"description": "Share Statistics"},
     "currentStreak": "Current Streak",
+    "@currentStreak": {"description": "Current Streak"},
     "failedToLoadDailyChallenge": "Failed to load daily challenge",
+    "@failedToLoadDailyChallenge": {"description": "Failed To Load Daily Challenge"},
     "failedToLoadChallenge": "Failed to load challenge",
+    "@failedToLoadChallenge": {"description": "Failed To Load Challenge"},
     "difficultyLabel": "Difficulty",
+    "@difficultyLabel": {"description": "Difficulty Label"},
     "wordsLabel": "Words",
+    "@wordsLabel": {"description": "Words Label"},
     "starsLabel": "Stars",
+    "@starsLabel": {"description": "Stars Label"},
     "timeLabel": "Time",
+    "@timeLabel": {"description": "Time Label"},
     "scoreLabel": "Score",
+    "@scoreLabel": {"description": "Score Label"},
     "viewResult": "View Result",
+    "@viewResult": {"description": "View Result"},
     "playNow": "Play Now",
+    "@playNow": {"description": "Play Now"},
     "expert": "Expert",
+    "@expert": {"description": "Expert"},
     "unknown": "Unknown",
-
+    "@unknown": {"description": "Unknown"},
     "monthJanuary": "January",
+    "@monthJanuary": {"description": "Month January"},
     "monthFebruary": "February",
+    "@monthFebruary": {"description": "Month February"},
     "monthMarch": "March",
+    "@monthMarch": {"description": "Month March"},
     "monthApril": "April",
+    "@monthApril": {"description": "Month April"},
     "monthMay": "May",
+    "@monthMay": {"description": "Month May"},
     "monthJune": "June",
+    "@monthJune": {"description": "Month June"},
     "monthJuly": "July",
+    "@monthJuly": {"description": "Month July"},
     "monthAugust": "August",
+    "@monthAugust": {"description": "Month August"},
     "monthSeptember": "September",
+    "@monthSeptember": {"description": "Month September"},
     "monthOctober": "October",
+    "@monthOctober": {"description": "Month October"},
     "monthNovember": "November",
+    "@monthNovember": {"description": "Month November"},
     "monthDecember": "December",
-
+    "@monthDecember": {"description": "Month December"},
     "yourStats": "Your Stats",
+    "@yourStats": {"description": "Your Stats"},
     "completedLabel": "Completed",
+    "@completedLabel": {"description": "Completed Label"},
     "bestStreak": "Best Streak",
-
+    "@bestStreak": {"description": "Best Streak"},
     "comboLabel": "{count} COMBO",
     "@comboLabel": {
         "placeholders": {
-            "count": { "type": "int" }
-        }
+            "count": {
+                "type": "int"
+            }
+        },
+        "description": "Combo count label"
     },
     "comboMultiplierLabel": "{multiplier}x Multiplier",
     "@comboMultiplierLabel": {
         "placeholders": {
-            "multiplier": { "type": "String" }
-        }
+            "multiplier": {
+                "type": "String"
+            }
+        },
+        "description": "Combo multiplier label"
     },
     "comboXLabel": "Combo x{count} ({multiplier}x)",
     "@comboXLabel": {
         "placeholders": {
-            "count": { "type": "int" },
-            "multiplier": { "type": "String" }
-        }
+            "count": {
+                "type": "int"
+            },
+            "multiplier": {
+                "type": "String"
+            }
+        },
+        "description": "Combo with count and multiplier label"
     },
     "comboBreak": "COMBO BREAK",
+    "@comboBreak": {"description": "Combo Break"},
     "comboLostLabel": "Lost {count}x combo",
     "@comboLostLabel": {
         "placeholders": {
-            "count": { "type": "int" }
-        }
+            "count": {
+                "type": "int"
+            }
+        },
+        "description": "Lost combo count label"
     },
     "undoTooltipMessage": "Undo: {action}\n{count} undos remaining",
     "@undoTooltipMessage": {
         "placeholders": {
-            "action": { "type": "String" },
-            "count": { "type": "int" }
-        }
+            "action": {
+                "type": "String"
+            },
+            "count": {
+                "type": "int"
+            }
+        },
+        "description": "Undo tooltip with action and remaining count"
     },
     "noUndosAvailable": "No more undos available",
+    "@noUndosAvailable": {"description": "No Undos Available"},
     "undoConfirmTitle": "Undo?",
+    "@undoConfirmTitle": {"description": "Undo Confirm Title"},
     "undoConfirmMessageWithAction": "This action will be undone:\n\n\"{action}\"\n\nUndos remaining: {count}",
     "@undoConfirmMessageWithAction": {
         "placeholders": {
-            "action": { "type": "String" },
-            "count": { "type": "int" }
-        }
+            "action": {
+                "type": "String"
+            },
+            "count": {
+                "type": "int"
+            }
+        },
+        "description": "Undo confirmation with specific action"
     },
     "undoConfirmMessage": "Undo the last action?\n\nUndos remaining: {count}",
     "@undoConfirmMessage": {
         "placeholders": {
-            "count": { "type": "int" }
-        }
+            "count": {
+                "type": "int"
+            }
+        },
+        "description": "Undo confirmation with remaining count"
     },
     "undoReverted": "Action undone",
+    "@undoReverted": {"description": "Undo Reverted"},
     "undosRemainingCount": "{count} undos remaining",
     "@undosRemainingCount": {
         "placeholders": {
-            "count": { "type": "int" }
-        }
+            "count": {
+                "type": "int"
+            }
+        },
+        "description": "Undos remaining count"
     },
     "rewardCreditsLabel": "+{amount} Credits",
     "@rewardCreditsLabel": {
         "placeholders": {
-            "amount": { "type": "int" }
-        }
+            "amount": {
+                "type": "int"
+            }
+        },
+        "description": "Reward credits amount label"
     },
     "rewardRevealHints": "+{count} Reveal Hint",
     "@rewardRevealHints": {
         "placeholders": {
-            "count": { "type": "int" }
-        }
+            "count": {
+                "type": "int"
+            }
+        },
+        "description": "Reward reveal hints count"
     },
     "rewardUndoHints": "+{count} Undo Hint",
     "@rewardUndoHints": {
         "placeholders": {
-            "count": { "type": "int" }
-        }
+            "count": {
+                "type": "int"
+            }
+        },
+        "description": "Reward undo hints count"
     },
     "dailyAdLimitReached": "Daily limit reached! (5/5)",
+    "@dailyAdLimitReached": {"description": "Daily Ad Limit Reached"},
     "creditsEarnedNotification": "+{amount} credits earned!",
     "@creditsEarnedNotification": {
         "placeholders": {
-            "amount": { "type": "int" }
-        }
+            "amount": {
+                "type": "int"
+            }
+        },
+        "description": "Credits earned notification"
     },
     "revealHintEarned": "+1 Reveal hint earned!",
+    "@revealHintEarned": {"description": "Reveal Hint Earned"},
     "undoHintEarned": "+1 Undo hint earned!",
+    "@undoHintEarned": {"description": "Undo Hint Earned"},
     "hintsPurchasedNotification": "{amount} hints purchased!",
     "@hintsPurchasedNotification": {
         "placeholders": {
-            "amount": { "type": "int" }
-        }
+            "amount": {
+                "type": "int"
+            }
+        },
+        "description": "Hints purchased notification"
     },
     "livesPurchasedNotification": "{amount} lives purchased!",
     "@livesPurchasedNotification": {
         "placeholders": {
-            "amount": { "type": "int" }
-        }
+            "amount": {
+                "type": "int"
+            }
+        },
+        "description": "Lives purchased notification"
     },
     "creditPurchaseComingSoon": "Buying {amount} credits for {price} (Coming soon!)",
     "@creditPurchaseComingSoon": {
         "placeholders": {
-            "amount": { "type": "int" },
-            "price": { "type": "String" }
-        }
+            "amount": {
+                "type": "int"
+            },
+            "price": {
+                "type": "String"
+            }
+        },
+        "description": "Credit purchase coming soon message"
     },
     "levelsLabel": "Levels",
+    "@levelsLabel": {"description": "Levels Label"},
     "streakLabel": "Streak",
+    "@streakLabel": {"description": "Streak Label"},
     "creditsEarnedLabel": "Credits Earned",
+    "@creditsEarnedLabel": {"description": "Credits Earned Label"},
     "completedToday": "Completed Today!",
+    "@completedToday": {"description": "Completed Today"},
     "todaysChallenge": "Today's Challenge",
+    "@todaysChallenge": {"description": "Todays Challenge"},
     "shareResultHeader": "CrossClimber Level {levelId} Completed!",
     "@shareResultHeader": {
         "placeholders": {
-            "levelId": { "type": "int" }
-        }
+            "levelId": {
+                "type": "int"
+            }
+        },
+        "description": "Share result header with level ID"
     },
-    "shareAchievementUnlocked": "\ud83c\udfc6 Achievement Unlocked!",
+    "shareAchievementUnlocked": "Achievement Unlocked!",
+    "@shareAchievementUnlocked": {"description": "Share Achievement Unlocked"},
     "shareAchievementCTA": "Playing CrossClimber - The ultimate word puzzle game!",
-    "shareDailyChallengeTitle": "\ud83d\udcc5 CrossClimber Daily Challenge",
+    "@shareAchievementCTA": {"description": "Share Achievement C T A"},
+    "shareDailyChallengeTitle": "CrossClimber Daily Challenge",
+    "@shareDailyChallengeTitle": {"description": "Share Daily Challenge Title"},
     "shareDailyLevelCompleted": "Level {levelId}: Completed!",
     "@shareDailyLevelCompleted": {
         "placeholders": {
-            "levelId": { "type": "int" }
-        }
+            "levelId": {
+                "type": "int"
+            }
+        },
+        "description": "Share daily level completed message"
     },
     "shareDailyLevelFailed": "Level {levelId}: Failed",
     "@shareDailyLevelFailed": {
         "placeholders": {
-            "levelId": { "type": "int" }
-        }
+            "levelId": {
+                "type": "int"
+            }
+        },
+        "description": "Share daily level failed message"
     },
     "shareDailyChallengeCTA": "Join the daily challenge!",
-    "shareMyStatsTitle": "\ud83d\udcca My CrossClimber Stats",
+    "@shareDailyChallengeCTA": {"description": "Share Daily Challenge C T A"},
+    "shareMyStatsTitle": "My CrossClimber Stats",
+    "@shareMyStatsTitle": {"description": "Share My Stats Title"},
     "shareStatsCTA": "Challenge me in CrossClimber!",
+    "@shareStatsCTA": {"description": "Share Stats C T A"},
     "shareStatisticsCTA": "Can you beat my stats?",
+    "@shareStatisticsCTA": {"description": "Share Statistics C T A"},
     "onboardingPage1Title": "Climb the Words!",
+    "@onboardingPage1Title": {"description": "Onboarding Page1 Title"},
     "onboardingPage1Desc": "Climb from the starting word to the end word — find the hidden steps!",
+    "@onboardingPage1Desc": {"description": "Onboarding Page1 Desc"},
     "onboardingPage2Title": "Guess, Sort, Solve!",
+    "@onboardingPage2Title": {"description": "Onboarding Page2 Title"},
     "onboardingPage2Desc": "3 phases to win: Guess hidden words → Sort them correctly → Solve the final word!",
+    "@onboardingPage2Desc": {"description": "Onboarding Page2 Desc"},
     "onboardingPage3Title": "Daily Challenge",
+    "@onboardingPage3Title": {"description": "Onboarding Page3 Title"},
     "onboardingPage3Desc": "A brand new puzzle every day. Build your streak and beat your own record!",
+    "@onboardingPage3Desc": {"description": "Onboarding Page3 Desc"},
     "onboardingPage4Title": "Build Combos!",
+    "@onboardingPage4Title": {"description": "Onboarding Page4 Title"},
     "onboardingPage4Desc": "Guess correctly in a row to multiply your score — 2x, 3x, 4x bonus points!",
+    "@onboardingPage4Desc": {"description": "Onboarding Page4 Desc"},
     "onboardingSkip": "Skip",
+    "@onboardingSkip": {"description": "Onboarding Skip"},
     "onboardingNext": "Next",
+    "@onboardingNext": {"description": "Onboarding Next"},
     "onboardingStart": "Let's Go!",
+    "@onboardingStart": {"description": "Onboarding Start"},
     "tutorialDontShowAgain": "Don't show again",
+    "@tutorialDontShowAgain": {"description": "Tutorial Dont Show Again"},
     "emptyAchievementsTitle": "No Achievements Yet",
+    "@emptyAchievementsTitle": {"description": "Empty Achievements Title"},
     "emptyAchievementsDesc": "Play games to start unlocking achievements and earning bonus credits!",
+    "@emptyAchievementsDesc": {"description": "Empty Achievements Desc"},
     "emptyStatisticsTitle": "No Stats Yet",
+    "@emptyStatisticsTitle": {"description": "Empty Statistics Title"},
     "emptyStatisticsDesc": "Your statistics will appear here after your first game.",
+    "@emptyStatisticsDesc": {"description": "Empty Statistics Desc"},
     "dailyMotivationTitle": "Ready for Today's Challenge?",
+    "@dailyMotivationTitle": {"description": "Daily Motivation Title"},
     "dailyMotivationDesc": "A new puzzle every day. Complete it to keep your streak alive!",
+    "@dailyMotivationDesc": {"description": "Daily Motivation Desc"},
     "dailyMotivationButton": "Play Now",
+    "@dailyMotivationButton": {"description": "Daily Motivation Button"},
     "discoveryShopTitle": "Welcome to the Shop!",
+    "@discoveryShopTitle": {"description": "Discovery Shop Title"},
     "discoveryShopDesc": "Use your credits to buy hints and lives. Watch ads for free daily rewards!",
+    "@discoveryShopDesc": {"description": "Discovery Shop Desc"},
     "discoveryAchievementsTitle": "Unlock Achievements!",
+    "@discoveryAchievementsTitle": {"description": "Discovery Achievements Title"},
     "discoveryAchievementsDesc": "Complete milestones to unlock badges and earn bonus credits.",
+    "@discoveryAchievementsDesc": {"description": "Discovery Achievements Desc"},
     "discoveryDailyTitle": "Build Your Streak!",
+    "@discoveryDailyTitle": {"description": "Discovery Daily Title"},
     "discoveryDailyDesc": "Complete the daily challenge every day to keep your streak alive and earn rewards.",
+    "@discoveryDailyDesc": {"description": "Discovery Daily Desc"},
     "discoveryGotIt": "Got it!",
+    "@discoveryGotIt": {"description": "Discovery Got It"},
     "homeSubtitle": "Climb the words to the top!",
+    "@homeSubtitle": {"description": "Home Subtitle"},
     "homeQuickPlay": "Quick Play",
+    "@homeQuickPlay": {"description": "Home Quick Play"},
+    "homeLevelsWithProgress": "Levels (Level {level})",
+    "@homeLevelsWithProgress": {
+        "placeholders": {
+            "level": {
+                "type": "int"
+            }
+        },
+        "description": "Levels button showing current progress"
+    },
     "homeContinueLevel": "Continue: Level {level}",
     "@homeContinueLevel": {
         "placeholders": {
-            "level": { "type": "int" }
-        }
+            "level": {
+                "type": "int"
+            }
+        },
+        "description": "Continue button with level number"
     },
-    "homeStreakDays": "{days}\uD83D\uDD25",
+    "homeStreakDays": "{days}",
     "@homeStreakDays": {
         "placeholders": {
-            "days": { "type": "int" }
-        }
+            "days": {
+                "type": "int"
+            }
+        },
+        "description": "Home streak days badge"
     },
-    "homeTotalStars": "{count} \u2605",
+    "homeTotalStars": "{count}",
     "@homeTotalStars": {
         "placeholders": {
-            "count": { "type": "int" }
-        }
+            "count": {
+                "type": "int"
+            }
+        },
+        "description": "Home total stars badge"
     },
     "homeAchievementsProgress": "{unlocked}/{total}",
     "@homeAchievementsProgress": {
         "placeholders": {
-            "unlocked": { "type": "int" },
-            "total": { "type": "int" }
-        }
+            "unlocked": {
+                "type": "int"
+            },
+            "total": {
+                "type": "int"
+            }
+        },
+        "description": "Home achievements unlocked/total"
     },
-
     "zoneProgress": "{completed}/{total} completed",
     "@zoneProgress": {
         "placeholders": {
-            "completed": { "type": "int" },
-            "total": { "type": "int" }
-        }
+            "completed": {
+                "type": "int"
+            },
+            "total": {
+                "type": "int"
+            }
+        },
+        "description": "Zone completed/total progress"
     },
     "phaseSortBanner": "Sort Now!",
+    "@phaseSortBanner": {"description": "Phase Sort Banner"},
     "phaseFinalBanner": "Find Final Words!",
-    "completion3Stars": "Perfect! All stars! 🌟",
-    "completion2Stars": "Great job! 👏",
+    "@phaseFinalBanner": {"description": "Phase Final Banner"},
+    "completion3Stars": "Perfect! All stars!",
+    "@completion3Stars": {"description": "Completion3 Stars"},
+    "completion2Stars": "Great job!",
+    "@completion2Stars": {"description": "Completion2 Stars"},
     "completion1Star": "Not bad! Try again for more stars.",
+    "@completion1Star": {"description": "Completion1 Star"},
     "completion0Stars": "Keep going, you can do it! Try again.",
+    "@completion0Stars": {"description": "Completion0 Stars"},
     "completionHintSuggestion": "Tip: Use hints to improve your score.",
+    "@completionHintSuggestion": {"description": "Completion Hint Suggestion"},
     "sharePreviewTitle": "Share Result",
+    "@sharePreviewTitle": {"description": "Share Preview Title"},
     "sharePreviewCopy": "Copy",
+    "@sharePreviewCopy": {"description": "Share Preview Copy"},
     "sharePreviewCopied": "Copied!",
+    "@sharePreviewCopied": {"description": "Share Preview Copied"},
     "sharePreviewClose": "Close",
+    "@sharePreviewClose": {"description": "Share Preview Close"},
     "settingsHighContrast": "High Contrast Mode",
+    "@settingsHighContrast": {"description": "Settings High Contrast"},
     "settingsHighContrastDesc": "Increase color contrast for better readability",
+    "@settingsHighContrastDesc": {"description": "Settings High Contrast Desc"},
     "semanticsDragInstruction": "Double tap and hold to drag and reorder",
+    "@semanticsDragInstruction": {"description": "Semantics Drag Instruction"},
     "semanticsComboMultiplier": "Combo: {count} in a row, {multiplier}x multiplier",
     "@semanticsComboMultiplier": {
         "placeholders": {
-            "count": { "type": "int" },
-            "multiplier": { "type": "String" }
-        }
+            "count": {
+                "type": "int"
+            },
+            "multiplier": {
+                "type": "String"
+            }
+        },
+        "description": "Accessibility label for combo multiplier"
     },
     "semanticsLevelCard": "Level {id}, {status}, {stars} stars",
     "@semanticsLevelCard": {
         "placeholders": {
-            "id": { "type": "int" },
-            "status": { "type": "String" },
-            "stars": { "type": "int" }
-        }
+            "id": {
+                "type": "int"
+            },
+            "status": {
+                "type": "String"
+            },
+            "stars": {
+                "type": "int"
+            }
+        },
+        "description": "Accessibility label for level card"
     },
     "semanticsLocked": "locked",
+    "@semanticsLocked": {"description": "Semantics Locked"},
     "semanticsUnlocked": "unlocked",
-    "semanticsCompleted": "completed"
+    "@semanticsUnlocked": {"description": "Semantics Unlocked"},
+    "semanticsCompleted": "completed",
+    "@semanticsCompleted": {"description": "Semantics Completed"},
+    "semanticsActionPlay": "play",
+    "@semanticsActionPlay": {"description": "Semantics Action Play"},
+    "semanticsActionOpen": "open",
+    "@semanticsActionOpen": {"description": "Semantics Action Open"},
+    "semanticsActionAddLetter": "add letter",
+    "@semanticsActionAddLetter": {"description": "Semantics Action Add Letter"},
+    "rankNovice": "Novice",
+    "@rankNovice": {"description": "Rank Novice"},
+    "rankWordStudent": "Word Student",
+    "@rankWordStudent": {"description": "Rank Word Student"},
+    "rankWordMaster": "Word Master",
+    "@rankWordMaster": {"description": "Rank Word Master"},
+    "rankPuzzleSolver": "Puzzle Solver",
+    "@rankPuzzleSolver": {"description": "Rank Puzzle Solver"},
+    "rankMountainClimber": "Mountain Climber",
+    "@rankMountainClimber": {"description": "Rank Mountain Climber"},
+    "rankWordEagle": "Word Eagle",
+    "@rankWordEagle": {"description": "Rank Word Eagle"},
+    "rankWordKing": "Word King",
+    "@rankWordKing": {"description": "Rank Word King"},
+    "rankDiamondMind": "Diamond Mind",
+    "@rankDiamondMind": {"description": "Rank Diamond Mind"},
+    "rankLegend": "Legend",
+    "@rankLegend": {"description": "Rank Legend"},
+    "rankCrossClimberMaster": "CrossClimber Master",
+    "@rankCrossClimberMaster": {"description": "Rank Cross Climber Master"},
+    "xpGained": "+{amount} XP",
+    "@xpGained": {
+        "placeholders": {
+            "amount": {
+                "type": "int"
+            }
+        },
+        "description": "XP gained amount"
+    },
+    "totalXpLabel": "Total XP: {amount}",
+    "@totalXpLabel": {
+        "placeholders": {
+            "amount": {
+                "type": "int"
+            }
+        },
+        "description": "Total XP label with amount"
+    },
+    "rankUpTitle": "Rank Up!",
+    "@rankUpTitle": {"description": "Rank Up Title"},
+    "rankUpMessage": "You've reached {rankName}!",
+    "@rankUpMessage": {
+        "placeholders": {
+            "rankName": {
+                "type": "String"
+            }
+        },
+        "description": "Rank up celebration message"
+    },
+    "profileCardTitle": "Player Profile",
+    "@profileCardTitle": {"description": "Profile Card Title"},
+    "xpProgress": "{current} / {target} XP",
+    "@xpProgress": {
+        "placeholders": {
+            "current": {
+                "type": "int"
+            },
+            "target": {
+                "type": "int"
+            }
+        },
+        "description": "XP progress current/target"
+    },
+    "dailyChallengeXp": "Daily Challenge XP",
+    "@dailyChallengeXp": {"description": "Daily Challenge Xp"},
+    "comboXpBonus": "Combo Bonus: +{amount} XP",
+    "@comboXpBonus": {
+        "placeholders": {
+            "amount": {
+                "type": "int"
+            }
+        },
+        "description": "Combo XP bonus amount"
+    },
+    "dailyCalendarTitle": "Daily Reward Calendar",
+    "@dailyCalendarTitle": {
+        "description": "Daily reward calendar section title"
+    },
+    "dailyCalendarDay": "Day {day}",
+    "@dailyCalendarDay": {
+        "description": "Day label in the 7-day calendar",
+        "placeholders": {
+            "day": {
+                "type": "int"
+            }
+        }
+    },
+    "dailyCalendarClaim": "Claim!",
+    "@dailyCalendarClaim": {
+        "description": "Button label to claim today's daily reward"
+    },
+    "dailyCalendarClaimed": "Claimed",
+    "@dailyCalendarClaimed": {
+        "description": "Status label shown when today's reward has been claimed"
+    },
+    "dailyCalendarNextIn": "Next in {time}",
+    "@dailyCalendarNextIn": {
+        "description": "Countdown label showing time until next daily reward",
+        "placeholders": {
+            "time": {
+                "type": "String"
+            }
+        }
+    },
+    "dailyCalendarStreakReset": "Streak reset — back to Day 1!",
+    "@dailyCalendarStreakReset": {
+        "description": "FOMO warning shown when the streak was reset due to a missed day"
+    },
+    "dailyCalendarRewardCredits": "{amount} credits",
+    "@dailyCalendarRewardCredits": {
+        "description": "Credits reward amount in the calendar",
+        "placeholders": {
+            "amount": {
+                "type": "int"
+            }
+        }
+    },
+    "dailyCalendarRewardReveal": "1 Reveal",
+    "@dailyCalendarRewardReveal": {
+        "description": "Reveal hint reward label in the calendar"
+    },
+    "dailyCalendarRewardUndo": "1 Undo",
+    "@dailyCalendarRewardUndo": {
+        "description": "Undo hint reward label in the calendar"
+    },
+    "dailyCalendarRewardSpecial": "Special Theme!",
+    "@dailyCalendarRewardSpecial": {
+        "description": "Special theme bonus reward label for Day 7"
+    },
+    "dailyCalendarRewardSummary": "Reward claimed!",
+    "@dailyCalendarRewardSummary": {
+        "description": "SnackBar message shown after successfully claiming a daily reward"
+    },
+    "dailyCalendarFomoWarning": "Don't miss tomorrow!",
+    "@dailyCalendarFomoWarning": {
+        "description": "FOMO reminder shown after claiming today's reward"
+    },
+    "tournamentTitle": "Weekly Tournament",
+    "@tournamentTitle": {
+        "description": "Weekly tournament section title"
+    },
+    "tournamentWeek": "Week {week}",
+    "@tournamentWeek": {
+        "description": "Tournament week label",
+        "placeholders": {
+            "week": {
+                "type": "String"
+            }
+        }
+    },
+    "tournamentActive": "Active",
+    "@tournamentActive": {
+        "description": "Status label for an active tournament"
+    },
+    "tournamentEnded": "Ended",
+    "@tournamentEnded": {
+        "description": "Status label for an ended tournament"
+    },
+    "tournamentEndsIn": "Ends in {time}",
+    "@tournamentEndsIn": {
+        "description": "Countdown label showing time until tournament ends",
+        "placeholders": {
+            "time": {
+                "type": "String"
+            }
+        }
+    },
+    "tournamentNextIn": "Next in {time}",
+    "@tournamentNextIn": {
+        "description": "Countdown label showing time until next tournament",
+        "placeholders": {
+            "time": {
+                "type": "String"
+            }
+        }
+    },
+    "tournamentLeaderboard": "Leaderboard",
+    "@tournamentLeaderboard": {
+        "description": "Tournament leaderboard section title"
+    },
+    "tournamentLevels": "Tournament Levels",
+    "@tournamentLevels": {
+        "description": "Tournament levels section title"
+    },
+    "tournamentMyRank": "Your Rank",
+    "@tournamentMyRank": {
+        "description": "User's own rank in the tournament"
+    },
+    "tournamentRank": "#{rank}",
+    "@tournamentRank": {
+        "description": "Rank number with hash prefix",
+        "placeholders": {
+            "rank": {
+                "type": "int"
+            }
+        }
+    },
+    "tournamentScore": "{score} pts",
+    "@tournamentScore": {
+        "description": "Tournament score display",
+        "placeholders": {
+            "score": {
+                "type": "int"
+            }
+        }
+    },
+    "tournamentRewards": "Rewards",
+    "@tournamentRewards": {
+        "description": "Tournament rewards section title"
+    },
+    "tournamentPlay": "Play",
+    "@tournamentPlay": {
+        "description": "Button to play a tournament level"
+    },
+    "tournamentLevelCompleted": "Done",
+    "@tournamentLevelCompleted": {
+        "description": "Label shown on a completed tournament level card"
+    },
+    "tournamentNotParticipating": "Not participating yet",
+    "@tournamentNotParticipating": {
+        "description": "Shown when user hasn't played any tournament level yet"
+    },
+    "tournamentLevelsProgress": "{count}/7 levels",
+    "@tournamentLevelsProgress": {
+        "description": "Number of completed tournament levels out of 7",
+        "placeholders": {
+            "count": {
+                "type": "int"
+            }
+        }
+    },
+    "tournamentCreditsReward": "{amount} Credits",
+    "@tournamentCreditsReward": {
+        "description": "Credit reward amount in tournament tiers",
+        "placeholders": {
+            "amount": {
+                "type": "int"
+            }
+        }
+    },
+    "tournamentParticipation": "Participation",
+    "@tournamentParticipation": {
+        "description": "Participation tier label in tournament rewards"
+    },
+    "tournamentOffline": "Tournament requires an internet connection",
+    "@tournamentOffline": {
+        "description": "Error message when tournament cannot be loaded offline"
+    },
+    "tournamentLoadError": "Could not load tournament",
+    "@tournamentLoadError": {
+        "description": "Error message when tournament data fails to load"
+    },
+    "tournamentScoreSubmitted": "Score saved to leaderboard!",
+    "@tournamentScoreSubmitted": {
+        "description": "Confirmation shown when a tournament score is successfully submitted"
+    },
+    "tournamentHomeBanner": "Weekly Tournament",
+    "@tournamentHomeBanner": {
+        "description": "Tournament banner title on the home screen"
+    },
+    "tournamentJoin": "Join!",
+    "@tournamentJoin": {
+        "description": "Call-to-action button on the tournament home banner"
+    },
+    "tournamentDifficultyEasy": "Easy",
+    "@tournamentDifficultyEasy": {
+        "description": "Easy difficulty label"
+    },
+    "tournamentDifficultyMedium": "Medium",
+    "@tournamentDifficultyMedium": {
+        "description": "Medium difficulty label"
+    },
+    "tournamentDifficultyHard": "Hard",
+    "@tournamentDifficultyHard": {
+        "description": "Hard difficulty label"
+    },
+    "idleMotivation1": "One more word?",
+    "@idleMotivation1": {
+        "description": "Idle motivation tooltip message 1"
+    },
+    "idleMotivation2": "You can do it!",
+    "@idleMotivation2": {
+        "description": "Idle motivation tooltip message 2"
+    },
+    "idleMotivation3": "Try a different approach?",
+    "@idleMotivation3": {
+        "description": "Idle motivation tooltip message 3"
+    },
+    "settingsGroupProfile": "Profile & Account",
+    "@settingsGroupProfile": { "description": "Settings group: profile" },
+    "settingsGroupAppearance": "Appearance",
+    "@settingsGroupAppearance": { "description": "Settings group: appearance" },
+    "settingsGroupGameplay": "Gameplay",
+    "@settingsGroupGameplay": { "description": "Settings group: gameplay" },
+    "settingsGroupSoundHaptic": "Sound & Haptics",
+    "@settingsGroupSoundHaptic": { "description": "Settings group: sound" },
+    "settingsGroupHelp": "Help & Info",
+    "@settingsGroupHelp": { "description": "Settings group: help" },
+    "chooseTheme": "Choose Theme",
+    "@chooseTheme": { "description": "Theme section label" },
+    "premiumTheme": "Premium",
+    "@premiumTheme": { "description": "Premium theme badge" },
+    "unlockInShop": "Unlock in Shop",
+    "@unlockInShop": { "description": "Prompt to unlock premium theme" },
+    "themeUnlocked": "Theme unlocked!",
+    "@themeUnlocked": { "description": "Theme unlock confirmation" },
+    "profileTitle": "Profile",
+    "@profileTitle": { "description": "Profile screen title" },
+    "editProfile": "Edit Profile",
+    "@editProfile": { "description": "Edit profile button" },
+    "chooseAvatar": "Choose Avatar",
+    "@chooseAvatar": { "description": "Avatar picker dialog title" },
+    "displayName": "Display Name",
+    "@displayName": { "description": "Username field label" },
+    "displayNameHint": "Enter your name",
+    "@displayNameHint": { "description": "Username field hint" },
+    "saveProfile": "Save",
+    "@saveProfile": { "description": "Save profile button" },
+    "profileSaved": "Profile saved!",
+    "@profileSaved": { "description": "Profile save confirmation" },
+    "connectedAccounts": "Connected Accounts",
+    "@connectedAccounts": { "description": "Connected accounts section" },
+    "googleConnected": "Google — Connected",
+    "@googleConnected": { "description": "Google account connected" },
+    "googleNotConnected": "Google — Not connected",
+    "@googleNotConnected": { "description": "Google account not connected" },
+    "connectGoogle": "Connect",
+    "@connectGoogle": { "description": "Connect Google account button" },
+    "disconnectGoogle": "Disconnect",
+    "@disconnectGoogle": { "description": "Disconnect Google account button" },
+    "deleteAccount": "Delete Account",
+    "@deleteAccount": { "description": "Delete account button" },
+    "deleteAccountDesc": "Permanently delete your account and all data. This action cannot be undone.",
+    "@deleteAccountDesc": { "description": "Delete account description" },
+    "deleteAccountConfirm": "Are you sure you want to delete your account? All progress, achievements, and purchases will be permanently lost.",
+    "@deleteAccountConfirm": { "description": "Delete account confirmation dialog" },
+    "deleteAccountButton": "Delete Forever",
+    "@deleteAccountButton": { "description": "Confirm delete button" },
+    "cancel": "Cancel",
+    "@cancel": { "description": "Cancel button" },
+    "rankLabel": "Rank",
+    "@rankLabel": { "description": "Rank label" },
+    "totalXp": "Total XP",
+    "@totalXp": { "description": "Total XP label" },
+    "faq": "FAQ",
+    "@faq": { "description": "FAQ button" },
+    "licenses": "Licenses",
+    "@licenses": { "description": "Licenses button" },
+    "privacyPolicy": "Privacy Policy",
+    "@privacyPolicy": { "description": "Privacy policy button" },
+    "unlockThemeTitle": "Unlock {themeName}",
+    "@unlockThemeTitle": { "description": "Theme purchase dialog title", "placeholders": { "themeName": { "type": "String", "description": "Name of the theme" } } },
+    "unlockThemeDesc": "Unlock this premium theme for {cost} credits.",
+    "@unlockThemeDesc": { "description": "Theme purchase dialog body", "placeholders": { "cost": { "type": "int", "description": "Credit cost" } } },
+    "unlockButton": "Unlock",
+    "@unlockButton": { "description": "Unlock purchase button" },
+    "yourCredits": "Your credits: {amount}",
+    "@yourCredits": { "description": "Current credit balance", "placeholders": { "amount": { "type": "int", "description": "Credit amount" } } },
+    "solveMiddleWordsFirst": "Solve middle words first to unlock",
+    "@solveMiddleWordsFirst": { "description": "Tooltip for locked end word rows" },
+    "offlineBanner": "You are offline. Some features may be unavailable.",
+    "@offlineBanner": { "description": "Banner shown when device has no internet connection" },
+    "backOnline": "You are back online!",
+    "@backOnline": { "description": "Snackbar shown when internet connection is restored" },
+    "doubleRewards": "Double Rewards",
+    "@doubleRewards": { "description": "Button to watch ad and double level completion credits" },
+    "watchAdForLife": "Watch Ad for Free Life",
+    "@watchAdForLife": { "description": "Button in out-of-lives dialog to watch rewarded ad for a free life" },
+    "adNotAvailable": "Ad not available right now. Please try again later.",
+    "@adNotAvailable": { "description": "Shown when rewarded ad failed to load or is not ready" }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:crossclimber/l10n/app_localizations.dart';
 import 'package:crossclimber/services/statistics_repository.dart';
+import 'package:crossclimber/theme/animations.dart';
 import 'package:crossclimber/theme/border_radius.dart';
 import 'package:crossclimber/theme/spacing.dart';
 
@@ -45,7 +46,7 @@ class TimeStatsCard extends StatelessWidget {
           ),
         ],
       ),
-    ).animate().fadeIn(delay: 150.ms).slideX(begin: -0.2, end: 0);
+    ).animate().fadeIn(delay: AnimDurations.microFast).slideX(begin: -0.2, end: 0);
   }
 
   String _formatDuration(int seconds) {

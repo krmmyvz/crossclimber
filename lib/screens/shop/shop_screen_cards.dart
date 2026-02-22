@@ -3,6 +3,7 @@ import 'package:crossclimber/l10n/app_localizations.dart';
 import 'package:crossclimber/theme/border_radius.dart';
 import 'package:crossclimber/theme/spacing.dart';
 import 'package:crossclimber/theme/game_colors.dart';
+import 'package:crossclimber/theme/icon_sizes.dart';
 
 /// Widget builders for shop package cards
 mixin ShopScreenCards {
@@ -22,7 +23,7 @@ mixin ShopScreenCards {
             color: theme.colorScheme.primaryContainer,
             borderRadius: RadiiBR.sm,
           ),
-          child: Icon(icon, color: theme.colorScheme.primary, size: 24),
+          child: Icon(icon, color: theme.colorScheme.primary, size: IconSizes.lg),
         ),
         HorizontalSpacing.s,
         Expanded(
@@ -58,30 +59,33 @@ mixin ShopScreenCards {
   }) {
     final theme = Theme.of(context);
 
-    return Card(
-      elevation: popular ? 4 : 1,
-      child: InkWell(
-        onTap: onTap,
-        borderRadius: RadiiBR.md,
-        child: Container(
-          padding: SpacingInsets.m,
-          decoration: BoxDecoration(
-            borderRadius: RadiiBR.md,
-            border: popular
-                ? Border.all(color: theme.colorScheme.primary, width: 2)
-                : null,
-          ),
-          child: Row(
-            children: [
-              Container(
-                padding: const EdgeInsets.all(Spacing.s + Spacing.xs),
-                decoration: BoxDecoration(
-                  color: theme.colorScheme.primaryContainer,
-                  borderRadius: RadiiBR.md,
-                ),
-                child: Icon(
-                  Icons.monetization_on,
-                  size: 32,
+    return Semantics(
+      label: '${AppLocalizations.of(context)!.nCredits(amount)}, $price, sat\u0131n almak i\u00e7in dokun',
+      button: true,
+      child: Card(
+        elevation: popular ? 4 : 1,
+        child: InkWell(
+          onTap: onTap,
+          borderRadius: RadiiBR.md,
+          child: Container(
+            padding: SpacingInsets.m,
+            decoration: BoxDecoration(
+              borderRadius: RadiiBR.md,
+              border: popular
+                  ? Border.all(color: theme.colorScheme.primary, width: 2)
+                  : null,
+            ),
+            child: Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(Spacing.s + Spacing.xs),
+                  decoration: BoxDecoration(
+                    color: theme.colorScheme.primaryContainer,
+                    borderRadius: RadiiBR.md,
+                  ),
+                  child: Icon(
+                    Icons.diamond_rounded,
+                  size: IconSizes.xxl,
                   color: theme.colorScheme.primary,
                 ),
               ),
@@ -92,10 +96,13 @@ mixin ShopScreenCards {
                   children: [
                     Row(
                       children: [
-                        Text(
-                          AppLocalizations.of(context)!.nCredits(amount),
-                          style: theme.textTheme.titleMedium?.copyWith(
-                            fontWeight: FontWeight.bold,
+                        Flexible(
+                          child: Text(
+                            AppLocalizations.of(context)!.nCredits(amount),
+                            style: theme.textTheme.titleMedium?.copyWith(
+                              fontWeight: FontWeight.bold,
+                            ),
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ),
                         if (popular) ...[
@@ -110,7 +117,7 @@ mixin ShopScreenCards {
                               borderRadius: RadiiBR.md,
                             ),
                             child: Text(
-                              AppLocalizations.of(context)!.mostPopular,
+                              AppLocalizations.of(context)!.popularLabel,
                               style: theme.textTheme.labelSmall?.copyWith(
                                 color: theme.colorScheme.onPrimary,
                                 fontWeight: FontWeight.bold,
@@ -127,11 +134,14 @@ mixin ShopScreenCards {
                           color: theme.colorScheme.tertiary,
                           fontWeight: FontWeight.bold,
                         ),
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 2,
                       ),
                   ],
                 ),
               ),
               Container(
+                constraints: const BoxConstraints(minWidth: 80),
                 padding: const EdgeInsets.symmetric(
                   horizontal: 16,
                   vertical: 8,
@@ -142,6 +152,7 @@ mixin ShopScreenCards {
                 ),
                 child: Text(
                   price,
+                  textAlign: TextAlign.center,
                   style: theme.textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.bold,
                     color: theme.colorScheme.onPrimary,
@@ -152,7 +163,8 @@ mixin ShopScreenCards {
           ),
         ),
       ),
-    );
+    ),
+  );
   }
 
   Widget buildLifePackageCard(
@@ -166,32 +178,36 @@ mixin ShopScreenCards {
     final theme = Theme.of(context);
     final canAfford = currentCredits >= cost;
 
-    return Card(
-      elevation: popular ? 4 : 1,
-      child: InkWell(
-        onTap: canAfford ? () => onPurchase(amount, cost) : null,
-        borderRadius: RadiiBR.md,
-        child: Container(
-          padding: SpacingInsets.m,
-          decoration: BoxDecoration(
-            borderRadius: RadiiBR.md,
-            border: popular
-                ? Border.all(color: theme.colorScheme.primary, width: 2)
-                : null,
-          ),
-          child: Row(
-            children: [
-              Container(
-                padding: const EdgeInsets.all(Spacing.s + Spacing.xs),
-                decoration: BoxDecoration(
-                  color: canAfford
-                      ? theme.colorScheme.errorContainer
-                      : theme.colorScheme.surfaceContainerHighest,
-                  borderRadius: RadiiBR.md,
-                ),
-                child: Icon(
-                  Icons.favorite,
-                  size: 32,
+    return Semantics(
+      label: '${AppLocalizations.of(context)!.nLives(amount)}, $cost kredi${canAfford ? ', sat\u0131n almak i\u00e7in dokun' : ', yetersiz kredi'}',
+      button: canAfford,
+      enabled: canAfford,
+      child: Card(
+        elevation: popular ? 4 : 1,
+        child: InkWell(
+          onTap: canAfford ? () => onPurchase(amount, cost) : null,
+          borderRadius: RadiiBR.md,
+          child: Container(
+            padding: SpacingInsets.m,
+            decoration: BoxDecoration(
+              borderRadius: RadiiBR.md,
+              border: popular
+                  ? Border.all(color: theme.colorScheme.primary, width: 2)
+                  : null,
+            ),
+            child: Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(Spacing.s + Spacing.xs),
+                  decoration: BoxDecoration(
+                    color: canAfford
+                        ? theme.colorScheme.errorContainer
+                        : theme.colorScheme.surfaceContainerHighest,
+                    borderRadius: RadiiBR.md,
+                  ),
+                  child: Icon(
+                    Icons.favorite,
+                  size: IconSizes.xxl,
                   color: canAfford
                       ? theme.gameColors.lives
                       : theme.colorScheme.onSurfaceVariant,
@@ -204,13 +220,16 @@ mixin ShopScreenCards {
                   children: [
                     Row(
                       children: [
-                        Text(
-                          AppLocalizations.of(context)!.nLives(amount),
-                          style: theme.textTheme.titleMedium?.copyWith(
-                            fontWeight: FontWeight.bold,
-                            color: canAfford
-                                ? null
-                                : theme.colorScheme.onSurfaceVariant,
+                        Flexible(
+                          child: Text(
+                            AppLocalizations.of(context)!.nLives(amount),
+                            style: theme.textTheme.titleMedium?.copyWith(
+                              fontWeight: FontWeight.bold,
+                              color: canAfford
+                                  ? null
+                                  : theme.colorScheme.onSurfaceVariant,
+                            ),
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ),
                         if (popular) ...[
@@ -251,8 +270,8 @@ mixin ShopScreenCards {
               Row(
                 children: [
                   Icon(
-                    Icons.monetization_on,
-                    size: 20,
+                    Icons.diamond_rounded,
+                    size: IconSizes.md,
                     color: canAfford
                         ? theme.colorScheme.primary
                         : theme.colorScheme.onSurfaceVariant,
@@ -273,7 +292,8 @@ mixin ShopScreenCards {
           ),
         ),
       ),
-    );
+    ),
+  );
   }
 
   Widget buildHintPackageCard(
@@ -291,32 +311,36 @@ mixin ShopScreenCards {
     final theme = Theme.of(context);
     final canAfford = currentCredits >= cost;
 
-    return Card(
-      elevation: popular ? 4 : 1,
-      child: InkWell(
-        onTap: canAfford ? () => onPurchase(hintType, amount, cost) : null,
-        borderRadius: RadiiBR.md,
-        child: Container(
-          padding: const EdgeInsets.all(12),
-          decoration: BoxDecoration(
-            borderRadius: RadiiBR.md,
-            border: popular
-                ? Border.all(color: theme.colorScheme.primary, width: 2)
-                : null,
-          ),
-          child: Row(
-            children: [
-              Container(
-                padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: canAfford
-                      ? theme.colorScheme.primaryContainer
-                      : theme.colorScheme.surfaceContainerHighest,
-                  borderRadius: RadiiBR.md,
-                ),
-                child: Icon(
-                  icon,
-                  size: 28,
+    return Semantics(
+      label: '$amount $title, $cost kredi${canAfford ? ', sat\u0131n almak i\u00e7in dokun' : ', yetersiz kredi'}',
+      button: canAfford,
+      enabled: canAfford,
+      child: Card(
+        elevation: popular ? 4 : 1,
+        child: InkWell(
+          onTap: canAfford ? () => onPurchase(hintType, amount, cost) : null,
+          borderRadius: RadiiBR.md,
+          child: Container(
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              borderRadius: RadiiBR.md,
+              border: popular
+                  ? Border.all(color: theme.colorScheme.primary, width: 2)
+                  : null,
+            ),
+            child: Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: canAfford
+                        ? theme.colorScheme.primaryContainer
+                        : theme.colorScheme.surfaceContainerHighest,
+                    borderRadius: RadiiBR.md,
+                  ),
+                  child: Icon(
+                    icon,
+                  size: IconSizes.xl,
                   color: canAfford
                       ? theme.colorScheme.primary
                       : theme.colorScheme.onSurfaceVariant,
@@ -381,8 +405,8 @@ mixin ShopScreenCards {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Icon(
-                    Icons.monetization_on,
-                    size: 20,
+                    Icons.diamond_rounded,
+                    size: IconSizes.md,
                     color: canAfford
                         ? theme.colorScheme.primary
                         : theme.colorScheme.onSurfaceVariant,
@@ -403,6 +427,7 @@ mixin ShopScreenCards {
           ),
         ),
       ),
-    );
+    ),
+  );
   }
 }

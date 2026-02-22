@@ -14,6 +14,9 @@ import 'package:flutter/material.dart';
 class Radii {
   Radii._(); // Prevent instantiation
 
+  /// Extra extra small - tiny indicators, progress dots
+  static const double xxs = 2.0;
+
   /// Extra small - letter tiles, small interactive elements
   static const double xs = 4.0;
 
@@ -32,6 +35,9 @@ class Radii {
   /// Extra extra large - dialogs, bottom sheets, modals
   static const double xxl = 24.0;
 
+  /// Triple extra large - prominent pill buttons, large chips
+  static const double xxxl = 32.0;
+
   /// Full - pill shapes, circular buttons
   static const double full = 999.0;
 }
@@ -47,11 +53,13 @@ class Radii {
 class RadiiBR {
   RadiiBR._();
 
+  static final BorderRadius xxs = BorderRadius.circular(Radii.xxs);
   static final BorderRadius xs = BorderRadius.circular(Radii.xs);
   static final BorderRadius sm = BorderRadius.circular(Radii.sm);
   static final BorderRadius md = BorderRadius.circular(Radii.md);
   static final BorderRadius lg = BorderRadius.circular(Radii.lg);
   static final BorderRadius xl = BorderRadius.circular(Radii.xl);
   static final BorderRadius xxl = BorderRadius.circular(Radii.xxl);
+  static final BorderRadius xxxl = BorderRadius.circular(Radii.xxxl);
   static final BorderRadius full = BorderRadius.circular(Radii.full);
 }

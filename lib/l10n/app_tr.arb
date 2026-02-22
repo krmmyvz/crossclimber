@@ -1,37 +1,55 @@
 {
     "@@locale": "tr",
     "appTitle": "CrossClimber",
+    "@appTitle": {"description": "App Title"},
     "play": "Oyna",
+    "@play": {"description": "Play"},
     "settings": "Ayarlar",
+    "@settings": {"description": "Settings"},
     "language": "Dil",
+    "@language": {"description": "Language"},
     "english": "İngilizce",
+    "@english": {"description": "English"},
     "turkish": "Türkçe",
+    "@turkish": {"description": "Turkish"},
     "level": "Seviye {levelNumber}",
     "@level": {
         "placeholders": {
             "levelNumber": {
                 "type": "int"
             }
-        }
+        },
+        "description": "Level number label"
     },
     "nextLevel": "Sonraki Seviye",
+    "@nextLevel": {"description": "Next Level"},
     "allLevelsCompleted": "Harika! Tüm Seviyeleri Tamamladın!",
+    "@allLevelsCompleted": {"description": "All Levels Completed"},
     "allLevelsCompletedDesc": "{totalLevels} seviyenin tümünü tamamladın! Yakında yeni zorluklar için takipte kal.",
     "@allLevelsCompletedDesc": {
         "placeholders": {
             "totalLevels": {
                 "type": "int"
             }
-        }
+        },
+        "description": "Message shown when all levels are completed"
     },
     "hint": "İpucu",
+    "@hint": {"description": "Hint"},
     "correct": "Doğru!",
+    "@correct": {"description": "Correct"},
     "wrong": "Yanlış!",
+    "@wrong": {"description": "Wrong"},
     "congratulations": "Tebrikler!",
+    "@congratulations": {"description": "Congratulations"},
     "youWon": "Seviyeyi tamamladın!",
+    "@youWon": {"description": "You Won"},
     "phase1Title": "Kelimeleri Tahmin Et",
+    "@phase1Title": {"description": "Phase1 Title"},
     "phase2Title": "Kelimeleri Sırala",
+    "@phase2Title": {"description": "Phase2 Title"},
     "phase3Title": "Son Kelimeleri Bul",
+    "@phase3Title": {"description": "Phase3 Title"},
     "phaseProgress": "Adım {current} / {total}",
     "@phaseProgress": {
         "placeholders": {
@@ -41,7 +59,8 @@
             "total": {
                 "type": "int"
             }
-        }
+        },
+        "description": "Phase step indicator"
     },
     "wordsFound": "{found} / {total} kelime bulundu",
     "@wordsFound": {
@@ -52,519 +71,1401 @@
             "total": {
                 "type": "int"
             }
-        }
+        },
+        "description": "Words found progress indicator"
     },
     "pause": "Duraklat",
+    "@pause": {"description": "Pause"},
     "resume": "Devam Et",
+    "@resume": {"description": "Resume"},
     "restart": "Yeniden Başla",
+    "@restart": {"description": "Restart"},
     "mainMenu": "Ana Menü",
+    "@mainMenu": {"description": "Main Menu"},
     "paused": "Duraklatıldı",
+    "@paused": {"description": "Paused"},
     "useHint": "İpucu Kullan",
+    "@useHint": {"description": "Use Hint"},
     "hintsRemaining": "{count} ipucu kaldı",
     "@hintsRemaining": {
         "placeholders": {
             "count": {
                 "type": "int"
             }
-        }
+        },
+        "description": "Hints remaining count"
     },
     "noHintsLeft": "İpucu kalmadı",
+    "@noHintsLeft": {"description": "No Hints Left"},
     "hintUsed": "İpucu kullanıldı!",
+    "@hintUsed": {"description": "Hint Used"},
     "tapToGuess": "Tahmin etmek için dokun",
+    "@tapToGuess": {"description": "Tap To Guess"},
     "enterWord": "Kelimeyi gir",
+    "@enterWord": {"description": "Enter Word"},
     "locked": "Kilitli",
+    "@locked": {"description": "Locked"},
     "completed": "Tamamlandı!",
+    "@completed": {"description": "Completed"},
     "timeElapsed": "Geçen Süre",
+    "@timeElapsed": {"description": "Time Elapsed"},
     "yourScore": "Skorun",
+    "@yourScore": {"description": "Your Score"},
     "stars": "{count} Yıldız",
     "@stars": {
         "placeholders": {
             "count": {
                 "type": "int"
             }
-        }
+        },
+        "description": "Stars count label"
     },
     "newBestTime": "Yeni Rekor Süre!",
+    "@newBestTime": {"description": "New Best Time"},
     "playAgain": "Tekrar Oyna",
+    "@playAgain": {"description": "Play Again"},
     "dragToReorder": "Sıralamak için sürükle",
+    "@dragToReorder": {"description": "Drag To Reorder"},
     "checkOrder": "Sıralamayı Kontrol Et",
+    "@checkOrder": {"description": "Check Order"},
     "orderCorrect": "Sıralama doğru!",
+    "@orderCorrect": {"description": "Order Correct"},
     "orderIncorrect": "Sıralama yanlış, tekrar dene",
+    "@orderIncorrect": {"description": "Order Incorrect"},
     "invalidWord": "Geçersiz kelime!",
+    "@invalidWord": {"description": "Invalid Word"},
     "alreadyGuessed": "Bu kelime zaten bulundu",
+    "@alreadyGuessed": {"description": "Already Guessed"},
     "theme": "Tema",
+    "@theme": {"description": "Theme"},
     "system": "Sistem",
+    "@system": {"description": "System"},
     "light": "Açık",
+    "@light": {"description": "Light"},
     "dark": "Koyu",
+    "@dark": {"description": "Dark"},
     "vibration": "Titreşim",
+    "@vibration": {"description": "Vibration"},
     "showTimer": "Zamanlayıcıyı Göster",
+    "@showTimer": {"description": "Show Timer"},
     "autoCheck": "Otomatik Kontrol",
+    "@autoCheck": {"description": "Auto Check"},
     "autoCheckDesc": "Kelimeyi tamamladığınızda otomatik kontrol edilsin",
+    "@autoCheckDesc": {"description": "Auto Check Desc"},
     "autoSort": "Otomatik Sıralama",
+    "@autoSort": {"description": "Auto Sort"},
     "autoSortDesc": "Tüm kelimeleri bulduğunuzda otomatik sıralama başlasın",
+    "@autoSortDesc": {"description": "Auto Sort Desc"},
     "appearance": "Görünüm",
+    "@appearance": {"description": "Appearance"},
     "soundEffects": "Ses Efektleri",
+    "@soundEffects": {"description": "Sound Effects"},
     "music": "Müzik",
+    "@music": {"description": "Music"},
     "tutorial": "Nasıl Oynanır",
+    "@tutorial": {"description": "Tutorial"},
     "about": "Hakkında",
+    "@about": {"description": "About"},
     "version": "Versiyon",
+    "@version": {"description": "Version"},
     "difficulty": "Zorluk",
+    "@difficulty": {"description": "Difficulty"},
     "easy": "Kolay",
+    "@easy": {"description": "Easy"},
     "medium": "Orta",
+    "@medium": {"description": "Medium"},
     "hard": "Zor",
+    "@hard": {"description": "Hard"},
     "achievements": "Başarımlar",
+    "@achievements": {"description": "Achievements"},
     "statistics": "İstatistikler",
+    "@statistics": {"description": "Statistics"},
     "dailyChallenge": "Günlük Challenge",
+    "@dailyChallenge": {"description": "Daily Challenge"},
     "profile": "Profil",
+    "@profile": {"description": "Profile"},
     "guestUser": "Misafir Kullanıcı",
+    "@guestUser": {"description": "Guest User"},
     "loggedInAs": "Giriş yapıldı: {email}",
     "@loggedInAs": {
         "placeholders": {
             "email": {
                 "type": "String"
             }
-        }
+        },
+        "description": "Logged in as email"
     },
     "linkAccount": "Hesabı Bağla",
+    "@linkAccount": {"description": "Link Account"},
     "linkAccountDesc": "İlerlemeni buluta kaydetmek için hesabını bağla.",
+    "@linkAccountDesc": {"description": "Link Account Desc"},
     "signOut": "Çıkış Yap",
+    "@signOut": {"description": "Sign Out"},
     "googleSignIn": "Google ile Giriş Yap",
-    
+    "@googleSignIn": {"description": "Google Sign In"},
     "tutorial_intro_welcome_title": "CrossClimber'a Hoş Geldiniz!",
+    "@tutorial_intro_welcome_title": {"description": "Tutorial intro welcome title"},
     "tutorial_intro_welcome_desc": "Bu eğlenceli kelime bulmaca oyununu nasıl oynayacağınızı öğrenin. Her seferde bir harf değiştirerek kelimeleri bağlayın!",
+    "@tutorial_intro_welcome_desc": {"description": "Tutorial intro welcome desc"},
     "tutorial_intro_objective_title": "Oyun Amacı",
+    "@tutorial_intro_objective_title": {"description": "Tutorial intro objective title"},
     "tutorial_intro_objective_desc": "Hedefiniz BAŞLANGIÇ ve BİTİŞ kelimeleri arasındaki eksik kelimeleri bulmaktır. Her kelime bir öncekinden tam olarak bir harf farklıdır.",
+    "@tutorial_intro_objective_desc": {"description": "Tutorial intro objective desc"},
     "tutorial_intro_rule_title": "Altın Kural",
+    "@tutorial_intro_rule_title": {"description": "Tutorial intro rule title"},
     "tutorial_intro_rule_desc": "Her seferinde sadece BİR harf değiştirebilirsiniz. Örneğin: KAL → BAL → BAT → BAŞ",
-    
+    "@tutorial_intro_rule_desc": {"description": "Tutorial intro rule desc"},
     "tutorial_guess_intro_title": "Faz 1: Tahmin Etme",
+    "@tutorial_guess_intro_title": {"description": "Tutorial guess intro title"},
     "tutorial_guess_intro_desc": "Önce tüm orta kelimeleri tahmin etmelisiniz. Tahmininize başlamak için boş bir slota dokunun.",
+    "@tutorial_guess_intro_desc": {"description": "Tutorial guess intro desc"},
     "tutorial_guess_success_title": "Harika İş!",
+    "@tutorial_guess_success_title": {"description": "Tutorial guess success title"},
     "tutorial_guess_success_desc": "İlk kelimeyi buldun! Bulmacayı tamamlamak için devam et.",
+    "@tutorial_guess_success_desc": {"description": "Tutorial guess success desc"},
     "tutorial_guess_keyboard_title": "Tahmininizi Yazın",
+    "@tutorial_guess_keyboard_title": {"description": "Tutorial guess keyboard title"},
     "tutorial_guess_keyboard_desc": "Klavyeyi kullanarak bir kelime yazın. Unutmayın: komşu kelimelerden sadece bir harf farklı olmalı!",
+    "@tutorial_guess_keyboard_desc": {"description": "Tutorial guess keyboard desc"},
     "tutorial_guess_hints_title": "Yardıma İhtiyacınız Var mı?",
+    "@tutorial_guess_hints_title": {"description": "Tutorial guess hints title"},
     "tutorial_guess_hints_desc": "Seviye başına 3 ipucunuz var. Takıldığınızda harfleri açığa çıkarmak veya ipucu almak için onları akıllıca kullanın.",
+    "@tutorial_guess_hints_desc": {"description": "Tutorial guess hints desc"},
     "tutorial_guess_timer_title": "Zamanla Yarışın",
+    "@tutorial_guess_timer_title": {"description": "Tutorial guess timer title"},
     "tutorial_guess_timer_desc": "Daha hızlı tamamlama daha fazla yıldız kazandırır! Merak etmeyin, zaman sınırı yok.",
-    
+    "@tutorial_guess_timer_desc": {"description": "Tutorial guess timer desc"},
     "tutorial_combo_intro_title": "Combo Sistemi!",
+    "@tutorial_combo_intro_title": {"description": "Tutorial combo intro title"},
     "tutorial_combo_intro_desc": "Doğru tahminlerinizi sürdürerek combo yapın ve skorunuzu katlayın! Her doğru cevap art arda çarpanınızı artırır.",
-    
+    "@tutorial_combo_intro_desc": {"description": "Tutorial combo intro desc"},
     "tutorial_sort_intro_title": "Faz 2: Sıralama",
+    "@tutorial_sort_intro_title": {"description": "Tutorial sort intro title"},
     "tutorial_sort_intro_desc": "Mükemmel! Tüm ara kelimeleri buldun. Şimdi bunları doğru sıraya diz - her kelime bir sonrakinden sadece BİR harf farklı olmalı.",
+    "@tutorial_sort_intro_desc": {"description": "Tutorial sort intro desc"},
     "tutorial_sort_action_title": "Gerçek Zamanlı Doğrulama",
+    "@tutorial_sort_action_title": {"description": "Tutorial sort action title"},
     "tutorial_sort_action_desc": "Kelimeleri sürükleyip sırala. Doğru konumdakiler yeşil, yanlış olanlar kırmızı kenarlıkla gösterilecek. Tüm kelimeler yeşil olunca BAŞLANGIÇ ve BİTİŞ otomatik açılır!",
-    
+    "@tutorial_sort_action_desc": {"description": "Tutorial sort action desc"},
     "tutorial_final_intro_title": "Faz 3: Final Meydan Okuması",
+    "@tutorial_final_intro_title": {"description": "Tutorial final intro title"},
     "tutorial_final_intro_desc": "Neredeyse bitti! Şimdi sıralanmış orta kelimelere dayanarak BAŞLANGIÇ ve BİTİŞ kelimelerinin ne olduğunu bulun.",
+    "@tutorial_final_intro_desc": {"description": "Tutorial final intro desc"},
     "tutorial_final_start_title": "Başlangıç Kelimesini Tahmin Edin",
+    "@tutorial_final_start_title": {"description": "Tutorial final start title"},
     "tutorial_final_start_desc": "İlk orta kelimeden önce hangi kelime gelir? Bir harf farklı olmalı.",
+    "@tutorial_final_start_desc": {"description": "Tutorial final start desc"},
     "tutorial_final_end_title": "Bitiş Kelimesini Tahmin Edin",
+    "@tutorial_final_end_title": {"description": "Tutorial final end title"},
     "tutorial_final_end_desc": "Son orta kelimeden sonra hangi kelime gelir? Merdiveni tamamlayın!",
-    
+    "@tutorial_final_end_desc": {"description": "Tutorial final end desc"},
     "tutorial_complete_congrats_title": "Hazırsınız!",
+    "@tutorial_complete_congrats_title": {"description": "Tutorial complete congrats title"},
     "tutorial_complete_congrats_desc": "Tebrikler! Artık CrossClimber'ı nasıl oynayacağınızı biliyorsunuz. İyi eğlenceler ve kendinize meydan okuyun!",
-    
+    "@tutorial_complete_congrats_desc": {"description": "Tutorial complete congrats desc"},
     "skipTutorial": "Tutorial'ı Atla",
+    "@skipTutorial": {"description": "Skip Tutorial"},
     "continueButton": "Devam Et",
+    "@continueButton": {"description": "Continue Button"},
     "showTips": "İpuçlarını Göster",
+    "@showTips": {"description": "Show Tips"},
     "resetTutorial": "Tutorial'ı Sıfırla",
-    
+    "@resetTutorial": {"description": "Reset Tutorial"},
+    "tutorialResetSuccess": "Tutorial ilerlemesi sıfırlandı.",
+    "@tutorialResetSuccess": {"description": "Tutorial Reset Success"},
     "outOfLivesTitle": "Canın Bitti!",
+    "@outOfLivesTitle": {"description": "Out Of Lives Title"},
     "outOfLivesMessage": "Canın bitti. Yenilenmesini bekleyebilir veya kredi kullanarak devam edebilirsin.",
+    "@outOfLivesMessage": {"description": "Out Of Lives Message"},
     "nextLifeIn": "Sonraki can: {time}",
     "@nextLifeIn": {
         "placeholders": {
             "time": {
                 "type": "String"
             }
-        }
+        },
+        "description": "Next life regeneration timer"
     },
-    "buyOneLife": "1 Can Al (50 💰)",
-    "buyAllLives": "Tüm Canları Al (100 💰)",
+    "buyOneLife": "1 Can Al (50 Kredi)",
+    "@buyOneLife": {"description": "Buy One Life"},
+    "buyAllLives": "Tüm Canları Al (100 Kredi)",
+    "@buyAllLives": {"description": "Buy All Lives"},
     "exitGame": "Oyundan Çık",
+    "@exitGame": {"description": "Exit Game"},
     "returnToMainMenu": "Ana Menüye Dön?",
+    "@returnToMainMenu": {"description": "Return To Main Menu"},
     "progressLostWarning": "Mevcut ilerlemeniz kaybolacak. Emin misiniz?",
+    "@progressLostWarning": {"description": "Progress Lost Warning"},
     "cancel": "İptal",
     "exit": "Çık",
+    "@exit": {"description": "Exit"},
     "startEndUnlocked": "BAŞLANGIÇ & BİTİŞ Açıldı!",
-
+    "@startEndUnlocked": {"description": "Start End Unlocked"},
     "shopTitle": "Market",
+    "@shopTitle": {"description": "Shop Title"},
     "freeCreditsTitle": "Ücretsiz Kazan",
+    "@freeCreditsTitle": {"description": "Free Credits Title"},
     "freeCreditsSubtitle": "Reklam izle, bedava kredi kazan",
+    "@freeCreditsSubtitle": {"description": "Free Credits Subtitle"},
     "creditPackageTitle": "Kredi Paketi",
+    "@creditPackageTitle": {"description": "Credit Package Title"},
     "creditPackageSubtitle": "Gerçek para ile kredi satın al",
+    "@creditPackageSubtitle": {"description": "Credit Package Subtitle"},
     "lifePackageTitle": "Can Paketi",
+    "@lifePackageTitle": {"description": "Life Package Title"},
     "lifePackageSubtitle": "Kredi ile can satın al",
+    "@lifePackageSubtitle": {"description": "Life Package Subtitle"},
     "hintPackageTitle": "İpucu Paketi",
+    "@hintPackageTitle": {"description": "Hint Package Title"},
     "hintPackageSubtitle": "Kredi ile ipucu satın al",
+    "@hintPackageSubtitle": {"description": "Hint Package Subtitle"},
     "nCredits": "{amount} Kredi",
     "@nCredits": {
         "placeholders": {
             "amount": {
                 "type": "int"
             }
-        }
+        },
+        "description": "Number of credits"
     },
     "mostPopular": "EN POPÜLER",
+    "@mostPopular": {"description": "Most Popular"},
     "popularLabel": "POPÜLER",
+    "@popularLabel": {"description": "Popular Label"},
     "nLives": "{amount} Can",
     "@nLives": {
         "placeholders": {
             "amount": {
                 "type": "int"
             }
-        }
+        },
+        "description": "Number of lives"
     },
     "buyOneLifeDesc": "Tek can satın al",
+    "@buyOneLifeDesc": {"description": "Buy One Life Desc"},
     "buyFiveLives": "5 cana çıkar",
+    "@buyFiveLives": {"description": "Buy Five Lives"},
     "revealWord": "Kelimeyi Göster",
+    "@revealWord": {"description": "Reveal Word"},
     "revealWordDesc": "Seçili kelimeyi tamamen açar",
+    "@revealWordDesc": {"description": "Reveal Word Desc"},
     "undoMove": "Geri Al",
+    "@undoMove": {"description": "Undo Move"},
     "undoMoveDesc": "Son yaptığın hareketi geri alır",
-    "dailyRewardClaim": "Günlük Ödülünü Al! 🎁",
+    "@undoMoveDesc": {"description": "Undo Move Desc"},
+    "dailyRewardClaim": "Günlük Ödülünü Al!",
+    "@dailyRewardClaim": {"description": "Daily Reward Claim"},
     "dailyRewardAmount": "20+ Kredi + Bonuslar",
+    "@dailyRewardAmount": {"description": "Daily Reward Amount"},
     "dailyRewardStreak": "Streak: {days} gün",
     "@dailyRewardStreak": {
         "placeholders": {
             "days": {
                 "type": "int"
             }
-        }
+        },
+        "description": "Daily reward streak days"
     },
     "watchAdsTitle": "Reklam İzle, Kazan",
+    "@watchAdsTitle": {"description": "Watch Ads Title"},
     "watchAdsSubtitle": "Günde 5 reklam izleyebilirsin",
+    "@watchAdsSubtitle": {"description": "Watch Ads Subtitle"},
     "watchAdCredits": "+10 Kredi",
+    "@watchAdCredits": {"description": "Watch Ad Credits"},
     "watchAdHint": "+1 İpucu",
+    "@watchAdHint": {"description": "Watch Ad Hint"},
     "dailyRewardTitle": "Günlük Ödül!",
+    "@dailyRewardTitle": {"description": "Daily Reward Title"},
     "alreadyClaimedToday": "Bugünkü ödülünü zaten aldın!",
+    "@alreadyClaimedToday": {"description": "Already Claimed Today"},
     "notEnoughCredits": "Yeterli kredin yok!",
+    "@notEnoughCredits": {"description": "Not Enough Credits"},
     "livesAlreadyFull": "Canın zaten dolu!",
+    "@livesAlreadyFull": {"description": "Lives Already Full"},
     "great": "Harika!",
+    "@great": {"description": "Great"},
     "share": "Paylaş",
+    "@share": {"description": "Share"},
     "shareResult": "Sonucu Paylaş",
+    "@shareResult": {"description": "Share Result"},
     "customKeyboard": "Özel Klavye",
+    "@customKeyboard": {"description": "Custom Keyboard"},
     "customKeyboardDesc": "Oyun içi QWERTY klavyeyi kullan",
+    "@customKeyboardDesc": {"description": "Custom Keyboard Desc"},
     "hapticFeedback": "Dokunsal Geri Bildirim",
+    "@hapticFeedback": {"description": "Haptic Feedback"},
     "hapticFeedbackDesc": "Titreşim ve dokunsal geri bildirim",
+    "@hapticFeedbackDesc": {"description": "Haptic Feedback Desc"},
     "gotIt": "Anladım!",
+    "@gotIt": {"description": "Got It"},
     "skipLabel": "Atla",
-
+    "@skipLabel": {"description": "Skip Label"},
     "progress": "İlerleme",
+    "@progress": {"description": "Progress"},
     "today": "Bugün",
+    "@today": {"description": "Today"},
     "yesterday": "Dün",
+    "@yesterday": {"description": "Yesterday"},
     "daysAgo": "{count} gün önce",
     "@daysAgo": {
         "placeholders": {
             "count": {
                 "type": "int"
             }
+        },
+        "description": "Days ago label"
+    },
+    "achievementFirstWin": "İlk Zafer",
+    "@achievementFirstWin": {"description": "Achievement First Win"},
+    "achievementTenLevels": "On Seviye",
+    "@achievementTenLevels": {"description": "Achievement Ten Levels"},
+    "achievementSpeedDemon": "Hız Şeytanı",
+    "@achievementSpeedDemon": {"description": "Achievement Speed Demon"},
+    "achievementMarathonRunner": "Maraton Koşucusu",
+    "@achievementMarathonRunner": {"description": "Achievement Marathon Runner"},
+    "achievementThirtyLevels": "Otuz Seviye",
+    "@achievementThirtyLevels": {"description": "Achievement Thirty Levels"},
+    "achievementPerfectStreak5": "5'li Mükemmel Seri",
+    "@achievementPerfectStreak5": {"description": "Achievement Perfect Streak5"},
+    "achievementCenturyClub": "Yüzler Kulübü",
+    "@achievementCenturyClub": {"description": "Achievement Century Club"},
+    "achievementHintlessHero": "İpucusuz Kahraman",
+    "@achievementHintlessHero": {"description": "Achievement Hintless Hero"},
+    "achievementErrorFree": "Hatasız",
+    "@achievementErrorFree": {"description": "Achievement Error Free"},
+    "achievementEarlyBird": "Sabah Kuşu",
+    "@achievementEarlyBird": {"description": "Achievement Early Bird"},
+    "achievementNightOwl": "Gece Kuşu",
+    "@achievementNightOwl": {"description": "Achievement Night Owl"},
+    "achievementPerfectStreak10": "10'lu Mükemmel Seri",
+    "@achievementPerfectStreak10": {"description": "Achievement Perfect Streak10"},
+    "achievementFiftyLevels": "Elli Seviye",
+    "@achievementFiftyLevels": {"description": "Achievement Fifty Levels"},
+    "achievementThreeStarPerfectionist": "Üç Yıldız Mükemmeliyetçisi",
+    "@achievementThreeStarPerfectionist": {"description": "Achievement Three Star Perfectionist"},
+    "achievementNoHintsMaster": "İpucu Ustası",
+    "@achievementNoHintsMaster": {"description": "Achievement No Hints Master"},
+    "achievementDescFirstWin": "İlk seviyeni tamamla",
+    "@achievementDescFirstWin": {"description": "Achievement Desc First Win"},
+    "achievementDescTenLevels": "10 seviye tamamla",
+    "@achievementDescTenLevels": {"description": "Achievement Desc Ten Levels"},
+    "achievementDescSpeedDemon": "Bir seviyeyi 30 saniyenin altında tamamla",
+    "@achievementDescSpeedDemon": {"description": "Achievement Desc Speed Demon"},
+    "achievementDescMarathonRunner": "Tek oturumda 10 seviye oyna",
+    "@achievementDescMarathonRunner": {"description": "Achievement Desc Marathon Runner"},
+    "achievementDescThirtyLevels": "30 seviye tamamla",
+    "@achievementDescThirtyLevels": {"description": "Achievement Desc Thirty Levels"},
+    "achievementDescPerfectStreak5": "Ardışık 5 seviyede 3 yıldız al",
+    "@achievementDescPerfectStreak5": {"description": "Achievement Desc Perfect Streak5"},
+    "achievementDescCenturyClub": "100 seviye tamamla",
+    "@achievementDescCenturyClub": {"description": "Achievement Desc Century Club"},
+    "achievementDescHintlessHero": "İpucu kullanmadan 10 seviye tamamla",
+    "@achievementDescHintlessHero": {"description": "Achievement Desc Hintless Hero"},
+    "achievementDescErrorFree": "Hiç hata yapmadan bir seviyeyi tamamla",
+    "@achievementDescErrorFree": {"description": "Achievement Desc Error Free"},
+    "achievementDescEarlyBird": "Sabah 9'dan önce bir seviye tamamla",
+    "@achievementDescEarlyBird": {"description": "Achievement Desc Early Bird"},
+    "achievementDescNightOwl": "Gece 11'den sonra bir seviye tamamla",
+    "@achievementDescNightOwl": {"description": "Achievement Desc Night Owl"},
+    "achievementDescPerfectStreak10": "Ardışık 10 seviyede 3 yıldız al",
+    "@achievementDescPerfectStreak10": {"description": "Achievement Desc Perfect Streak10"},
+    "achievementDescFiftyLevels": "50 seviye tamamla",
+    "@achievementDescFiftyLevels": {"description": "Achievement Desc Fifty Levels"},
+    "achievementDescThreeStarPerfectionist": "20 seviyede 3 yıldız al",
+    "@achievementDescThreeStarPerfectionist": {"description": "Achievement Desc Three Star Perfectionist"},
+    "achievementDescNoHintsMaster": "İpucu kullanmadan 50 seviye tamamla",
+    "@achievementDescNoHintsMaster": {"description": "Achievement Desc No Hints Master"},
+    "achievementStreak7Days": "Haftanın Savaşçısı",
+    "@achievementStreak7Days": {"description": "Achievement Streak7 Days"},
+    "achievementStreak14Days": "İki Hafta",
+    "@achievementStreak14Days": {"description": "Achievement Streak14 Days"},
+    "achievementStreak30Days": "Aylık Şampiyon",
+    "@achievementStreak30Days": {"description": "Achievement Streak30 Days"},
+    "achievementStreak60Days": "2 Aylık Seri",
+    "@achievementStreak60Days": {"description": "Achievement Streak60 Days"},
+    "achievementStreak100Days": "Yüzüncü Gün",
+    "@achievementStreak100Days": {"description": "Achievement Streak100 Days"},
+    "achievementCombo5x": "Kombo Başlangıcı",
+    "@achievementCombo5x": {"description": "Achievement Combo5x"},
+    "achievementCombo8x": "Kombo Ustası",
+    "@achievementCombo8x": {"description": "Achievement Combo8x"},
+    "achievementCombo10x": "Kombo Efsanesi",
+    "@achievementCombo10x": {"description": "Achievement Combo10x"},
+    "achievementSpeed60s": "Hızlı Koşucu",
+    "@achievementSpeed60s": {"description": "Achievement Speed60s"},
+    "achievementSpeed45s": "Yıldırım",
+    "@achievementSpeed45s": {"description": "Achievement Speed45s"},
+    "achievementAllLevels": "Tüm Seviyeler Tamam",
+    "@achievementAllLevels": {"description": "Achievement All Levels"},
+    "achievementLegendaryRank": "Efsanevi",
+    "@achievementLegendaryRank": {"description": "Achievement Legendary Rank"},
+    "achievementShareResults": "Paylaşımcı",
+    "@achievementShareResults": {"description": "Achievement Share Results"},
+    "achievementDailyChallengeFirst": "Günlük Meydan Okuyucu",
+    "@achievementDailyChallengeFirst": {"description": "Achievement Daily Challenge First"},
+    "achievementDailyChallenge30": "Günlük Şampiyon",
+    "@achievementDailyChallenge30": {"description": "Achievement Daily Challenge30"},
+    "achievementDescStreak7Days": "7 gün üst üste giriş yap",
+    "@achievementDescStreak7Days": {"description": "Achievement Desc Streak7 Days"},
+    "achievementDescStreak14Days": "14 gün üst üste giriş yap",
+    "@achievementDescStreak14Days": {"description": "Achievement Desc Streak14 Days"},
+    "achievementDescStreak30Days": "30 gün üst üste giriş yap",
+    "@achievementDescStreak30Days": {"description": "Achievement Desc Streak30 Days"},
+    "achievementDescStreak60Days": "60 gün üst üste giriş yap",
+    "@achievementDescStreak60Days": {"description": "Achievement Desc Streak60 Days"},
+    "achievementDescStreak100Days": "100 gün üst üste giriş yap",
+    "@achievementDescStreak100Days": {"description": "Achievement Desc Streak100 Days"},
+    "achievementDescCombo5x": "5x kombo yap",
+    "@achievementDescCombo5x": {"description": "Achievement Desc Combo5x"},
+    "achievementDescCombo8x": "8x kombo yap",
+    "@achievementDescCombo8x": {"description": "Achievement Desc Combo8x"},
+    "achievementDescCombo10x": "10x kombo yap",
+    "@achievementDescCombo10x": {"description": "Achievement Desc Combo10x"},
+    "achievementDescSpeed60s": "Bir seviyeyi 60 saniyede tamamla",
+    "@achievementDescSpeed60s": {"description": "Achievement Desc Speed60s"},
+    "achievementDescSpeed45s": "Bir seviyeyi 45 saniyede tamamla",
+    "@achievementDescSpeed45s": {"description": "Achievement Desc Speed45s"},
+    "achievementDescAllLevels": "Tüm mevcut seviyeleri tamamla",
+    "@achievementDescAllLevels": {"description": "Achievement Desc All Levels"},
+    "achievementDescLegendaryRank": "Efsanevi rütbesine ulaş",
+    "@achievementDescLegendaryRank": {"description": "Achievement Desc Legendary Rank"},
+    "achievementDescShareResults": "Sonuçlarını 5 kez paylaş",
+    "@achievementDescShareResults": {"description": "Achievement Desc Share Results"},
+    "achievementDescDailyChallengeFirst": "İlk günlük meydan okumanı tamamla",
+    "@achievementDescDailyChallengeFirst": {"description": "Achievement Desc Daily Challenge First"},
+    "achievementDescDailyChallenge30": "30 günlük meydan okuma tamamla",
+    "@achievementDescDailyChallenge30": {"description": "Achievement Desc Daily Challenge30"},
+    "achievementRarityCommon": "Yaygın",
+    "@achievementRarityCommon": {"description": "Achievement Rarity Common"},
+    "achievementRarityRare": "Nadir",
+    "@achievementRarityRare": {"description": "Achievement Rarity Rare"},
+    "achievementRarityLegendary": "Efsanevi",
+    "@achievementRarityLegendary": {"description": "Achievement Rarity Legendary"},
+    "achievementBadgeSelect": "Rozet Seç",
+    "@achievementBadgeSelect": {"description": "Achievement Badge Select"},
+    "achievementBadgeActive": "Aktif Rozet",
+    "@achievementBadgeActive": {"description": "Achievement Badge Active"},
+    "achievementBadgeRemove": "Rozeti Kaldır",
+    "@achievementBadgeRemove": {"description": "Achievement Badge Remove"},
+    "achievementBadgeRemoved": "Rozet kaldırıldı",
+    "@achievementBadgeRemoved": {"description": "Achievement Badge Removed"},
+    "achievementBadgeSelected": "Rozet seçildi!",
+    "@achievementBadgeSelected": {"description": "Achievement Badge Selected"},
+    "achievementUnlocked": "Başarım Açıldı",
+    "@achievementUnlocked": {"description": "Achievement Unlocked"},
+    "streakMilestoneTitle": "Seri Kilometre Taşı!",
+    "@streakMilestoneTitle": {"description": "Streak Milestone Title"},
+    "streakMilestoneDesc": "{days} günlük seri! +{credits} kredi!",
+    "@streakMilestoneDesc": {
+        "placeholders": {
+            "days": { "type": "int" },
+            "credits": { "type": "int" }
+        },
+        "description": "Seri kilometre taşına ulaşıldı"
+    },
+    "streakFreezeTitle": "Seri Dondurma",
+    "@streakFreezeTitle": {"description": "Streak Freeze Title"},
+    "streakFreezeDesc": "Harcanan 1 gün için serini korur",
+    "@streakFreezeDesc": {"description": "Streak Freeze Desc"},
+    "streakFreezeCount": "{count, plural, =1{1 dondurma mevcut} other{{count} dondurma mevcut}}",
+    "@streakFreezeCount": {
+        "placeholders": {
+            "count": { "type": "int" }
+        },
+        "description": "Mevcut seri dondurma sayısı"
+    },
+    "streakFreezeAutoUsed": "Seri dondurma kullanıldı! Serin güvende.",
+    "@streakFreezeAutoUsed": {"description": "Streak Freeze Auto Used"},
+    "streakLossWarningTitle": "Serin tehlikede!",
+    "@streakLossWarningTitle": {"description": "Streak Loss Warning Title"},
+    "streakLossWarning": "Serini kaybetme! Bugün oyna!",
+    "@streakLossWarning": {"description": "Streak Loss Warning"},
+    "streakDays": "günlük seri",
+    "@streakDays": {"description": "Streak Days"},
+    "streakTodayCompleted": "Bugün tamam",
+    "@streakTodayCompleted": {"description": "Streak Today Completed"},
+    "streakTodayIncomplete": "Bugün oyna!",
+    "@streakTodayIncomplete": {"description": "Streak Today Incomplete"},
+    "streakFreezeAvailable": "dondurma",
+    "@streakFreezeAvailable": {"description": "Streak Freeze Available"},
+    "streakNextMilestone": "Sonraki hedef: {days} gün",
+    "@streakNextMilestone": {
+        "placeholders": {
+            "days": {"type": "int"}
         }
     },
-
-    "achievementFirstWin": "İlk Zafer",
-    "achievementTenLevels": "On Seviye",
-    "achievementSpeedDemon": "Hız Şeytanı",
-    "achievementMarathonRunner": "Maraton Koşucusu",
-    "achievementThirtyLevels": "Otuz Seviye",
-    "achievementPerfectStreak5": "5'li Mükemmel Seri",
-    "achievementCenturyClub": "Yüzler Kulübü",
-    "achievementHintlessHero": "İpucusuz Kahraman",
-    "achievementErrorFree": "Hatasız",
-    "achievementEarlyBird": "Sabah Kuşu",
-    "achievementNightOwl": "Gece Kuşu",
-    "achievementPerfectStreak10": "10'lu Mükemmel Seri",
-    "achievementFiftyLevels": "Elli Seviye",
-    "achievementThreeStarPerfectionist": "Üç Yıldız Mükemmeliyetçisi",
-    "achievementNoHintsMaster": "İpucu Ustası",
-
-    "achievementDescFirstWin": "İlk seviyeni tamamla",
-    "achievementDescTenLevels": "10 seviye tamamla",
-    "achievementDescSpeedDemon": "Bir seviyeyi 30 saniyenin altında tamamla",
-    "achievementDescMarathonRunner": "Tek oturumda 10 seviye oyna",
-    "achievementDescThirtyLevels": "30 seviye tamamla",
-    "achievementDescPerfectStreak5": "Ardışık 5 seviyede 3 yıldız al",
-    "achievementDescCenturyClub": "100 seviye tamamla",
-    "achievementDescHintlessHero": "İpucu kullanmadan 10 seviye tamamla",
-    "achievementDescErrorFree": "Hiç hata yapmadan bir seviyeyi tamamla",
-    "achievementDescEarlyBird": "Sabah 9'dan önce bir seviye tamamla",
-    "achievementDescNightOwl": "Gece 11'den sonra bir seviye tamamla",
-    "achievementDescPerfectStreak10": "Ardışık 10 seviyede 3 yıldız al",
-    "achievementDescFiftyLevels": "50 seviye tamamla",
-    "achievementDescThreeStarPerfectionist": "20 seviyede 3 yıldız al",
-    "achievementDescNoHintsMaster": "İpucu kullanmadan 50 seviye tamamla",
-
+    "streakMilestoneReward": "Ödül: {credits} kredi",
+    "@streakMilestoneReward": {
+        "placeholders": {
+            "credits": {"type": "int"}
+        }
+    },
+    "streakMilestones": "Kilometre Taşları",
+    "@streakMilestones": {"description": "Streak Milestones"},
+    "streakAllMilestonesReached": "Tüm hedeflere ulaşıldı!",
+    "@streakAllMilestonesReached": {"description": "Streak All Milestones Reached"},
+    "streakFreezeShopTitle": "Seri Koruması",
+    "@streakFreezeShopTitle": {"description": "Streak Freeze Shop Title"},
+    "streakFreezeShopSubtitle": "Bir daha seri asla kaybetme",
+    "@streakFreezeShopSubtitle": {"description": "Streak Freeze Shop Subtitle"},
+    "buyStreakFreeze1": "1 Dondurma",
+    "@buyStreakFreeze1": {"description": "Buy Streak Freeze1"},
+    "buyStreakFreeze3": "3 Dondurma",
+    "@buyStreakFreeze3": {"description": "Buy Streak Freeze3"},
+    "streakFreezePurchased": "Seri dondurma satın alındı!",
+    "@streakFreezePurchased": {"description": "Streak Freeze Purchased"},
+    "streakFreezeZero": "Dondurma yok",
+    "@streakFreezeZero": {"description": "Streak Freeze Zero"},
     "yourStatistics": "İstatistiklerin",
+    "@yourStatistics": {"description": "Your Statistics"},
     "gamesPlayed": "Oynanan Oyun",
+    "@gamesPlayed": {"description": "Games Played"},
     "gamesWon": "Kazanılan Oyun",
+    "@gamesWon": {"description": "Games Won"},
     "performance": "Performans",
+    "@performance": {"description": "Performance"},
     "winRate": "Kazanma Oranı",
+    "@winRate": {"description": "Win Rate"},
     "avgStars": "Ort. Yıldız",
+    "@avgStars": {"description": "Avg Stars"},
     "timeStatistics": "Zaman İstatistikleri",
+    "@timeStatistics": {"description": "Time Statistics"},
     "totalTimePlayed": "Toplam Oynama Süresi",
+    "@totalTimePlayed": {"description": "Total Time Played"},
     "bestTime": "En İyi Süre",
+    "@bestTime": {"description": "Best Time"},
     "averageTime": "Ortalama Süre",
+    "@averageTime": {"description": "Average Time"},
     "starDistribution": "Yıldız Dağılımı",
+    "@starDistribution": {"description": "Star Distribution"},
     "totalStarsEarned": "Toplam Kazanılan Yıldız",
+    "@totalStarsEarned": {"description": "Total Stars Earned"},
     "perfectGames": "Mükemmel Oyunlar",
+    "@perfectGames": {"description": "Perfect Games"},
     "noGamesPlayedYet": "Henüz oyun oynamamışsın",
+    "@noGamesPlayedYet": {"description": "No Games Played Yet"},
     "wins": "Kazanma",
+    "@wins": {"description": "Wins"},
     "losses": "Kaybetme",
+    "@losses": {"description": "Losses"},
     "shareStatistics": "İstatistikleri Paylaş",
-
+    "@shareStatistics": {"description": "Share Statistics"},
     "currentStreak": "Mevcut Seri",
+    "@currentStreak": {"description": "Current Streak"},
     "failedToLoadDailyChallenge": "Günlük challenge yüklenemedi",
+    "@failedToLoadDailyChallenge": {"description": "Failed To Load Daily Challenge"},
     "failedToLoadChallenge": "Challenge yüklenemedi",
+    "@failedToLoadChallenge": {"description": "Failed To Load Challenge"},
     "difficultyLabel": "Zorluk",
+    "@difficultyLabel": {"description": "Difficulty Label"},
     "wordsLabel": "Kelimeler",
+    "@wordsLabel": {"description": "Words Label"},
     "starsLabel": "Yıldızlar",
+    "@starsLabel": {"description": "Stars Label"},
     "timeLabel": "Süre",
+    "@timeLabel": {"description": "Time Label"},
     "scoreLabel": "Puan",
+    "@scoreLabel": {"description": "Score Label"},
     "viewResult": "Sonucu Gör",
+    "@viewResult": {"description": "View Result"},
     "playNow": "Hemen Oyna",
+    "@playNow": {"description": "Play Now"},
     "expert": "Uzman",
+    "@expert": {"description": "Expert"},
     "unknown": "Bilinmiyor",
-
+    "@unknown": {"description": "Unknown"},
     "monthJanuary": "Ocak",
+    "@monthJanuary": {"description": "Month January"},
     "monthFebruary": "Şubat",
+    "@monthFebruary": {"description": "Month February"},
     "monthMarch": "Mart",
+    "@monthMarch": {"description": "Month March"},
     "monthApril": "Nisan",
+    "@monthApril": {"description": "Month April"},
     "monthMay": "Mayıs",
+    "@monthMay": {"description": "Month May"},
     "monthJune": "Haziran",
+    "@monthJune": {"description": "Month June"},
     "monthJuly": "Temmuz",
+    "@monthJuly": {"description": "Month July"},
     "monthAugust": "Ağustos",
+    "@monthAugust": {"description": "Month August"},
     "monthSeptember": "Eylül",
+    "@monthSeptember": {"description": "Month September"},
     "monthOctober": "Ekim",
+    "@monthOctober": {"description": "Month October"},
     "monthNovember": "Kasım",
+    "@monthNovember": {"description": "Month November"},
     "monthDecember": "Aralık",
-
+    "@monthDecember": {"description": "Month December"},
     "yourStats": "İstatistiklerin",
+    "@yourStats": {"description": "Your Stats"},
     "completedLabel": "Tamamlanan",
+    "@completedLabel": {"description": "Completed Label"},
     "bestStreak": "En İyi Seri",
-
+    "@bestStreak": {"description": "Best Streak"},
     "comboLabel": "{count} KOMBO",
     "@comboLabel": {
         "placeholders": {
-            "count": { "type": "int" }
-        }
+            "count": {
+                "type": "int"
+            }
+        },
+        "description": "Combo count label"
     },
     "comboMultiplierLabel": "{multiplier}x Çarpan",
     "@comboMultiplierLabel": {
         "placeholders": {
-            "multiplier": { "type": "String" }
-        }
+            "multiplier": {
+                "type": "String"
+            }
+        },
+        "description": "Combo multiplier label"
     },
     "comboXLabel": "Kombo x{count} ({multiplier}x)",
     "@comboXLabel": {
         "placeholders": {
-            "count": { "type": "int" },
-            "multiplier": { "type": "String" }
-        }
+            "count": {
+                "type": "int"
+            },
+            "multiplier": {
+                "type": "String"
+            }
+        },
+        "description": "Combo with count and multiplier label"
     },
     "comboBreak": "KOMBO BOZULDU",
+    "@comboBreak": {"description": "Combo Break"},
     "comboLostLabel": "{count}x kombo kaybedildi",
     "@comboLostLabel": {
         "placeholders": {
-            "count": { "type": "int" }
-        }
+            "count": {
+                "type": "int"
+            }
+        },
+        "description": "Lost combo count label"
     },
     "undoTooltipMessage": "Geri Al: {action}\n{count} geri alma hakkı kaldı",
     "@undoTooltipMessage": {
         "placeholders": {
-            "action": { "type": "String" },
-            "count": { "type": "int" }
-        }
+            "action": {
+                "type": "String"
+            },
+            "count": {
+                "type": "int"
+            }
+        },
+        "description": "Undo tooltip with action and remaining count"
     },
     "noUndosAvailable": "Geri alma hakkı kalmadı",
+    "@noUndosAvailable": {"description": "No Undos Available"},
     "undoConfirmTitle": "Geri Al?",
+    "@undoConfirmTitle": {"description": "Undo Confirm Title"},
     "undoConfirmMessageWithAction": "Bu işlemi geri alacaksınız:\n\n\"{action}\"\n\nKalan geri alma hakkı: {count}",
     "@undoConfirmMessageWithAction": {
         "placeholders": {
-            "action": { "type": "String" },
-            "count": { "type": "int" }
-        }
+            "action": {
+                "type": "String"
+            },
+            "count": {
+                "type": "int"
+            }
+        },
+        "description": "Undo confirmation with specific action"
     },
     "undoConfirmMessage": "Son işleminizi geri almak istiyor musunuz?\n\nKalan geri alma hakkı: {count}",
     "@undoConfirmMessage": {
         "placeholders": {
-            "count": { "type": "int" }
-        }
+            "count": {
+                "type": "int"
+            }
+        },
+        "description": "Undo confirmation with remaining count"
     },
     "undoReverted": "İşlem geri alındı",
+    "@undoReverted": {"description": "Undo Reverted"},
     "undosRemainingCount": "{count} geri alma hakkı kaldı",
     "@undosRemainingCount": {
         "placeholders": {
-            "count": { "type": "int" }
-        }
+            "count": {
+                "type": "int"
+            }
+        },
+        "description": "Undos remaining count"
     },
     "rewardCreditsLabel": "+{amount} Kredi",
     "@rewardCreditsLabel": {
         "placeholders": {
-            "amount": { "type": "int" }
-        }
+            "amount": {
+                "type": "int"
+            }
+        },
+        "description": "Reward credits amount label"
     },
     "rewardRevealHints": "+{count} Reveal İpucu",
     "@rewardRevealHints": {
         "placeholders": {
-            "count": { "type": "int" }
-        }
+            "count": {
+                "type": "int"
+            }
+        },
+        "description": "Reward reveal hints count"
     },
     "rewardUndoHints": "+{count} Undo İpucu",
     "@rewardUndoHints": {
         "placeholders": {
-            "count": { "type": "int" }
-        }
+            "count": {
+                "type": "int"
+            }
+        },
+        "description": "Reward undo hints count"
     },
     "dailyAdLimitReached": "Günlük limit doldu! (5/5)",
+    "@dailyAdLimitReached": {"description": "Daily Ad Limit Reached"},
     "creditsEarnedNotification": "+{amount} kredi kazandın!",
     "@creditsEarnedNotification": {
         "placeholders": {
-            "amount": { "type": "int" }
-        }
+            "amount": {
+                "type": "int"
+            }
+        },
+        "description": "Credits earned notification"
     },
     "revealHintEarned": "+1 Reveal ipucu kazandın!",
+    "@revealHintEarned": {"description": "Reveal Hint Earned"},
     "undoHintEarned": "+1 Undo ipucu kazandın!",
+    "@undoHintEarned": {"description": "Undo Hint Earned"},
     "hintsPurchasedNotification": "{amount} ipucu satın alındı!",
     "@hintsPurchasedNotification": {
         "placeholders": {
-            "amount": { "type": "int" }
-        }
+            "amount": {
+                "type": "int"
+            }
+        },
+        "description": "Hints purchased notification"
     },
     "livesPurchasedNotification": "{amount} can satın alındı!",
     "@livesPurchasedNotification": {
         "placeholders": {
-            "amount": { "type": "int" }
-        }
+            "amount": {
+                "type": "int"
+            }
+        },
+        "description": "Lives purchased notification"
     },
     "creditPurchaseComingSoon": "Gerçek para ile {amount} kredi satın alma: {price} (Yakında!)",
     "@creditPurchaseComingSoon": {
         "placeholders": {
-            "amount": { "type": "int" },
-            "price": { "type": "String" }
-        }
+            "amount": {
+                "type": "int"
+            },
+            "price": {
+                "type": "String"
+            }
+        },
+        "description": "Credit purchase coming soon message"
     },
     "levelsLabel": "Seviyeler",
+    "@levelsLabel": {"description": "Levels Label"},
     "streakLabel": "Seri",
+    "@streakLabel": {"description": "Streak Label"},
     "creditsEarnedLabel": "Kazanılan Kredi",
+    "@creditsEarnedLabel": {"description": "Credits Earned Label"},
     "completedToday": "Bugün Tamamlandı!",
+    "@completedToday": {"description": "Completed Today"},
     "todaysChallenge": "Bugünün Challenge'ı",
+    "@todaysChallenge": {"description": "Todays Challenge"},
     "shareResultHeader": "CrossClimber Seviye {levelId} Tamamlandı!",
     "@shareResultHeader": {
         "placeholders": {
-            "levelId": { "type": "int" }
-        }
+            "levelId": {
+                "type": "int"
+            }
+        },
+        "description": "Share result header with level ID"
     },
-    "shareAchievementUnlocked": "\ud83c\udfc6 Başarım Açıldı!",
+    "shareAchievementUnlocked": "Başarım Açıldı!",
+    "@shareAchievementUnlocked": {"description": "Share Achievement Unlocked"},
     "shareAchievementCTA": "CrossClimber oynuyorum - En zorlu kelime bulmaca oyunu!",
-    "shareDailyChallengeTitle": "\ud83d\udcc5 CrossClimber Günlük Challenge",
+    "@shareAchievementCTA": {"description": "Share Achievement C T A"},
+    "shareDailyChallengeTitle": "CrossClimber Günlük Challenge",
+    "@shareDailyChallengeTitle": {"description": "Share Daily Challenge Title"},
     "shareDailyLevelCompleted": "Seviye {levelId}: Tamamlandı!",
     "@shareDailyLevelCompleted": {
         "placeholders": {
-            "levelId": { "type": "int" }
-        }
+            "levelId": {
+                "type": "int"
+            }
+        },
+        "description": "Share daily level completed message"
     },
     "shareDailyLevelFailed": "Seviye {levelId}: Başarısız",
     "@shareDailyLevelFailed": {
         "placeholders": {
-            "levelId": { "type": "int" }
-        }
+            "levelId": {
+                "type": "int"
+            }
+        },
+        "description": "Share daily level failed message"
     },
     "shareDailyChallengeCTA": "Günlük challenge'a katıl!",
-    "shareMyStatsTitle": "\ud83d\udcca CrossClimber İstatistiklerim",
+    "@shareDailyChallengeCTA": {"description": "Share Daily Challenge C T A"},
+    "shareMyStatsTitle": "CrossClimber İstatistiklerim",
+    "@shareMyStatsTitle": {"description": "Share My Stats Title"},
     "shareStatsCTA": "CrossClimber'da benimle yarış!",
+    "@shareStatsCTA": {"description": "Share Stats C T A"},
     "shareStatisticsCTA": "Benim istatistiklerimi geçebilir misin?",
+    "@shareStatisticsCTA": {"description": "Share Statistics C T A"},
     "onboardingPage1Title": "Kelimeleri Tırman!",
+    "@onboardingPage1Title": {"description": "Onboarding Page1 Title"},
     "onboardingPage1Desc": "Başlangıç kelimesinden bitiş kelimesine gizli adımlarla tırman!",
+    "@onboardingPage1Desc": {"description": "Onboarding Page1 Desc"},
     "onboardingPage2Title": "Tahmin Et, Sırala, Çöz!",
+    "@onboardingPage2Title": {"description": "Onboarding Page2 Title"},
     "onboardingPage2Desc": "3 adımda kazan: Gizli kelimeleri tahmin et → Doğru sırala → Son kelimeyi çöz!",
+    "@onboardingPage2Desc": {"description": "Onboarding Page2 Desc"},
     "onboardingPage3Title": "Günlük Meydan Okuma",
+    "@onboardingPage3Title": {"description": "Onboarding Page3 Title"},
     "onboardingPage3Desc": "Her gün yeni bir bulmaca. Serisini kır, rekorunu geçmeye bak!",
+    "@onboardingPage3Desc": {"description": "Onboarding Page3 Desc"},
     "onboardingPage4Title": "Kombo Zinciri Kur!",
+    "@onboardingPage4Title": {"description": "Onboarding Page4 Title"},
     "onboardingPage4Desc": "Art arda doğru tahminler puanını çarpar — 2x, 3x, 4x bonus puan kazan!",
+    "@onboardingPage4Desc": {"description": "Onboarding Page4 Desc"},
     "onboardingSkip": "Atla",
+    "@onboardingSkip": {"description": "Onboarding Skip"},
     "onboardingNext": "İleri",
+    "@onboardingNext": {"description": "Onboarding Next"},
     "onboardingStart": "Başla!",
+    "@onboardingStart": {"description": "Onboarding Start"},
     "tutorialDontShowAgain": "Bir daha gösterme",
+    "@tutorialDontShowAgain": {"description": "Tutorial Dont Show Again"},
     "emptyAchievementsTitle": "Henüz Başarım Yok",
+    "@emptyAchievementsTitle": {"description": "Empty Achievements Title"},
     "emptyAchievementsDesc": "Başarımları açmak ve bonus kredi kazanmak için oynamaya başla!",
+    "@emptyAchievementsDesc": {"description": "Empty Achievements Desc"},
     "emptyStatisticsTitle": "Henüz İstatistik Yok",
+    "@emptyStatisticsTitle": {"description": "Empty Statistics Title"},
     "emptyStatisticsDesc": "İstatistiklerin ilk oyunun ardından burada görünecek.",
+    "@emptyStatisticsDesc": {"description": "Empty Statistics Desc"},
     "dailyMotivationTitle": "Bugünün Meydan Okumasına Hazır mısın?",
+    "@dailyMotivationTitle": {"description": "Daily Motivation Title"},
     "dailyMotivationDesc": "Her gün yeni bir bulmaca. Serini devam ettirmek için tamamla!",
+    "@dailyMotivationDesc": {"description": "Daily Motivation Desc"},
     "dailyMotivationButton": "Hemen Oyna",
+    "@dailyMotivationButton": {"description": "Daily Motivation Button"},
     "discoveryShopTitle": "Mağazaya Hoş Geldin!",
+    "@discoveryShopTitle": {"description": "Discovery Shop Title"},
     "discoveryShopDesc": "Kredilerinle ipucu ve can satın al. Reklamlar izleyerek günlük ücretsiz ödüller kazan!",
+    "@discoveryShopDesc": {"description": "Discovery Shop Desc"},
     "discoveryAchievementsTitle": "Başarımları Aç!",
+    "@discoveryAchievementsTitle": {"description": "Discovery Achievements Title"},
     "discoveryAchievementsDesc": "Dönüm noktalarını tamamlayarak rozetler aç ve bonus kredi kazan.",
+    "@discoveryAchievementsDesc": {"description": "Discovery Achievements Desc"},
     "discoveryDailyTitle": "Serini Gündeme Taşı!",
+    "@discoveryDailyTitle": {"description": "Discovery Daily Title"},
     "discoveryDailyDesc": "Serinizi canlı tutmak ve ödüller kazanmak için günlük meydan okumayı her gün tamamlayın.",
+    "@discoveryDailyDesc": {"description": "Discovery Daily Desc"},
     "discoveryGotIt": "Anlaştık!",
+    "@discoveryGotIt": {"description": "Discovery Got It"},
     "homeSubtitle": "Kelimelere zirveye tırman!",
+    "@homeSubtitle": {"description": "Home Subtitle"},
     "homeQuickPlay": "Hızlı Oyna",
+    "@homeQuickPlay": {"description": "Home Quick Play"},
+    "homeLevelsWithProgress": "Seviyeler (Level {level})",
+    "@homeLevelsWithProgress": {
+        "placeholders": {
+            "level": {
+                "type": "int"
+            }
+        },
+        "description": "Levels button showing current progress"
+    },
     "homeContinueLevel": "Devam Et: Level {level}",
     "@homeContinueLevel": {
         "placeholders": {
-            "level": { "type": "int" }
-        }
+            "level": {
+                "type": "int"
+            }
+        },
+        "description": "Continue button with level number"
     },
-    "homeStreakDays": "{days}\uD83D\uDD25",
+    "homeStreakDays": "{days}",
     "@homeStreakDays": {
         "placeholders": {
-            "days": { "type": "int" }
-        }
+            "days": {
+                "type": "int"
+            }
+        },
+        "description": "Home streak days badge"
     },
-    "homeTotalStars": "{count} \u2605",
+    "homeTotalStars": "{count}",
     "@homeTotalStars": {
         "placeholders": {
-            "count": { "type": "int" }
-        }
+            "count": {
+                "type": "int"
+            }
+        },
+        "description": "Home total stars badge"
     },
     "homeAchievementsProgress": "{unlocked}/{total}",
     "@homeAchievementsProgress": {
         "placeholders": {
-            "unlocked": { "type": "int" },
-            "total": { "type": "int" }
-        }
+            "unlocked": {
+                "type": "int"
+            },
+            "total": {
+                "type": "int"
+            }
+        },
+        "description": "Home achievements unlocked/total"
     },
-
     "zoneProgress": "{completed}/{total} tamamlandı",
     "@zoneProgress": {
         "placeholders": {
-            "completed": { "type": "int" },
-            "total": { "type": "int" }
-        }
+            "completed": {
+                "type": "int"
+            },
+            "total": {
+                "type": "int"
+            }
+        },
+        "description": "Zone completed/total progress"
     },
     "phaseSortBanner": "Şimdi Sırala!",
+    "@phaseSortBanner": {"description": "Phase Sort Banner"},
     "phaseFinalBanner": "Son Kelimeleri Bul!",
-    "completion3Stars": "Mükemmel! Tüm yıldızlar! 🌟",
-    "completion2Stars": "Harika iş! 👏",
+    "@phaseFinalBanner": {"description": "Phase Final Banner"},
+    "completion3Stars": "Mükemmel! Tüm yıldızlar!",
+    "@completion3Stars": {"description": "Completion3 Stars"},
+    "completion2Stars": "Harika iş!",
+    "@completion2Stars": {"description": "Completion2 Stars"},
     "completion1Star": "Fena değil! Daha fazla yıldız için tekrar dene.",
+    "@completion1Star": {"description": "Completion1 Star"},
     "completion0Stars": "Devam et, yapabilirsin! Tekrar dene.",
+    "@completion0Stars": {"description": "Completion0 Stars"},
     "completionHintSuggestion": "İpucu: Puanını artırmak için ipucu kullan.",
+    "@completionHintSuggestion": {"description": "Completion Hint Suggestion"},
     "sharePreviewTitle": "Sonucu Paylaş",
+    "@sharePreviewTitle": {"description": "Share Preview Title"},
     "sharePreviewCopy": "Kopyala",
+    "@sharePreviewCopy": {"description": "Share Preview Copy"},
     "sharePreviewCopied": "Kopyalandı!",
+    "@sharePreviewCopied": {"description": "Share Preview Copied"},
     "sharePreviewClose": "Kapat",
+    "@sharePreviewClose": {"description": "Share Preview Close"},
     "settingsHighContrast": "Yüksek Kontrast Modu",
+    "@settingsHighContrast": {"description": "Settings High Contrast"},
     "settingsHighContrastDesc": "Daha iyi okunabilirlik için renk kontrastını artır",
+    "@settingsHighContrastDesc": {"description": "Settings High Contrast Desc"},
     "semanticsDragInstruction": "Sürükleyip yeniden sıralamak için çift dokunun ve basılı tutun",
+    "@semanticsDragInstruction": {"description": "Semantics Drag Instruction"},
     "semanticsComboMultiplier": "Kombo: arka arkaya {count}, {multiplier}x çarpan",
     "@semanticsComboMultiplier": {
         "placeholders": {
-            "count": { "type": "int" },
-            "multiplier": { "type": "String" }
-        }
+            "count": {
+                "type": "int"
+            },
+            "multiplier": {
+                "type": "String"
+            }
+        },
+        "description": "Accessibility label for combo multiplier"
     },
     "semanticsLevelCard": "Level {id}, {status}, {stars} yıldız",
     "@semanticsLevelCard": {
         "placeholders": {
-            "id": { "type": "int" },
-            "status": { "type": "String" },
-            "stars": { "type": "int" }
-        }
+            "id": {
+                "type": "int"
+            },
+            "status": {
+                "type": "String"
+            },
+            "stars": {
+                "type": "int"
+            }
+        },
+        "description": "Accessibility label for level card"
     },
     "semanticsLocked": "kilitli",
+    "@semanticsLocked": {"description": "Semantics Locked"},
     "semanticsUnlocked": "kilidi açık",
-    "semanticsCompleted": "tamamlandı"
+    "@semanticsUnlocked": {"description": "Semantics Unlocked"},
+    "semanticsCompleted": "tamamlandı",
+    "@semanticsCompleted": {"description": "Semantics Completed"},
+    "semanticsActionPlay": "oyna",
+    "@semanticsActionPlay": {"description": "Semantics Action Play"},
+    "semanticsActionOpen": "aç",
+    "@semanticsActionOpen": {"description": "Semantics Action Open"},
+    "semanticsActionAddLetter": "harf ekle",
+    "@semanticsActionAddLetter": {"description": "Semantics Action Add Letter"},
+    "rankNovice": "Acemi",
+    "@rankNovice": {"description": "Rank Novice"},
+    "rankWordStudent": "Kelime Öğrencisi",
+    "@rankWordStudent": {"description": "Rank Word Student"},
+    "rankWordMaster": "Kelime Ustası",
+    "@rankWordMaster": {"description": "Rank Word Master"},
+    "rankPuzzleSolver": "Bulmaca Çözücü",
+    "@rankPuzzleSolver": {"description": "Rank Puzzle Solver"},
+    "rankMountainClimber": "Dağ Tırmanıcısı",
+    "@rankMountainClimber": {"description": "Rank Mountain Climber"},
+    "rankWordEagle": "Kelime Kartalı",
+    "@rankWordEagle": {"description": "Rank Word Eagle"},
+    "rankWordKing": "Kelime Kralı",
+    "@rankWordKing": {"description": "Rank Word King"},
+    "rankDiamondMind": "Elmas Zeka",
+    "@rankDiamondMind": {"description": "Rank Diamond Mind"},
+    "rankLegend": "Efsane",
+    "@rankLegend": {"description": "Rank Legend"},
+    "rankCrossClimberMaster": "CrossClimber Ustası",
+    "@rankCrossClimberMaster": {"description": "Rank Cross Climber Master"},
+    "xpGained": "+{amount} XP",
+    "@xpGained": {
+        "placeholders": {
+            "amount": {
+                "type": "int"
+            }
+        },
+        "description": "XP gained amount"
+    },
+    "totalXpLabel": "Toplam XP: {amount}",
+    "@totalXpLabel": {
+        "placeholders": {
+            "amount": {
+                "type": "int"
+            }
+        },
+        "description": "Total XP label with amount"
+    },
+    "rankUpTitle": "Seviye Atladın!",
+    "@rankUpTitle": {"description": "Rank Up Title"},
+    "rankUpMessage": "{rankName} seviyesine ulaştın!",
+    "@rankUpMessage": {
+        "placeholders": {
+            "rankName": {
+                "type": "String"
+            }
+        },
+        "description": "Rank up celebration message"
+    },
+    "profileCardTitle": "Oyuncu Profili",
+    "@profileCardTitle": {"description": "Profile Card Title"},
+    "xpProgress": "{current} / {target} XP",
+    "@xpProgress": {
+        "placeholders": {
+            "current": {
+                "type": "int"
+            },
+            "target": {
+                "type": "int"
+            }
+        },
+        "description": "XP progress current/target"
+    },
+    "dailyChallengeXp": "Günlük Meydan Okuma XP",
+    "@dailyChallengeXp": {"description": "Daily Challenge Xp"},
+    "comboXpBonus": "Kombo Bonusu: +{amount} XP",
+    "@comboXpBonus": {
+        "placeholders": {
+            "amount": {
+                "type": "int"
+            }
+        },
+        "description": "Combo XP bonus amount"
+    },
+    "dailyCalendarTitle": "Günlük Ödül Takvimi",
+    "@dailyCalendarTitle": {
+        "description": "Daily reward calendar section title"
+    },
+    "dailyCalendarDay": "{day}. Gün",
+    "@dailyCalendarDay": {
+        "description": "Day label in the 7-day calendar",
+        "placeholders": {
+            "day": {
+                "type": "int"
+            }
+        }
+    },
+    "dailyCalendarClaim": "Al!",
+    "@dailyCalendarClaim": {
+        "description": "Button label to claim today's daily reward"
+    },
+    "dailyCalendarClaimed": "Alındı",
+    "@dailyCalendarClaimed": {
+        "description": "Status label shown when today's reward has been claimed"
+    },
+    "dailyCalendarNextIn": "Sıradaki: {time}",
+    "@dailyCalendarNextIn": {
+        "description": "Countdown label showing time until next daily reward",
+        "placeholders": {
+            "time": {
+                "type": "String"
+            }
+        }
+    },
+    "dailyCalendarStreakReset": "Seri sıfırlandı — 1. Güne dönüldü!",
+    "@dailyCalendarStreakReset": {
+        "description": "FOMO warning shown when the streak was reset due to a missed day"
+    },
+    "dailyCalendarRewardCredits": "{amount} kredi",
+    "@dailyCalendarRewardCredits": {
+        "description": "Credits reward amount in the calendar",
+        "placeholders": {
+            "amount": {
+                "type": "int"
+            }
+        }
+    },
+    "dailyCalendarRewardReveal": "1 İpucu",
+    "@dailyCalendarRewardReveal": {
+        "description": "Reveal hint reward label in the calendar"
+    },
+    "dailyCalendarRewardUndo": "1 Geri Al",
+    "@dailyCalendarRewardUndo": {
+        "description": "Undo hint reward label in the calendar"
+    },
+    "dailyCalendarRewardSpecial": "Özel Tema!",
+    "@dailyCalendarRewardSpecial": {
+        "description": "Special theme bonus reward label for Day 7"
+    },
+    "dailyCalendarRewardSummary": "Ödül alındı!",
+    "@dailyCalendarRewardSummary": {
+        "description": "SnackBar message shown after successfully claiming a daily reward"
+    },
+    "dailyCalendarFomoWarning": "Yarını kaçırma!",
+    "@dailyCalendarFomoWarning": {
+        "description": "FOMO reminder shown after claiming today's reward"
+    },
+    "tournamentTitle": "Haftalık Turnuva",
+    "@tournamentTitle": {
+        "description": "Weekly tournament section title"
+    },
+    "tournamentWeek": "Hafta {week}",
+    "@tournamentWeek": {
+        "description": "Tournament week label",
+        "placeholders": {
+            "week": {
+                "type": "String"
+            }
+        }
+    },
+    "tournamentActive": "Aktif",
+    "@tournamentActive": {
+        "description": "Status label for an active tournament"
+    },
+    "tournamentEnded": "Bitti",
+    "@tournamentEnded": {
+        "description": "Status label for an ended tournament"
+    },
+    "tournamentEndsIn": "Bitiş: {time}",
+    "@tournamentEndsIn": {
+        "description": "Countdown label showing time until tournament ends",
+        "placeholders": {
+            "time": {
+                "type": "String"
+            }
+        }
+    },
+    "tournamentNextIn": "Sıradaki: {time}",
+    "@tournamentNextIn": {
+        "description": "Countdown label showing time until next tournament",
+        "placeholders": {
+            "time": {
+                "type": "String"
+            }
+        }
+    },
+    "tournamentLeaderboard": "Sıralama",
+    "@tournamentLeaderboard": {
+        "description": "Tournament leaderboard section title"
+    },
+    "tournamentLevels": "Turnuva Seviyeleri",
+    "@tournamentLevels": {
+        "description": "Tournament levels section title"
+    },
+    "tournamentMyRank": "Sıralamanız",
+    "@tournamentMyRank": {
+        "description": "User's own rank in the tournament"
+    },
+    "tournamentRank": "#{rank}",
+    "@tournamentRank": {
+        "description": "Rank number with hash prefix",
+        "placeholders": {
+            "rank": {
+                "type": "int"
+            }
+        }
+    },
+    "tournamentScore": "{score} puan",
+    "@tournamentScore": {
+        "description": "Tournament score display",
+        "placeholders": {
+            "score": {
+                "type": "int"
+            }
+        }
+    },
+    "tournamentRewards": "Ödüller",
+    "@tournamentRewards": {
+        "description": "Tournament rewards section title"
+    },
+    "tournamentPlay": "Oyna",
+    "@tournamentPlay": {
+        "description": "Button to play a tournament level"
+    },
+    "tournamentLevelCompleted": "Tamam",
+    "@tournamentLevelCompleted": {
+        "description": "Label shown on a completed tournament level card"
+    },
+    "tournamentNotParticipating": "Henüz katılmadınız",
+    "@tournamentNotParticipating": {
+        "description": "Shown when user hasn't played any tournament level yet"
+    },
+    "tournamentLevelsProgress": "{count}/7 seviye",
+    "@tournamentLevelsProgress": {
+        "description": "Number of completed tournament levels out of 7",
+        "placeholders": {
+            "count": {
+                "type": "int"
+            }
+        }
+    },
+    "tournamentCreditsReward": "{amount} Kredi",
+    "@tournamentCreditsReward": {
+        "description": "Credit reward amount in tournament tiers",
+        "placeholders": {
+            "amount": {
+                "type": "int"
+            }
+        }
+    },
+    "tournamentParticipation": "Katılım",
+    "@tournamentParticipation": {
+        "description": "Participation tier label in tournament rewards"
+    },
+    "tournamentOffline": "Turnuva internet bağlantısı gerektiriyor",
+    "@tournamentOffline": {
+        "description": "Error message when tournament cannot be loaded offline"
+    },
+    "tournamentLoadError": "Turnuva yüklenemedi",
+    "@tournamentLoadError": {
+        "description": "Error message when tournament data fails to load"
+    },
+    "tournamentScoreSubmitted": "Puanın sıralamaya kaydedildi!",
+    "@tournamentScoreSubmitted": {
+        "description": "Confirmation shown when a tournament score is successfully submitted"
+    },
+    "tournamentHomeBanner": "Haftalık Turnuva",
+    "@tournamentHomeBanner": {
+        "description": "Tournament banner title on the home screen"
+    },
+    "tournamentJoin": "Katıl!",
+    "@tournamentJoin": {
+        "description": "Call-to-action button on the tournament home banner"
+    },
+    "tournamentDifficultyEasy": "Kolay",
+    "@tournamentDifficultyEasy": {
+        "description": "Easy difficulty label"
+    },
+    "tournamentDifficultyMedium": "Orta",
+    "@tournamentDifficultyMedium": {
+        "description": "Medium difficulty label"
+    },
+    "tournamentDifficultyHard": "Zor",
+    "@tournamentDifficultyHard": {
+        "description": "Hard difficulty label"    },
+    "idleMotivation1": "Bir kelime daha?",
+    "@idleMotivation1": {
+        "description": "Idle motivation tooltip message 1"
+    },
+    "idleMotivation2": "Yapabilirsin!",
+    "@idleMotivation2": {
+        "description": "Idle motivation tooltip message 2"
+    },
+    "idleMotivation3": "Farklı bir yaklaşım dene?",
+    "@idleMotivation3": {
+        "description": "Idle motivation tooltip message 3"
+    },
+    "settingsGroupProfile": "Profil & Hesap",
+    "@settingsGroupProfile": { "description": "Settings group: profile" },
+    "settingsGroupAppearance": "Görünüm",
+    "@settingsGroupAppearance": { "description": "Settings group: appearance" },
+    "settingsGroupGameplay": "Oyun Ayarları",
+    "@settingsGroupGameplay": { "description": "Settings group: gameplay" },
+    "settingsGroupSoundHaptic": "Ses & Dokunsal",
+    "@settingsGroupSoundHaptic": { "description": "Settings group: sound" },
+    "settingsGroupHelp": "Yardım & Bilgi",
+    "@settingsGroupHelp": { "description": "Settings group: help" },
+    "chooseTheme": "Tema Seç",
+    "@chooseTheme": { "description": "Theme section label" },
+    "premiumTheme": "Premium",
+    "@premiumTheme": { "description": "Premium theme badge" },
+    "unlockInShop": "Mağazadan Aç",
+    "@unlockInShop": { "description": "Prompt to unlock premium theme" },
+    "themeUnlocked": "Tema açıldı!",
+    "@themeUnlocked": { "description": "Theme unlock confirmation" },
+    "profileTitle": "Profil",
+    "@profileTitle": { "description": "Profile screen title" },
+    "editProfile": "Profili Düzenle",
+    "@editProfile": { "description": "Edit profile button" },
+    "chooseAvatar": "Avatar Seç",
+    "@chooseAvatar": { "description": "Avatar picker dialog title" },
+    "displayName": "Görünen Ad",
+    "@displayName": { "description": "Username field label" },
+    "displayNameHint": "Adınızı girin",
+    "@displayNameHint": { "description": "Username field hint" },
+    "saveProfile": "Kaydet",
+    "@saveProfile": { "description": "Save profile button" },
+    "profileSaved": "Profil kaydedildi!",
+    "@profileSaved": { "description": "Profile save confirmation" },
+    "connectedAccounts": "Bağlı Hesaplar",
+    "@connectedAccounts": { "description": "Connected accounts section" },
+    "googleConnected": "Google — Bağlı",
+    "@googleConnected": { "description": "Google account connected" },
+    "googleNotConnected": "Google — Bağlı değil",
+    "@googleNotConnected": { "description": "Google account not connected" },
+    "connectGoogle": "Bağla",
+    "@connectGoogle": { "description": "Connect Google account button" },
+    "disconnectGoogle": "Bağlantıyı Kes",
+    "@disconnectGoogle": { "description": "Disconnect Google account button" },
+    "deleteAccount": "Hesabı Sil",
+    "@deleteAccount": { "description": "Delete account button" },
+    "deleteAccountDesc": "Hesabınızı ve tüm verilerinizi kalıcı olarak silin. Bu işlem geri alınamaz.",
+    "@deleteAccountDesc": { "description": "Delete account description" },
+    "deleteAccountConfirm": "Hesabınızı silmek istediğinizden emin misiniz? Tüm ilerleme, başarımlar ve satın almalar kalıcı olarak kaybolacak.",
+    "@deleteAccountConfirm": { "description": "Delete account confirmation dialog" },
+    "deleteAccountButton": "Kalıcı Olarak Sil",
+    "@deleteAccountButton": { "description": "Confirm delete button" },
+    "cancel": "İptal",
+    "@cancel": { "description": "Cancel button" },
+    "rankLabel": "Rütbe",
+    "@rankLabel": { "description": "Rank label" },
+    "totalXp": "Toplam XP",
+    "@totalXp": { "description": "Total XP label" },
+    "faq": "SSS",
+    "@faq": { "description": "FAQ button" },
+    "licenses": "Lisanslar",
+    "@licenses": { "description": "Licenses button" },
+    "privacyPolicy": "Gizlilik Politikası",
+    "@privacyPolicy": { "description": "Privacy policy button" },
+    "unlockThemeTitle": "{themeName} Kilidini Aç",
+    "@unlockThemeTitle": { "description": "Theme purchase dialog title", "placeholders": { "themeName": { "type": "String", "description": "Name of the theme" } } },
+    "unlockThemeDesc": "Bu premium temayı {cost} kredi ile açın.",
+    "@unlockThemeDesc": { "description": "Theme purchase dialog body", "placeholders": { "cost": { "type": "int", "description": "Credit cost" } } },
+    "unlockButton": "Kilidi Aç",
+    "@unlockButton": { "description": "Unlock purchase button" },
+    "yourCredits": "Krediniz: {amount}",
+    "@yourCredits": { "description": "Current credit balance", "placeholders": { "amount": { "type": "int", "description": "Credit amount" } } },
+    "solveMiddleWordsFirst": "Kilidi açmak için ortadaki kelimeleri çözün",
+    "@solveMiddleWordsFirst": { "description": "Tooltip for locked end word rows" },
+    "offlineBanner": "Çevrimdışısınız. Bazı özellikler kullanılamayabilir.",
+    "@offlineBanner": { "description": "Banner shown when device has no internet connection" },
+    "backOnline": "Tekrar çevrimiçisiniz!",
+    "@backOnline": { "description": "Snackbar shown when internet connection is restored" },
+    "doubleRewards": "Ödülleri İkiye Katla",
+    "@doubleRewards": { "description": "Button to watch ad and double level completion credits" },
+    "watchAdForLife": "Reklam İzle, Can Kazan",
+    "@watchAdForLife": { "description": "Button in out-of-lives dialog to watch rewarded ad for a free life" },
+    "adNotAvailable": "Reklam şu anda mevcut değil. Lütfen daha sonra tekrar deneyin.",
+    "@adNotAvailable": { "description": "Shown when rewarded ad failed to load or is not ready" }
 }
